@@ -1,0 +1,26 @@
+﻿@page "/recipes"
+@using CookingFrog.Domain
+@inject IRecipesRepo RecipesRepo
+@attribute [StreamRendering]
+
+<PageTitle>Recipes</PageTitle>
+
+<h1>Przepisy</h1>
+
+@if (recipes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <ul>
+        @foreach (var recipe in recipes)
+        {
+            <li>
+                <NavLink class="nav-link" href="@("recipe/" + recipe.Guid)">
+                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> @recipe.Summary
+                </NavLink>
+            </li>
+        }
+    </ul>
+}

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
+    <ProjectReference Include="..\..\CookingFrog.Infra\CookingFrog.Infra.csproj" />
+    <ProjectReference Include="..\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.10" />
+  </ItemGroup>
+
+</Project>

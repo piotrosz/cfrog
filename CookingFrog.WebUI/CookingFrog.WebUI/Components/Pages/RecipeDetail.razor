@@ -1,0 +1,66 @@
+﻿@page "/recipe/{Guid}"
+@using CookingFrog.Domain
+@inject IRecipesRepo RecipesRepo
+@attribute [StreamRendering]
+
+@if(Recipe == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row gy-2 g-2">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Składniki</h5>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var ingredient in Recipe.Ingredients)
+                            {
+                                <li class="list-group-item">
+                                    @if (@ingredient.GroupName != null)
+                                    {
+                                        <span class="badge rounded-pill bg-info align-content-end">@ingredient.GroupName</span>
+                                        <text>&nbsp;</text>
+                                    }
+                                    
+                                    <span>@ingredient.Name</span>
+
+                                    @{
+                                        var quantityAsString = ingredient.Quantity.ToString();
+                                    }
+
+                                    @if (quantityAsString != string.Empty)
+                                    {   <text>&nbsp;</text>
+                                        <span class="badge rounded-pill bg-primary align-content-end">@quantityAsString</span>
+                                    }
+                                    
+                                   
+                                </li>
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-2 g-2">
+
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Co robić</h5>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var step in Recipe.Steps)
+                            {
+                                <li class="list-group-item">@step.Description</li>
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
