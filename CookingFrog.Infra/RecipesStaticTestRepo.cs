@@ -2,7 +2,7 @@
 
 namespace CookingFrog.Infra;
 
-public class RecipesStaticTestRepo : IRecipesRepo
+public sealed class RecipesStaticTestRepo : IRecipesRepo
 {
     private static readonly IReadOnlyList<Recipe> Recipes =
     [
@@ -106,16 +106,16 @@ public class RecipesStaticTestRepo : IRecipesRepo
         ])
     ];
 
-    public IReadOnlyList<RecipeSummary> GetRecipes()
+    public Task<IReadOnlyList<RecipeSummary>> GetRecipes()
     {
-        return Recipes
+        return Task.FromResult<IReadOnlyList<RecipeSummary>>(Recipes
             .Select(r => new RecipeSummary(r.Guid, r.Summary))
-            .ToList();
+            .ToList());
     }
 
-    public Recipe GetRecipe(Guid guid)
+    public Task<Recipe> GetRecipe(Guid guid)
     {
-        return Recipes.Single(r => r.Guid == guid);
+        return Task.FromResult(Recipes.Single(r => r.Guid == guid));
     }
 
 }

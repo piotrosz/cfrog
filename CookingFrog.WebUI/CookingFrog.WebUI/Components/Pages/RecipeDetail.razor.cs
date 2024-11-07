@@ -11,7 +11,7 @@ public partial class RecipeDetail
     {
         if (Guid is not null)
         {
-            Recipe = RecipesRepo.GetRecipe(System.Guid.Parse(Guid));
+            Recipe = await RecipesRepo.GetRecipe(System.Guid.Parse(Guid));
         }
     }
 

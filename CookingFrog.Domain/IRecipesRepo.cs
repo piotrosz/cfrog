@@ -2,6 +2,6 @@
 
 public interface IRecipesRepo
 {
-    IReadOnlyList<RecipeSummary> GetRecipes();
-    Recipe GetRecipe(Guid guid);
+    Task<IReadOnlyList<RecipeSummary>> GetRecipes();
+    Task<Recipe> GetRecipe(Guid guid);
 }

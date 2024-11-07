@@ -5,8 +5,6 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookingFrog.Domain", "CookingFrog.Domain\CookingFrog.Domain.csproj", "{E934CD44-9CC5-4F59-963C-FCA07898FA2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookingFrog.WebAPI", "CookingFrog.WebAPI\CookingFrog.WebAPI.csproj", "{6C972374-3FE7-43F7-9246-92BBA4DB910B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.WebUI", "CookingFrog.WebUI\CookingFrog.WebUI\CookingFrog.WebUI.csproj", "{09846FF1-261A-4AB9-9261-45773AD27E5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.WebUI.Client", "CookingFrog.WebUI\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj", "{8926D9FC-F2B2-48C5-A772-5E3D1665B0A8}"

@@ -1,7 +1,9 @@
 using CookingFrog.Domain;
 using CookingFrog.Infra;
-using CookingFrog.WebUI.Client.Pages;
 using CookingFrog.WebUI.Components;
+
+using Azure.Identity;
+using Microsoft.Extensions.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,14 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.Services.AddScoped<IRecipesRepo, RecipesStaticTestRepo>();
+
+// TODO: Move to infrastructure
+builder.Services.AddAzureClients(clientBuilder =>
+{
+    // TODO: Move url to config
+    clientBuilder.AddTableServiceClient(new Uri("https://stdiwithazuresdk.table.core.windows.net"));
+    clientBuilder.UseCredential(new DefaultAzureCredential());
+});
 
 var app = builder.Build();
 

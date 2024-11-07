@@ -8,6 +8,6 @@ public partial class Recipes
 
     protected override async Task OnInitializedAsync()
     {
-        recipes = RecipesRepo.GetRecipes();
+        recipes = await RecipesRepo.GetRecipes();
     }
 }
