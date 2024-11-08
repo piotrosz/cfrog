@@ -1,6 +1,6 @@
 ﻿@page "/recipe/{Guid}"
 @using CookingFrog.Domain
-@inject IRecipesRepo RecipesRepo
+@inject IRecipesReadRepo RecipesRepo
 @attribute [StreamRendering]
 
 @if(Recipe == null)

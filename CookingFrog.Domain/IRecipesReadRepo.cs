@@ -1,6 +1,6 @@
 ﻿namespace CookingFrog.Domain;
 
-public interface IRecipesRepo
+public interface IRecipesReadRepo
 {
     Task<IReadOnlyList<RecipeSummary>> GetRecipes();
     Task<Recipe> GetRecipe(Guid guid);

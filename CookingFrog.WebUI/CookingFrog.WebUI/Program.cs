@@ -12,15 +12,9 @@ builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-builder.Services.AddScoped<IRecipesRepo, RecipesStaticTestRepo>();
+builder.Services.AddScoped<IRecipesReadRepo, RecipesStaticTestRepo>();
 
-// TODO: Move to infrastructure
-builder.Services.AddAzureClients(clientBuilder =>
-{
-    // TODO: Move url to config
-    clientBuilder.AddTableServiceClient(new Uri("https://stdiwithazuresdk.table.core.windows.net"));
-    clientBuilder.UseCredential(new DefaultAzureCredential());
-});
+builder.Services.AddFrogStorage(new Uri(builder.Configuration["Azure:Storage:Uri"])); 
 
 var app = builder.Build();
 

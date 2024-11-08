@@ -3,7 +3,7 @@ using CookingFrog.Domain;
 
 namespace CookingFrog.Infra;
 
-public sealed class RecipesAzTableStorageRepo : IRecipesRepo
+public sealed class RecipesAzTableStorageRepo : IRecipesReadRepo
 {
     private readonly TableServiceClient tableServiceClient;
 

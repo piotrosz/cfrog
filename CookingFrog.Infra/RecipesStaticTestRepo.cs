@@ -2,7 +2,7 @@
 
 namespace CookingFrog.Infra;
 
-public sealed class RecipesStaticTestRepo : IRecipesRepo
+public sealed class RecipesStaticTestRepo : IRecipesReadRepo
 {
     private static readonly IReadOnlyList<Recipe> Recipes =
     [
