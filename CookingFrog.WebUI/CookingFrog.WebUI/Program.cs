@@ -12,8 +12,6 @@ builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-builder.Services.AddScoped<IRecipesReadRepo, RecipesStaticTestRepo>();
-
 builder.Services.AddFrogStorage(new Uri(builder.Configuration["Azure:Storage:Uri"])); 
 
 var app = builder.Build();

@@ -3,18 +3,10 @@ using CookingFrog.Domain;
 
 namespace CookingFrog.Infra;
 
-public sealed class RecipesAzTableStorageRepo : IRecipesReadRepo
+public sealed class RecipesAzReadRepo(TableServiceClient tableServiceClient) : IRecipesReadRepo
 {
-    private readonly TableServiceClient tableServiceClient;
-
-    public RecipesAzTableStorageRepo(TableServiceClient tableServiceClient)
-    {
-        this.tableServiceClient = tableServiceClient;
-    }
-
     public async Task<Recipe> GetRecipe(Guid guid)
     {
-        
         throw new NotImplementedException();
     }
 

@@ -1,0 +1,21 @@
+@page "/recipe-add"
+
+<form method="post" @onsubmit="Submit" @formname="starship-plain-form">
+    <AntiforgeryToken />
+    <div class="mb-3">
+        <label for="txtTitle" class="form-label">Tytuł</label>
+        <InputText type="text" class="form-control" id="txtTitle" placeholder="" 
+                   @bind-Value="Model!.Title"/>
+    </div>
+    <div class="mb-3">
+        <label for="txtIngredients" class="form-label">Składniki</label>
+        <InputTextArea class="form-control" id="txtIngredients" rows="6" 
+            @bind-Value="Model!.Ingredients"></InputTextArea>
+    </div>
+    <div class="mb-3">
+        <label for="txtSteps" class="form-label">Co robić</label>
+        <InputTextArea class="form-control" id="txtSteps" rows="6"
+            @bind-Value="Model!.Steps"></InputTextArea>
+    </div>
+</form>
+

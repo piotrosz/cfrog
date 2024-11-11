@@ -5,7 +5,7 @@ namespace CookingFrog.Infra;
 
 public static class RecipeToRecipeTableEntityMapper
 {
-    public static RecipeTableEntity Map(Recipe recipe)
+    public static RecipeTableEntity Map(this Recipe recipe)
     {
         return new RecipeTableEntity
         {

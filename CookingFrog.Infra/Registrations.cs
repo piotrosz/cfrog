@@ -1,4 +1,5 @@
 ﻿using Azure.Identity;
+using CookingFrog.Domain;
 using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,5 +14,8 @@ public static class Registrations
             clientBuilder.AddTableServiceClient(serviceUri);
             clientBuilder.UseCredential(new DefaultAzureCredential());
         });
+        
+        services.AddScoped<IRecipesReadRepo, RecipesStaticTestRepo>();
+        services.AddScoped<IRecipesPersistRepo, RecipesAzPersistRepo>();
     }
 }

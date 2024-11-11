@@ -61,49 +61,65 @@ public sealed class RecipesStaticTestRepo : IRecipesReadRepo
                 "Przygotować sos mieszając wszystkie składniki."
             ]),
         Recipe.Create("🍜 Makaron w sosie pomidorowo-czosnkowym z kurczakiem",
-        TimeSpan.FromMinutes(30),
-        [
-            new Ingredient("mięso pierś kurczaka", Quantity.ThreeHundredGram),
-            new Ingredient("makaron Mie", Quantity.TwoHundredFiftyGram),
-            new Ingredient("warzywa mrożone, azja", Quantity.ThreeHundredGram),
-            new Ingredient("miód", new Quantity(50, UnitEnum.Gram)),
-            new Ingredient("sos sojowy ciemny", new Quantity(50, UnitEnum.Millilitre)),
-            new Ingredient("keczup", new Quantity(50, UnitEnum.Gram)),
-            new Ingredient("mąka", new Quantity(25, UnitEnum.Gram)),
-            new Ingredient("woda", new Quantity(80, UnitEnum.Millilitre)),
-            new Ingredient("szczypiorek", new Quantity(20, UnitEnum.Gram)),
-            new Ingredient("olej sezamowy", new Quantity(20, UnitEnum.Gram)),
-            new Ingredient("przyprawa do kurczaka", new Quantity(4, UnitEnum.Gram)),
-            new Ingredient("czosnek granulowany", new Quantity(8, UnitEnum.Gram)),
-        ], steps:
-        [
-            "Dopraw mięso w misce przyprawami (czosnek granulowany, przyp do kurczaka), obtocz mięso w mące, dodaj 1/4 oleju sezamowego.",
-            "smaż 🐤 na patelni z 1/4 oleju sezamowego przez 6-8min. Ugotuj makaron. Przelej 80ml wody z makaronu do szklanki. Makaron odcedź i przelej zimną wodą.",
-            "do dużej miski wlej sos sojowy, ketchup, miód, czosnek granulowany, wodę z makaronu, olej sezamowy i całość wymieszaj",
-            "Smaż warzywa mrożone 8-10min. Dodaj 🐤, makaron i sos. Dokładnie mieszaj i gotuj 2-3min",
-            "Wyłóż porcje na talerz. Posyp posiekanym szczypiorem."
-        ]),
+            TimeSpan.FromMinutes(30),
+            [
+                new Ingredient("mięso pierś kurczaka", Quantity.ThreeHundredGram),
+                new Ingredient("makaron Mie", Quantity.TwoHundredFiftyGram),
+                new Ingredient("warzywa mrożone, azja", Quantity.ThreeHundredGram),
+                new Ingredient("miód", new Quantity(50, UnitEnum.Gram)),
+                new Ingredient("sos sojowy ciemny", new Quantity(50, UnitEnum.Millilitre)),
+                new Ingredient("keczup", new Quantity(50, UnitEnum.Gram)),
+                new Ingredient("mąka", new Quantity(25, UnitEnum.Gram)),
+                new Ingredient("woda", new Quantity(80, UnitEnum.Millilitre)),
+                new Ingredient("szczypiorek", new Quantity(20, UnitEnum.Gram)),
+                new Ingredient("olej sezamowy", new Quantity(20, UnitEnum.Gram)),
+                new Ingredient("przyprawa do kurczaka", new Quantity(4, UnitEnum.Gram)),
+                new Ingredient("czosnek granulowany", new Quantity(8, UnitEnum.Gram)),
+            ], steps:
+            [
+                "Dopraw mięso w misce przyprawami (czosnek granulowany, przyp do kurczaka), obtocz mięso w mące, dodaj 1/4 oleju sezamowego.",
+                "smaż 🐤 na patelni z 1/4 oleju sezamowego przez 6-8min. Ugotuj makaron. Przelej 80ml wody z makaronu do szklanki. Makaron odcedź i przelej zimną wodą.",
+                "do dużej miski wlej sos sojowy, ketchup, miód, czosnek granulowany, wodę z makaronu, olej sezamowy i całość wymieszaj",
+                "Smaż warzywa mrożone 8-10min. Dodaj 🐤, makaron i sos. Dokładnie mieszaj i gotuj 2-3min",
+                "Wyłóż porcje na talerz. Posyp posiekanym szczypiorem."
+            ]),
         Recipe.Create("🥗 Sałatka makaronowa awokado, feta, pomidory, kukurydza",
-        TimeSpan.FromHours(0.5),
-        [
-            new Ingredient("makaron kokardki", Quantity.HundredGram),
-            new Ingredient("ser feta", new Quantity(150, UnitEnum.Gram)),
-            new Ingredient("🥑 awokado", Quantity.One),
-            new Ingredient("🍋 limonka", Quantity.Half),
-            new Ingredient("🌽 kukurydza w puszce", Quantity.One),
-            new Ingredient("🍅 pomidory koktajlowe", Quantity.TwoHundredGram),
-            new Ingredient("🧅 czerwona cebula", Quantity.Half),
-            new Ingredient("sól, pieprz", Quantity.Handful),
-            new Ingredient("🌶 ostra papryka", Quantity.Handful),
-            new Ingredient("liście bazylii", new Quantity(0.5m, UnitEnum.Glass)),
-            new Ingredient("oliwa", Quantity.TeaSpoon),
-            new Ingredient("majonez", Quantity.TeaSpoon)
-        ], steps: [
-            "Makaron ugotować w osolonej wodzie, odcedzić i wsypać do salaterki.",
-            "Dodać pokrojony w kosteczkę ser, a także obrane i pokrojone w kosteczkę awokado. Skropić sokiem z limonki.",
-            "Dodać odcedzoną kukurydzę, pokrojone na połówki pomidorki, posiekaną cebulę i całość doprawić solą, pieprzem i papryką.",
-            "Dodać posiekane listki bazylii, oliwę oraz majonez. Wszystko delikatnie wymieszać."
-        ])
+            TimeSpan.FromHours(0.5),
+            [
+                new Ingredient("makaron kokardki", Quantity.HundredGram),
+                new Ingredient("ser feta", new Quantity(150, UnitEnum.Gram)),
+                new Ingredient("🥑 awokado", Quantity.One),
+                new Ingredient("🍋 limonka", Quantity.Half),
+                new Ingredient("🌽 kukurydza w puszce", Quantity.One),
+                new Ingredient("🍅 pomidory koktajlowe", Quantity.TwoHundredGram),
+                new Ingredient("🧅 czerwona cebula", Quantity.Half),
+                new Ingredient("sól, pieprz", Quantity.Handful),
+                new Ingredient("🌶 ostra papryka", Quantity.Handful),
+                new Ingredient("liście bazylii", new Quantity(0.5m, UnitEnum.Glass)),
+                new Ingredient("oliwa", Quantity.TeaSpoon),
+                new Ingredient("majonez", Quantity.TeaSpoon)
+            ], steps:
+            [
+                "Makaron ugotować w osolonej wodzie, odcedzić i wsypać do salaterki.",
+                "Dodać pokrojony w kosteczkę ser, a także obrane i pokrojone w kosteczkę awokado. Skropić sokiem z limonki.",
+                "Dodać odcedzoną kukurydzę, pokrojone na połówki pomidorki, posiekaną cebulę i całość doprawić solą, pieprzem i papryką.",
+                "Dodać posiekane listki bazylii, oliwę oraz majonez. Wszystko delikatnie wymieszać."
+            ]),
+        Recipe.Create("🥞 Placki ziemniaczane",
+            TimeSpan.FromHours(1),
+            [
+                new Ingredient("ziemniaki", Quantity.HalfKilo),
+                new Ingredient("mąka pszenna", Quantity.HalfSpoon),
+                new Ingredient("cebula", Quantity.Quarter),
+                new Ingredient("jajko", Quantity.One),
+                new Ingredient("sól"),
+                new Ingredient("olej roślinny do smażenia")
+            ], [
+                "Ziemniaki obrać i zetrzeć na tarce o małych oczkach bezpośrednio do większej i płaskiej miski. Zostawić je w misce bez mieszania, miskę delikatnie przechylić i odstawić tak na ok. 5 minut.",
+                "W międzyczasie odlewać zbierający się sok, delikatnie przytrzymując ziemniaki, nadal ich nie mieszać. Na koniec docisnąć dłonią do miski i odlać jeszcze więcej soku. Dodać mąkę, drobno startą cebulę, jajko oraz dwie szczypty soli.",
+                "Rozgrzać patelnię, wlać olej. Masę ziemniaczaną wymieszać. Nakładać porcje masy (1 pełna łyżka) na rozgrzany olej i rozprowadzać ją na dość cienki placek. Smażyć na średnim ogniu przez ok. 2 - 3 minuty na złoty kolor, przewrócić na drugą stronę i powtórzyć smażenie.",
+                "Odkładać na talerz wyłożony ręcznikami papierowymi. Posypać solą morską z młynka. Placki ziemniaczane najlepsze są prosto z patelni gdy są chrupiące."
+            ])
     ];
 
     public Task<IReadOnlyList<RecipeSummary>> GetRecipes()
@@ -117,5 +133,4 @@ public sealed class RecipesStaticTestRepo : IRecipesReadRepo
     {
         return Task.FromResult(Recipes.Single(r => r.Guid == guid));
     }
-
 }

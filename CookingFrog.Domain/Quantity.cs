@@ -33,6 +33,8 @@ public sealed record Quantity(decimal Value, UnitEnum Unit)
     public static Quantity Handful => new(1, UnitEnum.Handful);
     
     public static Quantity Quarter => new(0.25m, UnitEnum.Quantity);
+    
+    public static Quantity HalfSpoon => new(0.5m, UnitEnum.Spoon);
 
     public override string ToString()
     {
