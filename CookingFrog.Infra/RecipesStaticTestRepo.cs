@@ -122,7 +122,7 @@ public sealed class RecipesStaticTestRepo : IRecipesReadRepo
             ])
     ];
 
-    public Task<IReadOnlyList<RecipeSummary>> GetRecipes()
+    public Task<IReadOnlyList<RecipeSummary>> GetRecipeSummaries()
     {
         return Task.FromResult<IReadOnlyList<RecipeSummary>>(Recipes
             .Select(r => new RecipeSummary(r.Guid, r.Summary))

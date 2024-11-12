@@ -4,7 +4,7 @@ namespace CookingFrog.Infra;
 
 public static class RecipeSummaryToRecipeSummaryTableEntityMapper
 {
-    public static RecipeSummaryTableEntity Map(this RecipeSummary recipeSummary)
+    public static RecipeSummaryTableEntity MapToTableEntity(this RecipeSummary recipeSummary)
     {
         return new RecipeSummaryTableEntity
         {

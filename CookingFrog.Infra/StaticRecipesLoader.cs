@@ -6,7 +6,7 @@ public class StaticRecipesLoader(IRecipesPersistRepo persistRepo, IRecipesReadRe
 {
     public async Task Load(CancellationToken cancellationToken = default)
     {
-        foreach (var recipeSummary in await readRepo.GetRecipes())
+        foreach (var recipeSummary in await readRepo.GetRecipeSummaries())
         {
             await persistRepo.Save(recipeSummary, cancellationToken);
             await persistRepo.Save(await readRepo.GetRecipe(recipeSummary.Guid), cancellationToken);

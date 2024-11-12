@@ -3,26 +3,29 @@ using CookingFrog.Domain;
 
 namespace CookingFrog.Infra;
 
+internal static class AzTableNames
+{
+    public const string RecipesTableName = "recipes";
+    public const string RecipeSummariesTableName = "recipeSummaries";
+}
+
 public class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRecipesPersistRepo
 {
-    private const string RecipesTableName = "recipes";
-    private const string RecipeSummariesTableName = "recipesSummaries";
-    
     public async Task Save(Recipe recipe, CancellationToken cancellationToken)
     {
-        var recipeEntity = recipe.Map();
+        var recipeEntity = recipe.MapToTableEntity();
 
-        await tableServiceClient.CreateTableIfNotExistsAsync(RecipesTableName, cancellationToken);
-        var tableClient = tableServiceClient.GetTableClient(RecipesTableName);
+        await tableServiceClient.CreateTableIfNotExistsAsync(AzTableNames.RecipesTableName, cancellationToken);
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
         await tableClient.AddEntityAsync(recipeEntity, cancellationToken);
     }
 
     public async Task Save(RecipeSummary recipeSummary, CancellationToken cancellationToken)
     {
-        var recipeSummaryEntity = recipeSummary.Map();
+        var recipeSummaryEntity = recipeSummary.MapToTableEntity();
         
-        await tableServiceClient.CreateTableIfNotExistsAsync(RecipesTableName, cancellationToken);
-        var tableClient = tableServiceClient.GetTableClient(RecipesTableName);
+        await tableServiceClient.CreateTableIfNotExistsAsync(AzTableNames.RecipeSummariesTableName, cancellationToken);
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipeSummariesTableName);
         await tableClient.AddEntityAsync(recipeSummaryEntity, cancellationToken);
     }
 }
