@@ -12,7 +12,8 @@ builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-builder.Services.AddFrogStorage(new Uri(builder.Configuration["Azure:Storage:Uri"])); 
+builder.Services.AddFrogStorage(
+    new Uri(builder.Configuration["Azure:Storage:Uri"])); 
 
 var app = builder.Build();
 
@@ -39,4 +40,6 @@ app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(typeof(CookingFrog.WebUI.Client._Imports).Assembly);
 
 app.Run();
+
+
 

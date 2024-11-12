@@ -1,4 +1,6 @@
 @page "/recipe-add"
+@using CookingFrog.Infra
+@inject IStaticRecipesLoader loader;
 
 <form method="post" @onsubmit="Submit" @formname="starship-plain-form">
     <AntiforgeryToken />
@@ -15,7 +17,8 @@
     <div class="mb-3">
         <label for="txtSteps" class="form-label">Co robić</label>
         <InputTextArea class="form-control" id="txtSteps" rows="6"
-            @bind-Value="Model!.Steps"></InputTextArea>
+                       @bind-Value="Model!.Steps"></InputTextArea>
     </div>
+    <button type="submit">Submit</button>
 </form>
 

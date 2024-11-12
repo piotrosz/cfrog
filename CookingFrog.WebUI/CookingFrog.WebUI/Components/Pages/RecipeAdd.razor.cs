@@ -11,7 +11,7 @@ public partial class RecipeAdd
     
     private void Submit()
     {
-        
+        loader.Load().Wait();
     }
 
     public class RecipeAddModel

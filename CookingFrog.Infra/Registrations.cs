@@ -1,4 +1,5 @@
-﻿using Azure.Identity;
+﻿using Azure.Data.Tables;
+using Azure.Identity;
 using CookingFrog.Domain;
 using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,7 +8,9 @@ namespace CookingFrog.Infra;
 
 public static class Registrations
 {
-    public static void AddFrogStorage(this IServiceCollection services, Uri serviceUri)
+    public static void AddFrogStorage(
+        this IServiceCollection services, 
+        Uri serviceUri)
     {
         services.AddAzureClients(clientBuilder =>
         {
@@ -17,5 +20,6 @@ public static class Registrations
         
         services.AddScoped<IRecipesReadRepo, RecipesStaticTestRepo>();
         services.AddScoped<IRecipesPersistRepo, RecipesAzPersistRepo>();
+        services.AddScoped<IStaticRecipesLoader, StaticRecipesLoader>();
     }
 }
