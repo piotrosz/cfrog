@@ -3,12 +3,6 @@ using CookingFrog.Domain;
 
 namespace CookingFrog.Infra;
 
-internal static class AzTableNames
-{
-    public const string RecipesTableName = "recipes";
-    public const string RecipeSummariesTableName = "recipeSummaries";
-}
-
 public class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRecipesPersistRepo
 {
     public async Task Save(Recipe recipe, CancellationToken cancellationToken)
