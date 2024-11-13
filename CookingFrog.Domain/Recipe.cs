@@ -2,7 +2,7 @@
 
 public sealed class Recipe
 {
-    private Recipe(
+    public Recipe(
         Guid guid,
         string summary,
         TimeSpan timeToPrepare,
@@ -26,6 +26,9 @@ public sealed class Recipe
 
     public TimeSpan TimeToPrepare { get; }
     
+    /// <summary>
+    /// Create with new Guid id. 
+    /// </summary>
     public static Recipe Create(
         string title, 
         TimeSpan timeToPrepare,
