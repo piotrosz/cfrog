@@ -9,9 +9,9 @@ public partial class RecipeAdd
 
     protected override void OnInitialized() => Model ??= new RecipeAddModel();
     
-    private void Submit()
+    private async Task Submit()
     {
-        loader.Load().Wait();
+        // await loader.Load();
     }
 
     public class RecipeAddModel

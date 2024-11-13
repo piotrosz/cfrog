@@ -12,8 +12,14 @@ builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+var storageUri = new Uri(builder.Configuration["Azure:Storage:Uri"]);
+var accountName = builder.Configuration["Azure:Storage:AccountName"];
+var accountKey = builder.Configuration["Azure:Storage:AccountKey"];
+
 builder.Services.AddFrogStorage(
-    new Uri(builder.Configuration["Azure:Storage:Uri"])); 
+   storageUri,
+   accountName,
+   accountKey); 
 
 var app = builder.Build();
 

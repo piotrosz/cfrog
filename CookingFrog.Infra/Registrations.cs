@@ -1,5 +1,5 @@
 ﻿using Azure.Data.Tables;
-using Azure.Identity;
+// using Azure.Identity;
 using CookingFrog.Domain;
 using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,15 +10,19 @@ public static class Registrations
 {
     public static void AddFrogStorage(
         this IServiceCollection services, 
-        Uri serviceUri)
+        Uri serviceUri,
+        string accountName,
+        string accountKey)
     {
         services.AddAzureClients(clientBuilder =>
         {
-            clientBuilder.AddTableServiceClient(serviceUri);
-            clientBuilder.UseCredential(new DefaultAzureCredential());
+            clientBuilder.AddTableServiceClient(
+                serviceUri,
+                new TableSharedKeyCredential(accountName, accountKey));
+            //clientBuilder.UseCredential(new DefaultAzureCredential());
         });
         
-        services.AddScoped<IRecipesReadRepo, RecipesStaticTestRepo>();
+        services.AddScoped<IRecipesReadRepo, RecipesAzReadRepo>();
         services.AddScoped<IRecipesPersistRepo, RecipesAzPersistRepo>();
         services.AddScoped<IStaticRecipesLoader, StaticRecipesLoader>();
     }
