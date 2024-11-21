@@ -5,10 +5,13 @@ namespace CookingFrog.Infra;
 
 public class RecipeSummaryTableEntity : ITableEntity
 {
-    public string PartitionKey { get; set; }
-    public string RowKey { get; set; }
+    public string? PartitionKey { get; set; }
+    
+    public required string RowKey { get; set; }
+    
     public DateTimeOffset? Timestamp { get; set; }
+    
     public ETag ETag { get; set; }
 
-    public string Summary { get; set; }
+    public required string Summary { get; init; }
 }

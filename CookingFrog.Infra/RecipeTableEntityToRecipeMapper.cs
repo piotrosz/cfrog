@@ -9,6 +9,11 @@ public static class RecipeTableEntityToRecipeMapper
     {
         var deserializedIngredients = JsonSerializer.Deserialize<IEnumerable<Ingredient>>(recipe.SerializedIngredients);
         var deserializedSteps = JsonSerializer.Deserialize<IEnumerable<Step>>(recipe.SerializedSteps);
+
+        if (deserializedIngredients == null || deserializedSteps == null)
+        {
+            throw new NullReferenceException("Recipe could not be deserialized.");
+        }
         
         return Recipe.Create(recipe.Summary,
             recipe.TimeToPrepare,
