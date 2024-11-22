@@ -48,6 +48,6 @@ public sealed record Quantity(decimal Value, UnitEnum Unit)
             return Value.ToString(CultureInfo.InvariantCulture);
         }
 
-        return $"{Value} {Unit}";
+        return $"{Value} {Unit.GetDisplayDescription()}";
     }
 }
