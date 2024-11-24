@@ -8,12 +8,10 @@ public enum UnitEnum
     Undefined,
     [Display(Description = "")]
     Quantity,
-    /* Weight */
     [Display(Description = "kg")]
     Kilogram,
     [Display(Description = "g")]
     Gram,
-    /* Other */
     [Display(Description = "łyżka")]
     Spoon,
     [Display(Description = "łyżeczka")]

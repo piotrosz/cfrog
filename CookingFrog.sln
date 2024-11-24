@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.WebUI.Client", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.Infra", "CookingFrog.Infra\CookingFrog.Infra.csproj", "{20887339-0C76-49AF-A851-38DD72B64FC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.Domain.Tests", "CookingFrog.Domain.Tests\CookingFrog.Domain.Tests.csproj", "{FB699CE9-A8BF-43E6-9FA5-F690B51269AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{20887339-0C76-49AF-A851-38DD72B64FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20887339-0C76-49AF-A851-38DD72B64FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20887339-0C76-49AF-A851-38DD72B64FC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB699CE9-A8BF-43E6-9FA5-F690B51269AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB699CE9-A8BF-43E6-9FA5-F690B51269AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB699CE9-A8BF-43E6-9FA5-F690B51269AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB699CE9-A8BF-43E6-9FA5-F690B51269AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

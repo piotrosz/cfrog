@@ -3,7 +3,7 @@ using CookingFrog.Domain;
 
 namespace CookingFrog.Infra;
 
-public class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRecipesPersistRepo
+internal class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRecipesPersistRepo
 {
     public async Task Save(Recipe recipe, CancellationToken cancellationToken)
     {

@@ -4,7 +4,7 @@ using CookingFrog.Domain;
 
 namespace CookingFrog.Infra;
 
-public sealed class RecipesAzReadRepo(TableServiceClient tableServiceClient) : IRecipesReadRepo
+internal sealed class RecipesAzReadRepo(TableServiceClient tableServiceClient) : IRecipesReadRepo
 {
     public async Task<Recipe> GetRecipe(Guid guid)
     {

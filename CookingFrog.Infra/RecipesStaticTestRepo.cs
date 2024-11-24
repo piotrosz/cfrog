@@ -2,7 +2,7 @@
 
 namespace CookingFrog.Infra;
 
-public sealed partial class RecipesStaticTestRepo : IRecipesReadRepo
+internal sealed partial class RecipesStaticTestRepo : IRecipesReadRepo
 {
     public Task<IReadOnlyList<RecipeSummary>> GetRecipeSummaries()
     {

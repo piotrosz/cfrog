@@ -2,7 +2,7 @@ using CookingFrog.Domain;
 
 namespace CookingFrog.Infra;
 
-public sealed partial class RecipesStaticTestRepo
+internal sealed partial class RecipesStaticTestRepo
 {
     private static readonly IReadOnlyList<Recipe> Recipes =
     [
