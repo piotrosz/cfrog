@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookingFrog.Domain", "CookingFrog.Domain\CookingFrog.Domain.csproj", "{E934CD44-9CC5-4F59-963C-FCA07898FA2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookingFrog.Domain", "src\CookingFrog.Domain\CookingFrog.Domain.csproj", "{E934CD44-9CC5-4F59-963C-FCA07898FA2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.WebUI", "CookingFrog.WebUI\CookingFrog.WebUI\CookingFrog.WebUI.csproj", "{09846FF1-261A-4AB9-9261-45773AD27E5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.WebUI", "src\CookingFrog.WebUI\CookingFrog.WebUI\CookingFrog.WebUI.csproj", "{09846FF1-261A-4AB9-9261-45773AD27E5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.WebUI.Client", "CookingFrog.WebUI\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj", "{8926D9FC-F2B2-48C5-A772-5E3D1665B0A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.WebUI.Client", "src\CookingFrog.WebUI\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj", "{8926D9FC-F2B2-48C5-A772-5E3D1665B0A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.Infra", "CookingFrog.Infra\CookingFrog.Infra.csproj", "{20887339-0C76-49AF-A851-38DD72B64FC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.Infra", "src\CookingFrog.Infra\CookingFrog.Infra.csproj", "{20887339-0C76-49AF-A851-38DD72B64FC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.Domain.Tests", "CookingFrog.Domain.Tests\CookingFrog.Domain.Tests.csproj", "{FB699CE9-A8BF-43E6-9FA5-F690B51269AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.Domain.Tests", "test\CookingFrog.Domain.Tests\CookingFrog.Domain.Tests.csproj", "{FB699CE9-A8BF-43E6-9FA5-F690B51269AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AD5A623C-D1AF-473F-81B8-C00B846B60B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3B1A5617-69F3-44D0-929C-718C1C8C2E6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,5 +53,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C48DCEC7-3044-46A9-9953-D85C34C2715A}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E934CD44-9CC5-4F59-963C-FCA07898FA2C} = {AD5A623C-D1AF-473F-81B8-C00B846B60B8}
+		{20887339-0C76-49AF-A851-38DD72B64FC2} = {AD5A623C-D1AF-473F-81B8-C00B846B60B8}
+		{09846FF1-261A-4AB9-9261-45773AD27E5F} = {AD5A623C-D1AF-473F-81B8-C00B846B60B8}
+		{8926D9FC-F2B2-48C5-A772-5E3D1665B0A8} = {AD5A623C-D1AF-473F-81B8-C00B846B60B8}
+		{FB699CE9-A8BF-43E6-9FA5-F690B51269AA} = {3B1A5617-69F3-44D0-929C-718C1C8C2E6D}
 	EndGlobalSection
 EndGlobal

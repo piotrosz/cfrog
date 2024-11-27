@@ -3,6 +3,7 @@ using CookingFrog.Infra;
 using CookingFrog.WebUI.Components;
 
 using Azure.Identity;
+using CookingFrog.WebUI;
 using Microsoft.Extensions.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,14 +13,12 @@ builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-var storageUri = new Uri(builder.Configuration["Azure:Storage:Uri"]);
-var accountName = builder.Configuration["Azure:Storage:AccountName"];
-var accountKey = builder.Configuration["Azure:Storage:AccountKey"];
+var config = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
 
 builder.Services.AddFrogStorage(
-   storageUri,
-   accountName,
-   accountKey);
+   config.Uri,
+   config.AccountName,
+   config.AccountKey);
 
 var app = builder.Build();
 
