@@ -19,7 +19,7 @@ var accountKey = builder.Configuration["Azure:Storage:AccountKey"];
 builder.Services.AddFrogStorage(
    storageUri,
    accountName,
-   accountKey); 
+   accountKey);
 
 var app = builder.Build();
 
