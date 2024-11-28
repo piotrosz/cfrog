@@ -1,6 +1,6 @@
 namespace CookingFrog.WebUI;
 
-public class AzureStorageConfig
+public sealed class AzureStorageConfig
 {
     public required Uri Uri { get; init; }
         

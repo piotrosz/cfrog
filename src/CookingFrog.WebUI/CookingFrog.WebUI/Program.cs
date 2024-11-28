@@ -4,6 +4,8 @@ using CookingFrog.WebUI.Components;
 
 using Azure.Identity;
 using CookingFrog.WebUI;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,12 +15,26 @@ builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-var config = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
+var azureStorageConfig = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
 
 builder.Services.AddFrogStorage(
-   config.Uri,
-   config.AccountName,
-   config.AccountKey);
+   azureStorageConfig.Uri,
+   azureStorageConfig.AccountName,
+   azureStorageConfig.AccountKey);
+
+// Authentication
+
+var googleAuthConfig = builder.Configuration.GetSection("Authentication:Google").Get<GoogleAuthConfig>();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+}).AddGoogle(options =>
+{
+    options.ClientId = googleAuthConfig.ClientId;
+    options.ClientSecret = googleAuthConfig.Secret;
+});
 
 var app = builder.Build();
 
