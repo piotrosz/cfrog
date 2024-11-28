@@ -1,5 +1,4 @@
 ﻿using Azure.Data.Tables;
-// using Azure.Identity;
 using CookingFrog.Domain;
 using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +13,10 @@ public static class Registrations
         string accountName,
         string accountKey)
     {
+        ArgumentNullException.ThrowIfNull(serviceUri);
+        ArgumentNullException.ThrowIfNull(accountName);
+        ArgumentNullException.ThrowIfNull(accountKey);
+
         services.AddAzureClients(clientBuilder =>
         {
             clientBuilder.AddTableServiceClient(
