@@ -1,12 +1,10 @@
-using CookingFrog.Domain;
 using CookingFrog.Infra;
 using CookingFrog.WebUI.Components;
-
-using Azure.Identity;
 using CookingFrog.WebUI;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Azure;
+using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +13,17 @@ builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+
 var azureStorageConfig = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
+
+if (builder.Environment.IsProduction())
+{
+    builder.Configuration.AddAzureKeyVault(
+        new Uri(builder.Configuration["Azure:KeyVault:Uri"]),
+        new DefaultAzureCredential());
+}
+
+var config = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
 
 builder.Services.AddFrogStorage(
    azureStorageConfig.Uri,
@@ -37,6 +45,8 @@ builder.Services.AddAuthentication(options =>
 });
 
 var app = builder.Build();
+
+// -----------------------------------------------------
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
