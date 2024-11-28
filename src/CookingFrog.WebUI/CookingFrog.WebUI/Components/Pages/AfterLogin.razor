@@ -1,0 +1,16 @@
+@page "/After-login"
+
+<h3>Logged in</h3>
+
+@code {
+    [CascadingParameter] public HttpContext HttpContext { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (HttpContext.User.Identity.IsAuthenticated)
+        {
+            
+        }
+    }
+
+}

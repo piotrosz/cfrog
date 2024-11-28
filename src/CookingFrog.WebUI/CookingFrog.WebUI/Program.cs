@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Azure;
 using Azure.Identity;
+using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
-
 
 var azureStorageConfig = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
 
@@ -23,8 +23,6 @@ if (builder.Environment.IsProduction())
         new DefaultAzureCredential());
 }
 
-var config = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
-
 builder.Services.AddFrogStorage(
    azureStorageConfig.Uri,
    azureStorageConfig.AccountName,
@@ -34,15 +32,20 @@ builder.Services.AddFrogStorage(
 
 var googleAuthConfig = builder.Configuration.GetSection("Authentication:Google").Get<GoogleAuthConfig>();
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultScheme = IdentityConstants.ApplicationScheme;
-    options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-}).AddGoogle(options =>
+const string authScheme = "ap-google-auth";
+
+builder.Services.AddAuthentication(authScheme)
+    .AddCookie(authScheme, options =>
+    {
+        options.Cookie.Name = ".ap.user";
+    })
+    .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
 {
     options.ClientId = googleAuthConfig.ClientId;
     options.ClientSecret = googleAuthConfig.Secret;
-});
+    
+    options.SignInScheme = authScheme;
+}).AddIdentityCookies();
 
 var app = builder.Build();
 
@@ -64,6 +67,7 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+app.UseAuthentication();
 
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
