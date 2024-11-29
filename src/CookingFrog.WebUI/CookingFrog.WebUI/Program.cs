@@ -87,6 +87,8 @@ void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
             options.ClientSecret = googleAuthConfig.Secret;
     
             options.SignInScheme = authScheme;
+            options.AccessDeniedPath = "/"; // TODO
+            
         })
         .AddIdentityCookies();
 }

@@ -7,20 +7,27 @@
 
 <h2>Przepisy</h2>
 
-@if (recipes == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <ul>
-        @foreach (var recipe in recipes)
+<AuthorizeView>
+    <NotAuthorized>
+        <p>Musisz się zalogować, by zobaczyć przepisy.</p>
+    </NotAuthorized>
+    <Authorized>
+        @if (recipes == null)
         {
-            <li>
-                <NavLink class="nav-link" href="@("recipe/" + recipe.Guid)">
-                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> @recipe.Summary
-                </NavLink>
-            </li>
+            <p><em>Loading...</em></p>
         }
-    </ul>
-}
+        else
+        {
+            <ul>
+                @foreach (var recipe in recipes)
+                {
+                    <li>
+                        <NavLink class="nav-link" href="@("recipe/" + recipe.Guid)">
+                            <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> @recipe.Summary
+                        </NavLink>
+                    </li>
+                }
+            </ul>
+        }
+    </Authorized>
+</AuthorizeView>
