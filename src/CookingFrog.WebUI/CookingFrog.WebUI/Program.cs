@@ -3,7 +3,9 @@ using CookingFrog.WebUI.Components;
 using CookingFrog.WebUI;
 using Microsoft.AspNetCore.Identity;
 using Azure.Identity;
+using CookingFrog.WebUI.Authorization;
 using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,16 @@ builder.Services.AddFrogStorage(
 
 AddGoogleAuthentication(builder);
 
+// Register the authorization handler
+builder.Services.AddSingleton<IAuthorizationHandler, SpecificLoginsHandler>();
+
+// Add authorization policy
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("SpecificLoginsPolicy", policy =>
+        policy.Requirements.Add(new SpecificLoginsRequirement(["user1@example.com", "user2@example.com"])));
+});
+
 var app = builder.Build();
 
 // -----------------------------------------------------
@@ -50,7 +62,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthorization();
 
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
@@ -81,8 +93,6 @@ void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
             options.SignInScheme = authScheme;
         })
         .AddIdentityCookies();
-
-    //webApplicationBuilder.Services.AddAuthorization();
 }
 
 
