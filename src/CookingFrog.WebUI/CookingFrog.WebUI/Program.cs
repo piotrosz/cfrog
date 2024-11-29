@@ -6,6 +6,8 @@ using Azure.Identity;
 using CookingFrog.WebUI.Authorization;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,16 +32,7 @@ builder.Services.AddFrogStorage(
    azureStorageConfig.AccountKey);
 
 AddGoogleAuthentication(builder);
-
-// Register the authorization handler
-builder.Services.AddSingleton<IAuthorizationHandler, SpecificLoginsHandler>();
-
-// Add authorization policy
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("SpecificLoginsPolicy", policy =>
-        policy.Requirements.Add(new SpecificLoginsRequirement(["user1@example.com", "user2@example.com"])));
-});
+AddAuthorization(builder);
 
 var app = builder.Build();
 
@@ -73,6 +66,9 @@ app.Run();
 
 void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
 {
+    builder.Services.AddCascadingAuthenticationState();
+    builder.Services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
+    
     var googleAuthConfig = webApplicationBuilder.Configuration
         .GetSection("Authentication:Google")
         .Get<GoogleAuthConfig>();
@@ -93,6 +89,21 @@ void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
             options.SignInScheme = authScheme;
         })
         .AddIdentityCookies();
+}
+
+void AddAuthorization(WebApplicationBuilder webApplicationBuilder)
+{
+    // Register the authorization handler
+    webApplicationBuilder.Services.AddSingleton<IAuthorizationHandler, SpecificLoginsHandler>();
+
+    var emails = webApplicationBuilder.Configuration["Authorization:Emails"].Split(',');
+    
+    // Add authorization policy
+    webApplicationBuilder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy("SpecificLoginsPolicy", policy =>
+            policy.Requirements.Add(new SpecificLoginsRequirement(emails)));
+    });
 }
 
 
