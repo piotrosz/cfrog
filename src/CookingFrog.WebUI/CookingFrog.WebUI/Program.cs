@@ -9,12 +9,9 @@ using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddRazorComponents()
     //.AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
-
-var azureStorageConfig = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
 
 if (builder.Environment.IsProduction())
 {
@@ -22,6 +19,8 @@ if (builder.Environment.IsProduction())
         new Uri(builder.Configuration["Azure:KeyVault:Uri"]),
         new DefaultAzureCredential());
 }
+
+var azureStorageConfig = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
 
 builder.Services.AddFrogStorage(
    azureStorageConfig.Uri,
