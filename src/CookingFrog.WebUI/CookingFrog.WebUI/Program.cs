@@ -1,9 +1,7 @@
 using CookingFrog.Infra;
 using CookingFrog.WebUI.Components;
 using CookingFrog.WebUI;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Azure;
 using Azure.Identity;
 using Microsoft.AspNetCore.Authentication.Google;
 
@@ -20,31 +18,16 @@ if (builder.Environment.IsProduction())
         new DefaultAzureCredential());
 }
 
-var azureStorageConfig = builder.Configuration.GetSection("Azure:Storage").Get<AzureStorageConfig>();
+var azureStorageConfig = builder.Configuration
+    .GetSection("Azure:Storage")
+    .Get<AzureStorageConfig>();
 
 builder.Services.AddFrogStorage(
    azureStorageConfig.Uri,
    azureStorageConfig.AccountName,
    azureStorageConfig.AccountKey);
 
-// Authentication
-
-var googleAuthConfig = builder.Configuration.GetSection("Authentication:Google").Get<GoogleAuthConfig>();
-
-const string authScheme = "ap-google-auth";
-
-builder.Services.AddAuthentication(authScheme)
-    .AddCookie(authScheme, options =>
-    {
-        options.Cookie.Name = ".ap.user";
-    })
-    .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
-{
-    options.ClientId = googleAuthConfig.ClientId;
-    options.ClientSecret = googleAuthConfig.Secret;
-    
-    options.SignInScheme = authScheme;
-}).AddIdentityCookies();
+AddGoogleAuthentication(builder);
 
 var app = builder.Build();
 
@@ -67,6 +50,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 app.UseAuthentication();
+//app.UseAuthorization();
 
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
@@ -74,6 +58,32 @@ app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(typeof(CookingFrog.WebUI.Client._Imports).Assembly);
 
 app.Run();
+
+void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
+{
+    var googleAuthConfig = webApplicationBuilder.Configuration
+        .GetSection("Authentication:Google")
+        .Get<GoogleAuthConfig>();
+
+    const string authScheme = "ap-google-auth";
+
+    webApplicationBuilder.Services
+        .AddAuthentication(authScheme)
+        .AddCookie(authScheme, options =>
+        {
+            options.Cookie.Name = ".ap.user";
+        })
+        .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
+        {
+            options.ClientId = googleAuthConfig.ClientId;
+            options.ClientSecret = googleAuthConfig.Secret;
+    
+            options.SignInScheme = authScheme;
+        })
+        .AddIdentityCookies();
+
+    //webApplicationBuilder.Services.AddAuthorization();
+}
 
 
 
