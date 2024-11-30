@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using CookingFrog.Domain.Parsing;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace CookingFrog.WebUI.Components.Pages;
 
@@ -8,10 +9,37 @@ public partial class RecipeAdd
 {
     [SupplyParameterFromForm]
     private RecipeAddModel? Model { get; set; }
-
-    protected override void OnInitialized() => Model ??= new RecipeAddModel();
     
-    private async Task Submit()
+    private EditContext? editContext;
+
+    private ValidationMessageStore? messageStore;
+
+    protected override void OnInitialized()
+    {
+        Model ??= new RecipeAddModel();
+        editContext = new(Model);
+        editContext.OnValidationRequested += HandleValidationRequested;
+        messageStore = new(editContext);
+    } 
+    
+    private void HandleValidationRequested(object? sender,
+        ValidationRequestedEventArgs args)
+    {
+        messageStore?.Clear();
+
+        // Custom validation logic
+        if (Model!.Ingredients == null || !Model.Ingredients.Any() )
+        {
+            messageStore?.Add(() => Model.Ingredients, "Add at least one.");
+        }
+    }
+
+    private void SubmitInvalid()
+    {
+        
+    }
+    
+    private void SubmitValid()
     {
         var recipe = RecipeParser.Parse(
             Model.TimeToPrepare,
@@ -20,6 +48,14 @@ public partial class RecipeAdd
             Model.Steps);
     }
 
+    public void Dispose()
+    {
+        if (editContext is not null)
+        {
+            editContext.OnValidationRequested -= HandleValidationRequested;
+        }
+    }
+    
     public class RecipeAddModel
     {
         [Required]
