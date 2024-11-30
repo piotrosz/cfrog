@@ -53,17 +53,19 @@ else
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-app.UseAntiforgery();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
     //.AddInteractiveServerRenderMode()
     .AddAdditionalAssemblies(typeof(CookingFrog.WebUI.Client._Imports).Assembly);
 
-app.Run();
 
+
+app.Run();
 void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
 {
     builder.Services.AddCascadingAuthenticationState();

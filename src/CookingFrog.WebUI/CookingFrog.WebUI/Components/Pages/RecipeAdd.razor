@@ -1,10 +1,9 @@
 @page "/recipe-add"
-@inject AntiforgeryStateProvider Antiforgery
 
 <AuthorizeView>
     <Authorized>
-        <form method="post" @onsubmit="Submit" @formname="starship-plain-form">
-            <AntiforgeryToken />
+        <form method="post" @onsubmit="Submit" @formname="recipe-add-form">
+            <AntiforgeryToken/>
             <div class="mb-3">
                 <label asp-for="txtTitle" for="txtTitle" class="form-label">Tytuł</label>
                 <InputText type="text" class="form-control" id="txtTitle" placeholder=""
