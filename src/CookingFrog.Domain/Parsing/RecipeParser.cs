@@ -7,8 +7,8 @@ public static class RecipeParser
     public static Recipe Parse(
         string timeToPrepare,
         string summary,
-        IEnumerable<string> ingredients,
-        IEnumerable<string> steps)
+        string ingredients,
+        string steps)
     {
         ArgumentNullException.ThrowIfNull(timeToPrepare);
         ArgumentNullException.ThrowIfNull(summary);
@@ -18,14 +18,16 @@ public static class RecipeParser
         var parsedTimeToPrepare = TimeSpan.ParseExact(timeToPrepare, "g", CultureInfo.CurrentCulture);
         
         var parsedIngredients = new List<Ingredient>();
+        var ingredientsArray = ingredients.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
         
-        foreach (var ingredient in ingredients)
+        foreach (var ingredient in ingredientsArray)
         {
             var parsedIngredient = IngredientParser.Parse(ingredient);
             parsedIngredients.Add(parsedIngredient);
         }
         
-        var parsedSteps = steps.Select(x => new Step(x));
+        var stepsArray = steps.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+        var parsedSteps = stepsArray.Select(x => new Step(x));
 
         return new Recipe(Guid.NewGuid(), summary, parsedTimeToPrepare, parsedIngredients, parsedSteps);
     }

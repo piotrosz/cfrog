@@ -11,8 +11,8 @@ public class RecipeParserTests
         var result = RecipeParser.Parse(
             "1:30", 
             "Nazwa",
-            ["cos;5 gram", "jakaś rzecz ;1 teaspoon", "sól ;1 handful"],
-            ["zrób to", "zrób tamto"]);
+            "cos;5 gram\n jakaś rzecz ;1 teaspoon\nsól ;1 handful",
+            "zrób to\nzrób tamto");
 
         result.Summary.Should().Be("Nazwa");
         result.Ingredients.Should().HaveCount(3);
