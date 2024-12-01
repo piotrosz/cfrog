@@ -23,7 +23,7 @@ public static class RecipeParser
         foreach (var ingredient in ingredientsArray)
         {
             var parsedIngredient = IngredientParser.Parse(ingredient);
-            parsedIngredients.Add(parsedIngredient);
+            parsedIngredients.Add(parsedIngredient.Result);
         }
         
         var stepsArray = steps.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);

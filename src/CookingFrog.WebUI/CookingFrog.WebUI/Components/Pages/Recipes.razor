@@ -12,14 +12,14 @@
         <p>Musisz się zalogować, by zobaczyć przepisy.</p>
     </NotAuthorized>
     <Authorized>
-        @if (recipes == null)
+        @if (_recipes == null)
         {
             <p><em>Loading...</em></p>
         }
         else
         {
             <ul>
-                @foreach (var recipe in recipes)
+                @foreach (var recipe in _recipes)
                 {
                     <li>
                         <NavLink class="nav-link" href="@("recipe/" + recipe.Guid)">

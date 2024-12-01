@@ -12,19 +12,31 @@ using Microsoft.AspNetCore.Components.Server;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
-    //.AddInteractiveServerComponents()
+    .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
 if (builder.Environment.IsProduction())
 {
+    var keyVaultUrl = builder.Configuration["Azure:KeyVault:Uri"];
+
+    if (keyVaultUrl == null)
+    {
+        throw new InvalidOperationException("Azure Key Vault is not configured.");
+    }
+        
     builder.Configuration.AddAzureKeyVault(
-        new Uri(builder.Configuration["Azure:KeyVault:Uri"]),
+        new Uri(keyVaultUrl),
         new DefaultAzureCredential());
 }
 
 var azureStorageConfig = builder.Configuration
     .GetSection("Azure:Storage")
     .Get<AzureStorageConfig>();
+
+if (azureStorageConfig == null)
+{
+    throw new InvalidOperationException("Azure Storage is not configured.");
+}
 
 builder.Services.AddFrogStorage(
    azureStorageConfig.Uri,
@@ -59,11 +71,9 @@ app.UseAuthorization();
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    //.AddInteractiveServerRenderMode()
     .AddAdditionalAssemblies(typeof(CookingFrog.WebUI.Client._Imports).Assembly);
-
-
 
 app.Run();
 void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
@@ -75,6 +85,11 @@ void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
         .GetSection("Authentication:Google")
         .Get<GoogleAuthConfig>();
 
+    if (googleAuthConfig == null)
+    {
+        throw new InvalidOperationException("Google authentication is not configured.");
+    }
+    
     const string authScheme = "ap-google-auth";
 
     webApplicationBuilder.Services
@@ -100,13 +115,20 @@ void AddAuthorization(WebApplicationBuilder webApplicationBuilder)
     // Register the authorization handler
     webApplicationBuilder.Services.AddSingleton<IAuthorizationHandler, SpecificLoginsHandler>();
 
-    var emails = webApplicationBuilder.Configuration["Authorization:Emails"].Split(',');
+    var emails = webApplicationBuilder.Configuration["Authorization:Emails"];
+
+    if (string.IsNullOrWhiteSpace(emails))
+    {
+        throw new InvalidOperationException("Emails is not configured.");
+    }
+    
+    var emailsArray = emails.Split(',');
     
     // Add authorization policy
     webApplicationBuilder.Services.AddAuthorization(options =>
     {
         options.AddPolicy("SpecificLoginsPolicy", policy =>
-            policy.Requirements.Add(new SpecificLoginsRequirement(emails)));
+            policy.Requirements.Add(new SpecificLoginsRequirement(emailsArray)));
     });
 }
 

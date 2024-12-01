@@ -5,17 +5,16 @@ namespace CookingFrog.WebUI.Components.Pages;
 
 public partial class Recipes
 {
-    [CascadingParameter] public HttpContext HttpContext { get; set; }
+    [CascadingParameter] public HttpContext? HttpContext { get; set; }
     
-    private IReadOnlyList<RecipeSummary>? recipes;
+    private IReadOnlyList<RecipeSummary>? _recipes;
 
     protected override async Task OnInitializedAsync()
     {
-        if (!HttpContext.User.Identity.IsAuthenticated)
+        if (HttpContext is { User.Identity.IsAuthenticated: false })
         {
-            return;
         }
         
-        recipes = await RecipesRepo.GetRecipeSummaries();
+        _recipes = await RecipesRepo.GetRecipeSummaries();
     }
 }

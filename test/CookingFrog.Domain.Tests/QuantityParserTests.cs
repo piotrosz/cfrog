@@ -14,6 +14,6 @@ public class QuantityParserTests
     private void AssertParse(string input, Quantity expected)
     {
         var result = QuantityParser.Parse(input);
-        Assert.Equal(expected, result);  
+        Assert.Equal(expected, result.Result);  
     }
 }

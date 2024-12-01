@@ -28,7 +28,7 @@ public partial class RecipeAdd
         messageStore?.Clear();
 
         // Custom validation logic
-        if (Model!.Ingredients == null || !Model.Ingredients.Any() )
+        if (Model != null && Model.Ingredients.Any() )
         {
             messageStore?.Add(() => Model.Ingredients, "Add at least one.");
         }
@@ -42,7 +42,7 @@ public partial class RecipeAdd
     private void SubmitValid()
     {
         var recipe = RecipeParser.Parse(
-            Model.TimeToPrepare,
+            Model!.TimeToPrepare,
             Model.Title,
             Model.Ingredients,
             Model.Steps);
@@ -56,20 +56,21 @@ public partial class RecipeAdd
         }
     }
     
-    public class RecipeAddModel
+    public sealed class RecipeAddModel
     {
         [Required]
-        [StringLength(10)]
-        public string? Title { get; set; }
-        
+        [MinLength(10, ErrorMessage = "Title minimal length is 10")]
+        [MaxLength(400, ErrorMessage = "Title maximal length is 400")]
+        public string Title { get; set; } = "";
+
         [Required]
-        public string? Ingredients { get; set; }
-        
+        public string Ingredients { get; set; } = "";
+
         [Required]
-        public string? Steps { get; set; }
-        
+        public string Steps { get; set; } = "";
+
         [Required]
         [RegularExpression(@"\d{1,2}:\d{1,2}")]
-        public string TimeToPrepare { get; set; }
+        public string TimeToPrepare { get; set; } = "00:00";
     }
 }
