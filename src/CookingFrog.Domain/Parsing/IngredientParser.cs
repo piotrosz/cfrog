@@ -5,7 +5,7 @@ public static class IngredientParser
     public static ParseResult<Ingredient> Parse(string ingredient)
     {
         ArgumentNullException.ThrowIfNull(ingredient);
-        if (!ingredient.Contains(";"))
+        if (!ingredient.Contains(';'))
         {
             return ParseResult<Ingredient>.Error("Ingredient must contain 'name' and 'amount' divided by semicolon.");
         }
@@ -20,6 +20,8 @@ public static class IngredientParser
         var name = parts[0].Trim();
         var quantity = QuantityParser.Parse(parts[1].Trim());
         
-        return  ParseResult<Ingredient>.Success(new Ingredient(name, quantity.Result));
+        return !quantity.IsSuccess ? 
+            ParseResult<Ingredient>.Error(quantity.ErrorDescription!) : 
+            ParseResult<Ingredient>.Success(new Ingredient(name, quantity.Result));
     }
 }

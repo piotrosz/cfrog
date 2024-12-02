@@ -23,8 +23,10 @@ public static class QuantityParser
         var unit = match.Groups["unit"].Value;
         
         var parsedNumber = Convert.ToDecimal(number, new NumberFormatInfo { NumberDecimalSeparator = "." });
-        var parsedUnit = Enum.Parse<UnitEnum>(unit, ignoreCase: true);
-        
-        return ParseResult<Quantity>.Success(new Quantity(parsedNumber, parsedUnit));
+        var unitParseSuccess = Enum.TryParse<UnitEnum>(unit, ignoreCase: true, out var result);
+
+        return !unitParseSuccess ? 
+            ParseResult<Quantity>.Error("Unit cannot be parsed.") : 
+            ParseResult<Quantity>.Success(new Quantity(parsedNumber, result));
     }
 }

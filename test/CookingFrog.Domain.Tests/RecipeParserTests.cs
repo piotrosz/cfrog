@@ -14,8 +14,10 @@ public class RecipeParserTests
             "cos;5 gram\n jakaś rzecz ;1 teaspoon\nsól ;1 handful",
             "zrób to\nzrób tamto");
 
-        result.Summary.Should().Be("Nazwa");
-        result.Ingredients.Should().HaveCount(3);
-        result.Steps.Should().HaveCount(2);
+        var recipe = result.Result;
+
+        recipe.Summary.Should().Be("Nazwa");
+        recipe.Ingredients.Should().HaveCount(3);
+        recipe.Steps.Should().HaveCount(2);
     }
 }

@@ -7,21 +7,24 @@ public record ParseResult<TResult>
         Result = result;
     }
 
-    private ParseResult(string error)
+    private ParseResult(string error, string part)
     {
         ErrorDescription = error;
         Result = default!;
+        Part = part;
     }
     
     public string? ErrorDescription { get; }
     
+    public string? Part { get; }
+
     public TResult Result { get; set; }
     
     public bool IsSuccess => ErrorDescription == null;
 
-    public static ParseResult<TResult> Error(string error)
+    public static ParseResult<TResult> Error(string error, string? part = null)
     {
-        return new ParseResult<TResult>(error);
+        return new ParseResult<TResult>(error, part);
     }
     
     public static ParseResult<TResult> Success(TResult result)

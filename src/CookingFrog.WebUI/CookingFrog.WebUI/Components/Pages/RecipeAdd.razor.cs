@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
 using CookingFrog.Domain.Parsing;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
@@ -22,15 +23,29 @@ public partial class RecipeAdd
         messageStore = new(editContext);
     } 
     
-    private void HandleValidationRequested(object? sender,
+    private void HandleValidationRequested(
+        object? sender,
         ValidationRequestedEventArgs args)
     {
         messageStore?.Clear();
 
-        // Custom validation logic
-        if (Model != null && Model.Ingredients.Any() )
+        var parseResult = RecipeParser.Parse(
+            Model!.TimeToPrepare,
+            Model.Title,
+            Model.Ingredients,
+            Model.Steps);
+
+        if (!parseResult.IsSuccess)
         {
-            messageStore?.Add(() => Model.Ingredients, "Add at least one.");
+            switch (parseResult.Part)
+            {
+                case "ingredients":
+                    messageStore.Add(() => Model.Ingredients, parseResult.ErrorDescription);
+                    break;
+                case "steps":
+                    messageStore.Add(() => Model.Steps, parseResult.ErrorDescription);
+                    break;
+            }
         }
     }
 
