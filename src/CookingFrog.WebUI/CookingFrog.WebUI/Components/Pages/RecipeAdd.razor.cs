@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.Linq.Expressions;
 using CookingFrog.Domain.Parsing;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
@@ -54,13 +53,18 @@ public partial class RecipeAdd
         
     }
     
-    private void SubmitValid()
+    private async Task SubmitValid()
     {
-        var recipe = RecipeParser.Parse(
+        var parseResult = RecipeParser.Parse(
             Model!.TimeToPrepare,
             Model.Title,
             Model.Ingredients,
             Model.Steps);
+
+        if (parseResult.IsSuccess)
+        {
+            await RecipesRepo.Save(parseResult.Result);
+        }
     }
 
     public void Dispose()

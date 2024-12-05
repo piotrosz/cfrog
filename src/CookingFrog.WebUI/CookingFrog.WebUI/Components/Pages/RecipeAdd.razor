@@ -1,4 +1,6 @@
 @page "/recipe-add"
+@using CookingFrog.Domain
+@inject IRecipesPersistRepo RecipesRepo
 
 <AuthorizeView Context="authContext">
     <Authorized>
