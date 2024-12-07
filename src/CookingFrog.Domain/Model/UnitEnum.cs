@@ -21,5 +21,9 @@ public enum UnitEnum
     [Display(Description = "szczypta")]
     Handful,
     [Display(Description = "ml")]
-    Millilitre
+    Millilitre,
+    [Display(Description = "ząbek")]
+    Clove,
+    [Display(Description = "puszka")]
+    Can
 }
