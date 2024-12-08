@@ -39,10 +39,10 @@ public partial class RecipeAdd
             switch (parseResult.Part)
             {
                 case "ingredients":
-                    messageStore.Add(() => Model.Ingredients, parseResult.ErrorDescription);
+                    messageStore?.Add(() => Model.Ingredients, parseResult.ErrorDescription!);
                     break;
                 case "steps":
-                    messageStore.Add(() => Model.Steps, parseResult.ErrorDescription);
+                    messageStore?.Add(() => Model.Steps, parseResult.ErrorDescription!);
                     break;
             }
         }
@@ -63,8 +63,10 @@ public partial class RecipeAdd
 
         if (parseResult.IsSuccess)
         {
-            await RecipesRepo.Save(parseResult.Result);
+            await RecipesRepo.SaveRecipe(parseResult.Result);
         }
+        
+        NavigationManager.NavigateTo("/");
     }
 
     public void Dispose()

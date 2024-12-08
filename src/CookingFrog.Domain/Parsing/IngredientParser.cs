@@ -10,7 +10,7 @@ public static class IngredientParser
             return ParseResult<Ingredient>.Error("Ingredient must contain 'name' and 'amount' divided by semicolon.");
         }
         
-        var parts = ingredient.Split(';');
+        var parts = ingredient.Trim().Split(';');
 
         if (parts.Length != 2)
         {

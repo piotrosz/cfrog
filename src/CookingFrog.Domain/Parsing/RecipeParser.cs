@@ -42,7 +42,7 @@ public static class RecipeParser
             return ParseResult<Recipe>.Error("Recipe must contain at least one step.", "steps");
         }
 
-        var parsedSteps = stepsArray.Select(x => new Step(x));
+        var parsedSteps = stepsArray.Select(x => new Step(x.Trim()));
 
         return ParseResult<Recipe>.Success(new Recipe(Guid.NewGuid(), summary, parsedTimeToPrepare, parsedIngredients, parsedSteps));
     }

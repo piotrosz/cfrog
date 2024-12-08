@@ -38,7 +38,7 @@ public sealed record Quantity(decimal Value, UnitEnum Unit)
 
     public override string ToString()
     {
-        if (Unit == UnitEnum.Undefined || Value == 0)
+        if (Unit == UnitEnum.Undefined && Value == 0)
         {
             return string.Empty;
         }

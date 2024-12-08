@@ -13,8 +13,8 @@ public class StaticRecipesLoader(
         logger.LogInformation("Loading Static Recipes");
         foreach (var recipeSummary in await readRepo.GetRecipeSummaries())
         {
-            await persistRepo.Save(recipeSummary, cancellationToken);
-            await persistRepo.Save(await readRepo.GetRecipe(recipeSummary.Guid), cancellationToken);
+            await persistRepo.SaveRecipeSummaryOnly(recipeSummary, cancellationToken);
+            await persistRepo.SaveRecipeOnly(await readRepo.GetRecipe(recipeSummary.Guid), cancellationToken);
         }
     }
 }

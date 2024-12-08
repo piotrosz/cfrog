@@ -36,7 +36,7 @@ public class RecipeParserTests
         czerwona soczewica;50 g
         bulion drobiowy lub warzywny lub rosół; 750 ml
         kurkuma; 1 teaspoon 
-        papryka w proszku; 1 teaspoon, 
+        papryka w proszku; 1 teaspoon
         ostra papryka; Handful
         krojone pomidory; 1 can
         posiekany koperek; 1 spoon

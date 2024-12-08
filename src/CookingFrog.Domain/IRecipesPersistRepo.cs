@@ -2,7 +2,8 @@
 
 public interface IRecipesPersistRepo
 {
-    Task Save(Recipe recipe, CancellationToken cancellationToken = default);
-    Task Save(RecipeSummary recipeSummary, CancellationToken cancellationToken = default);
+    Task SaveRecipe(Recipe recipe, CancellationToken cancellationToken = default);
+    Task SaveRecipeOnly(Recipe recipe, CancellationToken cancellationToken = default);
+    Task SaveRecipeSummaryOnly(RecipeSummary recipeSummary, CancellationToken cancellationToken = default);
 
 }

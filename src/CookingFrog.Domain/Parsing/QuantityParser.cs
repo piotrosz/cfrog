@@ -12,27 +12,30 @@ public static class QuantityParser
             ParseResult<Quantity>.Error("Quantity cannot be empty.");
         }
         
-        var match = Regex.Match(quantity, @"^(?<quantity>[0-9]{1,2}([.,]?[0-9]{0,1}))[ ]{0,1}(?<unit>\w+)?$");
+        var match = Regex.Match(quantity.Trim(), @"^(?<quantity>[0-9]{0,2}([.,]?[0-9]{0,1}))[ ]{0,1}(?<unit>\w+)?$");
 
         if (!match.Success)
         {
-            ParseResult<Quantity>.Error("Quantity cannot be parsed.");
+            return ParseResult<Quantity>.Error($"Quantity cannot be parsed: '{quantity}'.");
         }
         
         var number = match.Groups["quantity"].Value;
-        var parsedNumber = Convert.ToDecimal(number, new NumberFormatInfo { NumberDecimalSeparator = "." });
-
+        var parsedNumber = 1m;
+        if (!string.IsNullOrWhiteSpace(number))
+        {
+            parsedNumber = Convert.ToDecimal(number, new NumberFormatInfo { NumberDecimalSeparator = "." });
+        }
         
         var unit = match.Groups["unit"].Value;
         if (string.IsNullOrEmpty(unit))
         {
-            return ParseResult<Quantity>.Success(new Quantity(parsedNumber, UnitEnum.Undefined));
+            return ParseResult<Quantity>.Success(new Quantity(parsedNumber, UnitEnum.Quantity));
         }
         
-        var unitParseSuccess = Enum.TryParse<UnitEnum>(unit, ignoreCase: true, out var result);
+        var unitParseResult = UnitParser.Parse(unit);
 
-        return !unitParseSuccess ? 
+        return !unitParseResult.IsSuccess ? 
             ParseResult<Quantity>.Error($"Quantity cannot be parsed: '{quantity}'.") : 
-            ParseResult<Quantity>.Success(new Quantity(parsedNumber, result));
+            ParseResult<Quantity>.Success(new Quantity(parsedNumber, unitParseResult.Result));
     }
 }
