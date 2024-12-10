@@ -63,10 +63,17 @@ public partial class RecipeAdd
 
         if (parseResult.IsSuccess)
         {
-            await RecipesRepo.SaveRecipe(parseResult.Result);
+            var saveResult = await RecipesRepo.SaveRecipe(parseResult.Result);
+            if (saveResult.IsSuccess)
+            {
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                // TODO: show error
+            }
         }
         
-        NavigationManager.NavigateTo("/");
     }
 
     public void Dispose()
