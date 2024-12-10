@@ -7,7 +7,7 @@ public record ParseResult<TResult>
         Result = result;
     }
 
-    private ParseResult(string error, string part)
+    private ParseResult(string error, string? part)
     {
         ErrorDescription = error;
         Result = default!;
@@ -18,7 +18,7 @@ public record ParseResult<TResult>
     
     public string? Part { get; }
 
-    public TResult Result { get; set; }
+    public TResult Result { get; }
     
     public bool IsSuccess => ErrorDescription == null;
 

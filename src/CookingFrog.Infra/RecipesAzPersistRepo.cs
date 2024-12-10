@@ -1,21 +1,21 @@
 using Azure.Data.Tables;
 using CookingFrog.Domain;
+using CSharpFunctionalExtensions;
 
 namespace CookingFrog.Infra;
 
-// TODO: Add result
-
 internal class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRecipesPersistRepo
 {
-    public async Task SaveRecipe(Recipe recipe, CancellationToken cancellationToken = default)
+    public async Task<Result> SaveRecipe(Recipe recipe, CancellationToken cancellationToken = default)
     {
-        if (RecipeExists(recipe.Summary))
+        if (RecipeSummaryExists(recipe.Summary))
         {
-            return;
+            return Result.Failure($"Recipe '{recipe.Summary}' already exists.");
         }
 
         await SaveRecipeSummaryOnly(new RecipeSummary(recipe.Guid, recipe.Summary), cancellationToken);
         await SaveRecipeOnly(recipe, cancellationToken);
+        return Result.Success();
     }
 
     public async Task SaveRecipeOnly(Recipe recipe, CancellationToken cancellationToken)
@@ -37,7 +37,7 @@ internal class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRe
         await tableClient.AddEntityAsync(recipeSummaryEntity, cancellationToken);
     }
 
-    private bool RecipeExists(string summary)
+    private bool RecipeSummaryExists(string summary)
     {
         var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipeSummariesTableName);
         var result = tableClient.Query<RecipeTableEntity>(x => x.Summary == summary);
