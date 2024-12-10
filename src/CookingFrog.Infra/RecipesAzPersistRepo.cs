@@ -4,12 +4,16 @@ using CookingFrog.Domain;
 namespace CookingFrog.Infra;
 
 // TODO: Add result
-// TODO: Check for unique title
 
 internal class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRecipesPersistRepo
 {
     public async Task SaveRecipe(Recipe recipe, CancellationToken cancellationToken = default)
     {
+        if (RecipeExists(recipe.Summary))
+        {
+            return;
+        }
+
         await SaveRecipeSummaryOnly(new RecipeSummary(recipe.Guid, recipe.Summary), cancellationToken);
         await SaveRecipeOnly(recipe, cancellationToken);
     }
@@ -31,5 +35,12 @@ internal class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRe
         
         var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipeSummariesTableName);
         await tableClient.AddEntityAsync(recipeSummaryEntity, cancellationToken);
+    }
+
+    private bool RecipeExists(string summary)
+    {
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipeSummariesTableName);
+        var result = tableClient.Query<RecipeTableEntity>(x => x.Summary == summary);
+        return result.Any();
     }
 }
