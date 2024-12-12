@@ -5,12 +5,15 @@
 
 <AuthorizeView Context="authContext">
     <Authorized>
-        <EditForm EditContext="@editContext" 
+        <EditForm EditContext="@_editContext" 
                   OnInvalidSubmit="SubmitInvalid" 
                   OnValidSubmit="SubmitValid" 
                   FormName="recipe-add-form">
                 <DataAnnotationsValidator/> 
                 <ValidationSummary/>
+                <div class="invalid-feedback">
+                    @_saveError
+                </div>
                 <div class="mb-3">
                     <label
                         asp-for="txtTitle"

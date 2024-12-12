@@ -10,23 +10,25 @@ public partial class RecipeAdd
     [SupplyParameterFromForm]
     private RecipeAddModel? Model { get; set; }
     
-    private EditContext? editContext;
+    private EditContext? _editContext;
 
-    private ValidationMessageStore? messageStore;
+    private ValidationMessageStore? _messageStore;
+
+    private string? _saveError;
 
     protected override void OnInitialized()
     {
         Model ??= new RecipeAddModel();
-        editContext = new(Model);
-        editContext.OnValidationRequested += HandleValidationRequested;
-        messageStore = new(editContext);
+        _editContext = new(Model);
+        _editContext.OnValidationRequested += HandleValidationRequested;
+        _messageStore = new(_editContext);
     } 
     
     private void HandleValidationRequested(
         object? sender,
         ValidationRequestedEventArgs args)
     {
-        messageStore?.Clear();
+        _messageStore?.Clear();
 
         var parseResult = RecipeParser.Parse(
             Model!.TimeToPrepare,
@@ -39,10 +41,10 @@ public partial class RecipeAdd
             switch (parseResult.Part)
             {
                 case "ingredients":
-                    messageStore?.Add(() => Model.Ingredients, parseResult.ErrorDescription!);
+                    _messageStore?.Add(() => Model.Ingredients, parseResult.ErrorDescription!);
                     break;
                 case "steps":
-                    messageStore?.Add(() => Model.Steps, parseResult.ErrorDescription!);
+                    _messageStore?.Add(() => Model.Steps, parseResult.ErrorDescription!);
                     break;
             }
         }
@@ -70,17 +72,16 @@ public partial class RecipeAdd
             }
             else
             {
-                // TODO: show error
+                _saveError = saveResult.Error;
             }
         }
-        
     }
 
     public void Dispose()
     {
-        if (editContext is not null)
+        if (_editContext is not null)
         {
-            editContext.OnValidationRequested -= HandleValidationRequested;
+            _editContext.OnValidationRequested -= HandleValidationRequested;
         }
     }
     
