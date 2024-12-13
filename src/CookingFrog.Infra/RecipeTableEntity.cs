@@ -13,11 +13,11 @@ public class RecipeTableEntity : ITableEntity
     
     public ETag ETag { get; set; }
     
-    public required string SerializedIngredients { get; init; }
+    public required string SerializedIngredients { get; set; }
 
-    public required string SerializedSteps { get; init; }
+    public required string SerializedSteps { get; set; }
 
-    public required string Summary { get; init; }
+    public required string Summary { get; set; }
     
     public TimeSpan TimeToPrepare { get; init; }
 }

@@ -1,8 +1,10 @@
-﻿namespace CookingFrog.Domain;
+﻿using CSharpFunctionalExtensions;
+
+namespace CookingFrog.Domain;
 
 public interface IRecipesUpdateRepo
 {
-    Task UpdateTitle(string newTitle, Guid recipeGuid);
+    Task<Result> UpdateTitle(string newTitle, Guid recipeGuid);
 
     Task UpdateIngredients(IReadOnlyCollection<Ingredient> ingredients, Guid recipeGuid);
 

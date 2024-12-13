@@ -13,5 +13,5 @@ public class RecipeSummaryTableEntity : ITableEntity
     
     public ETag ETag { get; set; }
 
-    public required string Summary { get; init; }
+    public required string Summary { get; set; }
 }
