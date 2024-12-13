@@ -22,7 +22,7 @@ public class RecipeParserTests
     }
 
     [Fact]
-    public void TestParseSuccessComplex()
+    public void TestParseComplexRecipeSuccess()
     {
         var result = RecipeParser.Parse(
         "1:00",
@@ -51,6 +51,36 @@ public class RecipeParserTests
          Dodać krojone pomidory z puszki i gotować przez ok. 15 minut pod uchyloną pokrywą, od czasu do czasu zamieszać.
          Odstawić z ognia, wymieszać z posiekanym koperkiem oraz śmietanką.
 """);
+        
+        result.IsSuccess.Should().BeTrue();
+    }
+
+    [Fact]
+    public void TestParseComplexRecipeSuccess2()
+    {
+        var result = RecipeParser.Parse(
+            "1:00",
+            "🥗 Sałatka na ciepło z makaronem orzo, warzywami oraz fetą",
+            """
+            makaron orzo;1 szklanka
+            oliwa; 2 łyżki
+            mała cukinia; 1
+            czerwona papryka; 1
+            żółta papryka; 1
+            czerwona cebula; 1
+            🧄czosnek;1 ząbek
+            biały ocet winny; 1 łyżka
+            🍅pomidory koktajlowe; 150 g
+            bazylia;
+            feta; 100 g 
+            """,
+            """
+            Makaron wsypać na osolony wrzątek i gotować al dente, przez ok. 12 minut. Odcedzić, włożyć z powrotem do garnka, wymieszać z 1 łyżką oliwy.
+            W międzyczasie na dużą patelnię włożyć pokrojone w kostkę warzywa: cukinię, paprykę czerwoną oraz żółtą, czerwoną cebulę. Doprawić solą, pieprzem oraz skropić 1 łyżką oliwy i smażyć, aż będą miękkie i lekko zrumienione, przez ok. 5 minut. Pod koniec dodać przeciśnięty przez praskę czosnek i chwilę razem podsmażyć.
+            Na koniec skropić warzywa octem winnym i potrząsnąć patelnią w celu wymieszania składników.
+            Odstawić patelnię z ognia, dodać makaron orzo i wymieszać. Posypać pokrojonymi na połówki pomidorkami oraz listkami bazylii.
+            Wyłożyć do talerzu lub jednej salaterki i posypać pokrojoną fetą lub serem sałatkowym.
+            """);
         
         result.IsSuccess.Should().BeTrue();
     }
