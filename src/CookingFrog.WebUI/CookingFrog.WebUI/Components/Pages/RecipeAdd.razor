@@ -24,6 +24,7 @@
                         class="form-control"
                         id="txtTitle"
                         placeholder=""
+                        maxlength="400"
                         @bind-Value="Model!.Title"/>
                     <ValidationMessage For="() => Model.Title"></ValidationMessage>
                 </div>
@@ -36,6 +37,8 @@
                         class="form-control"
                         id="txtTimeToPrepare"
                         placeholder=""
+                        maxlength="5"
+                        style="width: 100px"
                         @bind-Value="Model!.TimeToPrepare"/>
                     <ValidationMessage For="() => Model.TimeToPrepare"/>
                 </div>
