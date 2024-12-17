@@ -84,4 +84,30 @@ public class RecipeParserTests
         
         result.IsSuccess.Should().BeTrue();
     }
+    
+    [Fact]
+    public void TestParseComplexRecipeSuccess3()
+    {
+        var result = RecipeParser.Parse(
+            "1:00",
+            "🥘 Leczo",
+            """
+            smalec;2 łyżki
+            cebula;2
+            kiełbasy (np. wiejskiej, podsuszanej); 200 g
+            czosnek;2 ząbki
+            papryka (np. żółta, czerwona, zielona);3
+            słodka papryka w proszku; 2 łyżeczki
+            sól i świeżo zmielony pieprz;
+            ostra papryka w proszku; 0.5 łyżeczki 
+            przecier pomidorowy - passata z butelki lub kartonu; 500 ml 
+            """,
+            """
+            Do szerokiego garnka włożyć smalec, dodać pokrojoną w kosteczkę cebulę oraz pokrojoną na plasterki kiełbasę, smażyć co chwilę mieszając przez około 7 minut. Dodać starty na tarce lub rozgnieciony czosnek i smażyć jeszcze przez 3 minuty.
+            Dodać pokrojone w kostkę papryki i co chwilę mieszając smażyć przez ok. 3 minuty. Doprawić solą (ok. pół łyżeczki), świeżo zmielonym pieprzem oraz słodką i ostrą papryką w proszku.
+            Następnie dodać obrane i pokrojone w kostkę świeże pomidory (bez nasion ze środka komór) lub passatę pomidorową. Gotować przez około 15 minut pod uchyloną pokrywą, w międzyczasie kilka razy zamieszać. Na koniec dodać koncentrat pomidorowy jeśli używaliśmy świeżych pomidorów.
+            """);
+        
+        result.IsSuccess.Should().BeTrue();
+    }
 }

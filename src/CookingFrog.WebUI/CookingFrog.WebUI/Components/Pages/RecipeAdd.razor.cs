@@ -88,7 +88,7 @@ public partial class RecipeAdd
     public sealed class RecipeAddModel
     {
         [Required]
-        [MinLength(10, ErrorMessage = "Title minimal length is 10")]
+        [MinLength(5, ErrorMessage = "Title minimal length is 5")]
         [MaxLength(400, ErrorMessage = "Title maximal length is 400")]
         public string Title { get; set; } = "";
 
