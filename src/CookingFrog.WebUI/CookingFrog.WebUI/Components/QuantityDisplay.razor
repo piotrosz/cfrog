@@ -1,0 +1,14 @@
+@using CookingFrog.Domain
+@{
+    var quantityAsString = Quantity.ToString();
+}
+
+@if (quantityAsString != string.Empty)
+{
+    <text>&nbsp;</text>
+    <span class="badge rounded-pill bg-primary align-content-end">@quantityAsString</span>
+}
+@code {
+    [Parameter]
+    public required Quantity Quantity { get; set; }
+}

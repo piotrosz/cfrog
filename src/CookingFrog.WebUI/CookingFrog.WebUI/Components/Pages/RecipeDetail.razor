@@ -3,6 +3,8 @@
 @inject IRecipesReadRepo RecipesRepo
 @attribute [StreamRendering]
 
+@rendermode InteractiveServer
+
 @if(Recipe == null)
 {
     <p><em>Loading...</em></p>
@@ -20,23 +22,20 @@ else
                             @foreach (var ingredient in Recipe.Ingredients)
                             {
                                 <li class="list-group-item">
-                                    @if (@ingredient.GroupName != null)
-                                    {
-                                        <span class="badge rounded-pill bg-info align-content-end">@ingredient.GroupName</span>
-                                        <text>&nbsp;</text>
-                                    }
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="@ingredient.Name">
+                                        <label class="form-check-label" for="@ingredient.Name">
+                                            @if (ingredient.GroupName != null)
+                                            {
+                                                <span class="badge rounded-pill bg-info align-content-end">@ingredient.GroupName</span>
+                                                <text>&nbsp;</text>
+                                            }
 
-                                    <span>@ingredient.Name</span>
+                                            <span>@ingredient.Name</span>
 
-                                    @{
-                                        var quantityAsString = ingredient.Quantity.ToString();
-                                    }
-
-                                    @if (quantityAsString != string.Empty)
-                                    {
-                                        <text>&nbsp;</text>
-                                        <span class="badge rounded-pill bg-primary align-content-end">@quantityAsString</span>
-                                    }
+                                            <QuantityDisplay quantity="@ingredient.Quantity"></QuantityDisplay>
+                                        </label>
+                                    </div>
                                 </li>
                             }
                         </ul>
@@ -52,15 +51,24 @@ else
                     <div class="card-body">
                         <h5 class="card-title">Co robić</h5>
                         <ul class="list-group list-group-flush">
-                            @foreach (var step in Recipe.Steps)
+                            @{ int i = 0; }
+                              @foreach (var step in Recipe.Steps)
                             {
-                                <li class="list-group-item">@step.Description</li>
-                            }
-                        </ul>
+                                {i++;}
+                                  <li class="list-group-item">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="@i">
+                                        <label class="form-check-label" for="@i">
+                                            @step.Description
+                                        </label>
+                                    </div>
+                                </li>
+                              }
+                              </ul>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+    }
