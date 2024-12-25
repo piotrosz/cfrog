@@ -25,21 +25,12 @@ else
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="@ingredient.Name">
                                         <label class="form-check-label" for="@ingredient.Name">
-                                            @if (ingredient.GroupName != null)
-                                            {
-                                                <span class="badge rounded-pill bg-info align-content-end">@ingredient.GroupName</span>
-                                                <text>&nbsp;</text>
-                                            }
-
-                                            <span>@ingredient.Name</span>
-
-                                            <QuantityDisplay quantity="@ingredient.Quantity"></QuantityDisplay>
+                                            <IngredientDisplay ingredient="@ingredient" />
                                         </label>
                                     </div>
                                 </li>
                             }
                         </ul>
-
                     </div>
                 </div>
             </div>
@@ -52,10 +43,12 @@ else
                         <h5 class="card-title">Co robić</h5>
                         <ul class="list-group list-group-flush">
                             @{ int i = 0; }
-                              @foreach (var step in Recipe.Steps)
+                            @foreach (var step in Recipe.Steps)
                             {
-                                {i++;}
-                                  <li class="list-group-item">
+                                {
+                                    i++;
+                                }
+                                <li class="list-group-item">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="@i">
                                         <label class="form-check-label" for="@i">
@@ -63,12 +56,11 @@ else
                                         </label>
                                     </div>
                                 </li>
-                              }
-                              </ul>
-
-                                  </div>
-                                  </div>
-                                  </div>
-                                  </div>
-                                  </div>
-    }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

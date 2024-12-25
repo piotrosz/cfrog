@@ -1,0 +1,16 @@
+@using CookingFrog.Domain
+@if (Ingredient.GroupName != null)
+{
+    <span class="badge rounded-pill bg-info align-content-end">@Ingredient.GroupName</span>
+    <text>&nbsp;</text>
+}
+
+<span>@Ingredient.Name</span>
+
+<QuantityDisplay quantity="@Ingredient.Quantity"></QuantityDisplay>
+
+@code
+{
+    [Parameter] 
+    public required Ingredient Ingredient { get; set; }
+}
