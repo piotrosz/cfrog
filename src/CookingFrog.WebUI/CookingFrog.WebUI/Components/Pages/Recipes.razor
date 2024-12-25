@@ -4,8 +4,6 @@
 
 <PageTitle>Cooking Frog</PageTitle>
 
-<h2>Przepisy</h2>
-
 <AuthorizeView>
     <NotAuthorized>
         <p>Musisz się zalogować, by zobaczyć przepisy.</p>
@@ -17,16 +15,21 @@
         }
         else
         {
-            <ul>
-                @foreach (var recipe in _recipes)
-                {
-                    <li>
-                        <NavLink class="nav-link" href="@("recipe/" + recipe.Guid)">
-                            @recipe.Summary
-                        </NavLink>
-                    </li>
-                }
-            </ul>
+            <div class="card" >
+                <div class="card-header">
+                    <h2>Przepisy</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var recipe in _recipes)
+                    {
+                        <li class="list-group-item">
+                            <NavLink class="nav-link" href="@("recipe/" + recipe.Guid)">
+                                @recipe.Summary
+                            </NavLink>
+                        </li>
+                    }
+                </ul>
+            </div>
         }
     </Authorized>
 </AuthorizeView>
