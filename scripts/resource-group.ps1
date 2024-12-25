@@ -29,7 +29,7 @@ az keyvault create --name $vaultName --resource-group $resourceGroupName --enabl
 az appservice plan create --name $appPlanName --resource-group $resourceGroupName --sku B1 --is-linux --location $location
 
 # Create app service
-az webapp create --name $webAppName --resource-group $resourceGroupName --plan $appPlanName --runtime "DOTNETCORE:8.0"
+az webapp create --name $webAppName --resource-group $resourceGroupName --plan $appPlanName --runtime "DOTNETCORE:9.0"
 
 # Assign idenity
 az webapp identity assign -g $resourceGroupName -n $webAppName
