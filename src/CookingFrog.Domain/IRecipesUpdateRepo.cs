@@ -8,6 +8,6 @@ public interface IRecipesUpdateRepo
 
     Task UpdateIngredients(IReadOnlyCollection<Ingredient> ingredients, Guid recipeGuid);
 
-    Task UpdateSteps(IReadOnlyCollection<Step> steps, Guid recipeGuid);
+    Task UpdateStep(int stepIndex, string description, Guid recipeGuid, CancellationToken cancellationToken);
 
 }

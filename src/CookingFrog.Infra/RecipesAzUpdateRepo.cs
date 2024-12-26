@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Azure.Data.Tables;
 using CookingFrog.Domain;
 using CSharpFunctionalExtensions;
@@ -47,8 +48,21 @@ internal class RecipesAzUpdateRepo(TableServiceClient tableServiceClient) : IRec
         throw new NotImplementedException();
     }
 
-    public async Task UpdateSteps(IReadOnlyCollection<Step> steps, Guid recipeGuid)
+    public async Task UpdateStep(int stepIndex, string description, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
+        var response = tableClient.GetEntity<RecipeTableEntity>(
+            "_default", 
+            recipeGuid.ToString(),
+            cancellationToken: cancellationToken);
+
+        var entity = response.Value;
+        var steps = JsonSerializer.Deserialize<List<Step>>(entity.SerializedSteps);
+
+        steps[stepIndex] = description;
+        
+        entity.SerializedSteps = JsonSerializer.Serialize(steps);
+        
+        await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
     }
 }

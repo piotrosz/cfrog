@@ -1,4 +1,5 @@
 ﻿using CookingFrog.Domain;
+using CookingFrog.WebUI.Components.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace CookingFrog.WebUI.Components.Pages;
@@ -23,6 +24,15 @@ public partial class RecipeDetail
         if (Recipe is not null && !string.IsNullOrWhiteSpace(newSummary))
         {
             await RecipesUpdateRepo.UpdateTitle(newSummary, Recipe.Guid, CancellationToken.None);
+            Recipe = await RecipesReadRepo.GetRecipe(Recipe.Guid);
+        }
+    }
+
+    private async Task UpdateStep(StepUpdateModel stepModel)
+    {
+        if (Recipe is not null && stepModel is not null)
+        {
+            await RecipesUpdateRepo.UpdateStep(stepModel.StepIndex, stepModel.Description, Recipe.Guid, CancellationToken.None);
             Recipe = await RecipesReadRepo.GetRecipe(Recipe.Guid);
         }
     }

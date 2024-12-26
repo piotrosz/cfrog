@@ -1,11 +1,32 @@
+@using CookingFrog.WebUI.Components.Models
 <li class="list-group-item">
     @if (_isEditMode)
     {
+        <div class="mb-3">
         <InputTextArea
             class="form-control"
             id="txtSteps"
             rows="6"
             @bind-Value="_editedStep"/>
+        </div>
+        <div class="mb-3">
+            <button
+                type="button"
+                class="btn btn-sm btn-light"
+                @onclick="@(async () =>
+                          {
+                              await UpdateStepClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
+                              _isEditMode = false;
+                          })">
+                ✅
+            </button>
+            <button
+                type="button"
+                class="btn btn-sm btn-light"
+                @onclick="@(() => { _isEditMode = false; })">
+                ❌
+            </button>
+        </div>
     }
     else
     {
@@ -27,13 +48,16 @@
 @code {
     [Parameter]
     public int StepIndex { get; set; }
-    
-    [Parameter]
-    public string Description { get; set; }
 
+    [Parameter] 
+    public string Description { get; set; } = string.Empty;
+
+    [Parameter] 
+    public EventCallback<StepUpdateModel> UpdateStepClicked { get; set; }
+    
     private bool _isEditMode;
 
-    private string _editedStep;
+    private string _editedStep = string.Empty;
 
     protected override void OnInitialized()
     {
