@@ -15,7 +15,9 @@ public static class RecipeTableEntityToRecipeMapper
             throw new NullReferenceException("Recipe could not be deserialized.");
         }
         
-        return Recipe.Create(recipe.Summary,
+        return Recipe.Create(
+            Guid.Parse(recipe.RowKey), 
+            recipe.Summary,
             recipe.TimeToPrepare,
             deserializedIngredients,
             deserializedSteps

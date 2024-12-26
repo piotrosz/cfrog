@@ -7,6 +7,7 @@ internal sealed partial class RecipesStaticTestRepo
     private static readonly IReadOnlyList<Recipe> Recipes =
     [
         Recipe.Create(
+            guid:Guid.NewGuid(),
             "🦃 Kotlety mielone",
             TimeSpan.FromHours(1.5),
             [
@@ -29,6 +30,7 @@ internal sealed partial class RecipesStaticTestRepo
 
             ]),
         Recipe.Create(
+            guid:Guid.NewGuid(),
             "🥗 Sałatka batat, avocado, jajko",
             TimeSpan.FromHours(1.0),
             [
@@ -60,7 +62,9 @@ internal sealed partial class RecipesStaticTestRepo
                 "Do misek lub pojemników na lunch włożyć szpinak, jajka, awokado, pomidorki, cebulę. Doprawić solą i pieprzem. Dodać upieczone bataty.",
                 "Przygotować sos mieszając wszystkie składniki."
             ]),
-        Recipe.Create("🍜 Makaron w sosie pomidorowo-czosnkowym z kurczakiem",
+        Recipe.Create(
+            Guid.NewGuid(), 
+            "🍜 Makaron w sosie pomidorowo-czosnkowym z kurczakiem",
             TimeSpan.FromMinutes(30),
             [
                 new Ingredient("mięso pierś kurczaka", Quantity.ThreeHundredGram),
@@ -83,7 +87,9 @@ internal sealed partial class RecipesStaticTestRepo
                 "Smaż warzywa mrożone 8-10min. Dodaj 🐤, makaron i sos. Dokładnie mieszaj i gotuj 2-3min",
                 "Wyłóż porcje na talerz. Posyp posiekanym szczypiorem."
             ]),
-        Recipe.Create("🥗 Sałatka makaronowa awokado, feta, pomidory, kukurydza",
+        Recipe.Create(
+            Guid.NewGuid(),
+            "🥗 Sałatka makaronowa awokado, feta, pomidory, kukurydza",
             TimeSpan.FromHours(0.5),
             [
                 new Ingredient("makaron kokardki", Quantity.HundredGram),
@@ -105,7 +111,9 @@ internal sealed partial class RecipesStaticTestRepo
                 "Dodać odcedzoną kukurydzę, pokrojone na połówki pomidorki, posiekaną cebulę i całość doprawić solą, pieprzem i papryką.",
                 "Dodać posiekane listki bazylii, oliwę oraz majonez. Wszystko delikatnie wymieszać."
             ]),
-        Recipe.Create("🥞 Placki ziemniaczane",
+        Recipe.Create(
+            Guid.NewGuid(),
+            "🥞 Placki ziemniaczane",
             TimeSpan.FromHours(1),
             [
                 new Ingredient("ziemniaki", Quantity.HalfKilo),

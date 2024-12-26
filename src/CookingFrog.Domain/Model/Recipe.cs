@@ -26,15 +26,13 @@ public sealed class Recipe
 
     public TimeSpan TimeToPrepare { get; }
     
-    /// <summary>
-    /// Create with new Guid id. 
-    /// </summary>
     public static Recipe Create(
+        Guid guid,
         string title, 
         TimeSpan timeToPrepare,
         IEnumerable<Ingredient> ingredients, 
         IEnumerable<Step> steps)
     {
-        return new Recipe(Guid.NewGuid(), title, timeToPrepare, ingredients, steps);
+        return new Recipe(guid, title, timeToPrepare, ingredients, steps);
     }
 }

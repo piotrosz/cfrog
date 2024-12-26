@@ -1,5 +1,7 @@
 ﻿@page "/recipe/{Guid}"
-@inject IRecipesReadRepo RecipesRepo
+@inject IRecipesReadRepo RecipesReadRepo
+@inject IRecipesUpdateRepo RecipesUpdateRepo
+
 @attribute [StreamRendering]
 
 @rendermode InteractiveServer
