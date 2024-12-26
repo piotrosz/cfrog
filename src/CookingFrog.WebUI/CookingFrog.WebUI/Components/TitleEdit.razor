@@ -1,0 +1,50 @@
+@if (_isSummaryEditMode == false)
+{
+    <h2 @onclick="SummaryEdit">@Title</h2>
+}
+else
+{
+    <div class="mb-3">
+        <InputText
+            type="text"
+            class="form-control"
+            id="txtTitle"
+            placeholder=""
+            maxlength="400"
+            style="width: 350px"
+            @bind-Value="@_recipeSummaryForEdit"/>
+    </div>
+    <div class="mb-3">
+        <button type="button"
+                class="btn btn-primary btn-sm"
+                @onclick="@(async () =>
+                          {
+                              await UpdateTitleClicked.InvokeAsync(_recipeSummaryForEdit);
+                              _isSummaryEditMode = false;
+                          })">
+            Zapisz
+        </button>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+    
+    [Parameter]
+    public EventCallback<string> UpdateTitleClicked { get; set; }
+    
+    private bool _isSummaryEditMode;
+
+    private string _recipeSummaryForEdit = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        _recipeSummaryForEdit = Title;
+    }
+
+    private void SummaryEdit()
+    {
+        _isSummaryEditMode = true;
+    }
+}
