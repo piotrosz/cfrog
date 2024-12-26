@@ -11,7 +11,6 @@ else
             id="txtTitle"
             placeholder=""
             maxlength="400"
-            style="width: 350px"
             @bind-Value="@_recipeSummaryForEdit"/>
     </div>
     <div class="mb-3">
@@ -23,6 +22,11 @@ else
                               _isSummaryEditMode = false;
                           })">
             Zapisz
+        </button>
+        <button type="button"
+                class="btn btn-primary btn-sm"
+                @onclick="() => { _isSummaryEditMode = false; }">
+            Anuluj
         </button>
     </div>
 }
