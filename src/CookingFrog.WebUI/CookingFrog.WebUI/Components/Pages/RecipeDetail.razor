@@ -13,7 +13,26 @@ else
     <div class="container" b>
         <div class="row gy-2 g-2">
             <div class="col-sm-12">
-                <h2>@Recipe.Summary</h2>
+                @if (_isSummaryEditMode == false)
+                {
+                    <h2 @onclick="SummaryEdit">@Recipe.Summary</h2>
+                }
+                else
+                {
+                    <div class="mb-3">
+                        <InputText
+                            type="text"
+                            class="form-control"
+                            id="txtTitle"
+                            placeholder=""
+                            maxlength="400"
+                            style="width: 350px"
+                            @bind-Value="@_recipeSummaryForEdit"/>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary btn-sm" @onclick="UpdateSummary">Zapisz</button>
+                    </div>
+                }
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Składniki</h5>
@@ -24,7 +43,7 @@ else
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="@ingredient.Name">
                                         <label class="form-check-label" for="@ingredient.Name">
-                                            <IngredientDisplay ingredient="@ingredient" />
+                                            <IngredientDisplay ingredient="@ingredient"/>
                                         </label>
                                     </div>
                                 </li>
