@@ -46,17 +46,8 @@ else
                             @{ var stepIndex = 0; }
                             @foreach (var step in Recipe.Steps)
                             {
-                                {
-                                    stepIndex++;
-                                }
-                                <li class="list-group-item">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="step@(stepIndex)">
-                                        <label class="form-check-label" for="step@(stepIndex)">
-                                            @step.Description
-                                        </label>
-                                    </div>
-                                </li>
+                                { stepIndex++; }
+                                <StepEdit StepIndex="stepIndex" Description="@step.Description"/>
                             }
                         </ul>
                     </div>
