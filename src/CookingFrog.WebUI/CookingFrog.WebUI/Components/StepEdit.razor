@@ -1,49 +1,49 @@
 @using CookingFrog.WebUI.Components.Models
-<li class="list-group-item">
-    @if (_isEditMode)
-    {
-        <div class="mb-3">
-        <InputTextArea
-            class="form-control"
-            id="txtSteps"
-            rows="6"
-            @bind-Value="_editedStep"/>
+
+@if (_isEditMode)
+{
+    <div class="mb-3">
+    <InputTextArea
+        class="form-control"
+        id="txtSteps"
+        rows="6"
+        @bind-Value="_editedStep"/>
+    </div>
+    <div class="mb-3">
+        <button
+            type="button"
+            class="btn btn-sm btn-light"
+            @onclick="@(async () =>
+                      {
+                          await UpdateStepClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
+                          _isEditMode = false;
+                      })">
+            ✅
+        </button>
+        <button
+            type="button"
+            class="btn btn-sm btn-light"
+            @onclick="@(() => { _isEditMode = false; })">
+            ❌
+        </button>
+    </div>
+}
+else
+{
+    <div class="input-group mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="step@(StepIndex)">
+            <label class="form-check-label" for="step@(StepIndex)">
+                @Description
+            </label>
         </div>
-        <div class="mb-3">
-            <button
-                type="button"
+        <button type="button"
                 class="btn btn-sm btn-light"
-                @onclick="@(async () =>
-                          {
-                              await UpdateStepClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
-                              _isEditMode = false;
-                          })">
-                ✅
-            </button>
-            <button
-                type="button"
-                class="btn btn-sm btn-light"
-                @onclick="@(() => { _isEditMode = false; })">
-                ❌
-            </button>
-        </div>
-    }
-    else
-    {
-        <div class="input-group mb-3">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="step@(StepIndex)">
-                <label class="form-check-label" for="step@(StepIndex)">
-                    @Description
-                </label>
-            </div>
-            <button type="button"
-                    class="btn btn-sm btn-light"
-                    @onclick="Edit">🖊️</button>
-        </div>
-        
-    }
-</li>
+                @onclick="Edit">🖊️</button>
+    </div>
+    
+}
+
 
 @code {
     [Parameter]

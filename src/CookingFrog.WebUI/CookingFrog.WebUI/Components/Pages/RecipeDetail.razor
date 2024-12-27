@@ -41,16 +41,14 @@ else
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Co robić</h5>
-                        <ul class="list-group list-group-flush">
-                            @{ var stepIndex = 0; }
-                            @foreach (var step in Recipe.Steps)
-                            {
-                                <StepEdit StepIndex="stepIndex" 
-                                          Description="@step.Description"
-                                          UpdateStepClicked="UpdateStep"/>
-                                { stepIndex++; }
-                            }
-                        </ul>
+                        @{ var stepIndex = 0; }
+                        @foreach (var step in Recipe.Steps)
+                        {
+                            <StepEdit StepIndex="stepIndex" 
+                                      Description="@step.Description"
+                                      UpdateStepClicked="UpdateStep"/>
+                            { stepIndex++; }
+                        }
                     </div>
                 </div>
             </div>
