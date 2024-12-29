@@ -1,0 +1,27 @@
+@if (_isEdit)
+{
+    <div class="input-group mb-3">
+        <QuantityEdit Quantity="Ingredient?.Quantity.Value" />
+    </div>
+        
+}
+else
+{
+    <div class="input-group mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="@Ingredient?.Name">
+            <label class="form-check-label" for="@Ingredient?.Name">
+                <IngredientDisplay ingredient="@Ingredient"/>
+            </label>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    [Parameter] 
+    public Ingredient? Ingredient { get; set; }
+
+    private bool _isEdit;
+}
