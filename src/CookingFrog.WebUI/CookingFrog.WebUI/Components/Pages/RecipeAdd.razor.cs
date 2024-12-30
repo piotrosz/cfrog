@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using CookingFrog.Domain;
 using CookingFrog.Domain.Parsing;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
@@ -7,6 +8,12 @@ namespace CookingFrog.WebUI.Components.Pages;
 
 public partial class RecipeAdd
 {
+    [Inject] 
+    public IRecipesPersistRepo? RecipesRepo { get; set; }
+
+    [Inject]
+    public NavigationManager? NavigationManager { get; set; }
+    
     [SupplyParameterFromForm]
     private RecipeAddModel? Model { get; set; }
     
@@ -65,10 +72,10 @@ public partial class RecipeAdd
 
         if (parseResult.IsSuccess)
         {
-            var saveResult = await RecipesRepo.SaveRecipe(parseResult.Result);
+            var saveResult = await RecipesRepo!.SaveRecipe(parseResult.Result);
             if (saveResult.IsSuccess)
             {
-                NavigationManager.NavigateTo("/");
+                NavigationManager!.NavigateTo("/");
             }
             else
             {

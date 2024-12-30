@@ -1,0 +1,33 @@
+<InputSelect @bind-Value="_unitOptions[1].Value" class="form-select form-select-sm">
+    @foreach (var option in _unitOptions)
+    {
+        <option value="@option.Value">@option.Description</option>
+    }
+</InputSelect>
+
+@code {
+    [Parameter]
+    public UnitEnum Unit { get; set; }
+
+    private IReadOnlyList<UnitOption> _unitOptions = new List<UnitOption>();
+
+    protected override void OnInitialized()
+    {
+        var allUnits = Enum.GetValues<UnitEnum>();
+
+        _unitOptions = allUnits
+            .Select(x => new UnitOption
+            {
+                Value = (int)x,
+                Description = x.GetDisplayDescription()
+            })
+            .ToList();
+    }
+    
+    private class UnitOption
+    {
+        public int Value { get; set; }
+
+        public string Description { get; set; } = string.Empty;
+    }
+}

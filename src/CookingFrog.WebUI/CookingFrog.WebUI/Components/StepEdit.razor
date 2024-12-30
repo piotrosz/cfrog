@@ -1,6 +1,6 @@
 @using CookingFrog.WebUI.Components.Models
 
-@if (_isEditMode)
+@if (_isEdit)
 {
     <div class="mb-3">
     <InputTextArea
@@ -15,15 +15,15 @@
             class="btn btn-sm btn-light"
             @onclick="@(async () =>
                       {
-                          await UpdateStepClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
-                          _isEditMode = false;
+                          await UpdateClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
+                          _isEdit = false;
                       })">
             ✅
         </button>
         <button
             type="button"
             class="btn btn-sm btn-light"
-            @onclick="@(() => { _isEditMode = false; })">
+            @onclick="@(() => { _isEdit = false; })">
             ❌
         </button>
     </div>
@@ -39,7 +39,9 @@ else
         </div>
         <button type="button"
                 class="btn btn-sm btn-light"
-                @onclick="Edit">🖊️</button>
+                @onclick="Edit">
+            🖊️
+        </button>
     </div>
     
 }
@@ -53,9 +55,9 @@ else
     public string Description { get; set; } = string.Empty;
 
     [Parameter] 
-    public EventCallback<StepUpdateModel> UpdateStepClicked { get; set; }
+    public EventCallback<StepUpdateModel> UpdateClicked { get; set; }
     
-    private bool _isEditMode;
+    private bool _isEdit;
 
     private string _editedStep = string.Empty;
 
@@ -66,6 +68,6 @@ else
 
     private void Edit()
     {
-        _isEditMode = true;
+        _isEdit = true;
     }
 }

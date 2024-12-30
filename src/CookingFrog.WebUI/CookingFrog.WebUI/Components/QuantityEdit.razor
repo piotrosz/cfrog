@@ -1,11 +1,20 @@
 
 <div class="mb-3">
-    <label class="form-label">Ilość</label>
-    <InputNumber class="form-control form-control-sm" @bind-value="Quantity" />
+    <InputNumber class="form-control form-control-sm" @bind-value="_updatedQuantity" />
 </div>
-
 
 @code {
     [Parameter]
     public decimal? Quantity { get; set; }
+
+    private decimal _updatedQuantity;
+
+    protected override void OnInitialized()
+    {
+        if (Quantity != null)
+        {
+            _updatedQuantity = Quantity.Value;
+        }
+    }
+
 }

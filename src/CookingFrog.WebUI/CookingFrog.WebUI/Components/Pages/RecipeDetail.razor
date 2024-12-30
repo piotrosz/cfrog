@@ -1,9 +1,5 @@
 ﻿@page "/recipe/{Guid}"
-@inject IRecipesReadRepo RecipesReadRepo
-@inject IRecipesUpdateRepo RecipesUpdateRepo
-
 @attribute [StreamRendering]
-
 @rendermode InteractiveServer
 
 @if(Recipe == null)
@@ -37,7 +33,7 @@ else
                         {
                             <StepEdit StepIndex="stepIndex" 
                                       Description="@step.Description"
-                                      UpdateStepClicked="UpdateStep"/>
+                                      UpdateClicked="UpdateStep"/>
                             { stepIndex++; }
                         }
                     </div>

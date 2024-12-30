@@ -1,9 +1,28 @@
+@using CookingFrog.WebUI.Components.Models
+
 @if (_isEdit)
 {
     <div class="input-group mb-3">
-        <QuantityEdit Quantity="Ingredient?.Quantity.Value" />
+        <InputText @bind-value="_updatedIngredient.Name" class="form-control form-control-sm"/>
+        <QuantityEdit Quantity="_updatedIngredient.Quantity"/>
+        <UnitEdit Unit="_updatedIngredient.Unit"/>
+        <button
+            type="button"
+            class="btn btn-sm btn-light"
+            @onclick="@(async () =>
+                      {
+                          // await UpdateClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
+                          _isEdit = false;
+                      })">
+            ✅
+        </button>
+        <button
+            type="button"
+            class="btn btn-sm btn-light"
+            @onclick="@(() => { _isEdit = false; })">
+            ❌
+        </button>
     </div>
-        
 }
 else
 {
@@ -14,14 +33,35 @@ else
                 <IngredientDisplay ingredient="@Ingredient"/>
             </label>
         </div>
+        <button type="button"
+                class="btn btn-sm btn-light"
+                @onclick="Edit">
+            🖊️
+        </button>
     </div>
 }
-
-
 
 @code {
     [Parameter] 
     public Ingredient? Ingredient { get; set; }
 
+    private IngredientUpdateModel _updatedIngredient = new(string.Empty, 0, UnitEnum.Undefined);
+
+    protected override void OnInitialized()
+    {
+        if (Ingredient != null)
+        {
+            _updatedIngredient = new IngredientUpdateModel(
+                Ingredient.Name,
+                Ingredient.Quantity.Value,
+                Ingredient.Quantity.Unit);
+        }
+    }
+
     private bool _isEdit;
+
+    private void Edit()
+    {
+        _isEdit = true;
+    }
 }
