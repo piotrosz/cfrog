@@ -36,9 +36,26 @@ public partial class RecipeDetail
 
     private async Task UpdateStep(StepUpdateModel stepModel)
     {
-        if (Recipe is not null && stepModel is not null)
+        if (Recipe is not null)
         {
-            await RecipesUpdateRepo!.UpdateStep(stepModel.StepIndex, stepModel.Description, Recipe.Guid, CancellationToken.None);
+            await RecipesUpdateRepo!.UpdateStep(
+                stepModel.StepIndex, 
+                stepModel.Description, 
+                Recipe.Guid, 
+                CancellationToken.None);
+            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+        }
+    }
+
+    private async Task UpdateIngredient(IngredientUpdateModel ingredientModel)
+    {
+        if (Recipe is not null)
+        {
+            await RecipesUpdateRepo!.UpdateIngredient(
+                ingredientModel.Index, 
+                new Ingredient(ingredientModel.Name, new Quantity(ingredientModel.Quantity, ingredientModel.Unit)), 
+                Recipe.Guid, 
+                CancellationToken.None);
             Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
         }
     }

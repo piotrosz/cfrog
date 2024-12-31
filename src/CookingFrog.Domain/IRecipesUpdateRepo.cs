@@ -6,7 +6,7 @@ public interface IRecipesUpdateRepo
 {
     Task<Result> UpdateTitle(string newTitle, Guid recipeGuid, CancellationToken cancellationToken);
 
-    Task UpdateIngredients(IReadOnlyCollection<Ingredient> ingredients, Guid recipeGuid);
+    Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken);
 
     Task UpdateStep(int stepIndex, string description, Guid recipeGuid, CancellationToken cancellationToken);
 

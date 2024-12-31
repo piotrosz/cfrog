@@ -2,26 +2,38 @@
 
 @if (_isEdit)
 {
-    <div class="input-group mb-3">
-        <InputText @bind-value="_updatedIngredient.Name" class="form-control form-control-sm" />
-        <QuantityEdit Quantity="_updatedIngredient.Quantity"/>
-        <UnitEdit Unit="_updatedIngredient.Unit"/>
-        <button
-            type="button"
-            class="btn btn-sm"
-            @onclick="@(async () =>
-                      {
-                          await UpdateClicked.InvokeAsync(_updatedIngredient);
-                          _isEdit = false;
-                      })">
-            ✅
-        </button>
-        <button
-            type="button"
-            class="btn btn-sm"
-            @onclick="@(() => { _isEdit = false; })">
-            ❌
-        </button>
+    <div class="container">
+        <div class="row">
+            <div class="col col-5">
+                <InputText @bind-value="_updatedIngredient.Name" class="form-control form-control-sm" />
+            </div>
+            <div class="col col-1">
+                <QuantityEdit Quantity="_updatedIngredient.Quantity"/>
+            </div>
+            <div class="col col=2">
+                <UnitEdit Unit="_updatedIngredient.Unit"/>
+            </div>
+            <div class="col col-4">
+                <div class="input-group mb-3">
+                    <button
+                        type="button"
+                        class="btn btn-sm"
+                        @onclick="@(async () =>
+                                  {
+                                      await UpdateClicked.InvokeAsync(_updatedIngredient);
+                                      _isEdit = false;
+                                  })">
+                        ✅
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-sm"
+                        @onclick="@(() => { _isEdit = false; })">
+                        ❌
+                    </button>
+                </div>      
+            </div>
+        </div>
     </div>
 }
 else

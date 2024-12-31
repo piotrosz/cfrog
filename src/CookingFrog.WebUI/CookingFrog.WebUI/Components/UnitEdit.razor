@@ -33,17 +33,17 @@
         var allUnits = Enum.GetValues<UnitEnum>();
 
         _unitOptions = allUnits
-            .Select(x => new UnitOption
+            .Select(unit => new UnitOption
             {
-                Value = (int)x,
-                Description = x.GetDisplayDescription()
+                Value = unit,
+                Description = unit.GetDisplayDescription()
             })
             .ToList();
     }
 
     private class UnitOption
     {
-        public int Value { get; set; }
+        public UnitEnum Value { get; set; }
 
         public string Description { get; set; } = string.Empty;
     }
