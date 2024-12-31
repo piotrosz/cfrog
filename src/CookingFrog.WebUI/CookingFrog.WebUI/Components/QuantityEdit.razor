@@ -1,12 +1,20 @@
 
 <div class="mb-3">
-    <InputNumber class="form-control form-control-sm" @bind-value="_updatedQuantity" />
+    <InputNumber class="form-control form-control-sm" 
+        @bind-value="_updatedQuantity" 
+         @onchange="@(async () =>
+        {
+            await UpdateClicked.InvokeAsync(_updatedQuantity);
+        })" />
 </div>
 
 @code {
     [Parameter]
     public decimal? Quantity { get; set; }
 
+    [Parameter] 
+    public EventCallback<decimal> UpdateClicked { get; set; }
+    
     private decimal _updatedQuantity;
 
     protected override void OnInitialized()
