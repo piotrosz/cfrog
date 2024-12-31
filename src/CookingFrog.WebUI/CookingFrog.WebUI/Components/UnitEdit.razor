@@ -1,4 +1,10 @@
-<InputSelect @bind-Value="_unitOptions[1].Value" class="form-select form-select-sm">
+<InputSelect 
+    @bind-Value="_selectedValue" 
+    class="form-select form-select-sm" 
+    @onchange="@(async () =>
+    {
+        await UpdateClicked.InvokeAsync(_selectedValue);
+    })">
     @foreach (var option in _unitOptions)
     {
         <option value="@option.Value">@option.Description</option>
@@ -9,9 +15,20 @@
     [Parameter]
     public UnitEnum Unit { get; set; }
 
+    private UnitEnum _selectedValue;
+    
+    [Parameter] 
+    public EventCallback<UnitEnum> UpdateClicked { get; set; }
+    
     private IReadOnlyList<UnitOption> _unitOptions = new List<UnitOption>();
 
     protected override void OnInitialized()
+    {
+        _selectedValue = Unit;
+        FillUnitOptions();
+    }
+
+    private void FillUnitOptions()
     {
         var allUnits = Enum.GetValues<UnitEnum>();
 
@@ -23,7 +40,7 @@
             })
             .ToList();
     }
-    
+
     private class UnitOption
     {
         public int Value { get; set; }

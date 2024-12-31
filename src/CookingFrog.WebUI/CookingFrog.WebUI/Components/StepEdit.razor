@@ -6,13 +6,13 @@
     <InputTextArea
         class="form-control"
         id="txtSteps"
-        rows="6"
+        rows="3"
         @bind-Value="_editedStep"/>
     </div>
     <div class="mb-3">
         <button
             type="button"
-            class="btn btn-sm btn-light"
+            class="btn btn-sm"
             @onclick="@(async () =>
                       {
                           await UpdateClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
@@ -22,7 +22,7 @@
         </button>
         <button
             type="button"
-            class="btn btn-sm btn-light"
+            class="btn btn-sm"
             @onclick="@(() => { _isEdit = false; })">
             ❌
         </button>
@@ -38,7 +38,7 @@ else
             </label>
         </div>
         <button type="button"
-                class="btn btn-sm btn-light"
+                class="btn btn-sm"
                 @onclick="Edit">
             🖊️
         </button>

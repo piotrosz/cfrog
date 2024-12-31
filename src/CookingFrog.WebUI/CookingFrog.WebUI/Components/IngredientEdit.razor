@@ -3,22 +3,22 @@
 @if (_isEdit)
 {
     <div class="input-group mb-3">
-        <InputText @bind-value="_updatedIngredient.Name" class="form-control form-control-sm"/>
+        <InputText @bind-value="_updatedIngredient.Name" class="form-control form-control-sm" />
         <QuantityEdit Quantity="_updatedIngredient.Quantity"/>
         <UnitEdit Unit="_updatedIngredient.Unit"/>
         <button
             type="button"
-            class="btn btn-sm btn-light"
+            class="btn btn-sm"
             @onclick="@(async () =>
                       {
-                          // await UpdateClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
+                          await UpdateClicked.InvokeAsync(_updatedIngredient);
                           _isEdit = false;
                       })">
             ✅
         </button>
         <button
             type="button"
-            class="btn btn-sm btn-light"
+            class="btn btn-sm"
             @onclick="@(() => { _isEdit = false; })">
             ❌
         </button>
@@ -34,7 +34,7 @@ else
             </label>
         </div>
         <button type="button"
-                class="btn btn-sm btn-light"
+                class="btn btn-sm"
                 @onclick="Edit">
             🖊️
         </button>
@@ -44,7 +44,10 @@ else
 @code {
     [Parameter] 
     public Ingredient? Ingredient { get; set; }
-
+    
+    [Parameter] 
+    public EventCallback<IngredientUpdateModel> UpdateClicked { get; set; }
+    
     private IngredientUpdateModel _updatedIngredient = new(string.Empty, 0, UnitEnum.Undefined);
 
     protected override void OnInitialized()
