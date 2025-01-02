@@ -9,7 +9,7 @@ namespace CookingFrog.WebUI.Components.Pages;
 public partial class RecipeAdd
 {
     [Inject] 
-    public IRecipesPersistRepo? RecipesRepo { get; set; }
+    public IRecipesSaveRepo? RecipesRepo { get; set; }
 
     [Inject]
     public NavigationManager? NavigationManager { get; set; }

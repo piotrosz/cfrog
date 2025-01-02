@@ -4,7 +4,7 @@ using CSharpFunctionalExtensions;
 
 namespace CookingFrog.Infra;
 
-internal class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRecipesPersistRepo
+internal class RecipesAzSaveRepo(TableServiceClient tableServiceClient) : IRecipesSaveRepo
 {
     public async Task<Result> SaveRecipe(Recipe recipe, CancellationToken cancellationToken = default)
     {
@@ -18,7 +18,7 @@ internal class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRe
         return Result.Success();
     }
 
-    public async Task SaveRecipeOnly(Recipe recipe, CancellationToken cancellationToken)
+    private async Task SaveRecipeOnly(Recipe recipe, CancellationToken cancellationToken)
     {
         var recipeEntity = recipe.MapToTableEntity();
 
@@ -27,7 +27,7 @@ internal class RecipesAzPersistRepo(TableServiceClient tableServiceClient) : IRe
         await tableClient.AddEntityAsync(recipeEntity, cancellationToken);
     }
 
-    public async Task SaveRecipeSummaryOnly(RecipeSummary recipeSummary, CancellationToken cancellationToken)
+    private async Task SaveRecipeSummaryOnly(RecipeSummary recipeSummary, CancellationToken cancellationToken)
     {
         var recipeSummaryEntity = recipeSummary.MapToTableEntity();
         

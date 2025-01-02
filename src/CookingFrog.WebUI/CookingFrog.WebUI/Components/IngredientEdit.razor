@@ -5,13 +5,19 @@
     <div class="container">
         <div class="row">
             <div class="col col-5">
-                <InputText @bind-value="_updatedIngredient.Name" class="form-control form-control-sm" />
+                <InputText 
+                    @bind-value="_updatedIngredient.Name" 
+                    class="form-control form-control-sm" />
             </div>
             <div class="col col-1">
-                <QuantityEdit Quantity="_updatedIngredient.Quantity" UpdateClicked="UpdateQuantity"/>
+                <QuantityEdit 
+                    Quantity="_updatedIngredient.Quantity" 
+                    UpdateClicked="UpdateQuantity" />
             </div>
             <div class="col col=2">
-                <UnitEdit Unit="_updatedIngredient.Unit" UpdateClicked="UpdateUnit"/>
+                <UnitEdit 
+                    Unit="_updatedIngredient.Unit" 
+                    UpdateClicked="UpdateUnit" />
             </div>
             <div class="col col-4">
                 <div class="input-group mb-3">
@@ -42,7 +48,8 @@ else
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="@Ingredient?.Name">
             <label class="form-check-label" for="@Ingredient?.Name">
-                <IngredientDisplay ingredient="@Ingredient"/>
+                <IngredientDisplay
+                    Ingredient="@Ingredient"/>
             </label>
         </div>
         <button type="button"

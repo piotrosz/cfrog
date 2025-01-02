@@ -15,7 +15,7 @@ else
     </div>
     <div class="mb-3">
         <button type="button"
-                class="btn btn-primary btn-sm"
+                class="btn btn-light btn-sm"
                 @onclick="@(async () =>
                           {
                               await UpdateTitleClicked.InvokeAsync(_recipeSummaryForEdit);
@@ -24,7 +24,7 @@ else
             Zapisz
         </button>
         <button type="button"
-                class="btn btn-primary btn-sm"
+                class="btn btn-light btn-sm"
                 @onclick="() => { _isSummaryEditMode = false; }">
             Anuluj
         </button>

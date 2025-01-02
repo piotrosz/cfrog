@@ -27,7 +27,7 @@ public static class Registrations
         
         services.AddScoped<IRecipesReadRepo, RecipesAzReadRepo>();
         //services.AddScoped<IRecipesReadRepo, RecipesStaticTestRepo>();
-        services.AddScoped<IRecipesPersistRepo, RecipesAzPersistRepo>();
+        services.AddScoped<IRecipesSaveRepo, RecipesAzSaveRepo>();
         services.AddScoped<IRecipesUpdateRepo, RecipesAzUpdateRepo>();
         services.AddScoped<IStaticRecipesLoader, StaticRecipesLoader>();
     }

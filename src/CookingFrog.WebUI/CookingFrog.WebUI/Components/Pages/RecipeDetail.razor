@@ -3,6 +3,8 @@
 @attribute [StreamRendering]
 @rendermode InteractiveServer
 
+<PageTitle>Cooking Frog - @Recipe.Summary</PageTitle>
+
 @if(Recipe == null)
 {
     <div class="alert alert-info" role="alert">
@@ -14,13 +16,16 @@ else
     <div class="container" b>
         <div class="row gy-2 g-2">
             <div class="col-sm-12">
-                <TitleEdit title="@Recipe.Summary" UpdateTitleClicked="UpdateSummary"/>
+                <TitleEdit Title="@Recipe.Summary" 
+                           UpdateTitleClicked="UpdateSummary"/>
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Składniki</h5>
                             @foreach (var ingredient in Recipe.Ingredients)
                             {
-                                <IngredientEdit Ingredient="ingredient" UpdateClicked="UpdateIngredient"/>
+                                <IngredientEdit 
+                                    Ingredient="ingredient" 
+                                    UpdateClicked="UpdateIngredient"/>
                             }
                     </div>
                 </div>

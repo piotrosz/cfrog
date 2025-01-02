@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 namespace CookingFrog.Infra;
 
 public class StaticRecipesLoader(
-    IRecipesPersistRepo persistRepo, 
+    IRecipesSaveRepo saveRepo, 
     IRecipesReadRepo readRepo,
     ILogger<StaticRecipesLoader> logger) : IStaticRecipesLoader
 {
@@ -13,8 +13,9 @@ public class StaticRecipesLoader(
         logger.LogInformation("Loading Static Recipes");
         foreach (var recipeSummary in await readRepo.GetRecipeSummaries())
         {
-            await persistRepo.SaveRecipeSummaryOnly(recipeSummary, cancellationToken);
-            await persistRepo.SaveRecipeOnly(await readRepo.GetRecipe(recipeSummary.Guid), cancellationToken);
+            var recipe = await readRepo.GetRecipe(recipeSummary.Guid);
+            await saveRepo.SaveRecipe(recipe, cancellationToken);
         }
+        logger.LogInformation("Static Recipes Loaded");
     }
 }
