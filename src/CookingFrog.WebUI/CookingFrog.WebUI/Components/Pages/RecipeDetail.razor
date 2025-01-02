@@ -3,8 +3,6 @@
 @attribute [StreamRendering]
 @rendermode InteractiveServer
 
-<PageTitle>Cooking Frog - @Recipe.Summary</PageTitle>
-
 @if(Recipe == null)
 {
     <div class="alert alert-info" role="alert">
@@ -13,6 +11,7 @@
 }
 else
 {
+    <PageTitle>Cooking Frog - @Recipe.Summary</PageTitle>
     <div class="container" b>
         <div class="row gy-2 g-2">
             <div class="col-sm-12">
