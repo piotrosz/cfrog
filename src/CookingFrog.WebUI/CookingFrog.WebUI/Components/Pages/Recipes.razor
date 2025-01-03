@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Components.QuickGrid
 @inject IRecipesReadRepo RecipesRepo
 @attribute [StreamRendering]
 
@@ -15,21 +16,15 @@
         }
         else
         {
-            <div class="card" >
-                <div class="card-header">
-                    <h2>Przepisy</h2>
-                </div>
-                <ul class="list-group list-group-flush">
-                    @foreach (var recipe in _recipes)
-                    {
-                        <li class="list-group-item">
-                            <NavLink class="nav-link" href="@("recipe/" + recipe.Guid)">
-                                @recipe.Summary
-                            </NavLink>
-                        </li>
-                    }
-                </ul>
-            </div>
+            <QuickGrid 
+                Items="_recipes" 
+                Class="table table-dark table-striped">
+                <TemplateColumn Context="summary">
+                    <NavLink class="nav-link" href="@("recipe/" + summary.Guid)">
+                        @summary.Summary
+                    </NavLink>
+                </TemplateColumn>
+            </QuickGrid>
         }
     </Authorized>
 </AuthorizeView>

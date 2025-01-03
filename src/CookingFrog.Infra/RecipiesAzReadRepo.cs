@@ -1,4 +1,3 @@
-using Azure;
 using Azure.Data.Tables;
 using CookingFrog.Domain;
 
