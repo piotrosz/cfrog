@@ -17,8 +17,8 @@ public static class IngredientParser
             return ParseResult<Ingredient>.Error("Ingredient must contain 'name' and 'amount' divided by semicolon.");
         }
         
-        var name = parts[0].Trim();
-        var quantity = QuantityParser.Parse(parts[1].Trim());
+        var name = parts[1].Trim();
+        var quantity = QuantityParser.Parse(parts[0].Trim());
         
         return !quantity.IsSuccess ? 
             ParseResult<Ingredient>.Error(quantity.ErrorDescription!) : 

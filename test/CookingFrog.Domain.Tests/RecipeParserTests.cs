@@ -6,41 +6,25 @@ namespace CookingFrog.Domain.Tests;
 public class RecipeParserTests
 {
     [Fact]
-    public void TestParseSuccessSimple()
-    {
-        var result = RecipeParser.Parse(
-            "1:30", 
-            "Nazwa",
-            "cos;5 gram\n jakaś rzecz ;1 teaspoon\nsól ;1 handful",
-            "zrób to\nzrób tamto");
-
-        var recipe = result.Result;
-
-        recipe.Summary.Should().Be("Nazwa");
-        recipe.Ingredients.Should().HaveCount(3);
-        recipe.Steps.Should().HaveCount(2);
-    }
-
-    [Fact]
     public void TestParseComplexRecipeSuccess()
     {
         var result = RecipeParser.Parse(
         "1:00",
         "🍲 Zupa z soczewicy",
         """
-        oliwa;2 spoon
-        cebula;1
-        czosnek;2 clove
-        marchewka;1
-        ziemniaki;3
-        czerwona soczewica;50 g
-        bulion drobiowy lub warzywny lub rosół; 750 ml
-        kurkuma; 1 teaspoon 
-        papryka w proszku; 1 teaspoon
-        ostra papryka; Handful
-        krojone pomidory; 1 can
-        posiekany koperek; 1 spoon
-        śmietanka  30% lub 18%; 0.3 glass
+        2 spoon; oliwa
+        1; cebula
+        2 clove;czosnek
+        1;marchewka
+        3;ziemniaki
+        50 g;czerwona soczewica
+        750 ml;bulion drobiowy lub warzywny lub rosół
+        1 teaspoon;kurkuma
+        1 teaspoon;papryka w proszku
+        Handful;ostra papryka
+        1 can;krojone pomidory
+        1 spoon; posiekany koperek
+        0.3 glass; śmietanka  30% lub 18%
 """,
          """
          W garnku na oliwie zeszklić pokrojoną w kosteczkę cebulę. 
@@ -62,17 +46,17 @@ public class RecipeParserTests
             "1:00",
             "🥗 Sałatka na ciepło z makaronem orzo, warzywami oraz fetą",
             """
-            makaron orzo;1 szklanka
-            oliwa; 2 łyżki
-            mała cukinia; 1
-            czerwona papryka; 1
-            żółta papryka; 1
-            czerwona cebula; 1
-            🧄czosnek;1 ząbek
-            biały ocet winny; 1 łyżka
-            🍅pomidory koktajlowe; 150 g
-            bazylia;
-            feta; 100 g 
+            1 szklanka;makaron orzo
+            2 łyżki;oliwa
+            1;mała cukinia
+            1;czerwona papryka
+            1;żółta papryka
+            1;czerwona cebula
+            1 ząbek; 🧄czosnek
+            1 łyżka;biały ocet winny
+            150 g;🍅pomidory koktajlowe
+            ;bazylia
+            100 g;feta  
             """,
             """
             Makaron wsypać na osolony wrzątek i gotować al dente, przez ok. 12 minut. Odcedzić, włożyć z powrotem do garnka, wymieszać z 1 łyżką oliwy.
@@ -92,15 +76,15 @@ public class RecipeParserTests
             "1:00",
             "🥘 Leczo",
             """
-            smalec;2 łyżki
-            cebula;2
-            kiełbasy (np. wiejskiej, podsuszanej); 200 g
-            czosnek;2 ząbki
-            papryka (np. żółta, czerwona, zielona);3
-            słodka papryka w proszku; 2 łyżeczki
-            sól i świeżo zmielony pieprz;
-            ostra papryka w proszku; 0.5 łyżeczki 
-            przecier pomidorowy - passata z butelki lub kartonu; 500 ml 
+            2 łyżki;smalec
+            2;cebula
+            200 g;kiełbasy (np. wiejskiej, podsuszanej)
+            2 ząbki;czosnek
+            3;papryka (np. żółta, czerwona, zielona)
+            2 łyżeczki;słodka papryka w proszku
+            ;sól i świeżo zmielony pieprz
+            0.5 łyżeczki;ostra papryka w proszku 
+            500 ml; przecier pomidorowy - passata z butelki lub kartonu 
             """,
             """
             Do szerokiego garnka włożyć smalec, dodać pokrojoną w kosteczkę cebulę oraz pokrojoną na plasterki kiełbasę, smażyć co chwilę mieszając przez około 7 minut. Dodać starty na tarce lub rozgnieciony czosnek i smażyć jeszcze przez 3 minuty.

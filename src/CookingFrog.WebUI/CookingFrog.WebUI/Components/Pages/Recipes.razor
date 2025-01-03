@@ -7,7 +7,9 @@
 
 <AuthorizeView>
     <NotAuthorized>
-        <p>Musisz się zalogować, by zobaczyć przepisy.</p>
+        <div class="alert alert-primary" role="alert">
+            <p>Musisz się zalogować, by zobaczyć przepisy.</p>
+        </div>
     </NotAuthorized>
     <Authorized>
         @if (_recipes == null)
@@ -18,11 +20,21 @@
         {
             <QuickGrid 
                 Items="_recipes" 
-                Class="table table-dark table-striped">
+                Class="table table-borderless">
                 <TemplateColumn Context="summary">
-                    <NavLink class="nav-link" href="@("recipe/" + summary.Guid)">
-                        @summary.Summary
-                    </NavLink>
+
+                    <div class="card text-dark bg-light mb-3">
+                    <div class="card-header">
+                        <NavLink class="nav-link" href="@("recipe/" + summary.Guid)">
+                            @summary.Summary
+                        </NavLink>
+                    </div>
+                        @* <div class="card-body"> *@
+                        @*     <h5 class="card-title">I</h5> *@
+                        @*     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> *@
+                        @* </div> *@
+                    </div>
+                    
                 </TemplateColumn>
             </QuickGrid>
         }
