@@ -3,12 +3,13 @@ using CookingFrog.Domain;
 namespace CookingFrog.WebUI.Components.Models;
 
 public record IngredientUpdateModel(
+    int Index,
     string Name, 
     decimal Quantity, 
     UnitEnum Unit, 
     string? GroupName)
 {
-    public int Index { get; set; }
+    public int Index { get; set; } = Index;
     
     public decimal Quantity { get; set; } = Quantity;
     

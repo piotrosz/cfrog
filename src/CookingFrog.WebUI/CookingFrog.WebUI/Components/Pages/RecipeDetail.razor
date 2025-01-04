@@ -19,11 +19,14 @@ else
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Składniki</h5>
+                            @{ var ingredientIndex = 0; }
                             @foreach (var ingredient in Recipe.Ingredients)
                             {
                                 <IngredientEdit 
+                                    Index="ingredientIndex"
                                     Ingredient="ingredient" 
                                     UpdateClicked="UpdateIngredient"/>
+                                { ingredientIndex++; }
                             }
                     </div>
                 </div>

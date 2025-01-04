@@ -1,3 +1,3 @@
 namespace CookingFrog.WebUI.Components.Models;
 
-public record StepUpdateModel(string Description, int StepIndex);
+public record StepUpdateModel(string Description, int Index);

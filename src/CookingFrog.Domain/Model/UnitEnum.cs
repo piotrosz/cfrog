@@ -25,5 +25,7 @@ public enum UnitEnum
     [Display(Description = "ząbek")]
     Clove,
     [Display(Description = "puszka")]
-    Can
+    Can,
+    [Display(Description = "kawałek")]
+    Piece
 }

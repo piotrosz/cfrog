@@ -39,7 +39,7 @@ public partial class RecipeDetail
         if (Recipe is not null)
         {
             await RecipesUpdateRepo!.UpdateStep(
-                stepModel.StepIndex, 
+                stepModel.Index, 
                 stepModel.Description, 
                 Recipe.Guid, 
                 CancellationToken.None);
@@ -51,9 +51,16 @@ public partial class RecipeDetail
     {
         if (Recipe is not null)
         {
+            var ingredient = new Ingredient(
+                ingredientModel.Name,
+                new Quantity(ingredientModel.Quantity, ingredientModel.Unit))
+            {
+                GroupName = ingredientModel.GroupName
+            };
+            
             await RecipesUpdateRepo!.UpdateIngredient(
                 ingredientModel.Index, 
-                new Ingredient(ingredientModel.Name, new Quantity(ingredientModel.Quantity, ingredientModel.Unit)), 
+                ingredient, 
                 Recipe.Guid, 
                 CancellationToken.None);
             Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
