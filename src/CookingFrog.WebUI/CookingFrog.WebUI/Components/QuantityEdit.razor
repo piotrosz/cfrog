@@ -1,9 +1,8 @@
-
 <div class="mb-3">
     <InputNumber 
         class="form-control form-control-sm" 
-        @bind-value="_updatedQuantity" 
-         @onchange="@(async () =>
+        @bind-value="_updatedQuantity"
+        @onchange="@(async () =>
         {
             await UpdateClicked.InvokeAsync(_updatedQuantity);
         })" />
@@ -25,5 +24,4 @@
             _updatedQuantity = Quantity.Value;
         }
     }
-
 }

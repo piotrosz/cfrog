@@ -1,10 +1,10 @@
-<InputSelect 
-    @bind-Value="_selectedValue" 
-    class="form-select form-select-sm" 
-    @onchange="@(async () =>
-    {
-        await UpdateClicked.InvokeAsync(_selectedValue);
-    })">
+<InputSelect
+    class="form-select form-select-sm"
+    TValue="UnitEnum"
+    ValueExpression="() => _selectedValue"
+    Value="_selectedValue"
+    ValueChanged="@(async (UnitEnum unit) => await PassValue(unit))">
+>
     @foreach (var option in _unitOptions)
     {
         <option value="@option.Value">@option.Description</option>
@@ -20,12 +20,18 @@
     [Parameter] 
     public EventCallback<UnitEnum> UpdateClicked { get; set; }
     
+    private async Task PassValue(UnitEnum value)
+    {
+        await UpdateClicked.InvokeAsync(value);
+        _selectedValue = value;
+    }
+    
     private IReadOnlyList<UnitOption> _unitOptions = new List<UnitOption>();
 
     protected override void OnInitialized()
     {
-        _selectedValue = Unit;
         FillUnitOptions();
+        _selectedValue = Unit;
     }
 
     private void FillUnitOptions()
