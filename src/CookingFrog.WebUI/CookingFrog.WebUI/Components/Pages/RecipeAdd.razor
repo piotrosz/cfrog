@@ -23,7 +23,7 @@
                         placeholder=""
                         maxlength="400"
                         @bind-Value="Model!.Title"/>
-                    <ValidationMessage For="() => Model.Title"></ValidationMessage>
+                    <ValidationMessage For="() => Model.Title"/>
                 </div>
                 <div class="mb-3">
                     <label
@@ -61,7 +61,10 @@
                         @bind-Value="Model!.Steps"/>
                     <ValidationMessage For="() => Model.Steps"/>
                 </div>
-                <button type="submit" class="btn btn-primary">Zapisz</button>
+                <button 
+                    type="submit" 
+                    class="btn btn-primary">Zapisz
+                    </button>
                 
             </EditForm>
     </Authorized>

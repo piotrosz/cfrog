@@ -14,10 +14,15 @@
                     Quantity="_updatedIngredient.Quantity" 
                     UpdateClicked="UpdateQuantity" />
             </div>
-            <div class="col col=2">
+            <div class="col col=1">
                 <UnitEdit 
                     Unit="_updatedIngredient.Unit" 
                     UpdateClicked="UpdateUnit" />
+            </div>
+            <div class="col col-1">
+                <InputText
+                    @bind-value="_updatedIngredient.GroupName"
+                    class="form-control form-control-sm" />
             </div>
             <div class="col col-4">
                 <div class="input-group mb-3">
@@ -67,16 +72,18 @@ else
     [Parameter] 
     public EventCallback<IngredientUpdateModel> UpdateClicked { get; set; }
     
-    private IngredientUpdateModel _updatedIngredient = new(string.Empty, 0, UnitEnum.Undefined);
+    private IngredientUpdateModel _updatedIngredient = new(string.Empty, 0, UnitEnum.Undefined, string.Empty);
 
     protected override void OnInitialized()
     {
         if (Ingredient != null)
         {
+            var quantity = Ingredient.Quantity; 
             _updatedIngredient = new IngredientUpdateModel(
                 Ingredient.Name,
-                Ingredient.Quantity.Value,
-                Ingredient.Quantity.Unit);
+                quantity.Value,
+                quantity.Unit,
+                Ingredient.GroupName);
         }
     }
 

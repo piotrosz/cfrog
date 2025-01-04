@@ -35,13 +35,15 @@ else
             <input class="form-check-input" type="checkbox" value="" id="step@(StepIndex)">
             <label class="form-check-label" for="step@(StepIndex)">
                 @Description
+            
+    <button type="button"
+            class="btn btn-sm"
+            @onclick="Edit">
+        🖊️
+    </button>
             </label>
+
         </div>
-        <button type="button"
-                class="btn btn-sm"
-                @onclick="Edit">
-            🖊️
-        </button>
     </div>
     
 }

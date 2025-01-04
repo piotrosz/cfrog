@@ -18,6 +18,8 @@ public class RecipeTableEntity : ITableEntity
     public required string SerializedSteps { get; set; }
 
     public required string Summary { get; set; }
+
+    public string? Notes { get; set; }
     
     public TimeSpan TimeToPrepare { get; init; }
 }

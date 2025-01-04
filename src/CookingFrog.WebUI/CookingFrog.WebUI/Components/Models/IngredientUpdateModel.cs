@@ -2,7 +2,11 @@ using CookingFrog.Domain;
 
 namespace CookingFrog.WebUI.Components.Models;
 
-public record IngredientUpdateModel(string Name, decimal Quantity, UnitEnum Unit)
+public record IngredientUpdateModel(
+    string Name, 
+    decimal Quantity, 
+    UnitEnum Unit, 
+    string? GroupName)
 {
     public int Index { get; set; }
     
@@ -11,4 +15,6 @@ public record IngredientUpdateModel(string Name, decimal Quantity, UnitEnum Unit
     public string Name { get; set; } = Name;
     
     public UnitEnum Unit { get; set; } = Unit;
+
+    public string? GroupName { get; set; } = GroupName;
 }

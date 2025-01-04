@@ -94,4 +94,20 @@ public class RecipeParserTests
         
         result.IsSuccess.Should().BeTrue();
     }
+    
+    [Fact]
+    public void TestParseComplexRecipeSuccess4()
+    {
+        var result = RecipeParser.Parse(
+            "1:00",
+            "",
+            """
+             xx
+            """,
+            """
+            xx
+            """);
+        
+        result.IsSuccess.Should().BeTrue();
+    }
 }

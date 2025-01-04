@@ -100,7 +100,7 @@ public partial class RecipeAdd
         public string Title { get; set; } = "";
 
         [Required]
-        public string Ingredients { get; set; } = "mąka; 0.5 kg\r\ncebula; 1";
+        public string Ingredients { get; set; } = "0.5 kg; mąka \r\n1; cebula";
 
         [Required]
         public string Steps { get; set; } = "Każdy krok w nowej linii.";
