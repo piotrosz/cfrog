@@ -15,15 +15,28 @@
             class="btn btn-sm"
             @onclick="@(async () =>
                       {
-                          await UpdateClicked.InvokeAsync(new StepUpdateModel(_editedStep, StepIndex));
+                          await UpdateClicked.InvokeAsync(new StepUpdateModel(_editedStep, Index));
                           _isEdit = false;
-                      })">
+                      })"
+            title="zapisz">
             ✅
         </button>
         <button
             type="button"
             class="btn btn-sm"
-            @onclick="@(() => { _isEdit = false; })">
+            @onclick="@(async () =>
+                      {
+                          await DeleteClicked.InvokeAsync(Index);
+                          _isEdit = false;
+                      })"
+            title="usuń">
+            🗑️
+        </button>
+        <button
+            type="button"
+            class="btn btn-sm"
+            @onclick="@(() => { _isEdit = false; })"
+            title="anuluj">
             ❌
         </button>
     </div>
@@ -32,8 +45,8 @@ else
 {
     <div class="input-group mb-3">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="step@(StepIndex)">
-            <label class="form-check-label" for="step@(StepIndex)">
+            <input class="form-check-input" type="checkbox" value="" id="step@(Index)">
+            <label class="form-check-label" for="step@(Index)">
                 @Description
             
     <button type="button"
@@ -51,13 +64,16 @@ else
 
 @code {
     [Parameter]
-    public int StepIndex { get; set; }
+    public int Index { get; set; }
 
     [Parameter] 
     public string Description { get; set; } = string.Empty;
 
     [Parameter] 
     public EventCallback<StepUpdateModel> UpdateClicked { get; set; }
+    
+    [Parameter]
+    public EventCallback<int> DeleteClicked { get; set; }
     
     private bool _isEdit;
 

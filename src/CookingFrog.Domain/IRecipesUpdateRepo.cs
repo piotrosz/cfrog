@@ -12,5 +12,9 @@ public interface IRecipesUpdateRepo
 
     Task AddIngredient(Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken);
     
+    Task DeleteIngredient(int index, Guid recipeGuid, CancellationToken cancellationToken);
     
+    Task AddStep(Step step, Guid recipeGuid, CancellationToken cancellationToken);
+    
+    Task DeleteStep(int index, Guid recipeGuid, CancellationToken cancellationToken);
 }

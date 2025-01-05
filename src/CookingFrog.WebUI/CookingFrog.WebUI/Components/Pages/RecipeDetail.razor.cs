@@ -66,4 +66,28 @@ public partial class RecipeDetail
             Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
         }
     }
+
+    private async Task DeleteIngredient(int index)
+    {
+        if (Recipe is not null)
+        {
+            await RecipesUpdateRepo!.DeleteIngredient(
+                index, 
+                Recipe.Guid, 
+                CancellationToken.None);
+            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+        }
+    }
+
+    private async Task DeleteStep(int index)
+    {
+        if (Recipe is not null)
+        {
+            await RecipesUpdateRepo!.DeleteStep(
+                index, 
+                Recipe.Guid, 
+                CancellationToken.None);
+            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+        }
+    }
 }

@@ -46,7 +46,7 @@ internal class RecipesAzUpdateRepo(TableServiceClient tableServiceClient) : IRec
         
         steps[stepIndex] = description;
         entity.SerializedSteps = JsonSerializer.Serialize(steps);
-        await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
+        await Save(cancellationToken, tableClient, entity);
     }
     
     public async Task AddIngredient(Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
@@ -56,9 +56,39 @@ internal class RecipesAzUpdateRepo(TableServiceClient tableServiceClient) : IRec
         var ingredients = GetIngredients(entity);
         ingredients.Add(ingredient);
         entity.SerializedIngredients = JsonSerializer.Serialize(ingredients);
-        await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
+        await Save(cancellationToken, tableClient, entity);
     }
     
+    public Task DeleteIngredient(int index, Guid recipeGuid, CancellationToken cancellationToken)
+    {
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
+        var entity = GetRecipe(recipeGuid, cancellationToken, tableClient);
+        var ingredients = GetIngredients(entity);
+        ingredients.RemoveAt(index);
+        entity.SerializedIngredients = JsonSerializer.Serialize(ingredients);
+        return Save(cancellationToken, tableClient, entity);
+    }
+
+    public Task AddStep(Step step, Guid recipeGuid, CancellationToken cancellationToken)
+    {
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
+        var entity = GetRecipe(recipeGuid, cancellationToken, tableClient);
+        var steps = GetSteps(entity);
+        steps.Add(step);
+        entity.SerializedSteps = JsonSerializer.Serialize(steps);
+        return Save(cancellationToken, tableClient, entity);
+    }
+
+    public Task DeleteStep(int index, Guid recipeGuid, CancellationToken cancellationToken)
+    {
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
+        var entity = GetRecipe(recipeGuid, cancellationToken, tableClient);
+        var steps = GetSteps(entity);
+        steps.RemoveAt(index);
+        entity.SerializedSteps = JsonSerializer.Serialize(steps);
+        return Save(cancellationToken, tableClient, entity);
+    }
+
     private static List<Step> GetSteps(RecipeTableEntity entity)
     {
         var steps = JsonSerializer.Deserialize<List<Step>>(entity.SerializedSteps);
@@ -114,6 +144,11 @@ internal class RecipesAzUpdateRepo(TableServiceClient tableServiceClient) : IRec
         var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
         var entity = GetRecipe(recipeGuid, cancellationToken, tableClient);
         entity.Summary = newTitle;
+        await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
+    }
+    
+    private static async Task Save(CancellationToken cancellationToken, TableClient tableClient, RecipeTableEntity entity)
+    {
         await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
     }
 }

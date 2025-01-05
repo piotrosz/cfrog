@@ -33,13 +33,26 @@
                                   {
                                       await UpdateClicked.InvokeAsync(_updatedIngredient);
                                       _isEdit = false;
-                                  })">
+                                  })"
+                        title="zapisz">
                         ✅
                     </button>
                     <button
                         type="button"
                         class="btn btn-sm"
-                        @onclick="@(() => { _isEdit = false; })">
+                        @onclick="@(async () =>
+                                  {
+                                      await DeleteClicked.InvokeAsync(Index);
+                                      _isEdit = false;
+                                  })"
+                        title="usuń">
+                        🗑️
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-sm"
+                        @onclick="@(() => { _isEdit = false; })" 
+                        title="anuluj">
                         ❌
                     </button>
                 </div>      
@@ -74,6 +87,9 @@ else
     
     [Parameter] 
     public EventCallback<IngredientUpdateModel> UpdateClicked { get; set; }
+    
+    [Parameter]
+    public EventCallback<int> DeleteClicked { get; set; }
     
     private IngredientUpdateModel _updatedIngredient = new(-1,string.Empty, 0, UnitEnum.Undefined, string.Empty);
 
