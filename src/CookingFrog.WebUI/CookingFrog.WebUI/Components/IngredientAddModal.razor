@@ -1,30 +1,57 @@
-
-@if (IsVisible)
-{
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
-    
-    <div class="modal fade" tabindex="-1" id="exampleModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+@using CookingFrog.WebUI.Components.Models
+<div class="modal fade" tabindex="-1" id="addIngredientModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Dodaj składnik</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label for="nazwa" class="form-label">Nazwa</label>
+                    <InputText
+                        @bind-value="_newIngredient.Name"
+                        class="form-control form-control-sm"/>
+                </div>
+                <div class="mb-3">
+                    <label for="unit" class="form-label">Jednostka</label>
+                    <UnitEdit
+                        Unit="_newIngredient.Unit"
+                        UpdateClicked="UpdateUnit"/>
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Ilość</label>
+                    <QuantityEdit
+                        Quantity="_newIngredient.Quantity"
+                        UpdateClicked="UpdateQuantity"/>
+                </div>
+                </form>
+            </div>
+                
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+            <button type="button" class="btn btn-primary">Zapisz</button>
         </div>
     </div>
-}
+</div>
 
 @code {
-    [Parameter]
-    public bool IsVisible { get; set; }
+    private IngredientAddModel _newIngredient = new(string.Empty, 0, UnitEnum.Undefined);
+
+    private void UpdateUnit(UnitEnum unit)
+    {
+        _newIngredient.Unit = unit;
+    }
+
+    private void UpdateQuantity(decimal quantity)
+    {
+        _newIngredient.Quantity = quantity;
+    }
+    
+    protected override void OnInitialized()
+    {
+    }
+
 }

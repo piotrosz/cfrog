@@ -38,7 +38,9 @@ else
             </div>
         </div>
         <div class="row gy-2 g-2">
-            <button class="btn btn-sm btn-toolbar">➕</button>
+            <button class="btn btn-sm btn-toolbar" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#addIngredientModal">➕</button>
         </div>
         <div class="row gy-2 g-2">
             <div class="col-sm-12">
@@ -66,5 +68,5 @@ else
         </div>
     </div>
     
-    <IngredientAddModal IsVisible="true"/>
+    <IngredientAddModal />
 }
