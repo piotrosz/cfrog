@@ -90,4 +90,18 @@ public partial class RecipeDetail
             Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
         }
     }
+
+    private async Task AddIngredient(IngredientAddModel ingredientModel)
+    {
+        if (Recipe is not null)
+        {
+            await RecipesUpdateRepo!.AddIngredient(new Ingredient(
+                ingredientModel.Name, 
+                new Quantity(ingredientModel.Quantity, ingredientModel.Unit)),
+                Recipe.Guid,
+                CancellationToken.None);
+            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+        }
+        
+    }
 }

@@ -1,4 +1,6 @@
 @using CookingFrog.WebUI.Components.Models
+
+
 <div class="modal fade" tabindex="-1" id="addIngredientModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -8,38 +10,42 @@
             </div>
             <div class="modal-body">
                 <form>
-                <div class="mb-3">
-                    <label for="nazwa" class="form-label">Nazwa</label>
-                    <InputText
-                        @bind-value="_newIngredient.Name"
-                        class="form-control form-control-sm"/>
-                </div>
-                <div class="mb-3">
-                    <label for="unit" class="form-label">Jednostka</label>
-                    <UnitEdit
-                        Unit="_newIngredient.Unit"
-                        UpdateClicked="UpdateUnit"/>
-                </div>
-                <div class="mb-3">
-                    <label for="quantity" class="form-label">Ilość</label>
-                    <QuantityEdit
-                        Quantity="_newIngredient.Quantity"
-                        UpdateClicked="UpdateQuantity"/>
-                </div>
+                    <div class="mb-3">
+                        <label for="nazwa" class="form-label">Nazwa</label>
+                        <InputText
+                            @bind-value="_newIngredient.Name"
+                            class="form-control form-control-sm"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="unit" class="form-label">Jednostka</label>
+                        <UnitEdit
+                            Unit="_newIngredient.Unit"
+                            UpdateClicked="UpdateUnit"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Ilość</label>
+                        <QuantityEdit
+                            Quantity="_newIngredient.Quantity"
+                            UpdateClicked="UpdateQuantity"/>
+                    </div>
                 </form>
             </div>
-                
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-            <button type="button" class="btn btn-primary">Zapisz</button>
-        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                <button type="button" 
+                        class="btn btn-primary" 
+                        @onclick="@(async () => await AddClicked.InvokeAsync(_newIngredient))">Zapisz</button>
+            </div>
+        </div>    
     </div>
 </div>
 
 @code {
     private IngredientAddModel _newIngredient = new(string.Empty, 0, UnitEnum.Undefined);
 
+    [Parameter]
+    public EventCallback<IngredientAddModel> AddClicked { get; set; }
+    
     private void UpdateUnit(UnitEnum unit)
     {
         _newIngredient.Unit = unit;
