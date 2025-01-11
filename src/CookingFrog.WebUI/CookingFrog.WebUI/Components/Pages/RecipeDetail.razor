@@ -3,23 +3,6 @@
 @attribute [StreamRendering]
 @rendermode InteractiveServer
 
-<script type="text/javascript">
-    let myModal;
-
-    window.showAddIngredientBootstrapModal = () => {
-        let divModal = document.getElementById('addIngredientModal');
-        myModal = new bootstrap.Modal(divModal);
-        myModal.show();
-    }
-
-    window.closeAddIngredientBootstrapModal = () => {
-        if (myModal != undefined) {
-            myModal.hide();
-        }
-    }
-
-</script>
-
 @if(Recipe == null)
 {
     <div class="alert alert-info" role="alert">
@@ -83,7 +66,13 @@ else
                 </div>
             </div>
         </div>
+        <div class="row gy-2 g-2">
+            <button class="btn btn-sm btn-toolbar"
+                    data-bs-toggle="modal"
+                    @onclick="ShowAddStepModal">➕</button>
+        </div>
     </div>
     
     <IngredientAddModal AddClicked="AddIngredient"/>
+    <StepAddModal AddClicked="AddStep"/>
 }

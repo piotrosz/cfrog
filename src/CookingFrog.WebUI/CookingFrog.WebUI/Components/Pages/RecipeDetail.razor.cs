@@ -112,4 +112,21 @@ public partial class RecipeDetail
             Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
         }
     }
+
+    private async Task ShowAddStepModal()
+    {
+        await JsRuntime.InvokeVoidAsync("showAddStepBootstrapModal");
+    }
+    
+    private async Task AddStep(string step)
+    {
+        if (Recipe is not null)
+        {
+            await RecipesUpdateRepo!.AddStep(
+                new Step(step), 
+                Recipe.Guid, 
+                CancellationToken.None);
+            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+        }
+    }
 }

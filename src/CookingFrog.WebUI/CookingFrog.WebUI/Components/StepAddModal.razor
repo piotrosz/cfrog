@@ -1,0 +1,42 @@
+<div class="modal fade" tabindex="-1" id="addStepModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Dodaj krok</h5>
+                <button type="button" class="btn-close" 
+                        data-bs-dismiss="modal" 
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <InputTextArea
+                            @bind-value="_step"
+                            class="form-control form-control-sm"
+                            rows="6"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                <button type="button" 
+                        class="btn btn-primary" 
+                        @onclick="@(async () =>
+                                  {
+                                      await JsRuntime.InvokeVoidAsync("closeAddStepBootstrapModal");
+                                      await AddClicked.InvokeAsync(_step);
+                                  })">Zapisz</button>
+            </div>
+        </div>    
+    </div>
+</div>
+
+@code {
+    [Inject] 
+    public required IJSRuntime JsRuntime { get; set; }
+
+    private string _step = string.Empty;
+
+    [Parameter]
+    public EventCallback<string> AddClicked { get; set; }
+}
