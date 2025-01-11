@@ -34,13 +34,20 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
                 <button type="button" 
                         class="btn btn-primary" 
-                        @onclick="@(async () => await AddClicked.InvokeAsync(_newIngredient))">Zapisz</button>
+                        @onclick="@(async () =>
+                                  {
+                                      await JsRuntime.InvokeVoidAsync("closeAddIngredientBootstrapModal");
+                                      await AddClicked.InvokeAsync(_newIngredient);
+                                  })">Zapisz</button>
             </div>
         </div>    
     </div>
 </div>
 
 @code {
+    [Inject] 
+    public required IJSRuntime JsRuntime { get; set; }
+    
     private IngredientAddModel _newIngredient = new(string.Empty, 0, UnitEnum.Undefined);
 
     [Parameter]

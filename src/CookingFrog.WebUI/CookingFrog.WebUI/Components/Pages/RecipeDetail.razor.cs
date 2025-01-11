@@ -1,6 +1,7 @@
 ﻿using CookingFrog.Domain;
 using CookingFrog.WebUI.Components.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace CookingFrog.WebUI.Components.Pages;
 
@@ -11,6 +12,9 @@ public partial class RecipeDetail
         
     [Inject]
     public IRecipesUpdateRepo? RecipesUpdateRepo { get; set; }
+    
+    [Inject] 
+    public required IJSRuntime JsRuntime { get; set; }
     
     private Recipe? Recipe { get; set; }
 
@@ -91,6 +95,11 @@ public partial class RecipeDetail
         }
     }
 
+    private async Task ShowAddIngredientModal()
+    {
+        await JsRuntime.InvokeVoidAsync("showAddIngredientBootstrapModal");
+    }
+    
     private async Task AddIngredient(IngredientAddModel ingredientModel)
     {
         if (Recipe is not null)
@@ -102,6 +111,5 @@ public partial class RecipeDetail
                 CancellationToken.None);
             Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
         }
-        
     }
 }
