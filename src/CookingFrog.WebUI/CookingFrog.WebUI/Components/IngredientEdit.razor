@@ -67,7 +67,8 @@ else
             <input class="form-check-input" type="checkbox" value="" id="@Ingredient?.Name">
             <label class="form-check-label" for="@Ingredient?.Name">
                 <IngredientDisplay
-                    Ingredient="@Ingredient"/>
+                    Ingredient="@Ingredient" 
+                    GroupIndex="GroupIndex"/>
             </label>
         </div>
         <button type="button"
@@ -84,6 +85,9 @@ else
     
     [Parameter]
     public int Index { get; set; }
+    
+    [Parameter]
+    public int GroupIndex { get; set; }
     
     [Parameter] 
     public EventCallback<IngredientUpdateModel> UpdateClicked { get; set; }

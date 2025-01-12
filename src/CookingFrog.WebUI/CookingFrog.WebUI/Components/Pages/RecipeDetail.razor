@@ -21,17 +21,23 @@ else
                         <h5 class="card-title">Składniki</h5>
                     </div>
                     <div class="card-body">
-                        @{ var ingredientIndex = 0; }
-                        @foreach (var ingredient in Recipe.Ingredients)
+                        @{ var ingredientIndex = 0;
+                           var groupIndex = 0; }
+                        @foreach (var ingredientGroup in Recipe.IngredientsGrouped)
                         {
-                            <IngredientEdit
-                                Index="ingredientIndex"
-                                Ingredient="ingredient"
-                                UpdateClicked="UpdateIngredient"
-                                DeleteClicked="DeleteIngredient"/>
+                            foreach (var ingredient in ingredientGroup)
                             {
-                                ingredientIndex++;
+                                <IngredientEdit
+                                    Index="ingredientIndex"
+                                    Ingredient="ingredient"
+                                    GroupIndex="groupIndex"
+                                    UpdateClicked="UpdateIngredient"
+                                    DeleteClicked="DeleteIngredient"/>
+                                {
+                                    ingredientIndex++;
+                                }    
                             }
+                            groupIndex++;
                         }
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 @if (Ingredient.GroupName != null)
 {
-    <span class="badge rounded-pill bg-info align-content-end">@Ingredient.GroupName</span>
+    <span class="badge rounded-pill @_styles[GroupIndex] align-content-end">@Ingredient.GroupName</span>
     <text>&nbsp;</text>
 }
 
@@ -10,6 +10,11 @@
 
 @code
 {
+    private List<string> _styles = ["bg-info", "bg-danger", "bg-warning text-dark", "bg-info text-dark", "bg-success"];
+    
     [Parameter] 
     public required Ingredient Ingredient { get; set; }
+    
+    [Parameter]
+    public int GroupIndex { get; set; }
 }
