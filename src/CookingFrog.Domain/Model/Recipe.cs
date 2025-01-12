@@ -17,7 +17,7 @@ public sealed class Recipe(
 
     public TimeSpan TimeToPrepare { get; } = timeToPrepare;
 
-    public string Notes { get; set; } = string.Empty;
+    public string Link { get; set; } = string.Empty;
     
     public static Recipe Create(
         Guid guid,

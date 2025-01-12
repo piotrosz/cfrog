@@ -44,16 +44,31 @@
 else
 {
     <div class="input-group mb-3">
+        
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="step@(Index)">
             <label class="form-check-label" for="step@(Index)">
-                @Description
-            
-    <button type="button"
-            class="btn btn-sm"
-            @onclick="Edit">
-        🖊️
-    </button>
+                @if (Description.StartsWith("[stage]", StringComparison.OrdinalIgnoreCase))
+                {
+                    <p class="h5">@Description.Substring(7) 
+                        <button type="button"
+                                class="btn btn-sm"
+                                @onclick="Edit">
+                            🖊️
+                        </button>
+                    </p>
+                }
+                else
+                {
+                    <span>@Description</span>
+                    <button type="button"
+                            class="btn btn-sm"
+                            @onclick="Edit">
+                        🖊️
+                    </button>
+                }
+
+                
             </label>
 
         </div>
