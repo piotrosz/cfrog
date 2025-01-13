@@ -1,3 +1,4 @@
+@using CookingFrog.WebUI.Components.Models
 <div class="modal fade" tabindex="-1" id="addStepModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -15,17 +16,32 @@
                             class="form-control form-control-sm"
                             rows="6"/>
                     </div>
+                    <div class="mb-3">
+                        <InputNumber
+                            class="form-control form-control-sm"
+                            TValue="int?"
+                            Value="_index"
+                            
+                            ValueExpression="() => _index"
+                            ValueChanged="value => { ChangeValue(value); }" />
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-                <button type="button" 
-                        class="btn btn-primary" 
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Zamknij
+                </button>
+                <button type="button"
+                        class="btn btn-primary"
                         @onclick="@(async () =>
                                   {
                                       await JsRuntime.InvokeVoidAsync("closeAddStepBootstrapModal");
-                                      await AddClicked.InvokeAsync(_step);
-                                  })">Zapisz</button>
+                                      await AddClicked.InvokeAsync(new AddStepModel(_index, _step));
+                                  })">
+                    Zapisz
+                </button>
             </div>
         </div>    
     </div>
@@ -37,6 +53,13 @@
 
     private string _step = string.Empty;
 
+    private int? _index = null;
+
+    private void ChangeValue(int? value)
+    {
+        _index = value;
+    }
+    
     [Parameter]
-    public EventCallback<string> AddClicked { get; set; }
+    public EventCallback<AddStepModel> AddClicked { get; set; }
 }

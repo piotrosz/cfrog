@@ -69,12 +69,21 @@ internal class RecipesAzUpdateRepo(TableServiceClient tableServiceClient) : IRec
         return Save(cancellationToken, tableClient, entity);
     }
 
-    public Task AddStep(Step step, Guid recipeGuid, CancellationToken cancellationToken)
+    public Task AddStep(int? index, Step step, Guid recipeGuid, CancellationToken cancellationToken)
     {
         var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
         var entity = GetRecipe(recipeGuid, cancellationToken, tableClient);
         var steps = GetSteps(entity);
-        steps.Add(step);
+        
+        if(index != null && index < steps.Count && index >= 0)
+        {
+            steps.Insert(index.Value, step); 
+        }
+        else
+        {
+            steps.Add(step);
+        }
+        
         entity.SerializedSteps = JsonSerializer.Serialize(steps);
         return Save(cancellationToken, tableClient, entity);
     }

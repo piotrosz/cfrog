@@ -118,12 +118,13 @@ public partial class RecipeDetail
         await JsRuntime.InvokeVoidAsync("showAddStepBootstrapModal");
     }
     
-    private async Task AddStep(string step)
+    private async Task AddStep(AddStepModel step)
     {
         if (Recipe is not null)
         {
             await RecipesUpdateRepo!.AddStep(
-                new Step(step), 
+                step.Index,
+                new Step(step.Step), 
                 Recipe.Guid, 
                 CancellationToken.None);
             Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
