@@ -118,8 +118,8 @@ internal class RecipesAzUpdateRepo(TableServiceClient tableServiceClient) : IRec
         {
             throw new Exception("Cannot deserialize ingredients.");
         }
-
-        return ingredients;
+        
+        return ingredients.OrderBy(i => i.GroupName).ToList();
     }
     
     private static RecipeTableEntity GetRecipe(Guid recipeGuid, CancellationToken cancellationToken, TableClient tableClient)

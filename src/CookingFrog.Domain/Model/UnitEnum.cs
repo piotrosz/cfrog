@@ -27,5 +27,7 @@ public enum UnitEnum
     [Display(Description = "puszka")]
     Can,
     [Display(Description = "kawałek")]
-    Piece
+    Piece,
+    [Display(Description = "cm")]
+    Cm
 }
