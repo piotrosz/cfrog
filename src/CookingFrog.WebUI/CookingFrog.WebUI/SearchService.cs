@@ -2,7 +2,7 @@ namespace CookingFrog.WebUI;
 
 public class SearchService
 {
-    public required Action<string> OnSearch { get; set; }
+    public required Func<string, Task> OnSearch { get; set; }
 
     public void NotifySearch(string searchTerm)
     {

@@ -14,8 +14,19 @@ internal sealed class RecipesAzReadRepo(TableServiceClient tableServiceClient) :
 
     public async Task<IReadOnlyList<RecipeSummary>> GetRecipeSummaries()
     {
+        return await Query("PartitionKey eq '_default'");
+    }
+
+    public async Task<IReadOnlyList<RecipeSummary>> QueryRecipeSummaries(string searchTerm)
+    {
+        return await Query($"contains(Summary,'{searchTerm}'");
+    }
+
+    private async Task<IReadOnlyList<RecipeSummary>> Query(string filter)
+    {
         var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipeSummariesTableName);
-        var queryResultsFilter = tableClient.QueryAsync<RecipeSummaryTableEntity>(filter: "PartitionKey eq '_default'");
+
+        var queryResultsFilter = tableClient.QueryAsync<RecipeSummaryTableEntity>(filter: filter);
         
         var result = new List<RecipeSummary>();
         
@@ -23,7 +34,7 @@ internal sealed class RecipesAzReadRepo(TableServiceClient tableServiceClient) :
         {
             result.Add(qEntity.Map());
         }
-
+      
         return result;
     }
 }

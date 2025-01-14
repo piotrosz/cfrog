@@ -53,10 +53,9 @@
 
             <AuthorizeView>
                 <Authorized>
-                    @context.User.Identity!.Name
+                    <span>@context.User.Identity!.Name</span>
                 </Authorized>
             </AuthorizeView>
-            @* <NavMenu /> *@
         </div>
     </div>
 </nav>
