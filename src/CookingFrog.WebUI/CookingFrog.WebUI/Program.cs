@@ -43,8 +43,6 @@ builder.Services.AddFrogStorage(
    azureStorageConfig.AccountName,
    azureStorageConfig.AccountKey);
 
-builder.Services.AddScoped<SearchService>();
-
 AddGoogleAuthentication(builder);
 AddAuthorization(builder);
 

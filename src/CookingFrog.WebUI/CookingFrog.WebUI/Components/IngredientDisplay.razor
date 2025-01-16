@@ -7,14 +7,3 @@
 <span>@Ingredient.Name</span>
 
 <QuantityDisplay quantity="@Ingredient.Quantity" />
-
-@code
-{
-    private List<string> _styles = ["bg-info", "bg-danger", "bg-warning text-dark", "bg-info text-dark", "bg-success"];
-    
-    [Parameter] 
-    public required Ingredient Ingredient { get; set; }
-    
-    [Parameter]
-    public int GroupIndex { get; set; }
-}
