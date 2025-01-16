@@ -46,20 +46,3 @@
         </div>    
     </div>
 </div>
-
-@code {
-    [Inject] 
-    public required IJSRuntime JsRuntime { get; set; }
-
-    private string _step = string.Empty;
-
-    private int? _index = null;
-
-    private void ChangeValue(int? value)
-    {
-        _index = value;
-    }
-    
-    [Parameter]
-    public EventCallback<AddStepModel> AddClicked { get; set; }
-}

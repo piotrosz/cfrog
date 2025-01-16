@@ -9,12 +9,3 @@
         @onclick="async () => { await SearchCalled.InvokeAsync(_searchTerm); }">
     Szukaj
 </button>
-
-
-@code {
-
-    private string? _searchTerm { get; set; }
-
-    [Parameter] 
-    public EventCallback<string> SearchCalled { get; set; }
-}
