@@ -1,29 +1,22 @@
-<form class="d-flex" method="post" @onsubmit="Submit" @formname="search-form">
-    <AntiforgeryToken />
-    <InputText class="form-control me-2"
-               type="search"
-               placeholder="Szukaj"
-               @bind-value="SearchTerm"
-               aria-label="Search"/>
-    <button class="btn btn-outline-success"
-            type="submit">
-        Szukaj
-    </button>
-</form>
+
+<InputText class="form-control me-2"
+           type="search"
+           placeholder="Szukaj"
+           @bind-value="SearchTerm"
+           aria-label="Search"/>
+<button class="btn btn-outline-success"
+        type="submit">
+    Szukaj
+</button>
+
 
 @code {
 
     [SupplyParameterFromForm]
     private string? SearchTerm { get; set; }
-    
-    [Inject]
-    public SearchService SearchService { get; set; }
 
-    private void Submit()
+    private void OnSearch()
     {
-        if (!string.IsNullOrWhiteSpace(SearchTerm))
-        {
-            SearchService.NotifySearch(SearchTerm); 
-        }
+        
     }
 }
