@@ -17,6 +17,11 @@ internal sealed class RecipesAzReadRepo(TableServiceClient tableServiceClient) :
         return await Query("PartitionKey eq '_default'");
     }
 
+    public async Task<IReadOnlyList<RecipeSummary>> QueryRecipeSummaries(string searchTerm)
+    {
+        return await Query($"contains(Summary,'{searchTerm}'");
+    }
+
     private async Task<IReadOnlyList<RecipeSummary>> Query(string filter)
     {
         var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipeSummariesTableName);

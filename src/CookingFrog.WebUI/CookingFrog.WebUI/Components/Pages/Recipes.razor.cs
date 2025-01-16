@@ -16,9 +16,9 @@ public partial class Recipes
     protected override async Task OnInitializedAsync()
     {
         _recipes = (await RecipesRepo.GetRecipeSummaries()).AsQueryable();
-        //SearchService.OnSearch += async searchTerm =>
-        //{
-        //    _recipes = (await RecipesRepo.QueryRecipeSummaries(searchTerm)).AsQueryable();
-        //};
+        SearchService.OnSearch += async searchTerm =>
+        {
+            _recipes = (await RecipesRepo.QueryRecipeSummaries(searchTerm)).AsQueryable();
+        };
     }
 }
