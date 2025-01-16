@@ -19,6 +19,7 @@ internal sealed class RecipesAzReadRepo(TableServiceClient tableServiceClient) :
 
     public async Task<IReadOnlyList<RecipeSummary>> QueryRecipeSummaries(string searchTerm)
     {
+        // TODO: In memory search for now
         return (await GetRecipeSummaries())
             .Where(r => r.Summary.Contains(searchTerm, StringComparison.InvariantCultureIgnoreCase)).ToList();
     }

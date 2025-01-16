@@ -14,4 +14,9 @@ public partial class Recipes
     {
         _recipes = (await RecipesRepo.GetRecipeSummaries()).AsQueryable();
     }
+
+    private async Task SearchRecipes(string searchTerm)
+    {
+        _recipes = (await RecipesRepo.QueryRecipeSummaries(searchTerm)).AsQueryable();
+    }
 }

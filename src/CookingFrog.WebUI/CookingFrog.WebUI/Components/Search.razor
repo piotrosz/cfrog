@@ -2,21 +2,19 @@
 <InputText class="form-control me-2"
            type="search"
            placeholder="Szukaj"
-           @bind-value="SearchTerm"
+           @bind-value="_searchTerm"
            aria-label="Search"/>
-<button class="btn btn-outline-success"
-        type="submit">
+<button class="btn btn-primary"
+        type="submit"
+        @onclick="async () => { await SearchCalled.InvokeAsync(_searchTerm); }">
     Szukaj
 </button>
 
 
 @code {
 
-    [SupplyParameterFromForm]
-    private string? SearchTerm { get; set; }
+    private string? _searchTerm { get; set; }
 
-    private void OnSearch()
-    {
-        
-    }
+    [Parameter] 
+    public EventCallback<string> SearchCalled { get; set; }
 }
