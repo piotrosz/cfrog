@@ -11,11 +11,6 @@ internal sealed partial class RecipesStaticTestRepo : IRecipesReadRepo
             .ToList());
     }
 
-    public Task<IReadOnlyList<RecipeSummary>> QueryRecipeSummaries(string searchTerm)
-    {
-        throw new NotImplementedException();
-    }
-
     public Task<Recipe> GetRecipe(Guid guid)
     {
         return Task.FromResult(Recipes.Single(r => r.Guid == guid));
