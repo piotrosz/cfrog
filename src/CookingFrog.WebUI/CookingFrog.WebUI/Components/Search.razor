@@ -1,11 +1,18 @@
-
-<InputText class="form-control me-2"
-           type="search"
-           placeholder="Szukaj"
-           @bind-value="_searchTerm"
-           aria-label="Search"/>
-<button class="btn btn-primary"
-        type="submit"
-        @onclick="async () => { await SearchCalled.InvokeAsync(_searchTerm); }">
-    Szukaj
-</button>
+<div style="margin: 2px; padding: 5px">
+<div class="row">
+    <div class="col">
+        <InputText class="form-control me-2"
+                   type="search"
+                   placeholder="Szukaj"
+                   @bind-value="_searchTerm"
+                   aria-label="Search"/>
+    </div>
+    <div class="col">
+        <button class="btn btn-primary"
+                type="submit"
+                @onclick="async () => { await SearchCalled.InvokeAsync(_searchTerm); }">
+            Szukaj
+        </button>
+    </div>
+</div>
+</div>
