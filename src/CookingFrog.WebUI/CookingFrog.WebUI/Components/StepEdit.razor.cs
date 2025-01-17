@@ -5,6 +5,8 @@ namespace CookingFrog.WebUI.Components;
 
 public partial class StepEdit
 {
+    [Parameter] public bool ShowEditButtons { get; set; } 
+    
     [Parameter] public int Index { get; set; }
 
     [Parameter] public string Description { get; set; } = string.Empty;

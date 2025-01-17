@@ -7,6 +7,8 @@ namespace CookingFrog.WebUI.Components.Pages;
 
 public partial class RecipeDetail
 {
+    private bool _showEditButtons = false;
+    
     [Inject]
     public IRecipesReadRepo? RecipesReadRepo { get; set; }
         

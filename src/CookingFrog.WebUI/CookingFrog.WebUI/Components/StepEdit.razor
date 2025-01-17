@@ -51,20 +51,26 @@ else
                 @if (Description.StartsWith("[stage]", StringComparison.OrdinalIgnoreCase))
                 {
                     <p class="h5">@Description.Substring(7) 
-                        <button type="button"
-                                class="btn btn-sm"
-                                @onclick="Edit">🖊️
-                        </button>
+                        @if (ShowEditButtons)
+                        {
+                            <button type="button"
+                                    class="btn btn-sm"
+                                    @onclick="Edit">🖊️
+                            </button>
+                        }
                     </p>
                 }
                 else
                 {
                     <b>@Index)</b>
                     <span>@((MarkupString)Description)</span>
-                    <button type="button"
-                            class="btn btn-sm"
-                            @onclick="Edit">🖊️
-                    </button>
+                    @if (ShowEditButtons)
+                    {
+                        <button type="button"
+                                class="btn btn-sm"
+                                @onclick="Edit">🖊️
+                        </button>
+                    }
                 }
             </label>
         </div>

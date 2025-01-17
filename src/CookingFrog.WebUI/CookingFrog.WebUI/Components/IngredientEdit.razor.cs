@@ -6,6 +6,8 @@ namespace CookingFrog.WebUI.Components;
 
 public partial class IngredientEdit
 {
+    [Parameter] public bool ShowEditButtons { get; set; }
+    
     [Parameter] public Ingredient? Ingredient { get; set; }
 
     [Parameter] public int Index { get; set; }
