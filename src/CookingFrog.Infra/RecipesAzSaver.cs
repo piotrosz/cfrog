@@ -4,7 +4,7 @@ using CSharpFunctionalExtensions;
 
 namespace CookingFrog.Infra;
 
-internal class RecipesAzSaveRepo(TableServiceClient tableServiceClient) : IRecipesSaveRepo
+internal class RecipesAzSaver(TableServiceClient tableServiceClient) : IRecipesSaver
 {
     public async Task<Result> SaveRecipe(Recipe recipe, CancellationToken cancellationToken = default)
     {

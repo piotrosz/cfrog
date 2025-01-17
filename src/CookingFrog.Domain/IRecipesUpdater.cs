@@ -2,7 +2,7 @@
 
 namespace CookingFrog.Domain;
 
-public interface IRecipesUpdateRepo
+public interface IRecipesUpdater
 {
     Task<Result> UpdateTitle(string newTitle, Guid recipeGuid, CancellationToken cancellationToken);
 

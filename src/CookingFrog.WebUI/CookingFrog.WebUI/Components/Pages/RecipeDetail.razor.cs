@@ -10,10 +10,10 @@ public partial class RecipeDetail
     private bool _showEditButtons = false;
     
     [Inject]
-    public IRecipesReadRepo? RecipesReadRepo { get; set; }
+    public IRecipesReader? RecipesReadRepo { get; set; }
         
     [Inject]
-    public IRecipesUpdateRepo? RecipesUpdateRepo { get; set; }
+    public IRecipesUpdater? RecipesUpdateRepo { get; set; }
     
     [Inject] 
     public required IJSRuntime JsRuntime { get; set; }

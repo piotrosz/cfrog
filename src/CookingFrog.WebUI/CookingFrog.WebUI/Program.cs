@@ -3,7 +3,9 @@ using CookingFrog.WebUI.Components;
 using CookingFrog.WebUI;
 using Microsoft.AspNetCore.Identity;
 using Azure.Identity;
+using CookingFrog.Domain;
 using CookingFrog.WebUI.Authorization;
+using CookingFrog.WebUI.WebAPI.Models;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -18,7 +20,6 @@ builder.Services.AddRazorComponents()
 if (builder.Environment.IsProduction())
 {
     var keyVaultUrl = builder.Configuration["Azure:KeyVault:Uri"];
-
     if (keyVaultUrl == null)
     {
         throw new InvalidOperationException("Azure Key Vault is not configured.");
@@ -43,8 +44,8 @@ builder.Services.AddFrogStorage(
    azureStorageConfig.AccountName,
    azureStorageConfig.AccountKey);
 
-AddGoogleAuthentication(builder);
-AddAuthorization(builder);
+builder.AddGoogleAuthentication();
+builder.AddAuthorization();
 
 var app = builder.Build();
 
@@ -75,62 +76,26 @@ app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(CookingFrog.WebUI.Client._Imports).Assembly);
 
+// Minimal API
+
+app.MapGet("/api/summaries", async (IRecipesReader reader) =>
+{
+    return (await reader.GetRecipeSummaries())
+        .Select(x => new RecipeSummaryModel(x.Summary, x.Guid));
+});
+
+app.MapGet("/api/summaries/{guid}", async (Guid guid, IRecipesReader reader) =>
+{
+    var recipe = await reader.GetRecipe(guid);
+    
+    return new RecipeModel(
+        recipe.Summary, 
+        recipe.Guid, 
+        recipe.Ingredients.Select(x => new IngredientModel(x.Name, x.Quantity.Value, x.Quantity.Unit, x.GroupName)),
+        recipe.Steps.Select(x => x.Description));
+
+});
+
 app.Run();
-void AddGoogleAuthentication(WebApplicationBuilder webApplicationBuilder)
-{
-    builder.Services.AddCascadingAuthenticationState();
-    builder.Services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
-    
-    var googleAuthConfig = webApplicationBuilder.Configuration
-        .GetSection("Authentication:Google")
-        .Get<GoogleAuthConfig>();
-
-    if (googleAuthConfig == null)
-    {
-        throw new InvalidOperationException("Google authentication is not configured.");
-    }
-    
-    const string authScheme = "ap-google-auth";
-
-    webApplicationBuilder.Services
-        .AddAuthentication(authScheme)
-        .AddCookie(authScheme, options =>
-        {
-            options.Cookie.Name = ".ap.user";
-        })
-        .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
-        {
-            options.ClientId = googleAuthConfig.ClientId;
-            options.ClientSecret = googleAuthConfig.Secret;
-    
-            options.SignInScheme = authScheme;
-            options.AccessDeniedPath = "/"; // TODO
-            
-        })
-        .AddIdentityCookies();
-}
-
-void AddAuthorization(WebApplicationBuilder webApplicationBuilder)
-{
-    // Register the authorization handler
-    webApplicationBuilder.Services.AddSingleton<IAuthorizationHandler, SpecificLoginsHandler>();
-
-    var emails = webApplicationBuilder.Configuration["Authorization:Emails"];
-
-    if (string.IsNullOrWhiteSpace(emails))
-    {
-        throw new InvalidOperationException("Emails is not configured.");
-    }
-    
-    var emailsArray = emails.Split(',');
-    
-    // Add authorization policy
-    webApplicationBuilder.Services.AddAuthorization(options =>
-    {
-        options.AddPolicy("SpecificLoginsPolicy", policy =>
-            policy.Requirements.Add(new SpecificLoginsRequirement(emailsArray)));
-    });
-}
-
 
 

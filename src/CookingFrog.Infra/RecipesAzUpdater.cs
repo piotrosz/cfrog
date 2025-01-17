@@ -5,7 +5,7 @@ using CSharpFunctionalExtensions;
 
 namespace CookingFrog.Infra;
 
-internal class RecipesAzUpdateRepo(TableServiceClient tableServiceClient) : IRecipesUpdateRepo
+internal class RecipesAzUpdater(TableServiceClient tableServiceClient) : IRecipesUpdater
 {
     public async Task<Result> UpdateTitle(string newTitle, Guid recipeGuid, CancellationToken cancellationToken)
     {

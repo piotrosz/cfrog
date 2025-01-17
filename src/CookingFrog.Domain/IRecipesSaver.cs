@@ -2,7 +2,7 @@
 
 namespace CookingFrog.Domain;
 
-public interface IRecipesSaveRepo
+public interface IRecipesSaver
 {
     Task<Result> SaveRecipe(Recipe recipe, CancellationToken cancellationToken = default);
 }

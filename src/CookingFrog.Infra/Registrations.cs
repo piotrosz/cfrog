@@ -25,10 +25,10 @@ public static class Registrations
             //clientBuilder.UseCredential(new DefaultAzureCredential());
         });
         
-        services.AddScoped<IRecipesReadRepo, RecipesAzReadRepo>();
+        services.AddScoped<IRecipesReader, RecipesAzReader>();
         //services.AddScoped<IRecipesReadRepo, RecipesStaticTestRepo>();
-        services.AddScoped<IRecipesSaveRepo, RecipesAzSaveRepo>();
-        services.AddScoped<IRecipesUpdateRepo, RecipesAzUpdateRepo>();
+        services.AddScoped<IRecipesSaver, RecipesAzSaver>();
+        services.AddScoped<IRecipesUpdater, RecipesAzUpdater>();
         services.AddScoped<IStaticRecipesLoader, StaticRecipesLoader>();
     }
 }
