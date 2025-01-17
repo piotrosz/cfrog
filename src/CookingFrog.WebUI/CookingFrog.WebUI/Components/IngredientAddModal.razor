@@ -11,29 +11,32 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
-                        <label for="nazwa" class="form-label">Nazwa</label>
+                        <label for="ingredient-name" class="form-label">Nazwa</label>
                         <InputText
                             @bind-value="_newIngredient.Name"
-                            class="form-control form-control-sm"/>
+                            class="form-control form-control-sm"
+                            id="ingredient-name"/>
                     </div>
                     <div class="mb-3">
-                        <label for="unit" class="form-label">Jednostka</label>
+                        <label for="ingredient-unit" class="form-label">Jednostka</label>
                         <UnitEdit
                             Unit="_newIngredient.Unit"
-                            UpdateClicked="UpdateUnit"/>
+                            UpdateClicked="UpdateUnit"
+                            id="ingredient-unit"/>
                     </div>
                     <div class="mb-3">
-                        <label for="quantity" class="form-label">Ilość</label>
+                        <label for="ingredient-quantity" class="form-label">Ilość</label>
                         <QuantityEdit
                             Quantity="_newIngredient.Quantity"
-                            UpdateClicked="UpdateQuantity"/>
+                            UpdateClicked="UpdateQuantity"
+                            id="ingredient-quantity"/>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
                 <button type="button" 
-                        class="btn btn-primary" 
+                        class="btn btn-success" 
                         @onclick="@(async () =>
                                   {
                                       await JsRuntime.InvokeVoidAsync("closeAddIngredientBootstrapModal");
