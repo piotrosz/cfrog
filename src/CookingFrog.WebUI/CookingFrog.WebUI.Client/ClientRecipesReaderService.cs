@@ -3,19 +3,23 @@ using CookingFrog.WebUI.Client.Models;
 
 namespace CookingFrog.WebUI.Client;
 
-public class ClientRecipesReaderService(HttpClient httpClient) : IRecipesReaderService
+public sealed class ClientRecipesReaderService(HttpClient httpClient) : IRecipesReaderService
 {
     public async Task<IEnumerable<RecipeSummaryModel>> GetRecipeSummaries()
     {
         var response = await httpClient.GetStreamAsync(
             "api/recipes"); 
-        return await JsonSerializer.DeserializeAsync<IEnumerable<RecipeSummaryModel>>(
+        return await JsonSserializer.DeserializeAsync<IEnumerable<RecipeSummaryModel>>(
             response, 
             new JsonSerializerOptions { PropertyNameCaseInsensitive = true});       
     }
 
-    public Task<IEnumerable<RecipeSummaryModel>> QueryRecipeSummaries(string searchTerm)
+    public async Task<IEnumerable<RecipeSummaryModel>> QueryRecipeSummaries(string searchTerm)
     {
-        throw new NotImplementedException();
+        var response = await httpClient.GetStreamAsync(
+            $"api/recipes?searchTerm={searchTerm}"); 
+        return await JsonSerializer.DeserializeAsync<IEnumerable<RecipeSummaryModel>>(
+            response, 
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true}); 
     }
 }
