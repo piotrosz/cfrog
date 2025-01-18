@@ -9,7 +9,7 @@ public sealed class ClientRecipesReaderService(HttpClient httpClient) : IRecipes
     {
         var response = await httpClient.GetStreamAsync(
             "api/recipes"); 
-        return await JsonSserializer.DeserializeAsync<IEnumerable<RecipeSummaryModel>>(
+        return await JsonSerializer.DeserializeAsync<IEnumerable<RecipeSummaryModel>>(
             response, 
             new JsonSerializerOptions { PropertyNameCaseInsensitive = true});       
     }
