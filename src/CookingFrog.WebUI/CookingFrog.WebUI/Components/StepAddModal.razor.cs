@@ -1,4 +1,4 @@
-﻿using CookingFrog.WebUI.Components.Models;
+﻿using CookingFrog.WebUI.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 

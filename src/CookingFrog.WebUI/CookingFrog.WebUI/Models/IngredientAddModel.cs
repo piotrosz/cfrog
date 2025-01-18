@@ -1,6 +1,6 @@
 using CookingFrog.Domain;
 
-namespace CookingFrog.WebUI.Components.Models;
+namespace CookingFrog.WebUI.Models;
 
 public record IngredientAddModel(string Name, decimal Quantity, UnitEnum Unit)
 {

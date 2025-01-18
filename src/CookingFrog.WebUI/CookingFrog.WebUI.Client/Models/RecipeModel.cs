@@ -1,4 +1,4 @@
-﻿namespace CookingFrog.WebUI.WebAPI.Models;
+﻿namespace CookingFrog.WebUI.Client.Models;
 
 public record RecipeModel(
     string Summary, 

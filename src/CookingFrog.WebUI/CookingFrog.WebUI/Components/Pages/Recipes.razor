@@ -1,6 +1,5 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.Components.QuickGrid
-@inject IRecipesReader RecipesRepo
 @attribute [StreamRendering]
 @rendermode InteractiveServer
 
@@ -18,7 +17,7 @@
             <p><em>Loading...</em></p>
         }
         else
-        {
+        { 
             <Search SearchCalled="SearchRecipes" />
             <QuickGrid 
                 Items="_recipes" 

@@ -1,15 +1,11 @@
 using CookingFrog.Infra;
 using CookingFrog.WebUI.Components;
 using CookingFrog.WebUI;
-using Microsoft.AspNetCore.Identity;
 using Azure.Identity;
 using CookingFrog.Domain;
-using CookingFrog.WebUI.Authorization;
-using CookingFrog.WebUI.WebAPI.Models;
-using Microsoft.AspNetCore.Authentication.Google;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Components.Server;
+using CookingFrog.WebUI.Client;
+using CookingFrog.WebUI.Client.Models;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,6 +39,8 @@ builder.Services.AddFrogStorage(
    azureStorageConfig.Uri,
    azureStorageConfig.AccountName,
    azureStorageConfig.AccountKey);
+
+builder.Services.AddScoped<IRecipesReaderService, ServerRecipesReaderService>();
 
 builder.AddGoogleAuthentication();
 builder.AddAuthorization();
@@ -78,10 +76,12 @@ app.MapRazorComponents<App>()
 
 // Minimal API
 
-app.MapGet("/api/summaries", async (IRecipesReader reader) =>
+app.MapGet("/api/summaries", async ([FromQuery] string searchTerm, IRecipesReader reader) =>
 {
-    return (await reader.GetRecipeSummaries())
-        .Select(x => new RecipeSummaryModel(x.Summary, x.Guid));
+    var result = string.IsNullOrWhiteSpace(searchTerm)
+        ? await reader.GetRecipeSummaries()
+        : await reader.QueryRecipeSummaries(searchTerm);
+    return result.Select(x => new RecipeSummaryModel(x.Summary, x.Guid));
 });
 
 app.MapGet("/api/summaries/{guid}", async (Guid guid, IRecipesReader reader) =>

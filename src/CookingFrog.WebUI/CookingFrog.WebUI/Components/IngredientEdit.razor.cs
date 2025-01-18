@@ -1,5 +1,5 @@
 ﻿using CookingFrog.Domain;
-using CookingFrog.WebUI.Components.Models;
+using CookingFrog.WebUI.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace CookingFrog.WebUI.Components;

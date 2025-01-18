@@ -1,4 +1,4 @@
-namespace CookingFrog.WebUI.Components.Models;
+namespace CookingFrog.WebUI.Models;
 
 public class AddStepModel(int? index, string step)
 {
