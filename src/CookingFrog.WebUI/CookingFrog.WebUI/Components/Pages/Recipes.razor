@@ -17,7 +17,8 @@
             <p><em>Loading...</em></p>
         }
         else
-        { 
+        {
+            // TODO:  Extract to component
             <Search SearchCalled="SearchRecipes" />
             <QuickGrid 
                 Items="_recipes" 
@@ -25,15 +26,11 @@
                 <TemplateColumn Context="summary">
 
                     <div class="card text-dark bg-light mb-3">
-                    <div class="card-header">
-                        <NavLink class="nav-link" href="@("recipe/" + summary.Guid)">
-                            @summary.Summary
-                        </NavLink>
-                    </div>
-                        @* <div class="card-body"> *@
-                        @*     <h5 class="card-title">I</h5> *@
-                        @*     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> *@
-                        @* </div> *@
+                        <div class="card-header">
+                            <NavLink class="nav-link" href="@("recipe/" + summary.Guid)">
+                                @summary.Summary
+                            </NavLink>
+                        </div>
                     </div>
                     
                 </TemplateColumn>
