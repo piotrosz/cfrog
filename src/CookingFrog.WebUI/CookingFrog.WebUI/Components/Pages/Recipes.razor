@@ -11,15 +11,8 @@
         </div>
     </NotAuthorized>
     <Authorized>
-        @if (_recipes == null)
-        {
-            <p><em>Loading...</em></p>
-        }
-        else
-        {
-            <RecipeList 
-                Recipes="_recipes"
-                OnSearch="SearchRecipes"/>
-        }
+        <RecipeList 
+            Recipes="_recipes"
+            OnSearch="SearchRecipes"/>
     </Authorized>
 </AuthorizeView>

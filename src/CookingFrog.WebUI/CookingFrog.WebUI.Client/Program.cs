@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using CookingFrog.WebUI.Client;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -9,5 +10,7 @@ builder.Services.AddScoped(sp => new HttpClient
 });
 
 builder.Services.AddScoped<IRecipesReaderService, ClientRecipesReaderService>();
+
+builder.Services.AddBlazoredLocalStorage();
 
 await builder.Build().RunAsync();
