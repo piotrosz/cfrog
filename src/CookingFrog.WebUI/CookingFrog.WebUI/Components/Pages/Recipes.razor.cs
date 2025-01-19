@@ -17,11 +17,13 @@ public partial class Recipes
     
     protected override async Task OnInitializedAsync()
     {
-        _recipes = (await RecipesReader.GetRecipeSummaries()).AsQueryable();
+        _recipes = (await RecipesReader.GetRecipeSummaries())
+            .AsQueryable();
     }
 
     private async Task SearchRecipes(string searchTerm)
     {
-        _recipes = (await RecipesReader.QueryRecipeSummaries(searchTerm)).AsQueryable();
+        _recipes = (await RecipesReader.QueryRecipeSummaries(searchTerm))
+            .AsQueryable();
     }
 }
