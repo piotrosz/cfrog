@@ -7,7 +7,7 @@ public static class IngredientParser
         ArgumentNullException.ThrowIfNull(ingredient);
         if (!ingredient.Contains(';'))
         {
-            return ParseResult<Ingredient>.Error("Ingredient must contain 'name' and 'amount' divided by semicolon.");
+            return ParseResult<Ingredient>.Success(new Ingredient(ingredient, Quantity.Undefined));
         }
         
         var parts = ingredient.Trim().Split(';');
