@@ -8,7 +8,7 @@ namespace CookingFrog.WebUI.Components.Pages;
 public partial class Recipes
 {
     [Inject]
-    public IRecipesReaderService RecipesReader { get; set; }
+    public required IRecipesReaderService RecipesReader { get; set; }
     
     [CascadingParameter] 
     public HttpContext? HttpContext { get; set; }

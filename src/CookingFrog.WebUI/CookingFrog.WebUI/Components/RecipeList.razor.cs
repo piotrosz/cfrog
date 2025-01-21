@@ -6,7 +6,7 @@ namespace CookingFrog.WebUI.Components;
 public partial class RecipeList
 {
     [Parameter] 
-    public IQueryable<RecipeSummaryModel> Recipes { get; set; }
+    public required IQueryable<RecipeSummaryModel> Recipes { get; set; }
 
     [Parameter] 
     public EventCallback<string> OnSearch { get; set; }

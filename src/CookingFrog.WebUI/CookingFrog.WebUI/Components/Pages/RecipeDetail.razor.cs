@@ -1,4 +1,6 @@
 ﻿using CookingFrog.Domain;
+using CookingFrog.WebUI.Client;
+using CookingFrog.WebUI.Client.Models;
 using CookingFrog.WebUI.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
@@ -10,21 +12,21 @@ public partial class RecipeDetail
     private bool _showEditButtons;
     
     [Inject]
-    public IRecipesReader? RecipesReadRepo { get; set; }
+    public IRecipesReaderService? RecipesReader { get; set; }
         
     [Inject]
-    public IRecipesUpdater? RecipesUpdateRepo { get; set; }
+    public IRecipesUpdaterService? RecipesUpdater { get; set; }
     
     [Inject] 
     public required IJSRuntime JsRuntime { get; set; }
     
-    private Recipe? Recipe { get; set; }
+    private RecipeModel? Recipe { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         if (Guid is not null && System.Guid.TryParse(Guid, out var guid))
         {
-            Recipe = await RecipesReadRepo!.GetRecipe(guid);
+            Recipe = await RecipesReader!.GetRecipe(guid);
         }
     }
 
@@ -35,8 +37,8 @@ public partial class RecipeDetail
     {
         if (Recipe is not null && !string.IsNullOrWhiteSpace(newSummary))
         {
-            await RecipesUpdateRepo!.UpdateTitle(newSummary, Recipe.Guid, CancellationToken.None);
-            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+            await RecipesUpdater!.UpdateTitle(newSummary, Recipe.Guid, CancellationToken.None);
+            Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
         }
     }
 
@@ -44,12 +46,12 @@ public partial class RecipeDetail
     {
         if (Recipe is not null)
         {
-            await RecipesUpdateRepo!.UpdateStep(
+            await RecipesUpdater!.UpdateStep(
                 stepModel.Index, 
                 stepModel.Description, 
                 Recipe.Guid, 
                 CancellationToken.None);
-            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+            Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
         }
     }
 
@@ -64,12 +66,12 @@ public partial class RecipeDetail
                 GroupName = ingredientModel.GroupName
             };
             
-            await RecipesUpdateRepo!.UpdateIngredient(
+            await RecipesUpdater!.UpdateIngredient(
                 ingredientModel.Index, 
                 ingredient, 
                 Recipe.Guid, 
                 CancellationToken.None);
-            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+            Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
         }
     }
 
@@ -77,11 +79,11 @@ public partial class RecipeDetail
     {
         if (Recipe is not null)
         {
-            await RecipesUpdateRepo!.DeleteIngredient(
+            await RecipesUpdater!.DeleteIngredient(
                 index, 
                 Recipe.Guid, 
                 CancellationToken.None);
-            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+            Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
         }
     }
 
@@ -89,11 +91,11 @@ public partial class RecipeDetail
     {
         if (Recipe is not null)
         {
-            await RecipesUpdateRepo!.DeleteStep(
+            await RecipesUpdater!.DeleteStep(
                 index, 
                 Recipe.Guid, 
                 CancellationToken.None);
-            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+            Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
         }
     }
 
@@ -106,12 +108,12 @@ public partial class RecipeDetail
     {
         if (Recipe is not null)
         {
-            await RecipesUpdateRepo!.AddIngredient(new Ingredient(
+            await RecipesUpdater!.AddIngredient(new Ingredient(
                 ingredientModel.Name, 
                 new Quantity(ingredientModel.Quantity, ingredientModel.Unit)),
                 Recipe.Guid,
                 CancellationToken.None);
-            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+            Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
         }
     }
 
@@ -124,12 +126,12 @@ public partial class RecipeDetail
     {
         if (Recipe is not null)
         {
-            await RecipesUpdateRepo!.AddStep(
+            await RecipesUpdater!.AddStep(
                 step.Index,
                 new Step(step.Step), 
                 Recipe.Guid, 
                 CancellationToken.None);
-            Recipe = await RecipesReadRepo!.GetRecipe(Recipe.Guid);
+            Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
         }
     }
 }

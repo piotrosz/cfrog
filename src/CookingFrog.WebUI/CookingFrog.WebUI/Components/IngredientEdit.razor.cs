@@ -1,4 +1,5 @@
 ﻿using CookingFrog.Domain;
+using CookingFrog.WebUI.Client.Models;
 using CookingFrog.WebUI.Models;
 using Microsoft.AspNetCore.Components;
 
@@ -8,7 +9,7 @@ public partial class IngredientEdit
 {
     [Parameter] public bool ShowEditButtons { get; set; }
     
-    [Parameter] public Ingredient? Ingredient { get; set; }
+    [Parameter] public IngredientModel? Ingredient { get; set; }
 
     [Parameter] public int Index { get; set; }
 
@@ -24,12 +25,11 @@ public partial class IngredientEdit
     {
         if (Ingredient != null && Index >= 0)
         {
-            var quantity = Ingredient.Quantity;
             _updatedIngredient = new IngredientUpdateModel(
                 Index,
                 Ingredient.Name,
-                quantity.Value,
-                quantity.Unit,
+                Ingredient.Amount,
+                Ingredient.Unit,
                 Ingredient.GroupName);
         }
     }

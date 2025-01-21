@@ -85,7 +85,7 @@ else
                         @foreach (var step in Recipe.Steps)
                         {
                             <StepEdit Index="stepIndex"
-                                      Description="@step.Description"
+                                      Description="@step"
                                       UpdateClicked="UpdateStep"
                                       DeleteClicked="DeleteStep"
                                       ShowEditButtons="_showEditButtons"/>

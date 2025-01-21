@@ -1,10 +1,11 @@
+using System.Runtime.CompilerServices;
 using CookingFrog.Infra;
 using CookingFrog.WebUI.Components;
 using CookingFrog.WebUI;
 using Azure.Identity;
 using CookingFrog.Domain;
 using CookingFrog.WebUI.Client;
-using CookingFrog.WebUI.Client.Models;
+using CookingFrog.WebUI.Client.Mapping;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +42,7 @@ builder.Services.AddFrogStorage(
    azureStorageConfig.AccountKey);
 
 builder.Services.AddScoped<IRecipesReaderService, ServerRecipesReaderService>();
+builder.Services.AddScoped<IRecipesUpdaterService, ServerRecipesUpdaterService>();
 
 builder.AddGoogleAuthentication();
 builder.AddAuthorization();
@@ -81,20 +83,21 @@ app.MapGet("/api/summaries", async ([FromQuery] string searchTerm, IRecipesReade
     var result = string.IsNullOrWhiteSpace(searchTerm)
         ? await reader.GetRecipeSummaries()
         : await reader.QueryRecipeSummaries(searchTerm);
-    return result.Select(x => new RecipeSummaryModel(x.Summary, x.Guid));
+    return result.Select(x => x.MapToRecipeSummaryModel());
 });
 
-app.MapGet("/api/summaries/{guid}", async (Guid guid, IRecipesReader reader) =>
+app.MapGet("/api/recipes/{guid}", async (Guid guid, IRecipesReader reader) =>
 {
     var recipe = await reader.GetRecipe(guid);
-    
-    return new RecipeModel(
-        recipe.Summary, 
-        recipe.Guid, 
-        recipe.Ingredients.Select(x => new IngredientModel(x.Name, x.Quantity.Value, x.Quantity.Unit, x.GroupName)),
-        recipe.Steps.Select(x => x.Description));
-
+    return recipe.MapToRecipeModel();
 });
+
+app.MapPost("api/recipes/{guid}/title", async (Guid guid, [FromBody] string title, IRecipesUpdater updater) =>
+{
+    await updater.UpdateTitle(title, guid, CancellationToken.None);
+});
+
+
 
 app.Run();
 

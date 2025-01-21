@@ -19,8 +19,6 @@ public sealed class Recipe(
 
     public string Link { get; set; } = string.Empty;
     
-    public IEnumerable<IGrouping<string?, Ingredient>> IngredientsGrouped => Ingredients.GroupBy(x => x.GroupName);
-    
     public static Recipe Create(
         Guid guid,
         string title, 
