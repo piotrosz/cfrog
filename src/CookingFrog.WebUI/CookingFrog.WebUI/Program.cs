@@ -47,6 +47,12 @@ builder.Services.AddScoped<IRecipesUpdaterService, ServerRecipesUpdaterService>(
 builder.AddGoogleAuthentication();
 builder.AddAuthorization();
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+}
+
 var app = builder.Build();
 
 // -----------------------------------------------------
@@ -97,7 +103,41 @@ app.MapPut("api/recipes/{guid}/title", async (Guid guid, [FromBody] string title
     await updater.UpdateTitle(title, guid, CancellationToken.None);
 });
 
+app.MapPut("api/recipes/{guid}/ingredients/{index}", async (Guid guid, int index, [FromBody] Ingredient ingredient, IRecipesUpdater updater) =>
+{
+    await updater.UpdateIngredient(index, ingredient, guid, CancellationToken.None);
+});
 
+app.MapPut("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, [FromBody] string step, IRecipesUpdater updater) =>
+{
+    await updater.UpdateStep(index, step, guid, CancellationToken.None);
+});
+
+app.MapPost("api/recipes/{guid}/ingredients", async (Guid guid, [FromBody] Ingredient ingredient, IRecipesUpdater updater) =>
+{
+    await updater.AddIngredient(ingredient, guid, CancellationToken.None);
+});
+
+app.MapPost("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, [FromBody] Step step, IRecipesUpdater updater) =>
+{
+    await updater.AddStep(index, step, guid, CancellationToken.None);
+});
+
+app.MapDelete("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, IRecipesUpdater updater) =>
+{
+    await updater.DeleteStep(index, guid, CancellationToken.None);
+});
+
+app.MapDelete("api/recipes/{guid}/ingredients/{index}", async (Guid guid, int index, IRecipesUpdater updater) =>
+{
+    await updater.DeleteIngredient(index, guid, CancellationToken.None);
+});
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.Run();
 

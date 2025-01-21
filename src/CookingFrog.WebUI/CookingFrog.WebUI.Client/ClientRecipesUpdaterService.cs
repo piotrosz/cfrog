@@ -8,41 +8,61 @@ public sealed class ClientRecipesUpdaterService(HttpClient httpClient) : IRecipe
 {
     public async Task<Result> UpdateTitle(string newTitle, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        var result = await httpClient.PutAsJsonAsync($"/api/recipes/{recipeGuid}/title", 
-            new StringContent(newTitle), cancellationToken);
-        
+        var result = await httpClient.PutAsJsonAsync(
+            $"/api/recipes/{recipeGuid}/title", 
+            newTitle, 
+            cancellationToken);
         result.EnsureSuccessStatusCode();
-        
         return Result.Success();
     }
 
-    public Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var result = await httpClient.PutAsJsonAsync(
+            $"api/recipes/{recipeGuid}/ingredients/{index}",
+            ingredient, cancellationToken);
+        result.EnsureSuccessStatusCode();
     }
 
-    public Task UpdateStep(int stepIndex, string description, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task UpdateStep(int stepIndex, string description, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var result = await httpClient.PutAsJsonAsync(
+            $"api/recipes/{recipeGuid}/steps/{stepIndex}",
+            description, cancellationToken);
+        result.EnsureSuccessStatusCode();
     }
 
-    public Task AddIngredient(Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task AddIngredient(Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var result = await httpClient.PostAsJsonAsync(
+            $"api/recipes/{recipeGuid}/ingredients",
+            ingredient, 
+            cancellationToken);
+        result.EnsureSuccessStatusCode();
     }
 
-    public Task DeleteIngredient(int index, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task DeleteIngredient(int index, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var result = await httpClient.DeleteAsync(
+            $"api/recipes/{recipeGuid}/ingredients/{index}",
+            cancellationToken);
+        result.EnsureSuccessStatusCode();
     }
 
-    public Task AddStep(int? index, Step step, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task AddStep(int? index, Step step, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var result = await httpClient.PostAsJsonAsync(
+            $"api/recipes/{recipeGuid}/steps",
+            step, 
+            cancellationToken);
+        result.EnsureSuccessStatusCode();
     }
 
-    public Task DeleteStep(int index, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task DeleteStep(int index, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var result = await httpClient.DeleteAsync(
+            $"api/recipes/{recipeGuid}/steps/{index}",
+            cancellationToken);
+        result.EnsureSuccessStatusCode();
     }
 }

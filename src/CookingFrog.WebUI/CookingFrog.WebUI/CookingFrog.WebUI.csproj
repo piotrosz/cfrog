@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
     <ProjectReference Include="..\..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
     <ProjectReference Include="..\..\CookingFrog.Infra\CookingFrog.Infra.csproj" />
     <ProjectReference Include="..\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj" />
