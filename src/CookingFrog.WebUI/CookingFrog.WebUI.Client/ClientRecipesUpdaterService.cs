@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using CookingFrog.Domain;
+using CookingFrog.WebUI.Client.Models;
 using CSharpFunctionalExtensions;
 
 namespace CookingFrog.WebUI.Client;
@@ -16,7 +17,7 @@ public sealed class ClientRecipesUpdaterService(HttpClient httpClient) : IRecipe
         return Result.Success();
     }
 
-    public async Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task UpdateIngredient(int index, IngredientModel ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
         var result = await httpClient.PutAsJsonAsync(
             $"api/recipes/{recipeGuid}/ingredients/{index}",
@@ -32,7 +33,7 @@ public sealed class ClientRecipesUpdaterService(HttpClient httpClient) : IRecipe
         result.EnsureSuccessStatusCode();
     }
 
-    public async Task AddIngredient(Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task AddIngredient(IngredientModel ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
         var result = await httpClient.PostAsJsonAsync(
             $"api/recipes/{recipeGuid}/ingredients",
@@ -49,7 +50,7 @@ public sealed class ClientRecipesUpdaterService(HttpClient httpClient) : IRecipe
         result.EnsureSuccessStatusCode();
     }
 
-    public async Task AddStep(int? index, Step step, Guid recipeGuid, CancellationToken cancellationToken)
+    public async Task AddStep(int? index, string step, Guid recipeGuid, CancellationToken cancellationToken)
     {
         var result = await httpClient.PostAsJsonAsync(
             $"api/recipes/{recipeGuid}/steps",

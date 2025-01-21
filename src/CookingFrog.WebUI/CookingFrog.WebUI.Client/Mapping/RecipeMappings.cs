@@ -5,6 +5,13 @@ namespace CookingFrog.WebUI.Client.Mapping;
 
 public static class RecipeMappings
 {
+    public static Ingredient MapToDomain(this IngredientModel ingredientModel)
+    {
+        return new Ingredient(ingredientModel.Name, 
+            new Quantity(ingredientModel.Amount, ingredientModel.Unit),
+            ingredientModel.GroupName);
+    }
+    
     public static RecipeModel MapToRecipeModel(this Recipe recipe)
     {
         var ingredients = recipe.Ingredients

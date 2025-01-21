@@ -1,5 +1,7 @@
 ﻿using CookingFrog.Domain;
 using CookingFrog.WebUI.Client;
+using CookingFrog.WebUI.Client.Mapping;
+using CookingFrog.WebUI.Client.Models;
 using CSharpFunctionalExtensions;
 
 namespace CookingFrog.WebUI;
@@ -11,9 +13,9 @@ public sealed class ServerRecipesUpdaterService(IRecipesUpdater recipesUpdater) 
         return recipesUpdater.UpdateTitle(newTitle, recipeGuid, cancellationToken);
     }
 
-    public Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
+    public Task UpdateIngredient(int index, IngredientModel ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        return recipesUpdater.UpdateIngredient(index, ingredient, recipeGuid, cancellationToken);
+        return recipesUpdater.UpdateIngredient(index, ingredient.MapToDomain(), recipeGuid, cancellationToken);
     }
 
     public Task UpdateStep(int stepIndex, string description, Guid recipeGuid, CancellationToken cancellationToken)
@@ -21,9 +23,9 @@ public sealed class ServerRecipesUpdaterService(IRecipesUpdater recipesUpdater) 
         return recipesUpdater.UpdateStep(stepIndex, description, recipeGuid, cancellationToken);
     }
 
-    public Task AddIngredient(Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
+    public Task AddIngredient(IngredientModel ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        return recipesUpdater.AddIngredient(ingredient, recipeGuid, cancellationToken);
+        return recipesUpdater.AddIngredient(ingredient.MapToDomain(), recipeGuid, cancellationToken);
     }
 
     public Task DeleteIngredient(int index, Guid recipeGuid, CancellationToken cancellationToken)
@@ -31,7 +33,7 @@ public sealed class ServerRecipesUpdaterService(IRecipesUpdater recipesUpdater) 
         return recipesUpdater.DeleteIngredient(index, recipeGuid, cancellationToken);
     }
 
-    public Task AddStep(int? index, Step step, Guid recipeGuid, CancellationToken cancellationToken)
+    public Task AddStep(int? index, string step, Guid recipeGuid, CancellationToken cancellationToken)
     {
         return recipesUpdater.AddStep(index, step, recipeGuid, cancellationToken);
     }

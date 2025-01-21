@@ -6,6 +6,7 @@ using Azure.Identity;
 using CookingFrog.Domain;
 using CookingFrog.WebUI.Client;
 using CookingFrog.WebUI.Client.Mapping;
+using CookingFrog.WebUI.Client.Models;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -103,9 +104,9 @@ app.MapPut("api/recipes/{guid}/title", async (Guid guid, [FromBody] string title
     await updater.UpdateTitle(title, guid, CancellationToken.None);
 });
 
-app.MapPut("api/recipes/{guid}/ingredients/{index}", async (Guid guid, int index, [FromBody] Ingredient ingredient, IRecipesUpdater updater) =>
+app.MapPut("api/recipes/{guid}/ingredients/{index}", async (Guid guid, int index, [FromBody] IngredientModel ingredient, IRecipesUpdater updater) =>
 {
-    await updater.UpdateIngredient(index, ingredient, guid, CancellationToken.None);
+    await updater.UpdateIngredient(index, ingredient.MapToDomain(), guid, CancellationToken.None);
 });
 
 app.MapPut("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, [FromBody] string step, IRecipesUpdater updater) =>
@@ -113,12 +114,12 @@ app.MapPut("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, [Fro
     await updater.UpdateStep(index, step, guid, CancellationToken.None);
 });
 
-app.MapPost("api/recipes/{guid}/ingredients", async (Guid guid, [FromBody] Ingredient ingredient, IRecipesUpdater updater) =>
+app.MapPost("api/recipes/{guid}/ingredients", async (Guid guid, [FromBody] IngredientModel ingredient, IRecipesUpdater updater) =>
 {
-    await updater.AddIngredient(ingredient, guid, CancellationToken.None);
+    await updater.AddIngredient(ingredient.MapToDomain(), guid, CancellationToken.None);
 });
 
-app.MapPost("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, [FromBody] Step step, IRecipesUpdater updater) =>
+app.MapPost("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, [FromBody] string step, IRecipesUpdater updater) =>
 {
     await updater.AddStep(index, step, guid, CancellationToken.None);
 });

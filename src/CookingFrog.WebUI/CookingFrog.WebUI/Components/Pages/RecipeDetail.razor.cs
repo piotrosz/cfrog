@@ -59,12 +59,11 @@ public partial class RecipeDetail
     {
         if (Recipe is not null)
         {
-            var ingredient = new Ingredient(
+            var ingredient = new IngredientModel(
                 ingredientModel.Name,
-                new Quantity(ingredientModel.Quantity, ingredientModel.Unit))
-            {
-                GroupName = ingredientModel.GroupName
-            };
+                ingredientModel.Quantity,
+                ingredientModel.Unit,
+                ingredientModel.GroupName);
             
             await RecipesUpdater!.UpdateIngredient(
                 ingredientModel.Index, 
@@ -108,9 +107,11 @@ public partial class RecipeDetail
     {
         if (Recipe is not null)
         {
-            await RecipesUpdater!.AddIngredient(new Ingredient(
+            await RecipesUpdater!.AddIngredient(new IngredientModel(
                 ingredientModel.Name, 
-                new Quantity(ingredientModel.Quantity, ingredientModel.Unit)),
+                ingredientModel.Quantity, 
+                ingredientModel.Unit, 
+                GroupName: null), // TODO: Add possibility to add with group 
                 Recipe.Guid,
                 CancellationToken.None);
             Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
@@ -128,7 +129,7 @@ public partial class RecipeDetail
         {
             await RecipesUpdater!.AddStep(
                 step.Index,
-                new Step(step.Step), 
+                step.Step, 
                 Recipe.Guid, 
                 CancellationToken.None);
             Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
