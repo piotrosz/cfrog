@@ -1,4 +1,5 @@
-﻿using CookingFrog.Domain;
+﻿using System.Net.Http.Json;
+using CookingFrog.Domain;
 using CSharpFunctionalExtensions;
 
 namespace CookingFrog.WebUI.Client;
@@ -7,10 +8,12 @@ public sealed class ClientRecipesUpdaterService(HttpClient httpClient) : IRecipe
 {
     public async Task<Result> UpdateTitle(string newTitle, Guid recipeGuid, CancellationToken cancellationToken)
     {
-        var result = await httpClient.PostAsync($"/api/recipes/{recipeGuid}/title", 
+        var result = await httpClient.PutAsJsonAsync($"/api/recipes/{recipeGuid}/title", 
             new StringContent(newTitle), cancellationToken);
         
         result.EnsureSuccessStatusCode();
+        
+        return Result.Success();
     }
 
     public Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)

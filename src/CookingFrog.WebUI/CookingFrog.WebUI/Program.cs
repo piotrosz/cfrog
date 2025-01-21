@@ -92,7 +92,7 @@ app.MapGet("/api/recipes/{guid}", async (Guid guid, IRecipesReader reader) =>
     return recipe.MapToRecipeModel();
 });
 
-app.MapPost("api/recipes/{guid}/title", async (Guid guid, [FromBody] string title, IRecipesUpdater updater) =>
+app.MapPut("api/recipes/{guid}/title", async (Guid guid, [FromBody] string title, IRecipesUpdater updater) =>
 {
     await updater.UpdateTitle(title, guid, CancellationToken.None);
 });
