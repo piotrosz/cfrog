@@ -41,7 +41,7 @@ else
                         var ingredientIndex = 0;
                         var groupIndex = 0;
                     }
-                    @foreach (var ingredientGroup in Recipe.IngredientsGrouped)
+                    @foreach (var ingredientGroup in GetIngredientsGrouped())
                     {
                         foreach (var ingredient in ingredientGroup)
                         {

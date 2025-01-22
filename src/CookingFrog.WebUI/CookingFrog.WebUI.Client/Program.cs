@@ -10,6 +10,7 @@ builder.Services.AddScoped(sp => new HttpClient
 });
 
 builder.Services.AddScoped<IRecipesReaderService, ClientRecipesReaderService>();
+builder.Services.AddScoped<IRecipesUpdaterService, ClientRecipesUpdaterService>();
 
 builder.Services.AddBlazoredLocalStorage();
 

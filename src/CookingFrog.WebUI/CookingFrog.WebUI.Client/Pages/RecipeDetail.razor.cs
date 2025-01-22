@@ -27,6 +27,15 @@ public partial class RecipeDetail
         }
     }
 
+    private IEnumerable<IGrouping<string?, IngredientModel>> GetIngredientsGrouped()
+    {
+        if (Recipe is null)
+        {
+            return [];
+        }
+        return Recipe.Ingredients.GroupBy(x => x.GroupName);
+    }
+    
     [Parameter] 
     public string? Guid { get; set; }
     
