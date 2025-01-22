@@ -1,11 +1,8 @@
-﻿using CookingFrog.Domain;
-using CookingFrog.WebUI.Client;
-using CookingFrog.WebUI.Client.Models;
-using CookingFrog.WebUI.Models;
+﻿using CookingFrog.WebUI.Client.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
-namespace CookingFrog.WebUI.Components.Pages;
+namespace CookingFrog.WebUI.Client.Pages;
 
 public partial class RecipeDetail
 {

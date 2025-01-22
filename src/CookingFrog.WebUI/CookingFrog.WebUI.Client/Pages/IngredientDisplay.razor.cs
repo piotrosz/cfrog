@@ -2,7 +2,7 @@
 using CookingFrog.WebUI.Client.Models;
 using Microsoft.AspNetCore.Components;
 
-namespace CookingFrog.WebUI.Components;
+namespace CookingFrog.WebUI.Client.Pages;
 
 public partial class IngredientDisplay
 {

@@ -1,9 +1,9 @@
 ﻿using CookingFrog.Domain;
-using CookingFrog.WebUI.Models;
+using CookingFrog.WebUI.Client.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
-namespace CookingFrog.WebUI.Components;
+namespace CookingFrog.WebUI.Client.Pages;
 
 public partial class IngredientAddModal
 {

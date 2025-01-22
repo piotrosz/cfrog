@@ -1,7 +1,8 @@
 ﻿@page "/recipe/{Guid}"
 
 @attribute [StreamRendering]
-@rendermode InteractiveServer
+@* @rendermode InteractiveServer *@
+@rendermode InteractiveWebAssembly
 
 @if(Recipe == null)
 {

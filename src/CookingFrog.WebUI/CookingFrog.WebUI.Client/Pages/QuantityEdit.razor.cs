@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace CookingFrog.WebUI.Components;
+namespace CookingFrog.WebUI.Client.Pages;
 
 public partial class QuantityEdit
 {
