@@ -52,8 +52,12 @@ public sealed class ClientRecipesUpdaterService(HttpClient httpClient) : IRecipe
 
     public async Task AddStep(int? index, string step, Guid recipeGuid, CancellationToken cancellationToken)
     {
+        var url = index.HasValue ?
+            $"api/recipes/{recipeGuid}/steps/{index}" :
+            $"api/recipes/{recipeGuid}/steps";
+        
         var result = await httpClient.PostAsJsonAsync(
-            $"api/recipes/{recipeGuid}/steps",
+            url,
             step, 
             cancellationToken);
         result.EnsureSuccessStatusCode();

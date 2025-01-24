@@ -36,6 +36,7 @@
                                   {
                                       await JsRuntime.InvokeVoidAsync("closeAddIngredientBootstrapModal");
                                       await AddClicked.InvokeAsync(_newIngredient);
+                                      _newIngredient = IngredientAddModel.Empty;
                                   })">Zapisz</button>
             </div>
         </div>    

@@ -16,5 +16,6 @@ public partial class StepAddModal
         _index = value;
     }
 
-    [Parameter] public EventCallback<AddStepModel> AddClicked { get; set; }
+    [Parameter] 
+    public EventCallback<AddStepModel> AddClicked { get; set; }
 }

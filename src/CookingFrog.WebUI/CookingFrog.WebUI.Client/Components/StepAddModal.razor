@@ -20,7 +20,6 @@
                             class="form-control form-control-sm"
                             TValue="int?"
                             Value="_index"
-                            
                             ValueExpression="() => _index"
                             ValueChanged="value => { ChangeValue(value); }" />
                     </div>
@@ -38,6 +37,8 @@
                                   {
                                       await JsRuntime.InvokeVoidAsync("closeAddStepBootstrapModal");
                                       await AddClicked.InvokeAsync(new AddStepModel(_index, _step));
+                                      this._step = string.Empty;
+                                      this._index = null;
                                   })">
                     Zapisz
                 </button>

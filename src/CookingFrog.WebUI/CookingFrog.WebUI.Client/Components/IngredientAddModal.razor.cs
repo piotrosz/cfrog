@@ -9,7 +9,7 @@ public partial class IngredientAddModal
 {
     [Inject] public required IJSRuntime JsRuntime { get; set; }
 
-    private IngredientAddModel _newIngredient = new(string.Empty, 0, UnitEnum.Undefined);
+    private IngredientAddModel _newIngredient = IngredientAddModel.Empty;
 
     [Parameter] public EventCallback<IngredientAddModel> AddClicked { get; set; }
 

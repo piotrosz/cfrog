@@ -124,6 +124,11 @@ app.MapPost("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, [Fr
     await updater.AddStep(index, step, guid, CancellationToken.None);
 });
 
+app.MapPost("api/recipes/{guid}/steps/", async (Guid guid, [FromBody] string step, IRecipesUpdater updater) =>
+{
+    await updater.AddStep(index: null, step, guid, CancellationToken.None);
+});
+
 app.MapDelete("api/recipes/{guid}/steps/{index}", async (Guid guid, int index, IRecipesUpdater updater) =>
 {
     await updater.DeleteStep(index, guid, CancellationToken.None);
