@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace CookingFrog.WebUI.Client.Pages;
+namespace CookingFrog.WebUI.Client.Components;
 
 public partial class TitleEdit
 {

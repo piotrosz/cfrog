@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
-namespace CookingFrog.WebUI.Client.Pages;
+namespace CookingFrog.WebUI.Client.Components;
 
 public partial class StepAddModal
 {
