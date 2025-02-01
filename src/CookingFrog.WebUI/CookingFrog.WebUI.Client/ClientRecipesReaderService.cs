@@ -28,6 +28,6 @@ public sealed class ClientRecipesReaderService(HttpClient httpClient) : IRecipes
         var response = await httpClient.GetStreamAsync(
             $"api/recipes/{recipeGuid}");
         return await JsonSerializer.DeserializeAsync<RecipeModel>(
-            response, JsonSerializerOptions); 
+            response, JsonSerializerOptions) ?? throw new Exception("Recipe null!"); 
     }
 }

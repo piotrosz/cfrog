@@ -1,23 +1,13 @@
 ﻿namespace CookingFrog.Domain;
 
-public sealed class Recipe(
-    Guid guid,
-    string summary,
-    TimeSpan timeToPrepare,
-    IEnumerable<Ingredient> ingredients,
-    IEnumerable<Step> steps)
+public sealed record Recipe(
+    Guid Guid,
+    string Summary,
+    TimeSpan TimeToPrepare,
+    IEnumerable<Ingredient> Ingredients,
+    IEnumerable<Step> Steps)
 {
-    public Guid Guid { get; } = guid;
-
-    public string Summary { get; } = summary;
-
-    public IEnumerable<Step> Steps { get; } = steps;
-
-    public IEnumerable<Ingredient> Ingredients { get; } = ingredients;
-
-    public TimeSpan TimeToPrepare { get; } = timeToPrepare;
-
-    public string Link { get; set; } = string.Empty;
+    public string Link { get; init; } = string.Empty;
     
     public static Recipe Create(
         Guid guid,

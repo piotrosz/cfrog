@@ -1,8 +1,6 @@
 ﻿namespace CookingFrog.Domain;
 
-public sealed class Step(string description)
+public sealed record Step(string Description)
 {
-    public string Description { get; } = description;
-    
     public static implicit operator Step(string description) => new(description);
 }
