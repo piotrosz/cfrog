@@ -42,24 +42,26 @@ else
                     @{
                         var ingredientIndex = 0;
                         var groupIndex = 0;
+                        var groupName = string.Empty;
                     }
-                    @foreach (var ingredientGroup in GetIngredientsGrouped())
+                    @foreach (var ingredient in GetIngredientsGrouped())
                     {
-                        foreach (var ingredient in ingredientGroup)
+                        if (groupName != ingredient.GroupName)
                         {
-                            <IngredientEdit
-                                Index="ingredientIndex"
-                                Ingredient="ingredient"
-                                GroupIndex="groupIndex"
-                                ShowEditButtons="_showEditButtons"
-                                UpdateClicked="UpdateIngredient"
-                                DeleteClicked="DeleteIngredient"/>
-                            {
-                                ingredientIndex++;
-                            }
+                            groupIndex++;
+                            groupName = ingredient.GroupName;
                         }
-
-                        groupIndex++;
+                        
+                        <IngredientEdit
+                            Index="ingredientIndex"
+                            Ingredient="ingredient"
+                            ShowEditButtons="_showEditButtons"
+                            UpdateClicked="UpdateIngredient"
+                            DeleteClicked="DeleteIngredient"
+                            GroupIndex="groupIndex"/>
+                        {
+                            ingredientIndex++;
+                        }
                     }
                 </div>
             </div>
