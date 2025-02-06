@@ -1,5 +1,4 @@
 ﻿using System.Net.Http.Json;
-using CookingFrog.Domain;
 using CookingFrog.WebUI.Client.Models;
 using CSharpFunctionalExtensions;
 
