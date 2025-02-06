@@ -38,16 +38,11 @@ public sealed record Quantity(decimal Value, UnitEnum Unit)
 
     public override string ToString()
     {
-        if (Unit == UnitEnum.Undefined && Value == 0)
+        return Unit switch
         {
-            return string.Empty;
-        }
-
-        if (Unit == UnitEnum.Quantity)
-        {
-            return Value.ToString(CultureInfo.InvariantCulture);
-        }
-
-        return $"{Value} {Unit.GetDisplayDescription()}";
+            UnitEnum.Undefined when Value == 0 => string.Empty,
+            UnitEnum.Quantity => Value.ToString(CultureInfo.InvariantCulture),
+            _ => $"{Value} {Unit.GetDisplayDescription()}"
+        };
     }
 }

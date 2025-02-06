@@ -3,7 +3,7 @@ using Azure.Data.Tables;
 
 namespace CookingFrog.Infra;
 
-public record RecipeSummaryTableEntity : ITableEntity
+public sealed record RecipeSummaryTableEntity : ITableEntity
 {
     public string? PartitionKey { get; set; }
     
