@@ -44,7 +44,7 @@ else
     <div class="input-group mb-1">
         
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="step@(Index)">
+            <input class="form-check-input" type="checkbox" @bind-value="_isCompleted" id="step@(Index)"/>
             <label class="form-check-label" for="step@(Index)">
                 @if (Description.StartsWith("[stage]", StringComparison.OrdinalIgnoreCase))
                 {
@@ -60,6 +60,7 @@ else
                 }
                 else
                 {
+                    <span class="@(_isCompleted ? "text-decoration-line-through" : "text-decoration-none")">
                     <b>@Index)</b>
                     <span>@((MarkupString)Description)</span>
                     @if (ShowEditButtons)
@@ -69,6 +70,7 @@ else
                                 @onclick="Edit">🖊️
                         </button>
                     }
+                    </span>
                 }
             </label>
         </div>

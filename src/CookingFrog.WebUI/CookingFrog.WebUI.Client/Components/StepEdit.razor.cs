@@ -18,11 +18,18 @@ public partial class StepEdit
     private bool _isEdit;
     private string _editedStep = string.Empty;
 
+    private bool _isCompleted;
+    
     protected override void OnInitialized()
     {
         _editedStep = Description;
     }
 
+    private void FlipCompleted()
+    {
+        _isCompleted = !_isCompleted;
+    }
+    
     private void Edit()
     {
         _isEdit = true;

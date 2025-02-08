@@ -44,6 +44,7 @@ public partial class IngredientEdit
     }
 
     private bool _isEdit;
+    private bool _isCompleted;
 
     private void Edit()
     {

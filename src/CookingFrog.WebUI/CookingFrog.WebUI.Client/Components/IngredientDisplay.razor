@@ -1,9 +1,9 @@
-@if (Ingredient.GroupName != null)
-{
-    <span class="badge rounded-pill @_styles[GroupIndex] align-content-end">@Ingredient.GroupName</span>
-    <text>&nbsp;</text>
-}
-
-<span>@Ingredient.Name</span>
-
-<QuantityDisplay quantity="@GetQuantity(Ingredient)" />
+<span class="@(IsCompleted ? "text-decoration-line-through" : "text-decoration-none")">
+    @if (Ingredient.GroupName != null)
+    {
+        <span class="badge rounded-pill @_styles[GroupIndex] align-content-end">@Ingredient.GroupName</span>
+        <text>&nbsp;</text>
+    }
+    <span>@Ingredient.Name</span>
+    <QuantityDisplay quantity="@GetQuantity(Ingredient)" />
+</span>
