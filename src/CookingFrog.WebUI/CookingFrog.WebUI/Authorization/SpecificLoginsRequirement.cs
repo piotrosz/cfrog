@@ -2,12 +2,7 @@
 
 using Microsoft.AspNetCore.Authorization;
 
-public class SpecificLoginsRequirement : IAuthorizationRequirement
+public class SpecificLoginsRequirement(IEnumerable<string> allowedLogins) : IAuthorizationRequirement
 {
-    public IEnumerable<string> AllowedLogins { get; }
-
-    public SpecificLoginsRequirement(IEnumerable<string> allowedLogins)
-    {
-        AllowedLogins = allowedLogins;
-    }
+    public IEnumerable<string> AllowedLogins { get; } = allowedLogins;
 }

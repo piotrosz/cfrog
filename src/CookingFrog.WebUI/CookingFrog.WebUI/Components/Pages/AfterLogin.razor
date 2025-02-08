@@ -4,7 +4,8 @@
 <h3>Logged in</h3>
 
 @code {
-    [CascadingParameter] public HttpContext? HttpContext { get; set; }
+    [CascadingParameter] 
+    public HttpContext? HttpContext { get; set; }
 
     protected override void OnInitialized()
     {
