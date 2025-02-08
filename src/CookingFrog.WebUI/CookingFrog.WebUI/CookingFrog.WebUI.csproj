@@ -12,7 +12,7 @@
     <ProjectReference Include="..\..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
     <ProjectReference Include="..\..\CookingFrog.Infra\CookingFrog.Infra.csproj" />
     <ProjectReference Include="..\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj" />
-    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.3.2" />
+    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="9.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="9.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.1" />
