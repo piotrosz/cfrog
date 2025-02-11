@@ -7,4 +7,6 @@ public record RecipeModel(
     string Summary,
     Guid Guid,
     IEnumerable<IngredientModel> Ingredients,
-    IEnumerable<string> Steps);
+    IEnumerable<string> Steps,
+    string Notes);
+    

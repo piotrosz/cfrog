@@ -14,6 +14,18 @@ internal class RecipesAzUpdater(TableServiceClient tableServiceClient) : IRecipe
         return Result.Success();
     }
 
+    public async Task<Result> UpdateNotes(string notes, Guid recipeGuid, CancellationToken cancellationToken)
+    {
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
+        var entity = GetRecipe(recipeGuid, cancellationToken, tableClient);
+
+        entity.Notes = notes;
+        
+        await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
+        
+        return Result.Success();
+    }
+
     public async Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
         var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);

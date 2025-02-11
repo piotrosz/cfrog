@@ -1,8 +1,8 @@
 namespace CookingFrog.WebUI.Client.Models;
 
-public class AddStepModel(int? index, string step)
+public record AddStepModel(int? Index, string Step)
 {
-    public int? Index { get; } = index;
+    public int? Index { get; } = Index;
 
-    public string Step { get; } = step;
+    public string Step { get; } = Step;
 }

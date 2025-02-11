@@ -7,7 +7,7 @@ public sealed record Recipe(
     IEnumerable<Ingredient> Ingredients,
     IEnumerable<Step> Steps)
 {
-    public string Link { get; init; } = string.Empty;
+    public string Notes { get; init; } = string.Empty;
     
     public static Recipe Create(
         Guid guid,

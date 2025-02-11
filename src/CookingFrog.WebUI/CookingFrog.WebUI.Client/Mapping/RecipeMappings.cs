@@ -23,7 +23,8 @@ public static class RecipeMappings
             recipe.Summary, 
             recipe.Guid, 
             ingredients,
-            steps); 
+            steps,
+            recipe.Notes); 
         
         return recipeModel;
     }
