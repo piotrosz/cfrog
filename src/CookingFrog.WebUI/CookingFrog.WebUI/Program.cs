@@ -45,8 +45,7 @@ builder.AddAuthorization();
 
 if (builder.Environment.IsDevelopment())
 {
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+    builder.Services.AddOpenApi();
 }
 
 var app = builder.Build();
@@ -57,6 +56,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
+    app.MapOpenApi();
+    app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "v1"));
 }
 else
 {
@@ -79,11 +80,5 @@ app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(typeof(CookingFrog.WebUI.Client._Imports).Assembly);
 
 app.UseCfrogMinimalApi();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.Run();
