@@ -110,18 +110,24 @@ else
                         @onclick="ShowAddStepModal">➕</button>
             }
         </div>
-        <div class="row gy-2 g-2">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        Notatki
-                    </div>
-                    <div class="card-body">
-                        Notatka
+        @if (_showEditButtons || (!_showEditButtons && !string.IsNullOrWhiteSpace(Recipe.Notes)))
+        {
+            <div class="row gy-2 g-2">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Notatki
+                        </div>
+                        <div class="card-body">
+                            <NotesEdit
+                                Notes="@Recipe.Notes"
+                                UpdateClicked="UpdateNotes"
+                                IsEdit="_showEditButtons"/>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
     </div>
     
     <IngredientAddModal AddClicked="AddIngredient"/>

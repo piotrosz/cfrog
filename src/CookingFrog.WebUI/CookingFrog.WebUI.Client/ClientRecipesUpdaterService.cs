@@ -16,6 +16,16 @@ public sealed class ClientRecipesUpdaterService(HttpClient httpClient) : IRecipe
         return Result.Success();
     }
 
+    public async Task<Result> UpdateNote(string note, Guid recipeGuid, CancellationToken cancellationToken)
+    {
+        var result = await httpClient.PutAsJsonAsync(
+            $"/api/recipes/{recipeGuid}/note", 
+            note, 
+            cancellationToken);
+        result.EnsureSuccessStatusCode();
+        return Result.Success();
+    }
+
     public async Task UpdateIngredient(int index, IngredientModel ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
         var result = await httpClient.PutAsJsonAsync(

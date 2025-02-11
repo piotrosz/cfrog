@@ -6,8 +6,8 @@ internal sealed partial class RecipesStaticTestRepo
 {
     private static readonly IReadOnlyList<Recipe> Recipes =
     [
-        Recipe.Create(
-            guid:Guid.NewGuid(),
+        new Recipe(
+            Guid.NewGuid(),
             "🦃 Kotlety mielone",
             TimeSpan.FromHours(1.5),
             [
@@ -29,8 +29,8 @@ internal sealed partial class RecipesStaticTestRepo
                 "Uformować podłużne kotlety, obtoczyć w bułce tartej i kłaść na dobrze rozgrzany olej na patelni. Po obsmażeniu z dwóch stron przełożyć kotlety do garnka lub naczynia żaroodpornego (bez przykrycia) i wstawić do rozgrzanego do 150 stopni C piekarnika, na około 15 minut. Unikniemy długiego smażenia, a kotlety będą w środku idealnie miękkie."
 
             ]),
-        Recipe.Create(
-            guid:Guid.NewGuid(),
+        new Recipe(
+            Guid.NewGuid(),
             "🥗 Sałatka batat, avocado, jajko",
             TimeSpan.FromHours(1.0),
             [
@@ -53,7 +53,7 @@ internal sealed partial class RecipesStaticTestRepo
                 new Ingredient("opcjonalnie majonez", Quantity.TeaSpoon, "sos"),
                 new Ingredient("opcjonalnie płatki chilli", Quantity.Handful, "sos"),
 
-            ], steps:
+            ],
             [
                 "Piekarnik nagrzać do 210C. Batata obrać, umyć, pokroić na kawałki, doprawić startym czosnkiem, solą, pieprzem i papryką w proszku. Wymieszać z oliwą i ułożyć na blaszce do pieczenia lub w naczyniu żaroodpornym i piec przez ok. 20 - 25 minut (do miękkości).",
                 "Jajka ugotować na twardo (6 minut od zagotowania się wody), obrać i przekroić na połówki.",
@@ -62,7 +62,7 @@ internal sealed partial class RecipesStaticTestRepo
                 "Do misek lub pojemników na lunch włożyć szpinak, jajka, awokado, pomidorki, cebulę. Doprawić solą i pieprzem. Dodać upieczone bataty.",
                 "Przygotować sos mieszając wszystkie składniki."
             ]),
-        Recipe.Create(
+        new Recipe(
             Guid.NewGuid(), 
             "🍜 Makaron w sosie pomidorowo-czosnkowym z kurczakiem",
             TimeSpan.FromMinutes(30),
@@ -79,7 +79,7 @@ internal sealed partial class RecipesStaticTestRepo
                 new Ingredient("olej sezamowy", new Quantity(20, UnitEnum.Gram)),
                 new Ingredient("przyprawa do kurczaka", new Quantity(4, UnitEnum.Gram)),
                 new Ingredient("czosnek granulowany", new Quantity(8, UnitEnum.Gram)),
-            ], steps:
+            ],
             [
                 "Dopraw mięso w misce przyprawami (czosnek granulowany, przyp do kurczaka), obtocz mięso w mące, dodaj 1/4 oleju sezamowego.",
                 "smaż 🐤 na patelni z 1/4 oleju sezamowego przez 6-8min. Ugotuj makaron. Przelej 80ml wody z makaronu do szklanki. Makaron odcedź i przelej zimną wodą.",
@@ -87,7 +87,7 @@ internal sealed partial class RecipesStaticTestRepo
                 "Smaż warzywa mrożone 8-10min. Dodaj 🐤, makaron i sos. Dokładnie mieszaj i gotuj 2-3min",
                 "Wyłóż porcje na talerz. Posyp posiekanym szczypiorem."
             ]),
-        Recipe.Create(
+        new Recipe(
             Guid.NewGuid(),
             "🥗 Sałatka makaronowa awokado, feta, pomidory, kukurydza",
             TimeSpan.FromHours(0.5),
@@ -104,14 +104,14 @@ internal sealed partial class RecipesStaticTestRepo
                 new Ingredient("liście bazylii", new Quantity(0.5m, UnitEnum.Glass)),
                 new Ingredient("oliwa", Quantity.TeaSpoon),
                 new Ingredient("majonez", Quantity.TeaSpoon)
-            ], steps:
+            ],
             [
                 "Makaron ugotować w osolonej wodzie, odcedzić i wsypać do salaterki.",
                 "Dodać pokrojony w kosteczkę ser, a także obrane i pokrojone w kosteczkę awokado. Skropić sokiem z limonki.",
                 "Dodać odcedzoną kukurydzę, pokrojone na połówki pomidorki, posiekaną cebulę i całość doprawić solą, pieprzem i papryką.",
                 "Dodać posiekane listki bazylii, oliwę oraz majonez. Wszystko delikatnie wymieszać."
             ]),
-        Recipe.Create(
+        new Recipe(
             Guid.NewGuid(),
             "🥞 Placki ziemniaczane",
             TimeSpan.FromHours(1),

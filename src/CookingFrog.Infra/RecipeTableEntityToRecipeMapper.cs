@@ -15,12 +15,15 @@ public static class RecipeTableEntityToRecipeMapper
             throw new NullReferenceException("Recipe could not be deserialized.");
         }
         
-        return Recipe.Create(
+        var result = new Recipe(
             Guid.Parse(recipe.RowKey), 
             recipe.Summary,
             recipe.TimeToPrepare,
             deserializedIngredients,
-            deserializedSteps
+            deserializedSteps,
+            recipe.Notes ?? string.Empty
         );
+        
+        return result;
     }
 }

@@ -52,6 +52,15 @@ public partial class RecipeDetail
         }
     }
 
+    private async Task UpdateNotes(string? newNote)
+    {
+        if (Recipe is not null && !string.IsNullOrWhiteSpace(newNote))
+        {
+            await RecipesUpdater!.UpdateNote(newNote, Recipe.Guid, CancellationToken.None);
+            Recipe = await RecipesReader!.GetRecipe(Recipe.Guid);
+        }
+    }
+    
     private async Task UpdateStep(StepUpdateModel stepModel)
     {
         if (Recipe is not null)

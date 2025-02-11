@@ -1,5 +1,4 @@
-﻿using CookingFrog.Domain;
-using CookingFrog.WebUI.Client.Models;
+﻿using CookingFrog.WebUI.Client.Models;
 using CSharpFunctionalExtensions;
 
 namespace CookingFrog.WebUI.Client;
@@ -8,6 +7,8 @@ public interface IRecipesUpdaterService
 {
     Task<Result> UpdateTitle(string newTitle, Guid recipeGuid, CancellationToken cancellationToken);
 
+    Task<Result> UpdateNote(string note, Guid recipeGuid, CancellationToken cancellationToken);
+    
     Task UpdateIngredient(int index, IngredientModel ingredient, Guid recipeGuid, CancellationToken cancellationToken);
 
     Task UpdateStep(int stepIndex, string description, Guid recipeGuid, CancellationToken cancellationToken);

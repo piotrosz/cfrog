@@ -31,6 +31,12 @@ internal static class WebApplicationExtensions
                 await updater.UpdateTitle(title, guid, CancellationToken.None);
             });
 
+        app.MapPut("api/recipes/{guid}/note",
+            async (Guid guid, [FromBody] string note, IRecipesUpdater updater) =>
+            {
+                await updater.UpdateNotes(note, guid, CancellationToken.None);
+            });
+        
         app.MapPut("api/recipes/{guid}/ingredients/{index}",
             async (Guid guid, int index, [FromBody] IngredientModel ingredient, IRecipesUpdater updater) =>
             {

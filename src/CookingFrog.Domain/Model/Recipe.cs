@@ -5,17 +5,14 @@ public sealed record Recipe(
     string Summary,
     TimeSpan TimeToPrepare,
     IEnumerable<Ingredient> Ingredients,
-    IEnumerable<Step> Steps)
+    IEnumerable<Step> Steps,
+    string Notes)
 {
-    public string Notes { get; init; } = string.Empty;
-    
-    public static Recipe Create(
-        Guid guid,
-        string title, 
-        TimeSpan timeToPrepare,
-        IEnumerable<Ingredient> ingredients, 
-        IEnumerable<Step> steps)
+    public Recipe(Guid Guid,
+        string Summary,
+        TimeSpan TimeToPrepare,
+        IEnumerable<Ingredient> Ingredients,
+        IEnumerable<Step> Steps) : this(Guid, Summary, TimeToPrepare, Ingredients, Steps, string.Empty)
     {
-        return new Recipe(guid, title, timeToPrepare, ingredients, steps);
     }
 }

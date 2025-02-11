@@ -1,0 +1,57 @@
+@if (_isEdit)
+{
+    <div>
+        <div class="mb-1">
+            <InputTextArea
+                class="form-control"
+                id="txtSteps"
+                rows="3"
+                @bind-Value="_notes"/>
+        </div>
+        <div class="mb-3">
+            <button
+                type="button"
+                class="btn btn-sm btn-success"
+                @onclick="@(async () =>
+                          {
+                              await UpdateClicked.InvokeAsync(_notes);
+                              _isEdit = false;
+                              _notes = string.Empty;
+                          })"
+                title="zapisz">
+                Zapisz
+            </button>
+        </div>
+    </div>
+    
+}
+else
+{
+    @Notes
+}
+
+@code {
+    private string _notes = string.Empty;
+    private bool _isEdit = false;
+    
+    [Parameter]
+    public bool IsEdit { get; set; }
+    
+    [Parameter]
+    public EventCallback<string> UpdateClicked { get; set; }
+    
+    [Parameter]
+    public string Notes { get; set; } = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        _notes = Notes;
+        _isEdit = IsEdit;
+    }
+
+    protected override void OnParametersSet()
+    {
+        _notes = Notes;
+        _isEdit = IsEdit;
+    }
+}

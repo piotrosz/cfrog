@@ -13,6 +13,11 @@ public sealed class ServerRecipesUpdaterService(IRecipesUpdater recipesUpdater) 
         return recipesUpdater.UpdateTitle(newTitle, recipeGuid, cancellationToken);
     }
 
+    public Task<Result> UpdateNote(string note, Guid recipeGuid, CancellationToken cancellationToken)
+    {
+        return recipesUpdater.UpdateNotes(note, recipeGuid, cancellationToken);
+    }
+
     public Task UpdateIngredient(int index, IngredientModel ingredient, Guid recipeGuid, CancellationToken cancellationToken)
     {
         return recipesUpdater.UpdateIngredient(index, ingredient.MapToDomain(), recipeGuid, cancellationToken);
