@@ -5,10 +5,8 @@ using Microsoft.JSInterop;
 
 namespace CookingFrog.WebUI.Client.Components;
 
-public partial class IngredientAddModal
+public partial class IngredientAddModal(IJSRuntime JsRuntime)
 {
-    [Inject] public required IJSRuntime JsRuntime { get; set; }
-
     private IngredientAddModel _newIngredient = IngredientAddModel.Empty;
 
     [Parameter] public EventCallback<IngredientAddModel> AddClicked { get; set; }

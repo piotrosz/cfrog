@@ -5,11 +5,13 @@ namespace CookingFrog.WebUI.Client.Components;
 
 public partial class UnitEdit
 {
-    [Parameter] public UnitEnum Unit { get; set; }
+    [Parameter] 
+    public UnitEnum Unit { get; set; }
 
     private UnitEnum _selectedValue;
 
-    [Parameter] public EventCallback<UnitEnum> UpdateClicked { get; set; }
+    [Parameter] 
+    public EventCallback<UnitEnum> UpdateClicked { get; set; }
 
     private async Task PassValue(UnitEnum value)
     {

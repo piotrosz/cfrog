@@ -4,9 +4,11 @@ namespace CookingFrog.WebUI.Client.Components;
 
 public partial class QuantityEdit
 {
-    [Parameter] public decimal? Quantity { get; set; }
+    [Parameter] 
+    public decimal? Quantity { get; set; }
 
-    [Parameter] public EventCallback<decimal> UpdateClicked { get; set; }
+    [Parameter] 
+    public EventCallback<decimal> UpdateClicked { get; set; }
 
     public async Task ChangeValue(decimal value)
     {

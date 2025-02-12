@@ -6,14 +6,10 @@ using Microsoft.AspNetCore.Components.Forms;
 
 namespace CookingFrog.WebUI.Components.Pages;
 
-public partial class RecipeAdd
+public partial class RecipeAdd(
+    IRecipesSaver? RecipesRepo,
+    NavigationManager? NavigationManager)
 {
-    [Inject] 
-    public IRecipesSaver? RecipesRepo { get; set; }
-
-    [Inject]
-    public NavigationManager? NavigationManager { get; set; }
-    
     [SupplyParameterFromForm]
     private RecipeAddModel? Model { get; set; }
     

@@ -11,9 +11,11 @@ public partial class IngredientDisplay
     [Parameter]
     public bool IsCompleted { get; set; }
     
-    [Parameter] public required IngredientModel Ingredient { get; set; }
+    [Parameter] 
+    public required IngredientModel Ingredient { get; set; }
 
-    [Parameter] public int GroupIndex { get; set; }
+    [Parameter] 
+    public int GroupIndex { get; set; }
     
     private Quantity GetQuantity(IngredientModel ingredient) => new(ingredient.Amount, ingredient.Unit);
 }

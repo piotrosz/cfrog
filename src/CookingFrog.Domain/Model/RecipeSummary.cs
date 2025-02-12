@@ -1,3 +1,3 @@
 ﻿namespace CookingFrog.Domain;
 
-public record RecipeSummary(Guid Guid, string Summary);
+public sealed record RecipeSummary(Guid Guid, string Summary);

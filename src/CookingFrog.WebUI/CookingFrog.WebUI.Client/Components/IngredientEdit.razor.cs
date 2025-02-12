@@ -6,15 +6,20 @@ namespace CookingFrog.WebUI.Client.Components;
 
 public partial class IngredientEdit
 {
-    [Parameter] public bool ShowEditButtons { get; set; }
+    [Parameter] 
+    public bool ShowEditButtons { get; set; }
     
-    [Parameter] public IngredientModel? Ingredient { get; set; }
+    [Parameter] 
+    public IngredientModel? Ingredient { get; set; }
 
-    [Parameter] public int Index { get; set; }
+    [Parameter] 
+    public int Index { get; set; }
 
-    [Parameter] public int GroupIndex { get; set; }
+    [Parameter] 
+    public int GroupIndex { get; set; }
 
-    [Parameter] public EventCallback<IngredientUpdateModel> UpdateClicked { get; set; }
+    [Parameter] 
+    public EventCallback<IngredientUpdateModel> UpdateClicked { get; set; }
 
     [Parameter] public EventCallback<int> DeleteClicked { get; set; }
 
