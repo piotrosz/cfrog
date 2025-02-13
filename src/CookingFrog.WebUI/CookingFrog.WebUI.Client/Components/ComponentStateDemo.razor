@@ -1,0 +1,13 @@
+﻿
+<p><strong>Renderer Location:</strong> @_rendererLocation</p>
+<p><strong>Is Interactive:</strong> @(RendererInfo.IsInteractive ? "Yes" : "No")</p>
+<p><strong>Assigned Render Mode:</strong> @_renderMode</p>
+
+@if (!RendererInfo.IsInteractive)
+{
+    <p>Loading interactivity... Please wait!</p>
+}
+else
+{
+    <p>Interactive mode enabled. You can now interact with the component!</p>
+}
