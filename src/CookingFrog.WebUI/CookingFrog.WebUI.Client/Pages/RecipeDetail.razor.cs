@@ -26,19 +26,6 @@ public partial class RecipeDetail
             Recipe = await RecipesReader!.GetRecipe(guid);
         }
     }
-
-    private IEnumerable<IngredientModel> GetIngredientsGrouped()
-    {
-        if (Recipe is null)
-        {
-            return [];
-        }
-        return Recipe.Ingredients
-            .OrderBy(x => x.Name)
-            .GroupBy(x => x.GroupName)
-            .Select(x => x.ToList())
-            .SelectMany(x => x);
-    }
     
     [Parameter] 
     public string? Guid { get; set; }

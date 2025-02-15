@@ -42,7 +42,7 @@ else
                         var groupIndex = 0;
                         var groupName = string.Empty;
                     }
-                    @foreach (var ingredient in GetIngredientsGrouped())
+                    @foreach (var ingredient in Recipe.Ingredients)
                     {
                         if (groupName != ingredient.GroupName)
                         {

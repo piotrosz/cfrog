@@ -9,7 +9,7 @@ public static class RecipeTableEntityToRecipeMapper
     {
         var deserializedIngredients = JsonSerializer.Deserialize<IEnumerable<Ingredient>>(recipe.SerializedIngredients);
         var deserializedSteps = JsonSerializer.Deserialize<IEnumerable<Step>>(recipe.SerializedSteps);
-
+        
         if (deserializedIngredients == null || deserializedSteps == null)
         {
             throw new NullReferenceException("Recipe could not be deserialized.");
@@ -19,11 +19,19 @@ public static class RecipeTableEntityToRecipeMapper
             Guid.Parse(recipe.RowKey), 
             recipe.Summary,
             recipe.TimeToPrepare,
-            deserializedIngredients,
+            OrderIngredients(deserializedIngredients),
             deserializedSteps,
-            recipe.Notes ?? string.Empty
-        );
+            recipe.Notes ?? string.Empty);
         
         return result;
+    }
+
+    private static IEnumerable<Ingredient> OrderIngredients(IEnumerable<Ingredient> ingredients)
+    {
+        return ingredients
+            .OrderBy(x => x.Name)
+            .GroupBy(x => x.GroupName)
+            .Select(x => x.ToList())
+            .SelectMany(x => x);
     }
 }
