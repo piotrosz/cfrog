@@ -8,4 +8,6 @@ public sealed record Ingredient(string Name, Quantity Quantity, string? GroupNam
     public Ingredient(string name) : this(name, Quantity.Undefined)
     {
     }
+    
+    public int? Alternative { get ; set ; }
 }

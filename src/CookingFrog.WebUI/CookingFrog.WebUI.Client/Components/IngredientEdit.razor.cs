@@ -45,9 +45,16 @@ public partial class IngredientEdit
                 Ingredient.Amount,
                 Ingredient.Unit,
                 Ingredient.GroupName);
+            
+            _updatedIngredient.Alternative = Ingredient.Alternative;
         }
     }
 
+    private void ChangeAlternativeValue(int? value)
+    {
+        _updatedIngredient.Alternative = value;
+    }
+    
     private void UpdateQuantity(decimal quantity)
     {
         _updatedIngredient.Quantity = quantity;

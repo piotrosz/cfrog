@@ -18,4 +18,6 @@ public record IngredientUpdateModel(
     public UnitEnum Unit { get; set; } = Unit;
 
     public string? GroupName { get; set; } = GroupName;
+    
+    public int? Alternative { get; set; }
 }

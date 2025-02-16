@@ -23,6 +23,15 @@
                     @bind-value="_updatedIngredient.GroupName"
                     class="form-control form-control-sm" />
             </div>
+            <div class="col col-1">
+                <InputNumber
+                    class="form-control form-control-sm"
+                    TValue="int?"
+                    Value="_updatedIngredient.Alternative"
+                    ValueExpression="() => _updatedIngredient.Alternative"
+                    ValueChanged="value => { ChangeAlternativeValue(value); }" />
+            </div>
+            
             <div class="col col-6">
                 <div class="input-group mb-3">
                     <button

@@ -69,7 +69,8 @@ public partial class RecipeDetail
                 ingredientModel.Name,
                 ingredientModel.Quantity,
                 ingredientModel.Unit,
-                ingredientModel.GroupName);
+                ingredientModel.GroupName,
+                ingredientModel.Alternative);
             
             await RecipesUpdater!.UpdateIngredient(
                 ingredientModel.Index, 
