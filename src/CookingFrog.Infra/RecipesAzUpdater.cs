@@ -39,6 +39,7 @@ internal class RecipesAzUpdater(TableServiceClient tableServiceClient) : IRecipe
         }
         
         ingredients[index] = ingredient;
+        
         entity.SerializedIngredients = JsonSerializer.Serialize(ingredients);
         await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
     }

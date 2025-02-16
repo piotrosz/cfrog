@@ -27,6 +27,16 @@ public partial class IngredientEdit
 
     protected override void OnInitialized()
     {
+        SetIngredient();
+    }
+
+    protected override void OnParametersSet()
+    {
+        SetIngredient();
+    }
+    
+    private void SetIngredient()
+    {
         if (Ingredient != null && Index >= 0)
         {
             _updatedIngredient = new IngredientUpdateModel(
