@@ -22,6 +22,4 @@ public sealed record RecipeTableEntity : ITableEntity
     public string? Notes { get; set; }
     
     public TimeSpan TimeToPrepare { get; init; }
-    
-    public int? Alternative { get; set; }
 }
