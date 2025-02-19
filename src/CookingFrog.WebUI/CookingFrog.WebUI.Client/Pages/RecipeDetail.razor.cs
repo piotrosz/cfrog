@@ -35,7 +35,7 @@ public partial class RecipeDetail(
 
     private async Task UpdateNotes(string? newNote)
     {
-        if (Recipe is not null)
+        if (newNote != null && Recipe is not null)
         {
             await recipesUpdater!.UpdateNote(newNote, Recipe.Guid, CancellationToken.None);
             Recipe = await recipesReader!.GetRecipe(Recipe.Guid);
