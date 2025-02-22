@@ -15,3 +15,8 @@ Blazor web app
 - Add/edit notes
 - Add ingredient at index
 
+docker build -t piotrosz/cfrog:zaba1 .
+
+docker image ls
+
+docker run -p 8080:80 piotrosz/cfrog:zaba1 
