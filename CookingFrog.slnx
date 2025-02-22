@@ -1,0 +1,14 @@
+﻿<Solution>
+  <Folder Name="/doc/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src\CookingFrog.Domain\CookingFrog.Domain.csproj" />
+    <Project Path="src\CookingFrog.Infra\CookingFrog.Infra.csproj" Type="Classic C#" />
+    <Project Path="src\CookingFrog.WebUI\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj" Type="Classic C#" />
+    <Project Path="src\CookingFrog.WebUI\CookingFrog.WebUI\CookingFrog.WebUI.csproj" Type="Classic C#" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test\CookingFrog.Domain.Tests\CookingFrog.Domain.Tests.csproj" Type="Classic C#" />
+  </Folder>
+</Solution>

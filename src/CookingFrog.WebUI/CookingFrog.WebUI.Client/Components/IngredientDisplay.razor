@@ -6,5 +6,8 @@
     }
     <span>@Ingredient.Name</span>
     <QuantityDisplay quantity="@GetQuantity(Ingredient)" />
-    <span class="badge bg-dark">@Ingredient.Alternative</span>
+    @if (Ingredient.Alternative != null)
+    {
+        <span class="badge bg-dark">LUB @Ingredient.Alternative</span>
+    }
 </span>
