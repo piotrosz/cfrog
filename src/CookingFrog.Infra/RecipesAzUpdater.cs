@@ -130,13 +130,7 @@ internal class RecipesAzUpdater(TableServiceClient tableServiceClient) : IRecipe
         {
             throw new Exception("Cannot deserialize ingredients.");
         }
-        
-        return ingredients
-            .OrderBy(x => x.Name)
-            .GroupBy(i => i.GroupName)
-            .Select(g => g.ToList())
-            .SelectMany(x => x)
-            .ToList();
+        return ingredients.OrderIngredients();
     }
     
     private static RecipeTableEntity GetRecipe(Guid recipeGuid, CancellationToken cancellationToken, TableClient tableClient)

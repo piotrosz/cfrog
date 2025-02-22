@@ -19,19 +19,10 @@ public static class RecipeTableEntityToRecipeMapper
             Guid.Parse(recipe.RowKey), 
             recipe.Summary,
             recipe.TimeToPrepare,
-            OrderIngredients(deserializedIngredients),
+            deserializedIngredients.OrderIngredients(),
             deserializedSteps,
             recipe.Notes ?? string.Empty);
         
         return result;
-    }
-
-    private static IEnumerable<Ingredient> OrderIngredients(IEnumerable<Ingredient> ingredients)
-    {
-        return ingredients
-            .OrderBy(x => x.Name)
-            .GroupBy(x => x.GroupName)
-            .Select(x => x.ToList())
-            .SelectMany(x => x);
     }
 }
