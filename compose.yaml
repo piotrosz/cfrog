@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "80:8080"
+  azurite:
+    image: "mcr.microsoft.com/azure-storage/azurite"
+    ports:
+      - "1000:1000"
+      - "1001:1001"
+      - "1002:1002"
