@@ -8,10 +8,24 @@ namespace CookingFrog.Infra;
 public static class Registrations
 {
     public static void AddFrogStorage(
+        this IServiceCollection services,
+        string? connectionString)
+    {
+        ArgumentNullException.ThrowIfNull(connectionString);
+
+        services.AddAzureClients(clientBuilder =>
+        {
+            clientBuilder.AddTableServiceClient(connectionString);
+        });
+
+        AddServices(services);
+    }
+
+    public static void AddFrogStorage(
         this IServiceCollection services, 
         Uri serviceUri,
-        string accountName,
-        string accountKey)
+        string? accountName,
+        string? accountKey)
     {
         ArgumentNullException.ThrowIfNull(serviceUri);
         ArgumentNullException.ThrowIfNull(accountName);
@@ -25,8 +39,12 @@ public static class Registrations
             //clientBuilder.UseCredential(new DefaultAzureCredential());
         });
         
+        AddServices(services);
+    }
+
+    private static void AddServices(IServiceCollection services)
+    {
         services.AddScoped<IRecipesReader, RecipesAzReader>();
-        //services.AddScoped<IRecipesReadRepo, RecipesStaticTestRepo>();
         services.AddScoped<IRecipesSaver, RecipesAzSaver>();
         services.AddScoped<IRecipesUpdater, RecipesAzUpdater>();
         services.AddScoped<IStaticRecipesLoader, StaticRecipesLoader>();

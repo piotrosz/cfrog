@@ -17,7 +17,7 @@ if (builder.Environment.IsProduction())
     {
         throw new InvalidOperationException("Azure Key Vault is not configured.");
     }
-        
+    
     builder.Configuration.AddAzureKeyVault(
         new Uri(keyVaultUrl),
         new DefaultAzureCredential());
@@ -32,10 +32,18 @@ if (azureStorageConfig == null)
     throw new InvalidOperationException("Azure Storage is not configured.");
 }
 
-builder.Services.AddFrogStorage(
-   azureStorageConfig.Uri,
-   azureStorageConfig.AccountName,
-   azureStorageConfig.AccountKey);
+if (azureStorageConfig.Uri is not null)
+{
+    builder.Services.AddFrogStorage(
+        azureStorageConfig.Uri,
+        azureStorageConfig.AccountName,
+        azureStorageConfig.AccountKey);
+}
+else
+{
+    builder.Services.AddFrogStorage(
+        azureStorageConfig.ConnectionString);
+}
 
 builder.Services.AddScoped<IRecipesReaderService, ServerRecipesReaderService>();
 builder.Services.AddScoped<IRecipesUpdaterService, ServerRecipesUpdaterService>();
