@@ -10,7 +10,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-if (builder.Environment.IsProduction())
+if (!builder.Environment.IsDevelopment())
 {
     var keyVaultUrl = builder.Configuration["Azure:KeyVault:Uri"];
     if (keyVaultUrl == null)
@@ -48,8 +48,11 @@ else
 builder.Services.AddScoped<IRecipesReaderService, ServerRecipesReaderService>();
 builder.Services.AddScoped<IRecipesUpdaterService, ServerRecipesUpdaterService>();
 
-builder.AddGoogleAuthentication();
-builder.AddAuthorization();
+if (!builder.Environment.IsDevelopment())
+{
+    builder.AddFrogGoogleAuthentication();
+    builder.AddFrogAuthorization();
+}
 
 if (builder.Environment.IsDevelopment())
 {
@@ -77,8 +80,12 @@ else
 app.UseHttpsRedirection();
 
 app.MapStaticAssets();
-app.UseAuthentication();
-app.UseAuthorization();
+
+if(!app.Environment.IsDevelopment())
+{
+    app.UseAuthentication();
+    app.UseAuthorization();
+}
 
 app.UseAntiforgery();
 

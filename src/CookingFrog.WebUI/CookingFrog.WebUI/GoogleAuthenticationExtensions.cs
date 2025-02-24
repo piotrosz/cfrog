@@ -7,7 +7,7 @@ namespace CookingFrog.WebUI;
 
 public static class GoogleAuthenticationExtensions
 {
-    public static void AddGoogleAuthentication(this WebApplicationBuilder webApplicationBuilder)
+    public static void AddFrogGoogleAuthentication(this WebApplicationBuilder webApplicationBuilder)
     {
         webApplicationBuilder.Services.AddCascadingAuthenticationState();
         webApplicationBuilder.Services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();

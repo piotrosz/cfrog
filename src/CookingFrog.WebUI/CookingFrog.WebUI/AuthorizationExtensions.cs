@@ -5,7 +5,7 @@ namespace CookingFrog.WebUI;
 
 public static class AuthorizationExtensions 
 {
-    public static void AddAuthorization(this WebApplicationBuilder webApplicationBuilder)
+    public static void AddFrogAuthorization(this WebApplicationBuilder webApplicationBuilder)
     {
         // Register the authorization handler
         webApplicationBuilder.Services.AddSingleton<IAuthorizationHandler, SpecificLoginsHandler>();
