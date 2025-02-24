@@ -32,7 +32,7 @@ if (azureStorageConfig == null)
     throw new InvalidOperationException("Azure Storage is not configured.");
 }
 
-if (azureStorageConfig.Uri is not null)
+if (!string.IsNullOrEmpty(azureStorageConfig.AccountKey))
 {
     builder.Services.AddFrogStorage(
         azureStorageConfig.Uri,
@@ -48,11 +48,8 @@ else
 builder.Services.AddScoped<IRecipesReaderService, ServerRecipesReaderService>();
 builder.Services.AddScoped<IRecipesUpdaterService, ServerRecipesUpdaterService>();
 
-if (!builder.Environment.IsDevelopment())
-{
-    builder.AddFrogGoogleAuthentication();
-    builder.AddFrogAuthorization();
-}
+builder.AddFrogGoogleAuthentication();
+builder.AddFrogAuthorization();
 
 if (builder.Environment.IsDevelopment())
 {
@@ -81,11 +78,8 @@ app.UseHttpsRedirection();
 
 app.MapStaticAssets();
 
-if(!app.Environment.IsDevelopment())
-{
-    app.UseAuthentication();
-    app.UseAuthorization();
-}
+app.UseAuthentication(); 
+app.UseAuthorization();
 
 app.UseAntiforgery();
 

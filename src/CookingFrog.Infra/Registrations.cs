@@ -23,7 +23,7 @@ public static class Registrations
 
     public static void AddFrogStorage(
         this IServiceCollection services, 
-        Uri serviceUri,
+        Uri? serviceUri,
         string? accountName,
         string? accountKey)
     {
