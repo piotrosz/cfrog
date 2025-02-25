@@ -14,6 +14,7 @@ services:
     container_name: "azurite"
     hostname: azurite
     restart: always
+    command: "azurite --tableHost 127.0.0.1 --tablePort 10002"
     ports:
       - "10002:10002"
     volumes:
