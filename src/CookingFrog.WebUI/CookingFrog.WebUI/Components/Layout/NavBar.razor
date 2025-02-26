@@ -1,7 +1,7 @@
 @using CookingFrog.WebUI.Authorization
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand text-success font-monospace" href="">🐸 Cooking Frog</a>
+        <a class="navbar-brand text-success font-monospace" href="">cooking fr🐸g</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,7 +11,7 @@
                     <AuthorizeView>
                         <NotAuthorized>
                             <NavLink class="nav-link" href="login">
-                                <span class="bi bi-person-circle-nested-nav-menu" aria-hidden="true"></span> Log in
+                                <span class="bi bg-info-subtle font-monospace" aria-hidden="true"></span> Log in
                             </NavLink>
                         </NotAuthorized>
                     </AuthorizeView>
@@ -20,7 +20,7 @@
                     <AuthorizeView>
                         <Authorized>
                             <NavLink class="nav-link" href="recipe-add">
-                                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Dodaj
+                                <span class="bi bg-info-subtle" aria-hidden="true"></span> Dodaj
                             </NavLink>
                         </Authorized>
                     </AuthorizeView>
