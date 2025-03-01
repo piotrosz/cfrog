@@ -4,22 +4,32 @@ using Microsoft.AspNetCore.Components;
 
 namespace CookingFrog.WebUI.Components.Pages;
 
-public partial class Recipes(IRecipesReaderService RecipesReader)
+public partial class Recipes(IRecipesReaderService recipesReader)
 {
     [CascadingParameter] 
     public HttpContext? HttpContext { get; set; }
     
-    private IQueryable<RecipeSummaryModel>? _recipes;
+    private IQueryable<RecipeSummaryModel>? _initialRecipes = new List<RecipeSummaryModel>().AsQueryable();
+
+    private IQueryable<RecipeSummaryModel>? _recipes = new List<RecipeSummaryModel>().AsQueryable();
     
     protected override async Task OnInitializedAsync()
     {
-        _recipes = (await RecipesReader.GetRecipeSummaries())
+        _recipes = (await recipesReader.GetRecipeSummaries())
             .AsQueryable();
+
+        _initialRecipes = _recipes;
     }
 
-    private async Task SearchRecipes(string searchTerm)
+    private Task SearchRecipes(string searchTerm)
     {
-        _recipes = (await RecipesReader.QueryRecipeSummaries(searchTerm))
+        _recipes = _initialRecipes.Where(x => x.Summary
+                .Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
             .AsQueryable();
+
+        return Task.CompletedTask;
+
+        //_recipes = (await recipesReader.QueryRecipeSummaries(searchTerm))
+        //    .AsQueryable();
     }
 }

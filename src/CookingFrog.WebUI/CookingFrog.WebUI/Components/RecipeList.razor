@@ -1,11 +1,11 @@
 @using Microsoft.AspNetCore.Components.QuickGrid
 @using CookingFrog.WebUI.Client.Components
 
-@* <ComponentStateDemo /> *@
-
 @if (Recipes == null)
 {
-    <p><em>Loading...</em></p>
+    <div class="alert alert-info" role="alert">
+        Ładowanie przepisów...
+    </div>
 }
 else
 {
@@ -14,7 +14,6 @@ else
         Items="Recipes"
         Class="table table-borderless">
         <TemplateColumn Context="summary">
-
             <div class="card mb-3">
                 <div class="card-header">
                     <NavLink class="nav-link" href="@("recipe/" + summary.Guid)">
@@ -22,7 +21,6 @@ else
                     </NavLink>
                 </div>
             </div>
-
         </TemplateColumn>
     </QuickGrid>
 }

@@ -1,19 +1,21 @@
 <div style="margin: 2px; padding: 5px">
 <div class="row">
-    <div class="col">
+    <div class="col col-md-2">
         <InputText class="form-control me-2"
                    type="search"
                    placeholder="Szukaj"
                    @bind-value="SearchTerm"
                    aria-label="Search"
+                   @oninput="async () => { await SearchCalled.InvokeAsync(SearchTerm); }"
                    @onkeydown="@DoSearch"/>
     </div>
-    <div class="col">
+    <div class="col col-md-2">
         <button class="btn btn-success"
                 type="submit"
                 @onclick="async () => { await SearchCalled.InvokeAsync(SearchTerm); }">
             Szukaj
         </button>
     </div>
+    <div class="col col-md-8"></div>
 </div>
 </div>
