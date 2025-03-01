@@ -2,13 +2,25 @@
 
 Blazor web app
 
-docker compose build
-
-docker compose up
-
 Run locally with docker with source code attached:
 ```bash
 docker run -d -p 8081:5289 -v $(pwd):/var/www -w "/var/www" mcr.microsoft.com/dotnet/sdk:9.0 bash -c "dotnet watch run --project ./src/CookingFrog.WebUI/CookingFrog.WebUI/CookingFrog.WebUI.csproj"  
+```
+
+launchsettings.json - replace localhost with *.
+
+Build and then run docker image from Dockerfile
+
+```
+docker build -t piotrosz/cfrog:1.0 .
+docker run -p 8081:8080 -e ASPNETCORE_ENVIRONMENT=Development piotrosz/cfrog:1.0 
+```
+
+Build and run using Docker compose:
+
+```
+docker compose build
+docker compose up
 ```
 
 ### Ideas:
