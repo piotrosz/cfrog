@@ -39,11 +39,9 @@ docker compose remove
 
 ### Ideas:
 
-- Use IDistributed cache
-- Export recipies to json
-- Import recipies from json
-- CreatedBy (email)
-- ModifiedBy (email)
-- Favourite (my recipes)
-- Display preparation time
-- Be able to edit preparation time
+- Use `IDistributedCache`
+- Import & export recipies in json
+- Add CreatedBy (email)
+- Add ModifiedBy (email)
+- Recipies per user
+- Display and edit preparation time
