@@ -5,6 +5,8 @@ Uses `InteractiveServer` and `InteractiveWebAssembly` render modes: [link](https
 Azure table storage used as data store. 
 Google auth.
 
+### Docker
+
 Run locally with docker with source code attached:
 ```bash
 docker run -d -p 8081:5289 -v $(pwd):/var/www -w "/var/www" mcr.microsoft.com/dotnet/sdk:9.0 bash -c "dotnet watch run --project ./src/CookingFrog.WebUI/CookingFrog.WebUI/CookingFrog.WebUI.csproj"  
