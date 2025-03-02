@@ -32,17 +32,19 @@ if (azureStorageConfig == null)
     throw new InvalidOperationException("Azure Storage is not configured.");
 }
 
-if (!string.IsNullOrEmpty(azureStorageConfig.AccountKey))
+if (!string.IsNullOrEmpty(azureStorageConfig.ConnectionString))
 {
+    Console.WriteLine($"Adding Azure Storage with the connection string '{azureStorageConfig.ConnectionString}'.");
+    builder.Services.AddFrogStorage(
+        azureStorageConfig.ConnectionString);
+}
+else
+{
+    Console.WriteLine("Adding Azure Storage with account key.");
     builder.Services.AddFrogStorage(
         azureStorageConfig.Uri,
         azureStorageConfig.AccountName,
         azureStorageConfig.AccountKey);
-}
-else
-{
-    builder.Services.AddFrogStorage(
-        azureStorageConfig.ConnectionString);
 }
 
 builder.Services.AddScoped<IRecipesReaderService, ServerRecipesReaderService>();

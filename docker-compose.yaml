@@ -1,0 +1,30 @@
+services:
+  web:
+    build: 
+      context: .
+      ## dockerfile:
+    networks:
+      - cfrog-network
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Azure:Storage:ConnectionString=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;
+    depends_on:
+      - azurite
+        
+  azurite:
+    networks:
+      - cfrog-network
+    image: mcr.microsoft.com/azure-storage/azurite
+    hostname: azurite
+    restart: always
+    command: "azurite --blobHost 127.0.0.1 --blobPort 10000 --queueHost 127.0.0.1 --queuePort 10001 --tableHost 127.0.0.1 --tablePort 10002"
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+    
+networks:
+  cfrog-network:
+    driver: bridge
