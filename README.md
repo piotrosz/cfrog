@@ -1,8 +1,9 @@
-## 🐸🐸🐸 cfrog 🐸🐸🐸
+## 🐸 cfrog
 
 Blazor web app. 
 Uses `InteractiveServer` and `InteractiveWebAssembly` render modes: [link](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/render-modes?view=aspnetcore-9.0)
-
+Azure table storage used as data store. 
+Google auth.
 
 Run locally with docker with source code attached:
 ```bash
@@ -38,6 +39,7 @@ docker compose remove
 
 ### Ideas:
 
+- Use IDistributed cache
 - Export recipies to json
 - Import recipies from json
 - CreatedBy (email)
@@ -45,5 +47,3 @@ docker compose remove
 - Favourite (my recipes)
 - Display preparation time
 - Be able to edit preparation time
-- Link to original page
-- Add ingredient at index
