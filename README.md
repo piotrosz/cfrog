@@ -20,11 +20,14 @@ Build and run using Docker compose:
 
 ```
 docker compose build
-docker compose up
+docker compose up [-d]
 docker compose up --no-deps web
 docker compose down
+
 docker compose logs azurite
-docker compose ps
+
+docker compose ps [-a]
+
 docker compose start
 docker compose stop
 docker compose remove
