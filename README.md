@@ -1,6 +1,8 @@
 ## cfrog
 
-Blazor web app
+Blazor web app. 
+Uses InterctiveServer and Interactive WebAssembly render modes: (link)[https://learn.microsoft.com/en-us/aspnet/core/blazor/components/render-modes?view=aspnetcore-9.0]
+
 
 Run locally with docker with source code attached:
 ```bash
