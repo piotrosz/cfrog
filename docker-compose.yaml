@@ -19,12 +19,15 @@ services:
     image: mcr.microsoft.com/azure-storage/azurite
     hostname: azurite
     restart: always
-    command: "azurite --blobHost 127.0.0.1 --blobPort 10000 --queueHost 127.0.0.1 --queuePort 10001 --tableHost 127.0.0.1 --tablePort 10002"
+    command: "azurite --tablePort 9999 --tableHost 0.0.0.0 --tableKeepAliveTimeout 5 --loose --skipApiVersionCheck --disableProductStyleUrl --disableTelemetry -l /azurite-workspace -d /azurite-workspace/debug.log"
     ports:
-      - "10000:10000"
-      - "10001:10001"
-      - "10002:10002"
-    
+      - "9999:9999"
+    volumes:
+      - azurite-data:/azurite-workspace
+
 networks:
   cfrog-network:
     driver: bridge
+
+volumes:
+  azurite-data:
