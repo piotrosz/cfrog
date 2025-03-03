@@ -9,7 +9,7 @@ services:
       - "8080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - Azure:Storage:ConnectionString=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;
+      - Azure:Storage:ConnectionString=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://host.docker.internal:10012/devstoreaccount1;
     depends_on:
       - azurite
         
@@ -19,11 +19,11 @@ services:
     image: mcr.microsoft.com/azure-storage/azurite
     hostname: azurite
     restart: always
-    command: "azurite --tablePort 9999 --tableHost 0.0.0.0 --tableKeepAliveTimeout 5 --loose --skipApiVersionCheck --disableProductStyleUrl --disableTelemetry -l /azurite-workspace -d /azurite-workspace/debug.log"
+    command: azurite -l /Users/piotr/Github/cfrog -d /Users/piotr/Github/cfrog/debug.log --tableHost 0.0.0.0
     ports:
-      - "9999:9999"
+      - "10012:10002"
     volumes:
-      - azurite-data:/azurite-workspace
+      - azurite-data:/Users/piotr/Github/cfrog
 
 networks:
   cfrog-network:
