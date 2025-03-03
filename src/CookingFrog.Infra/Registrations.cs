@@ -44,6 +44,7 @@ public static class Registrations
 
     private static void AddServices(IServiceCollection services)
     {
+        services.AddScoped<IRecipesAzInitializer, RecipesAzInitializer>();
         services.AddScoped<IRecipesReader, RecipesAzReader>();
         services.AddScoped<IRecipesSaver, RecipesAzSaver>();
         services.AddScoped<IRecipesUpdater, RecipesAzUpdater>();

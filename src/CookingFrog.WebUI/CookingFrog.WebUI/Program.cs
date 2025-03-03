@@ -2,6 +2,7 @@ using CookingFrog.Infra;
 using CookingFrog.WebUI.Components;
 using CookingFrog.WebUI;
 using Azure.Identity;
+using CookingFrog.Domain;
 using CookingFrog.WebUI.Client;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -91,5 +92,6 @@ app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(typeof(CookingFrog.WebUI.Client._Imports).Assembly);
 
 app.UseCfrogMinimalApi();
-
+var initializer = app.Services.GetService<IRecipesAzInitializer>();
+await initializer.Initialize();
 app.Run();
