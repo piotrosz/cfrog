@@ -92,6 +92,15 @@ app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(typeof(CookingFrog.WebUI.Client._Imports).Assembly);
 
 app.UseCfrogMinimalApi();
-var initializer = app.Services.GetService<IRecipesAzInitializer>();
-await initializer.Initialize();
+
+// https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-9.0#resolve-a-service-at-app-startup
+using (var serviceScope = app.Services.CreateScope())
+{
+    var services = serviceScope.ServiceProvider;
+
+    var initializer = services.GetRequiredService<IRecipesAzInitializer>();
+    Console.WriteLine("Initializing the recipes storage...");
+    await initializer.Initialize();
+}
+
 app.Run();
