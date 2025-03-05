@@ -37,6 +37,15 @@ public static class UnitParser
             "kawałek" => ParseResult<UnitEnum>.Success(UnitEnum.Piece),
             "kawałki" => ParseResult<UnitEnum>.Success(UnitEnum.Piece),
             "kawałków" => ParseResult<UnitEnum>.Success(UnitEnum.Piece),
+            "liść" => ParseResult<UnitEnum>.Success(UnitEnum.Leave),
+            "liście" => ParseResult<UnitEnum>.Success(UnitEnum.Leave),
+            "liści" => ParseResult<UnitEnum>.Success(UnitEnum.Leave),
+            "łodyga" => ParseResult<UnitEnum>.Success(UnitEnum.Stalk),
+            "łodygi" => ParseResult<UnitEnum>.Success(UnitEnum.Stalk),
+            "łodyg" => ParseResult<UnitEnum>.Success(UnitEnum.Stalk),
+            "ziarno" => ParseResult<UnitEnum>.Success(UnitEnum.Grain),
+            "ziarna" => ParseResult<UnitEnum>.Success(UnitEnum.Grain),
+            "ziaren" => ParseResult<UnitEnum>.Success(UnitEnum.Grain),
             _ => ParseResult<UnitEnum>.Error($"Cannot parse unit: '{input}'")
         };
     }

@@ -29,5 +29,11 @@ public enum UnitEnum
     [Display(Description = "kawałek")]
     Piece,
     [Display(Description = "cm")]
-    Cm
+    Cm,
+    [Display(Description = "listek")]
+    Leave,
+    [Display(Description = "łodyga")]
+    Stalk,
+    [Display(Description = "ziarenko")]
+    Grain
 }
