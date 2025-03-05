@@ -42,7 +42,7 @@ public sealed record Quantity(decimal Value, UnitEnum Unit)
         {
             UnitEnum.Undefined when Value == 0 => string.Empty,
             UnitEnum.Quantity => Value.ToString(CultureInfo.InvariantCulture),
-            _ => $"{Value} {Unit.GetDisplayDescription()}"
+            _ => $"{Value} {Unit.GetDisplayDescription(Value)}"
         };
     }
 }

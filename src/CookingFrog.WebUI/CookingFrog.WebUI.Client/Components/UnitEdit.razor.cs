@@ -35,7 +35,7 @@ public partial class UnitEdit
             .Select(unit => new UnitOption
             {
                 Value = unit,
-                Description = unit.GetDisplayDescription()
+                Description = unit.GetDisplayDescription(1)
             })
             .ToList();
     }

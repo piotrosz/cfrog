@@ -12,28 +12,28 @@ public enum UnitEnum
     Kilogram,
     [Display(Description = "g")]
     Gram,
-    [Display(Description = "łyżka")]
+    [Display(Description = "łyżka|łyżki|łyżek")]
     Spoon,
-    [Display(Description = "łyżeczka")]
+    [Display(Description = "łyżeczka|łyżeczki|łyżeczek")]
     Teaspoon,
-    [Display(Description = "szklanka")]
+    [Display(Description = "szklanka|szklanki|szklanek")]
     Glass,
-    [Display(Description = "szczypta")]
+    [Display(Description = "szczypta|szczypty|szczypt")]
     Handful,
     [Display(Description = "ml")]
     Millilitre,
-    [Display(Description = "ząbek")]
+    [Display(Description = "ząbek|ząbki|ząbków")]
     Clove,
-    [Display(Description = "puszka")]
+    [Display(Description = "puszka|puszki|puszek")]
     Can,
-    [Display(Description = "kawałek")]
+    [Display(Description = "kawałek|kawałki|kawałków")]
     Piece,
     [Display(Description = "cm")]
     Cm,
-    [Display(Description = "listek")]
+    [Display(Description = "listek|listki|listków")]
     Leave,
-    [Display(Description = "łodyga")]
+    [Display(Description = "łodyga|łodygi|łodyg")]
     Stalk,
-    [Display(Description = "ziarenko")]
+    [Display(Description = "ziarenko|ziarenka|ziarenek")]
     Grain
 }
