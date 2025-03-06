@@ -10,14 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.1" />
-    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="9.0.1" />
-    <PackageReference Include="Microsoft.NET.Sdk.WebAssembly.Pack" Version="9.0.1" />
+    <PackageReference Include="Blazored.LocalStorage" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+    <PackageReference Include="Microsoft.NET.ILLink.Tasks" />
+    <PackageReference Include="Microsoft.NET.Sdk.WebAssembly.Pack" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CookingFrog.Application.Models\CookingFrog.Application.Models.csproj" />
+    <ProjectReference Include="..\..\CookingFrog.Application.Models\CookingFrog.Application.Models.csproj" />
     <ProjectReference Include="..\..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
   </ItemGroup>
 

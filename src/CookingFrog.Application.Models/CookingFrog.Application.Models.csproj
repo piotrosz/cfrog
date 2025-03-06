@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\CookingFrog.Domain\CookingFrog.Domain.csproj" />
+    <ProjectReference Include="..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
   </ItemGroup>
 
 </Project>

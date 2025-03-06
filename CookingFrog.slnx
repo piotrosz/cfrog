@@ -4,6 +4,8 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src\CookingFrog.Domain\CookingFrog.Domain.csproj" />
+	<Project Path="src\CookingFrog.Application.Models\CookingFrog.Application.Models.csproj" />
+	<Project Path="src\CookingFrog.MinimalApi\CookingFrog.MinimalApi.csproj" />
     <Project Path="src\CookingFrog.Infra\CookingFrog.Infra.csproj" Type="Classic C#" />
     <Project Path="src\CookingFrog.WebUI\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj" Type="Classic C#" />
     <Project Path="src\CookingFrog.WebUI\CookingFrog.WebUI\CookingFrog.WebUI.csproj" Type="Classic C#" />

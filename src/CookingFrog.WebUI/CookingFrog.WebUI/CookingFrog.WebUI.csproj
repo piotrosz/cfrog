@@ -8,16 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
-    <ProjectReference Include="..\..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
+  <ProjectReference Include="..\..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
     <ProjectReference Include="..\..\CookingFrog.Infra\CookingFrog.Infra.csproj" />
     <ProjectReference Include="..\..\CookingFrog.MinimalApi\CookingFrog.MinimalApi.csproj" />
     <ProjectReference Include="..\CookingFrog.WebUI.Client\CookingFrog.WebUI.Client.csproj" />
-    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.4.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="9.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="9.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" />
   </ItemGroup>
 
 </Project>

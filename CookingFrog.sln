@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{0C8DDE00-C44
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.MinimalApi", "src\CookingFrog.MinimalApi\CookingFrog.MinimalApi.csproj", "{7895D22C-D725-4C41-8B73-83ED738D4857}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.Application.Models", "CookingFrog.Application.Models\CookingFrog.Application.Models.csproj", "{2768EF06-0DB0-40D6-B5FE-172DDAA39C20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookingFrog.Application.Models", "src\CookingFrog.Application.Models\CookingFrog.Application.Models.csproj", "{2768EF06-0DB0-40D6-B5FE-172DDAA39C20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
