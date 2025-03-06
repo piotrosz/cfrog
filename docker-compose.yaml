@@ -12,6 +12,8 @@ services:
       - Azure:Storage:ConnectionString=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://host.docker.internal:10012/devstoreaccount1;
     depends_on:
       - azurite
+    labels:
+      com.jetbrains.rider.debug: "true"
         
   azurite:
     networks:
@@ -24,6 +26,8 @@ services:
       - "10012:10002"
     volumes:
       - azurite-data:/Users/piotr/Github/cfrog
+    labels: 
+      com.jetbrains.rider.debug: "false"
 
 networks:
   cfrog-network:
