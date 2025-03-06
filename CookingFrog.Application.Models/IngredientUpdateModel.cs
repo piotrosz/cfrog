@@ -1,6 +1,6 @@
 using CookingFrog.Domain;
 
-namespace CookingFrog.WebUI.Client.Models;
+namespace CookingFrog.Application.Models;
 
 public record IngredientUpdateModel(
     int Index,

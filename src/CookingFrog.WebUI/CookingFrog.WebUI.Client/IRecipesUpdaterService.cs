@@ -1,4 +1,4 @@
-﻿using CookingFrog.WebUI.Client.Models;
+﻿using CookingFrog.Application.Models;
 using CSharpFunctionalExtensions;
 
 namespace CookingFrog.WebUI.Client;

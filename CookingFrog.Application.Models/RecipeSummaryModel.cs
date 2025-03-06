@@ -1,3 +1,3 @@
-﻿namespace CookingFrog.WebUI.Client.Models;
+﻿namespace CookingFrog.Application.Models;
 
 public record RecipeSummaryModel(string Summary, Guid Guid);

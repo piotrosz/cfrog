@@ -1,7 +1,6 @@
-﻿using CookingFrog.Domain;
+﻿using CookingFrog.Application.Models;
+using CookingFrog.Domain;
 using CookingFrog.WebUI.Client;
-using CookingFrog.WebUI.Client.Mapping;
-using CookingFrog.WebUI.Client.Models;
 using CSharpFunctionalExtensions;
 
 namespace CookingFrog.WebUI;

@@ -4,6 +4,7 @@ using CookingFrog.WebUI;
 using Azure.Identity;
 using CookingFrog.Domain;
 using CookingFrog.WebUI.Client;
+using CookingFrog.MinimalApi;
 
 var builder = WebApplication.CreateBuilder(args);
 

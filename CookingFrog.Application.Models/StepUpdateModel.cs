@@ -1,3 +1,3 @@
-namespace CookingFrog.WebUI.Client.Models;
+namespace CookingFrog.Application.Models;
 
 public record StepUpdateModel(string Description, int Index);

@@ -1,4 +1,4 @@
-using CookingFrog.WebUI.Client.Models;
+using CookingFrog.Application.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace CookingFrog.WebUI.Components;

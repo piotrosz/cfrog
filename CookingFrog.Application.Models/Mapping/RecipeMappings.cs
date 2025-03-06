@@ -1,7 +1,6 @@
 ﻿using CookingFrog.Domain;
-using CookingFrog.WebUI.Client.Models;
 
-namespace CookingFrog.WebUI.Client.Mapping;
+namespace CookingFrog.Application.Models;
 
 public static class RecipeMappings
 {

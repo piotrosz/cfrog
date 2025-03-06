@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CookingFrog.Application.Models\CookingFrog.Application.Models.csproj" />
     <ProjectReference Include="..\..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
   </ItemGroup>
 

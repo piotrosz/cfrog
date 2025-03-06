@@ -1,11 +1,11 @@
+using CookingFrog.Application.Models;
 using CookingFrog.Domain;
-using CookingFrog.WebUI.Client.Mapping;
-using CookingFrog.WebUI.Client.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CookingFrog.WebUI;
+namespace CookingFrog.MinimalApi;
 
-internal static class WebApplicationExtensions
+public static class WebApplicationExtensions
 {
     public static void UseCfrogMinimalApi(this WebApplication app)
     {

@@ -1,5 +1,5 @@
 using System.Text.Json;
-using CookingFrog.WebUI.Client.Models;
+using CookingFrog.Application.Models;
 
 namespace CookingFrog.WebUI.Client;
 
