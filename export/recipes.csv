@@ -1,0 +1,354 @@
+PartitionKey,RowKey,Notes,Notes@type,SerializedIngredients,SerializedIngredients@type,SerializedSteps,SerializedSteps@type,Summary,Summary@type,TimeToPrepare,TimeToPrepare@type
+_default,031a177c-3022-46d7-bec0-930154cf4ed2,Piec bez przykrycia,String,"[{""Name"":""czosnek"",""Quantity"":{""Value"":1,""Unit"":9},""GroupName"":null},{""Name"":""filet z indyka, pokrojony na 3 sznycle"",""Quantity"":{""Value"":500,""Unit"":3},""GroupName"":null},{""Name"":""mozzarella (1 kulka)"",""Quantity"":{""Value"":125,""Unit"":3},""GroupName"":null},{""Name"":""p\u0119czek natki pietruszki (5 ga\u0142\u0105zek)\r"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null},{""Name"":""s\u00F3l, pieprz, oliwa extra vergine\r"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null},{""Name"":""suszone pomidory"",""Quantity"":{""Value"":4,""Unit"":11},""GroupName"":null},{""Name"":""szynka parme\u0144ska/serrano lub cieniutko pokrojony boczek"",""Quantity"":{""Value"":100,""Unit"":3},""GroupName"":null},{""Name"":""musztarda francuska"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":""sos musztardowy""},{""Name"":""\u015Bmietanka krem\u00F3wka 30%"",""Quantity"":{""Value"":70,""Unit"":8},""GroupName"":""sos musztardowy""},{""Name"":""\u015Bwie\u017Co zmielony pieprz"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":""sos musztardowy""}]",String,"[{""Description"":""Sznycle rozbi\u0107 na cie\u0144sze filety, doprawi\u0107 sol\u0105. Natk\u0119 pietruszki drobno posieka\u0107 z czosnkiem, doprawi\u0107 sol\u0105, pieprzem i wymiesza\u0107 z 1 \u0142y\u017Ck\u0105 oliwy. Powsta\u0142e pesto wy\u0142o\u017Cy\u0107 na filety, rozsmarowa\u0107 pozostawiaj\u0105c ok. 1cm wolnego brzegu (od\u0142o\u017Cy\u0107 1 \u0142y\u017Ceczk\u0119 pesto do sosu musztardowego).""},{""Description"":""Mozzarell\u0119 wyj\u0105\u0107 z zalewy i pokroi\u0107 na \u003Cb\u003E3 grube plastry\u003C/b\u003E. Po\u0142o\u017Cy\u0107 je po\u015Brodku ka\u017Cdego filetu, posypa\u0107 posiekanymi suszonymi pomidorami. Zawin\u0105\u0107 roladk\u0119 spinaj\u0105c w razie potrzeby wyka\u0142aczkami. Ka\u017Cd\u0105 roladk\u0119 zawin\u0105\u0107 w miar\u0119 szczelnie w \u003Cb\u003E2\u003C/b\u003E plasterki szynki.""},{""Description"":""U\u0142o\u017Cy\u0107 w naczyniu \u017Caroodpornym i posmarowa\u0107 oliw\u0105 ze s\u0142oika z suszonymi pomidorami. Roladki mo\u017Cna schowa\u0107 do lod\u00F3wki na max. 1 dob\u0119 lub od razu upiec.""},{""Description"":""Piec bez przykrycia przez \u003Cb\u003E30 minut\u003C/b\u003E w piekarniku nagrzanym do \u003Cb\u003E180\u0026deg;C\u003C/b\u003E (je\u015Bli pieczemy roladki wyj\u0119te z lod\u00F3wki, doliczamy 5 minut pieczenia).""},{""Description"":""Sos musztardowy z musztard\u0105 francusk\u0105: Soki z pieczenia zla\u0107 do garnuszka, doda\u0107 \u015Bmietank\u0119 krem\u00F3wk\u0119, musztard\u0119, pieprz oraz od\u0142o\u017Cone pesto pietruszkowe. Delikatnie zagotowa\u0107 co chwil\u0119 mieszaj\u0105c.""}]",String,🦃 🦃 🦃 Roladki z indyka,String,PT0S,String
+_default,14d37fa9-6c73-40bb-bd5a-f3f600f5a57c,Moje notatki,String,"[{""Name"":""makaron orzo"",""Quantity"":{""Value"":1,""Unit"":6},""GroupName"":null},{""Name"":""oliwa"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":null},{""Name"":""ma\u0142a cukinia"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""czerwona papryka"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""\u017C\u00F3\u0142ta papryka"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""czerwona cebula"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""\uD83E\uDDC4 czosnek"",""Quantity"":{""Value"":1,""Unit"":9},""GroupName"":null},{""Name"":""bia\u0142y ocet winny"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":null},{""Name"":""\uD83C\uDF45 pomidory koktajlowe"",""Quantity"":{""Value"":150,""Unit"":3},""GroupName"":null},{""Name"":""bazylia"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""feta"",""Quantity"":{""Value"":100,""Unit"":3},""GroupName"":null}]",String,"[{""Description"":""Makaron wsypa\u0107 na osolony wrz\u0105tek i gotowa\u0107 al dente, przez ok. 12 minut. Odcedzi\u0107, w\u0142o\u017Cy\u0107 z powrotem do garnka, wymiesza\u0107 z 1 \u0142y\u017Ck\u0105 oliwy.""},{""Description"":""W mi\u0119dzyczasie na du\u017C\u0105 patelni\u0119 w\u0142o\u017Cy\u0107 pokrojone w kostk\u0119 warzywa: cukini\u0119, papryk\u0119 czerwon\u0105 oraz \u017C\u00F3\u0142t\u0105, czerwon\u0105 cebul\u0119. Doprawi\u0107 sol\u0105, pieprzem oraz skropi\u0107 1 \u0142y\u017Ck\u0105 oliwy i sma\u017Cy\u0107, a\u017C b\u0119d\u0105 mi\u0119kkie i lekko zrumienione, przez ok. 5 minut. Pod koniec doda\u0107 przeci\u015Bni\u0119ty przez prask\u0119 czosnek i chwil\u0119 razem podsma\u017Cy\u0107.""},{""Description"":""Na koniec skropi\u0107 warzywa octem winnym i potrz\u0105sn\u0105\u0107 patelni\u0105 w celu wymieszania sk\u0142adnik\u00F3w.""},{""Description"":""Odstawi\u0107 patelni\u0119 z ognia, doda\u0107 makaron orzo i wymiesza\u0107. Posypa\u0107 pokrojonymi na po\u0142\u00F3wki pomidorkami oraz listkami bazylii.""},{""Description"":""Wy\u0142o\u017Cy\u0107 do talerzu lub jednej salaterki i posypa\u0107 pokrojon\u0105 fet\u0105 lub serem sa\u0142atkowym.""}]",String,"🥗 Sałatka na ciepło z makaronem orzo, warzywami oraz fetą",String,PT0S,String
+_default,26a66144-13f8-46b7-a426-cf701e013c46,,,"[{""Name"":""\uD83C\uDF36 s\u0142odka papryka"",""Quantity"":{""Value"":0.5,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83C\uDF45 pomidorki koktajlowe"",""Quantity"":{""Value"":100,""Unit"":3},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83C\uDF4B sok z limonki lub cytryny"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDD51 awokado"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDD54 batat"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDD5A jajko"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDDC4 czosnek"",""Quantity"":{""Value"":0.5,""Unit"":9},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDDC5 czerwona cebula"",""Quantity"":{""Value"":0.25,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDED2 oliwa"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":null,""Alternative"":null},{""Name"":""pieprz"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null,""Alternative"":null},{""Name"":""s\u00F3l"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null,""Alternative"":null},{""Name"":""szpinak"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null,""Alternative"":null},{""Name"":""musztarda miodowa"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":""sos"",""Alternative"":null},{""Name"":""oliwa ekstra"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":""sos"",""Alternative"":null},{""Name"":""opcjonalnie majonez"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":""sos"",""Alternative"":null},{""Name"":""opcjonalnie p\u0142atki chilli"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":""sos"",""Alternative"":null},{""Name"":""sok z limonki lub cytryny"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":""sos"",""Alternative"":null},{""Name"":""s\u00F3l, pieprz"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":""sos"",""Alternative"":null}]",String,"[{""Description"":""Piekarnik nagrza\u0107 do \u003Cb\u003E210 C\u003C/b\u003E. Batata obra\u0107, umy\u0107, pokroi\u0107 na kawa\u0142ki, doprawi\u0107 startym czosnkiem, sol\u0105, pieprzem i papryk\u0105 w proszku. Wymiesza\u0107 z oliw\u0105 i u\u0142o\u017Cy\u0107 na blaszce do pieczenia lub w naczyniu \u017Caroodpornym i piec przez ok. \u003Cb\u003E20-25\u003C/b\u003E minut (do mi\u0119kko\u015Bci).""},{""Description"":""Jajka ugotowa\u0107 na twardo (6 minut od zagotowania si\u0119 wody), obra\u0107 i przekroi\u0107 na po\u0142\u00F3wki.""},{""Description"":""Awokado przekroi\u0107 na p\u00F3\u0142, wyj\u0105\u0107 pestk\u0119, obra\u0107, pokroi\u0107 na plasterki, skropi\u0107 sokiem z cytryny.""},{""Description"":""Pomidorki umy\u0107 i przekroi\u0107 na po\u0142\u00F3wki. Cebul\u0119 obra\u0107 i przekroi\u0107 na p\u00F3\u0142 i pokroi\u0107 na cienkie plasterki.""},{""Description"":""Do misek lub pojemnik\u00F3w na lunch w\u0142o\u017Cy\u0107 szpinak, jajka, awokado, pomidorki, cebul\u0119. Doprawi\u0107 sol\u0105 i pieprzem. Doda\u0107 upieczone bataty.""},{""Description"":""Przygotowa\u0107 \u003Cspan class=\u0022badge rounded-pill bg-danger\u0022\u003Esos\u003C/span\u003E mieszaj\u0105c wszystkie sk\u0142adniki.""}]",String,"🥗 Sałatka batat, avocado, jajko",String,PT0S,String
+_default,324d8881-504f-411e-acf9-a9656ea124c6,,,"[{""Name"":""cebula"",""Quantity"":{""Value"":0.3,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""czosnek"",""Quantity"":{""Value"":1,""Unit"":9},""GroupName"":null,""Alternative"":null},{""Name"":""jajko"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""mielonego mi\u0119sa wieprzowego (np. kark\u00F3wki, \u0142opatki)"",""Quantity"":{""Value"":280,""Unit"":3},""GroupName"":null,""Alternative"":null},{""Name"":""m\u0142odej kapusty (lub 1/4 g\u0142\u00F3wki kapusty peki\u0144skiej)"",""Quantity"":{""Value"":0.2,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""oleju sezamowego"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""s\u00F3l i pieprz\r"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null,""Alternative"":null},{""Name"":""sosu sojowego"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":null,""Alternative"":null},{""Name"":""startego imbiru"",""Quantity"":{""Value"":2,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""ugotowanego bia\u0142ego ry\u017Cu"",""Quantity"":{""Value"":1,""Unit"":6},""GroupName"":null,""Alternative"":null},{""Name"":""ostry sos chili (sriracha) lub sos s\u0142odko-kwa\u015Bny, szczypiorek, papryczka chili"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":""do podania"",""Alternative"":null}]",String,"[
+  {
+    ""Description"": ""Mielone mi\u0119so w\u0142o\u017Cy\u0107 do miski, doda\u0107 ry\u017C, start\u0105 na tarce cebul\u0119 i rozgnieciony lub drobno starty czosnek, starty imbir (bez w\u0142\u00F3kien), sos sojowy, olej sezamowy.""
+  },
+  {
+    ""Description"": ""Doprawi\u0107 sol\u0105, pieprzem i wyrobi\u0107 mas\u0119. Doda\u0107 jajko i jeszcze raz wyrobi\u0107. Uformowa\u0107 4 kulki o \u015Brednicy ok. 5 cm.""
+  },
+  {
+    ""Description"": ""Kapust\u0119 cienko poszatkowa\u0107, u\u0142o\u017Cy\u0107 na dnie naczynia lub koszyczka do gotowania na parze, doprawi\u0107 j\u0105 sol\u0105 i pieprzem. Na kapu\u015Bcie po\u0142o\u017Cy\u0107 kulki mi\u0119sne.""
+  },
+  {
+    ""Description"": ""Zagotowa\u0107 wod\u0119, postawi\u0107 naczynie z mi\u0119sem na parze i przykry\u0107. Gotowa\u0107 przez 15 minut na nieco wi\u0119kszym ogniu.""
+  },
+  {
+    ""Description"": ""Po ugotowaniu posypa\u0107 szczypiorkiem. Wierzch pulpecik\u00F3w udekorowa\u0107 posiekan\u0105 papryczk\u0105 chili oraz ostrym sosem. Danie mo\u017Cna dodatkowo skropi\u0107 sosem sojowym i olejem sezamowym.""
+  }
+]",String,"🇨🇳 ""Lwie głowy"" - chińskie pulpeciki mięsne gotowane na parze z kapustą",String,PT0S,String
+_default,3fe125f6-b108-4216-9dc7-87c0b0fd0468,,,"[{""Name"":""\uD83E\uDDC0 starty parmezan"",""Quantity"":{""Value"":150,""Unit"":3},""GroupName"":null},{""Name"":""lasagne (gotowe lub domowe)"",""Quantity"":{""Value"":15,""Unit"":11},""GroupName"":null},{""Name"":""bia\u0142e lub czerwone wino"",""Quantity"":{""Value"":1,""Unit"":6},""GroupName"":""sos""},{""Name"":""boczek w\u0119dz. lub gotowany"",""Quantity"":{""Value"":150,""Unit"":3},""GroupName"":""sos""},{""Name"":""cebula"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":""sos""},{""Name"":""gor\u0105cy bulion"",""Quantity"":{""Value"":1,""Unit"":6},""GroupName"":""sos""},{""Name"":""koncentrat pomidorowy"",""Quantity"":{""Value"":4,""Unit"":4},""GroupName"":""sos""},{""Name"":""\u0142odyga selera naciowego"",""Quantity"":{""Value"":2,""Unit"":1},""GroupName"":""sos""},{""Name"":""marchewka"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":""sos""},{""Name"":""mi\u0119so mielone wieprzowo-wo\u0142owe"",""Quantity"":{""Value"":500,""Unit"":3},""GroupName"":""sos""},{""Name"":""oliwa"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":""sos""},{""Name"":""passata pomidorowa"",""Quantity"":{""Value"":400,""Unit"":3},""GroupName"":""sos""},{""Name"":""ga\u0142ka muszkato\u0142owa"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":""sos beszamelowy""},{""Name"":""m\u0105ka"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":""sos beszamelowy""},{""Name"":""mas\u0142o"",""Quantity"":{""Value"":4,""Unit"":4},""GroupName"":""sos beszamelowy""},{""Name"":""mleko"",""Quantity"":{""Value"":650,""Unit"":8},""GroupName"":""sos beszamelowy""}]",String,"[{""Description"":""[Stage] Sos bolo\u0144ski""},{""Description"":""Na oliwie, w du\u017Cym garnku, zeszkli\u0107 drobno posiekan\u0105 cebul\u0119, doda\u0107 posiekany w drobn\u0105 kosteczk\u0119 seler naciowy oraz start\u0105 marchewk\u0119 (warzywa mo\u017Cna te\u017C rozdrobni\u0107 w malakserze).""},{""Description"":""Obsma\u017Cy\u0107, nast\u0119pnie \u003Cb\u003Eprzesun\u0105\u0107 na bok\u003C/b\u003E i w wolne miejsce w\u0142o\u017Cy\u0107 pokrojony w drobn\u0105 kosteczk\u0119 boczek. Zrumieni\u0107 i wymiesza\u0107 z warzywami.""},{""Description"":""Przesun\u0105\u0107 wszystko na bok garnka i partiami wk\u0142ada\u0107 mi\u0119so: w\u0142o\u017Cy\u0107 \u003Cb\u003E1/3 cz\u0119\u015B\u0107 mi\u0119sa\u003C/b\u003E i obsma\u017Cy\u0107 mieszaj\u0105c co chwil\u0119, a\u017C zmieni kolor z czerwonego na br\u0105zowy. Nast\u0119pnie wymiesza\u0107 z warzywami i boczkiem, przesun\u0105\u0107 na bok, powt\u00F3rzy\u0107 z reszt\u0105 mi\u0119sa.""},{""Description"":""Wla\u0107 wino i gotowa\u0107 na \u015Brednim ogniu przez \u003Cb\u003E3 minuty\u003C/b\u003E, doda\u0107 gor\u0105cy bulion wymieszany z koncentratem pomidorowym, zagotowa\u0107, doda\u0107 passat\u0119 pomidorow\u0105.""},{""Description"":""Doprawi\u0107 sol\u0105 i pieprzem. Przykry\u0107 i gotowa\u0107 na ma\u0142ym ogniu \u003Cb\u003E2 godziny\u003C/b\u003E (mo\u017Cna d\u0142u\u017Cej). Od czasu do czasu zamiesza\u0107.""},{""Description"":""[STAGE] Sos beszamelowy""},{""Description"":""W \u015Brednim garnku dobrze rozgrza\u0107 mas\u0142o, doda\u0107 m\u0105k\u0119 i sma\u017Cy\u0107 przez oko\u0142o 2 minuty ci\u0105gle mieszaj\u0105c. Stopniowo wlewa\u0107 mleko ca\u0142y czas energicznie mieszaj\u0105c a\u017C sos b\u0119dzie g\u0142adki.""},{""Description"":""Gotowa\u0107 na wolnym ogniu przez kilka minut. Odstawi\u0107 z ognia, doprawi\u0107 sol\u0105 i ga\u0142k\u0105 muszkato\u0142ow\u0105.""},{""Description"":""[STAGE] Pieczenie""},{""Description"":""Piekarnik nagrza\u0107 do \u003Cb\u003E175C\u003C/b\u003E (grzanie g\u00F3ra-d\u00F3\u0142 bez termoobiegu). Przygotowa\u0107 \u017Caroodporn\u0105 form\u0119 o wymiarach oko\u0142o \u003Cb\u003E19x27 cm\u003C/b\u003E. Wysmarowa\u0107 j\u0105 mas\u0142em, wla\u0107 i rozprowadzi\u0107 ok. 100 ml sosu beszamelowego, u\u0142o\u017Cy\u0107 pierwsz\u0105 warstw\u0119 p\u0142at\u00F3w lasagne (mog\u0105 nieznacznie na siebie nachodzi\u0107).""},{""Description"":""Na p\u0142atach lasagne rozprowadzi\u0107 warstw\u0119 sosu bolo\u0144skiego, nast\u0119pnie pola\u0107 sosem beszamelowym i posypa\u0107 parmezanem. Powt\u00F3rzy\u0107 jeszcze 4-krotnie.""},{""Description"":""Tak z\u0142o\u017Con\u0105 lasagne w\u0142o\u017Cy\u0107 do piekarnika i piec 45 minut (w po\u0142owie czasu pieczenia przykry\u0107 foli\u0105 aluminiow\u0105). Po wyj\u0119ciu z piekarnika odczeka\u0107 5 minut przed porcjowaniem.""}]",String,🇮🇹 Lasagne,String,PT0S,String
+_default,493f5f9e-bb1d-410c-8e19-c052d9ae6fd1,,,"[{""Name"":""jajka"",""Quantity"":{""Value"":2,""Unit"":1},""GroupName"":null},{""Name"":""boczek (w\u0119dzony lub suszony - pancetta)"",""Quantity"":{""Value"":100,""Unit"":3},""GroupName"":null},{""Name"":""makaron spaghetti"",""Quantity"":{""Value"":150,""Unit"":3},""GroupName"":null},{""Name"":""czosnek"",""Quantity"":{""Value"":2,""Unit"":9},""GroupName"":null},{""Name"":""drobno posiekana natka pietruszki"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":null},{""Name"":""ser Pecorino (lub Parmezan lub Grana Padano)"",""Quantity"":{""Value"":30,""Unit"":3},""GroupName"":null},{""Name"":""s\u00F3l"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null},{""Name"":""\u015Bwie\u017Co zmielony czarny pieprz"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null}]",String,"[{""Description"":""Makaron ugotowa\u0107 al dente w osolonej wodzie. Jajka sparzy\u0107 wrz\u0105tkiem, wbi\u0107 do g\u0142\u0119bokiego talerza, doprawi\u0107 sol\u0105 i roztrzepa\u0107 widelcem.""},{""Description"":""Na patelni\u0119 w\u0142o\u017Cy\u0107 pokrojony w kosteczk\u0119 boczek i podsma\u017Cy\u0107 na ma\u0142ym ogniu przez kilka minut a\u017C si\u0119 lekko zrumieni. Doda\u0107 starty czosnek oraz posiekan\u0105 natk\u0119 pietruszki i sma\u017Cy\u0107 jeszcze przez kilkana\u015Bcie sekund.""},{""Description"":""Trzymaj\u0105c patelni\u0119 na ma\u0142ym ogniu doda\u0107 makaron i wymiesza\u0107. Odstawi\u0107 z ognia, doda\u0107 po\u0142ow\u0119 sera i doprawi\u0107 \u015Bwie\u017Co zmielonym pieprzem.""},{""Description"":""Makaron pola\u0107 roztrzepanymi jajkami i wymiesza\u0107. Jajka nie mog\u0105 ca\u0142kowicie si\u0119 \u015Bci\u0105\u0107, maj\u0105 utworzy\u0107 kremowy sos i tylko troch\u0119 zg\u0119stnie\u0107 od gor\u0105cego makaronu.""},{""Description"":""Wy\u0142o\u017Cy\u0107 na talerze i posypa\u0107 pozosta\u0142ym serem.""}]",String,🍝 Spaghetti alla carbonara,String,PT0S,String
+_default,4b41c59d-b042-4a4e-b5d1-6c811f6a0211,"* gotowanego lub parzonego<br/>
+** cielęcego lub wołowo-wieprzowego",String,"[
+  {
+    ""Name"": ""boczku*"",
+    ""Quantity"": {
+      ""Value"": 150,
+      ""Unit"": 3
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""cebula"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 1
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""\u0142odygi selera naciowego"",
+    ""Quantity"": {
+      ""Value"": 2,
+      ""Unit"": 1
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""marchewka"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 1
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""oliwy"",
+    ""Quantity"": {
+      ""Value"": 2,
+      ""Unit"": 4
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""mielonego mi\u0119sa**"",
+    ""Quantity"": {
+      ""Value"": 500,
+      ""Unit"": 3
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""czerwonego wina"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 6
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""gor\u0105cego bulionu"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 6
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""koncentratu pomidorowego"",
+    ""Quantity"": {
+      ""Value"": 4,
+      ""Unit"": 4
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""obranych pomidor\u00F3w"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 10
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""szklanki mleka"",
+    ""Quantity"": {
+      ""Value"": 0.5,
+      ""Unit"": 1
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""makaron spaghetti (75 g / porcj\u0119)\r"",
+    ""Quantity"": {
+      ""Value"": 0,
+      ""Unit"": 0
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""tarty parmezan"",
+    ""Quantity"": {
+      ""Value"": 0,
+      ""Unit"": 0
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  }
+]",String,"[
+  {
+    ""Description"": ""Boczek pokroi\u0107 w drobn\u0105 kostk\u0119 i w\u0142o\u017Cy\u0107 na du\u017C\u0105 patelni\u0119, wytopi\u0107 na ma\u0142ym ogniu a\u017C si\u0119 zrumieni. Przesun\u0105\u0107 na bok, w wytopiony t\u0142uszcz w\u0142o\u017Cy\u0107 drobno posiekan\u0105 cebul\u0119 i zeszkli\u0107. Doda\u0107 drobno posiekany seler naciowy i start\u0105 marchewk\u0119. Obsma\u017Cy\u0107, nast\u0119pnie wszystko prze\u0142o\u017Cy\u0107 do garnka.""
+  },
+  {
+    ""Description"": ""Na patelni\u0119 wla\u0107 oliw\u0119 i obsma\u017Cy\u0107 mi\u0119so. Obsma\u017Cone mi\u0119so prze\u0142o\u017Cy\u0107 do garnka z boczkiem i warzywami. Wla\u0107 wino i gotowa\u0107 mieszaj\u0105c ok. 5 minut. Doda\u0107 gor\u0105cy bulion i koncentrat pomidorowy, wymiesza\u0107. Doda\u0107 pomidory z puszki, doprawi\u0107 sol\u0105 i pieprzem. Drewnian\u0105 \u0142y\u017Ck\u0105 rozdrobni\u0107 pomidory i wymiesza\u0107.""
+  },
+  {
+    ""Description"": ""Przykry\u0107 i gotowa\u0107 na ma\u0142ym ogniu przez minimum 2 godziny, od czasu do czasu mieszaj\u0105c. W po\u0142owie gotowania doda\u0107 mleko. Podawa\u0107 z ugotowanym makaronem spaghetti posypuj\u0105c tartym parmezanem.""
+  }
+]",String,🍝 Spaghetti bolognese,String,PT0S,String
+_default,70d9bff1-a1b8-41f5-8473-8703c8f9ef84,,,"[{""Name"":""\uD83C\uDF36\uFE0F czerwona papryka"",""Quantity"":{""Value"":0.5,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83C\uDF36\uFE0F ma\u0142a papryczka chili "",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83D\uDC16 pol\u0119dwiczka wieprzowa"",""Quantity"":{""Value"":300,""Unit"":3},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDD55 marchew"",""Quantity"":{""Value"":0.5,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDDC4 czosnek"",""Quantity"":{""Value"":2,""Unit"":9},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDDC5 cebula szalotka lub 1/4 cebuli"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""kawa\u0142ek imbiru"",""Quantity"":{""Value"":3,""Unit"":12},""GroupName"":null,""Alternative"":null},{""Name"":""m\u0105ka ziemniaczana"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":null,""Alternative"":null},{""Name"":""olej ro\u015Blinny"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":null,""Alternative"":null},{""Name"":""por"",""Quantity"":{""Value"":0.5,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""cukier"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":""sos"",""Alternative"":null},{""Name"":""ocet ry\u017Cowy (lub sok wyci\u015Bni\u0119ty z 0.5 \uD83C\uDF4B)"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":""sos"",""Alternative"":null},{""Name"":""sos sojowy"",""Quantity"":{""Value"":5,""Unit"":4},""GroupName"":""sos"",""Alternative"":null},{""Name"":""woda"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":""sos"",""Alternative"":null}]",String,"[{""Description"":""Odci\u0105\u0107 bia\u0142\u0105 b\u0142on\u0119 na zewn\u0119trznej stronie pol\u0119dwiczki. Mi\u0119so przekroi\u0107 wzd\u0142u\u017C na p\u00F3\u0142, nast\u0119pnie w poprzek w\u0142\u00F3kien na jak najcie\u0144sze plasterki. Doprawi\u0107 sol\u0105 i pieprzem, obtoczy\u0107 w m\u0105ce ziemniaczanej. Nastawi\u0107 ry\u017C na gotowanie.""},{""Description"":""Przygotowa\u0107 warzywa: \u003Cb\u003Epapryk\u0119\u003C/b\u003E pokroi\u0107 w kostk\u0119, \u003Cb\u003Ecebul\u0119\u003C/b\u003E obra\u0107 i pokroi\u0107 w nieco wi\u0119ksz\u0105 kostk\u0119, \u003Cb\u003Emarchewk\u0119\u003C/b\u003E obra\u0107 i pokroi\u0107 wzd\u0142u\u017C na cienkie s\u0142upki, tak samo pokroi\u0107 \u003Cb\u003Epora\u003C/b\u003E.""},{""Description"":""\u003Cb\u003EPapryczk\u0119 chili\u003C/b\u003E przekroi\u0107 wzd\u0142u\u017C, usun\u0105\u0107 pestki, nast\u0119pnie drobno posieka\u0107. \u003Cb\u003ECzosnek i imbir\u003C/b\u003E obra\u0107 i zetrze\u0107 na drobnej tarce.""},{""Description"":""Przygotowa\u0107 sos: wymiesza\u0107 wszystkie sk\u0142adniki w miseczce.""},{""Description"":""W woku lub w wysokiej i du\u017Cej patelni rozgrza\u0107 \u003Cb\u003E1 \u0142y\u017Ck\u0119 oleju\u003C/b\u003E, w\u0142o\u017Cy\u0107 wszystkie przygotowane \u003Cb\u003Ewarzywa\u003C/b\u003E i mieszaj\u0105c sma\u017Cy\u0107 na wi\u0119kszym ogniu przez oko\u0142o \u003Cb\u003E4 minuty\u003C/b\u003E. Warzywa wyj\u0105\u0107 i od\u0142o\u017Cy\u0107 na talerz.""},{""Description"":""Na patelni\u0119 doda\u0107 drug\u0105 \u0142y\u017Ck\u0119 oleju i w\u0142o\u017Cy\u0107 pol\u0119dwiczk\u0119, zwi\u0119kszy\u0107 ogie\u0144 do du\u017Cego i sma\u017Cy\u0107 przez oko\u0142o \u003Cb\u003E3 minuty\u003C/b\u003E co chwil\u0119 mieszaj\u0105c aby r\u00F3wnomiernie si\u0119 obsma\u017Ca\u0142a.""},{""Description"":""W\u0142o\u017Cy\u0107 z powrotem warzywa i wszystko wymiesza\u0107, nast\u0119pnie wla\u0107 sos. Gotowa\u0107 przez oko\u0142o \u003Cb\u003E2 minuty\u003C/b\u003E a\u017C sos zg\u0119stnieje, w mi\u0119dzyczasie co chwil\u0119 zamiesza\u0107. Wy\u0142o\u017Cy\u0107 danie na talerze, obok po\u0142o\u017Cy\u0107 ry\u017C, posypa\u0107 szczypiorkiem i podawa\u0107.""}]",String,🇨🇳 Wieprzowina po chińsku,String,PT0S,String
+_default,7591baeb-8260-4f86-8d7a-b886266b68d2,dsfsd   dkjcsdhfsdjkc djk ,String,"[{""Name"":""\uD83E\uDD56 sucha bu\u0142ka"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""\uD83E\uDD5B mleko lub woda do namoczenia bu\u0142ki"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null},{""Name"":""\uD83E\uDD83 mi\u0119so mielone z indyka"",""Quantity"":{""Value"":0.5,""Unit"":2},""GroupName"":null},{""Name"":""\uD83E\uDDC5 \u015Brednia cebula starta"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""\uD83E\uDD5A jajko"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""\uD83E\uDDC2 s\u00F3l"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null},{""Name"":""czarny pieprz zmielony"",""Quantity"":{""Value"":0.5,""Unit"":5},""GroupName"":null},{""Name"":""zimna woda"",""Quantity"":{""Value"":0.25,""Unit"":6},""GroupName"":null},{""Name"":""bu\u0142ka tarta"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null},{""Name"":""smalec lub mas\u0142o klarowane lub olej"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null}]",String,"[{""Description"":""Bu\u0142k\u0119 zala\u0107 mlekiem lub wod\u0105, odstawi\u0107 do namoczenia na oko\u0142o 10-15 minut.""},{""Description"":""Do wi\u0119kszej miski w\u0142o\u017Cy\u0107 zmielone mi\u0119so, start\u0105 na drobnej tarce cebul\u0119, jajko, s\u00F3l i pieprz oraz odci\u015Bni\u0119t\u0105 bu\u0142k\u0119, wszystko dobrze wymiesza\u0107.""},{""Description"":""W trakcie wyrabiania mi\u0119sa nale\u017Cy dodawa\u0107 po troszku zimnej wody i wyrabia\u0107 tak d\u0142ugo a\u017C mi\u0119so wch\u0142onie wod\u0119 i nie b\u0119dzie przywiera\u0107 do d\u0142oni. Im d\u0142u\u017Cej wyrabiamy, tym lepsze kotlety. Masa mi\u0119sna mo\u017Ce wydawa\u0107 si\u0119 do\u015B\u0107 lu\u017Ana, ale dzi\u0119ki temu kotlety b\u0119d\u0105 delikatniejsze, mniej zbite i twarde.""},{""Description"":""Uformowa\u0107 pod\u0142u\u017Cne kotlety, obtoczy\u0107 w bu\u0142ce tartej i k\u0142a\u015B\u0107 na dobrze rozgrzany olej na patelni. Po obsma\u017Ceniu z dw\u00F3ch stron prze\u0142o\u017Cy\u0107 kotlety do garnka lub naczynia \u017Caroodpornego (bez przykrycia) i wstawi\u0107 do rozgrzanego do 150 stopni C piekarnika, na oko\u0142o 15 minut. Unikniemy d\u0142ugiego sma\u017Cenia, a kotlety b\u0119d\u0105 w \u015Brodku idealnie mi\u0119kkie.""}]",String,🦃 Kotlety mielone,String,PT0S,String
+_default,80ead776-9caf-40dc-8835-ef9081b69dfd,,,"[{""Name"":""bulion np. wo\u0142owy, drobiowy"",""Quantity"":{""Value"":2,""Unit"":6},""GroupName"":null},{""Name"":""cebula"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""czosnek"",""Quantity"":{""Value"":4,""Unit"":9},""GroupName"":null},{""Name"":""listek laurowy"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""marchewka"",""Quantity"":{""Value"":2,""Unit"":1},""GroupName"":null},{""Name"":""m\u0105ka"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":null},{""Name"":""olej ro\u015Blinny"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":null},{""Name"":""przecier pomidorowy"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":null},{""Name"":""sos worcestershire"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":null},{""Name"":""s\u00F3l morska"",""Quantity"":{""Value"":1.5,""Unit"":5},""GroupName"":null},{""Name"":""suszony tymianek"",""Quantity"":{""Value"":2,""Unit"":5},""GroupName"":null},{""Name"":""wo\u0142owina (gulaszowej, z przerostami)"",""Quantity"":{""Value"":800,""Unit"":3},""GroupName"":null},{""Name"":""ziemniaki"",""Quantity"":{""Value"":1,""Unit"":2},""GroupName"":null},{""Name"":""zmielony pieprz"",""Quantity"":{""Value"":0.3,""Unit"":5},""GroupName"":null}]",String,"[
+  {
+    ""Description"": ""Wo\u0142owin\u0119 pokroi\u0107 na ok. 2 cm kawa\u0142ki. Doprawi\u0107 sol\u0105, pieprzem i obtoczy\u0107 w m\u0105ce. Partiami, dok\u0142adnie z ka\u017Cdej strony, obsma\u017Ca\u0107 na patelni z olejem.""
+  },
+  {
+    ""Description"": ""Obsma\u017Cone kawa\u0142ki mi\u0119sa przek\u0142ada\u0107 do wi\u0119kszego naczynia \u017Caroodpornego z pokryw\u0105. Piekarnik nagrza\u0107 do 160 stopni C.""
+  },
+  {
+    ""Description"": ""Czosnek obra\u0107. Cebul\u0119 obra\u0107 i pokroi\u0107 na wi\u0119ksze kawa\u0142ki. Czosnek i cebul\u0119 wrzuci\u0107 na patelni\u0119 po mi\u0119sie i co chwil\u0119 mieszaj\u0105c podsma\u017Ca\u0107 przez ok. 2 minuty. Prze\u0142o\u017Cy\u0107 do mi\u0119sa.""
+  },
+  {
+    ""Description"": ""Na t\u0119 sam\u0105 patelni\u0119 w\u0142o\u017Cy\u0107 obran\u0105 i pokrojon\u0105 na d\u0142u\u017Csze kawa\u0142ki marchewk\u0119 i tak samo podsma\u017Cy\u0107 jak poprzednio.""
+  },
+  {
+    ""Description"": ""Tak samo post\u0105pi\u0107 z obranymi pokrojonymi ziemniakami (ma\u0142e ziemniaki wystarczy przekroi\u0107 na p\u00F3\u0142). Wszystko wk\u0142ada\u0107 do naczynia z mi\u0119sem.""
+  },
+  {
+    ""Description"": ""Oddzielnie zagotowa\u0107 bulion z sosem worcestershire, tymiankiem, li\u015Bciem laurowym i przecierem. Wla\u0107 do naczynia z gulaszem, przykry\u0107 pokryw\u0105 i wstawi\u0107 do piekarnika.""
+  },
+  {
+    ""Description"": ""Piec przez ok. 2 do 2 i 1/2 godziny.""
+  }
+]",String,🐗 Gulasz wołowy z ziemniakami i marchewką,String,PT0S,String
+_default,880903c4-b5c0-4403-9a42-3083394d9ee4,,,"[{""Name"":""m\u0105ka ziemniaczana"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""natka pietruszki"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null,""Alternative"":null},{""Name"":""pieprz cayenne lub ostra papryka"",""Quantity"":{""Value"":0.3,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""pol\u0119dwica wieprzowa ok. 450 g"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null,""Alternative"":null},{""Name"":""sos sojowy"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":null,""Alternative"":null},{""Name"":""suszone pomidory"",""Quantity"":{""Value"":8,""Unit"":11},""GroupName"":null,""Alternative"":null},{""Name"":""\u015Bmietanki krem\u00F3wki 30%"",""Quantity"":{""Value"":150,""Unit"":8},""GroupName"":null,""Alternative"":null},{""Name"":""whisky lub brandy lub wytrawnego wina (bia\u0142ego lub czerwonego)"",""Quantity"":{""Value"":60,""Unit"":8},""GroupName"":null,""Alternative"":null},{""Name"":""woda"",""Quantity"":{""Value"":250,""Unit"":8},""GroupName"":null,""Alternative"":null}]",String,"[
+  {
+    ""Description"": ""Pol\u0119dwic\u0119 op\u0142uka\u0107 i osuszy\u0107, odci\u0105\u0107 bia\u0142\u0105 b\u0142on\u0119 na boku. Mi\u0119so pokroi\u0107 uko\u015Bnie na 1 cm plasterki. Suszone pomidory pokroi\u0107 na mniejsze kawa\u0142ki, w\u0142o\u017Cy\u0107 do ma\u0142ego garnka, wla\u0107 alkohol i zagotowa\u0107. Po minucie gotowania odstawi\u0107 z ognia.""
+  },
+  {
+    ""Description"": ""Rozgrza\u0107 du\u017C\u0105 patelni\u0119 z pokryw\u0105 lub rondel z grubym dnem. Wla\u0107 2 \u0142y\u017Cki oleju z suszonych pomidor\u00F3w. Gdy olej b\u0119dzie ju\u017C gor\u0105cy uk\u0142ada\u0107 plasterki mi\u0119sa i sma\u017Cy\u0107 przez ok. 2 - 3 minuty na z\u0142oty kolor. W mi\u0119dzyczasie doprawi\u0107 sol\u0105 morsk\u0105 (niezbyt du\u017Co, bo sos sojowy jest s\u0142ony) oraz pieprzem. Przewr\u00F3ci\u0107 na drug\u0105 stron\u0119 i powt\u00F3rzy\u0107 sma\u017Cenie.""
+  },
+  {
+    ""Description"": ""Wla\u0107 gor\u0105c\u0105 wod\u0119 i sos sojowy, doda\u0107 pieprz cayenne. Przykry\u0107 i zagotowa\u0107. Gotowa\u0107 pod przykryciem przez ok. 25 minut, do mi\u0119kko\u015Bci mi\u0119sa, w mi\u0119dzyczasie 1 - 2 razy mi\u0119so przewr\u00F3ci\u0107.""
+  },
+  {
+    ""Description"": ""Zdj\u0105\u0107 pokryw\u0119, doda\u0107 suszone pomidory wraz z p\u0142ynem z gotowania i wymiesza\u0107. Doda\u0107 \u015Bmietank\u0119, wymiesza\u0107 potrz\u0105saj\u0105c patelni\u0105 i gotowa\u0107 jeszcze przez ok. 5 minut. Na koniec posypa\u0107 przez sitko m\u0105k\u0105 ziemniaczan\u0105, wymiesza\u0107 i zagotowa\u0107. Odstawi\u0107 z ognia i posypa\u0107 posiekan\u0105 natk\u0105 pietruszki.""
+  }
+]",String,🐖 Polędwiczki z suszonymi pomidorami,String,PT0S,String
+_default,9038a6a5-d36a-4cc1-8398-03a41e13c473,,,"[{""Name"":""makaron kokardki"",""Quantity"":{""Value"":100,""Unit"":3},""GroupName"":null},{""Name"":""ser feta"",""Quantity"":{""Value"":150,""Unit"":3},""GroupName"":null},{""Name"":""\uD83E\uDD51 awokado"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""\uD83C\uDF4B limonka"",""Quantity"":{""Value"":0.5,""Unit"":1},""GroupName"":null},{""Name"":""\uD83C\uDF3D kukurydza w puszce"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""\uD83C\uDF45 pomidory koktajlowe"",""Quantity"":{""Value"":200,""Unit"":3},""GroupName"":null},{""Name"":""\uD83E\uDDC5 czerwona cebula"",""Quantity"":{""Value"":0.5,""Unit"":1},""GroupName"":null},{""Name"":""s\u00F3l, pieprz"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null},{""Name"":""\uD83C\uDF36 ostra papryka"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null},{""Name"":""li\u015Bcie bazylii"",""Quantity"":{""Value"":0.5,""Unit"":6},""GroupName"":null},{""Name"":""oliwa"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null},{""Name"":""majonez"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null}]",String,"[{""Description"":""Makaron ugotowa\u0107 w osolonej wodzie, odcedzi\u0107 i wsypa\u0107 do salaterki.""},{""Description"":""Doda\u0107 pokrojony w kosteczk\u0119 ser, a tak\u017Ce obrane i pokrojone w kosteczk\u0119 awokado. Skropi\u0107 sokiem z limonki.""},{""Description"":""Doda\u0107 odcedzon\u0105 kukurydz\u0119, pokrojone na po\u0142\u00F3wki pomidorki, posiekan\u0105 cebul\u0119 i ca\u0142o\u015B\u0107 doprawi\u0107 sol\u0105, pieprzem i papryk\u0105.""},{""Description"":""Doda\u0107 posiekane listki bazylii, oliw\u0119 oraz majonez. Wszystko delikatnie wymiesza\u0107.""}]",String,"🥗 Sałatka makaronowa awokado, feta, pomidory, kukurydza",String,PT30M,String
+_default,98e88319-4cdf-430b-bb6f-130a4e957bce,"<h5>Wskazówki</h5>
+<div class=""alert alert-primary"" role=""alert"">
+Mięso można wcześniej (np. dzień lub kilka godzin wcześniej) zamarynować w składnikach z przepisu (w soli, pieprzu, winie, oliwie, rozmarynie i czosnku), ale nie jest to konieczne.
+</div>
+<div class=""alert alert-primary"" role=""alert"">
+Zamiast folii aluminiowej można użyć naczynia żaroodpornego z pokrywą.
+</div>",String,"[{""Name"":""\uD83C\uDF77 bia\u0142e wytrawne wino (je\u015Bli nie mamy mo\u017Cna u\u017Cy\u0107 bulionu)"",""Quantity"":{""Value"":0.5,""Unit"":6},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83D\uDC16 kark\u00F3wka wieprzowa (karczku)"",""Quantity"":{""Value"":700,""Unit"":3},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDD55 mro\u017Cona marchewka mini lub zwyk\u0142a"",""Quantity"":{""Value"":100,""Unit"":3},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDDC2 s\u00F3l morska i \u015Bwie\u017Co zmielony czarny pieprz"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null,""Alternative"":null},{""Name"":""\uD83E\uDDC4 czosnek"",""Quantity"":{""Value"":2,""Unit"":9},""GroupName"":null,""Alternative"":null},{""Name"":""oliwa extra vergine lub 2 \u0142y\u017Ceczki mas\u0142a"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""ga\u0142\u0105zka rozmarynu lub 2 \u0142y\u017Ceczki suszonego"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null,""Alternative"":null},{""Name"":""ga\u0142\u0105zka rozmarynu"",""Quantity"":{""Value"":1,""Unit"":0},""GroupName"":null,""Alternative"":2},{""Name"":""suszony rozmaryn"",""Quantity"":{""Value"":2,""Unit"":5},""GroupName"":null,""Alternative"":2},{""Name"":""sos sojowy"",""Quantity"":{""Value"":2,""Unit"":5},""GroupName"":null,""Alternative"":3},{""Name"":""worcestershire"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null,""Alternative"":3}]",String,"[{""Description"":""Kark\u00F3wk\u0119 pokroi\u0107 na plastry grubo\u015Bci ok. 1,5 cm. W\u0142o\u017Cy\u0107 do naczynia \u017Caroodpornego lub blachy i u\u0142o\u017Cy\u0107 tak aby mi\u0119so tylko miejscami zachodzi\u0142o na siebie. Mi\u0119so doprawi\u0107 sol\u0105 oraz pieprzem.""},{""Description"":""Skropi\u0107 oliw\u0105 lub roztopionym mas\u0142em. Na wierzchu mi\u0119sa po\u0142o\u017Cy\u0107 listki rozmarynu oraz po\u0142\u00F3wki obranego czosnku, skropi\u0107 sosem sojowym.""},{""Description"":""Na dno naczynia wla\u0107 wino. Ob\u0142o\u017Cy\u0107 obran\u0105 \uD83E\uDD55 marchewk\u0119 (mini lub zwyk\u0142\u0105 pokrojon\u0105 na plasterki).""},{""Description"":""Przykry\u0107 szczelnie foli\u0105 aluminiow\u0105 i wstawi\u0107 do piekarnika nagrzanego do \u003Cb\u003E190\u0026deg;C\u003C/b\u003E. Piec przez \u003Cb\u003E1.5h\u003C/b\u003E, nast\u0119pnie zdj\u0105\u0107 przykrycie, zwi\u0119kszy\u0107 temp. do \u003Cb\u003E220\u0026deg;C\u003C/b\u003E i piec jeszcze przez ok. \u003Cb\u003E15 minut\u003C/b\u003E a\u017C mi\u0119so si\u0119 zrumieni i soki lekko odparuj\u0105.""}]",String,🐖 Karkówka pieczona w plastrach,String,PT0S,String
+_default,9fa5a681-4c42-4640-a78e-ab2b05d68638,,,"[{""Name"":""ziemniaki"",""Quantity"":{""Value"":0.5,""Unit"":2},""GroupName"":null},{""Name"":""m\u0105ka pszenna"",""Quantity"":{""Value"":0.5,""Unit"":4},""GroupName"":null},{""Name"":""cebula"",""Quantity"":{""Value"":0.25,""Unit"":1},""GroupName"":null},{""Name"":""jajko"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""s\u00F3l"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null},{""Name"":""olej ro\u015Blinny do sma\u017Cenia"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null}]",String,"[{""Description"":""Ziemniaki obra\u0107 i zetrze\u0107 na tarce o ma\u0142ych oczkach bezpo\u015Brednio do wi\u0119kszej i p\u0142askiej miski. Zostawi\u0107 je w misce bez mieszania, misk\u0119 delikatnie przechyli\u0107 i odstawi\u0107 tak na ok. 5 minut.""},{""Description"":""W mi\u0119dzyczasie odlewa\u0107 zbieraj\u0105cy si\u0119 sok, delikatnie przytrzymuj\u0105c ziemniaki, nadal ich nie miesza\u0107. Na koniec docisn\u0105\u0107 d\u0142oni\u0105 do miski i odla\u0107 jeszcze wi\u0119cej soku. Doda\u0107 m\u0105k\u0119, drobno start\u0105 cebul\u0119, jajko oraz dwie szczypty soli.""},{""Description"":""Rozgrza\u0107 patelni\u0119, wla\u0107 olej. Mas\u0119 ziemniaczan\u0105 wymiesza\u0107. Nak\u0142ada\u0107 porcje masy (1 pe\u0142na \u0142y\u017Cka) na rozgrzany olej i rozprowadza\u0107 j\u0105 na do\u015B\u0107 cienki placek. Sma\u017Cy\u0107 na \u015Brednim ogniu przez ok. 2-3 minuty na z\u0142oty kolor, przewr\u00F3ci\u0107 na drug\u0105 stron\u0119 i powt\u00F3rzy\u0107 sma\u017Cenie.""},{""Description"":""Odk\u0142ada\u0107 na talerz wy\u0142o\u017Cony r\u0119cznikami papierowymi. Posypa\u0107 sol\u0105 morsk\u0105 z m\u0142ynka. Placki ziemniaczane najlepsze s\u0105 prosto z patelni gdy s\u0105 chrupi\u0105ce.""}]",String,🥞 Placki ziemniaczane,String,PT0S,String
+_default,ab6cf2ca-53e8-4cfd-89be-09ba2148efbc,rozkoszny,String,"[{""Name"":""(45 g) startego parmezanu"",""Quantity"":{""Value"":0.5,""Unit"":6},""GroupName"":null,""Alternative"":null},{""Name"":""(60 ml) oliwy extra virgin"",""Quantity"":{""Value"":0.25,""Unit"":6},""GroupName"":null,""Alternative"":null},{""Name"":""1 kulka (125 g) mozzarelli\r"",""Quantity"":{""Value"":1,""Unit"":0},""GroupName"":null,""Alternative"":null},{""Name"":""bazylii, porwanej w r\u0119kach lub posiekanej"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":null,""Alternative"":null},{""Name"":""czosnku, obrane"",""Quantity"":{""Value"":3,""Unit"":9},""GroupName"":null,""Alternative"":null},{""Name"":""gnocchi"",""Quantity"":{""Value"":400,""Unit"":3},""GroupName"":null,""Alternative"":null},{""Name"":""pomidork\u00F3w koktajlowych"",""Quantity"":{""Value"":500,""Unit"":3},""GroupName"":null,""Alternative"":null},{""Name"":""soli morskiej drobnoziarnistej"",""Quantity"":{""Value"":5,""Unit"":5},""GroupName"":null,""Alternative"":null},{""Name"":""\u015Bwie\u017Co mielony pieprz"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null,""Alternative"":null}]",String,"[{""Description"":""Rozgrzej piekarnik do 200 \u0026#x2103; (g\u00F3ra-d\u00F3\u0142).""},{""Description"":""Prze\u0142\u00F3\u017C pomidorki koktajlowe, czosnek oliw\u0119 i s\u00F3l do du\u017Cej brytfanki. Dopraw \u015Bwie\u017Co mielonym pieprzem. Obtocz pomidory w oliwie i piecz, a\u017C zmi\u0119kn\u0105, przez 15\u201320 minut.""},{""Description"":""Do\u0142\u00F3\u017C gnocchi i obtocz je w sokach zgromadzonych w brytfance. Piecz, a\u017C stan\u0105 si\u0119 przypiek\u0105 na chrupko, 15\u201320 minut. Dodaj parmezan, mozzarell\u0119 i bazyli\u0119. Wymieszaj do po\u0142\u0105czenia.""}]",String,"🍲 Pieczone gnocchi z pomidorkami, mozzarellą i bazylią",String,PT0S,String
+_default,b6811e5d-56bb-46de-8357-779d58a0197e,,,"[{""Name"":""pol\u0119dwica wieprzowa, ok. 400 g"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""czosnku"",""Quantity"":{""Value"":2,""Unit"":9},""GroupName"":null},{""Name"":""s\u00F3l"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null},{""Name"":""pieprz"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null},{""Name"":""(p\u0142aska) skrobi ziemniaczanej"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":null},{""Name"":""oleju ro\u015Blinnego"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":null},{""Name"":""imbir kawa\u0142ek"",""Quantity"":{""Value"":3,""Unit"":12},""GroupName"":null},{""Name"":""ma\u0142y por"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""ma\u0142e pieczarki"",""Quantity"":{""Value"":200,""Unit"":3},""GroupName"":null},{""Name"":""ocet ry\u017Cowy (lub sok wyci\u015Bni\u0119ty z 1/2 cytryny)"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":""sos""},{""Name"":""woda"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":""sos""},{""Name"":""cukru (np. trzcinowego)"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":""sos""},{""Name"":""sosu ostrygowego (opcjonalnie)"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":""sos""},{""Name"":""sosu sojowego"",""Quantity"":{""Value"":5,""Unit"":4},""GroupName"":""sos""}]",String,"[
+  {
+    ""Description"": ""Pol\u0119dwic\u0119 umy\u0107, osuszy\u0107, odci\u0105\u0107 bia\u0142\u0105 b\u0142on\u0119, nast\u0119pnie pokroi\u0107 uko\u015Bnie na plastry o grubo\u015Bci 2,5 cm.""
+  },
+  {
+    ""Description"": ""Rozbi\u0107 je p\u0142askim t\u0142uczkiem i natrze\u0107 czosnkiem przeci\u015Bni\u0119tym przez prask\u0119. W\u0142o\u017Cy\u0107 do lod\u00F3wki na ok. 1 godzin\u0119 (je\u015Bli mamy czas).""
+  },
+  {
+    ""Description"": ""Doprawi\u0107 sol\u0105 i pieprzem a nast\u0119pnie delikatnie opr\u00F3szy\u0107 skrobi\u0105 ziemniaczan\u0105.""
+  },
+  {
+    ""Description"": ""Rozgrza\u0107 du\u017C\u0105 patelni\u0119 z 2 \u0142y\u017Ckami oleju. Obsma\u017Cy\u0107 pol\u0119dwiczki po oko\u0142o 2,5 minuty z ka\u017Cdej strony. Od\u0142o\u017Cy\u0107 na talerz.""
+  },
+  {
+    ""Description"": ""Na t\u0119 sam\u0105 patelni\u0119 wla\u0107 pozosta\u0142\u0105 \u0142y\u017Ck\u0119 oleju, doda\u0107 posiekanego pora, obrany i starty imbir i umyte pieczarki (wi\u0119ksze mo\u017Cna pokroi\u0107). Sma\u017Cy\u0107 przez oko\u0142o 3 - 5 minut co chwil\u0119 mieszaj\u0105c (je\u015Bli za bardzo si\u0119 przypala mo\u017Cna skropi\u0107 patelni\u0119 wod\u0105).""
+  },
+  {
+    ""Description"": ""W\u0142o\u017Cy\u0107 z powrotem mi\u0119so na patelni\u0119 z warzywami i po chwili wla\u0107 sos (wymieszane sk\u0142adniki).""
+  },
+  {
+    ""Description"": ""Gotowa\u0107 przez oko\u0142o 2 minuty a\u017C sos zg\u0119stnieje, w mi\u0119dzyczasie co chwil\u0119 zamiesza\u0107 (potrz\u0105sn\u0105\u0107 patelni\u0105, przewr\u00F3ci\u0107 mi\u0119so na drug\u0105 stron\u0119).""
+  }
+]",String,🇨🇳 Polędwica wieprzowa smażona z pieczarkami i porem w szklistym sosie na sposób chiński,String,PT0S,String
+_default,b7649289-e990-4946-8ba3-4d14e006fb55,"<a href=""https://www.hajduczeknaturalnie.pl/kartacze-albo-cepeliny-z-soczewica/"">LINK</a>",String,"[{""Name"":""br\u0105zowa soczewica"",""Quantity"":{""Value"":1,""Unit"":6},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""czosnek, obrane i drobno posiekane lub przeci\u015Bni\u0119te przez prask\u0119"",""Quantity"":{""Value"":3,""Unit"":9},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""du\u017Ca cebula, obrana i posiekana"",""Quantity"":{""Value"":1,""Unit"":0},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""listki laurowe"",""Quantity"":{""Value"":2,""Unit"":0},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""\u0142y\u017Ceczka pieprzu zio\u0142owego\r"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""\u0142y\u017Cka suszonego majeranku\r"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""oliwa/olej"",""Quantity"":{""Value"":3,""Unit"":4},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""ziarenka ziela angielskiego"",""Quantity"":{""Value"":2,""Unit"":0},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""pieprz i s\u00F3l do smaku"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":""farsz"",""Alternative"":null},{""Name"":""p\u0142aska \u0142y\u017Ceczka kwasku cytrynowego (nie jest niezb\u0119dny, ale nie pozwala kluskom zsinie\u0107, wi\u0119c s\u0105 bielutkie i \u0142adnie wygl\u0105daj\u0105)\r"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":""ciasto"",""Alternative"":null},{""Name"":""skrobi ziemniaczanej"",""Quantity"":{""Value"":4,""Unit"":4},""GroupName"":""ciasto"",""Alternative"":null},{""Name"":""ziemniak\u00F3w obranych, ugotowanych i przeci\u015Bni\u0119tych przez prask\u0119 (najlepiej jest rozdrabnia\u0107 jeszcze ciep\u0142e ziemniaki)"",""Quantity"":{""Value"":1,""Unit"":2},""GroupName"":""ciasto"",""Alternative"":null},{""Name"":""ziemniak\u00F3w surowych, obranych i startych na ma\u0142ych oczkach tarki albo rozdrobnionych w malakserze"",""Quantity"":{""Value"":2,""Unit"":2},""GroupName"":""ciasto"",""Alternative"":null}]",String,"[{""Description"":""[Stage]Farsz""},{""Description"":""Zacznij od przygotowania farszu, mo\u017Cesz to zrobi\u0107 nawet poprzedniego dnia wieczorem. Br\u0105zow\u0105 soczewic\u0119 op\u0142ucz na sicie zimn\u0105 wod\u0105. W garnku zagotuj 2 szklanki wody z \u0142y\u017Ck\u0105 oleju, zielem angielskim i listkami laurowymi. Dodaj do niej soczewic\u0119 i gotuj do mi\u0119kko\u015Bci pod przykryciem na niewielkim ogniu (b\u0119dzie si\u0119 gotowa\u0107 oko\u0142o 40 minut). Zamieszaj od czasu do czasu, a pod koniec gotowania (nie wcze\u015Bniej!) dodaj \u0142y\u017Ceczk\u0119 soli. Mi\u0119kk\u0105 soczewic\u0119 odced\u017A starannie na sicie i prze\u0142\u00F3\u017C do miski.""},{""Description"":""Pozosta\u0142e 2 \u0142y\u017Cki oleju rozgrzej na patelni i usma\u017C na niej posiekan\u0105 cebul\u0119 wraz z majerankiem i pieprzem zio\u0142owym. Gdy ju\u017C si\u0119 lekko przyrumieni, dodaj przeci\u015Bni\u0119ty przez prask\u0119 czosnek, wymieszaj i zdejmij z palnika. Dodaj do miski z soczewic\u0105.""},{""Description"":""\u003Cb\u003EFarsz zmiel\u003C/b\u003E w maszynce do mi\u0119sa lub malakserze. Nie zapomnij wyj\u0105\u0107 listk\u00F3w laurowych, ziele angielskie mo\u017Ce zosta\u0107. Przypraw jeszcze ewentualnie czosnkiem, pieprzem, sol\u0105 i majerankiem. Smak ma by\u0107 wyrazisty.""},{""Description"":""[Stage]Ciasto""},{""Description"":""Ugotowane, rozdrobnione ziemniaki w\u0142\u00F3\u017C do sporej miski.""},{""Description"":""Do utartych surowych ziemniak\u00F3w dodaj kwasek cytrynowy i wymieszaj.""},{""Description"":""Surowe ziemniaki umieszczaj po trochu w \u015Bciereczce/pieluszce i odciskaj dok\u0142adnie z p\u0142ynu. Zadbaj o to, by p\u0142yn \u015Bcieka\u0142 do jakiego\u015B naczynia, nie wylewaj go na razie.""},{""Description"":""Suche, odci\u015Bni\u0119te ziemniaki dodawaj do miski z ugotowanymi.""},{""Description"":""Po d\u0142u\u017Cszej chwili na dnie naczynia z odci\u015Bni\u0119tym p\u0142ynem zbierze si\u0119 skrobia. W\u00F3wczas zlej wod\u0119 znad tego osadu, a skrobi\u0119 dodaj do ziemniak\u00F3w w misce. Wymieszaj wszystko dok\u0142adnie, dodaj s\u00F3l do smaku (powinny wystarczy\u0107 2 \u0142y\u017Ceczki) i zagnie\u0107 ciasto d\u0142o\u0144mi, sprawdzaj\u0105c przy tym, czy dobrze si\u0119 lepi. Zazwyczaj trzeba doda\u0107 ze dwie-trzy \u0142y\u017Cki skrobi ziemniaczanej. Jej ilo\u015B\u0107 zale\u017Cy od konsystencji ciasta. Gotowe powinno by\u0107 jak plastelina.""},{""Description"":""Nabierz porcj\u0119 ciasta i rozp\u0142aszcz j\u0105 na d\u0142oni (taki placuszek powinien by\u0107 w\u0142a\u015Bnie mniej wi\u0119cej wielko\u015Bci d\u0142oni). Na \u015Brodku zr\u00F3b wg\u0142\u0119bienie, w kt\u00F3re w\u0142o\u017Cysz porcj\u0119 farszu, mniej wi\u0119cej \u0142y\u017Ck\u0119. Ciasto sklejaj i formuj z niego w d\u0142oniach pod\u0142u\u017Cny kszta\u0142t charakterystyczny dla cepelina. Gotowe kluski uk\u0142adaj np. na desce. Z podanej porcji powinno wyj\u015B\u0107 oko\u0142o 12 du\u017Cych kartaczy.""},{""Description"":""Zagotuj wod\u0119 w du\u017Cym garnku, nie zapomnij jej osoli\u0107. Dla \u0142atwiejszego gotowania gospodynie radz\u0105 doda\u0107 do wody \u0142y\u017Ck\u0119 skrobi ziemniaczanej (przed wlaniem do wrz\u0105tku koniecznie rozmieszaj j\u0105 w po\u0142owie szklanki zimnej wody, jak na kisiel). Gdy ponownie zawrze, wk\u0142adaj partiami przygotowane kartacze. Musz\u0105 swobodnie p\u0142ywa\u0107. Gotuj je przez oko\u0142o 20-25 minut. Od czasu do czasu warto je delikatnie przemiesza\u0107 i ewentualnie odwr\u00F3ci\u0107 ka\u017Cd\u0105 klusk\u0119 na drug\u0105 stron\u0119.""},{""Description"":""Ugotowane cepeliny wyjmuj \u0142y\u017Ck\u0105 cedzakow\u0105 i ods\u0105czaj dok\u0142adnie. Podawaj ciep\u0142e, polane przyrumienion\u0105 na oleju cebulk\u0105. Najlepiej smakuj\u0105 sowicie okraszone.""}]",String,👹 Pierdolce z soczewicą,String,PT0S,String
+_default,b7a2579b-4a4a-4aa6-863f-662ec497a27c,,,"[{""Name"":""cebula"",""Quantity"":{""Value"":2,""Unit"":1},""GroupName"":null},{""Name"":""czosnek"",""Quantity"":{""Value"":2,""Unit"":9},""GroupName"":null},{""Name"":""kie\u0142bas (np. wiejska, podsuszana)"",""Quantity"":{""Value"":200,""Unit"":3},""GroupName"":null},{""Name"":""ostra papryka w proszku"",""Quantity"":{""Value"":0.5,""Unit"":5},""GroupName"":null},{""Name"":""papryka (np. \u017C\u00F3\u0142ta, czerwona, zielona)"",""Quantity"":{""Value"":3,""Unit"":1},""GroupName"":null},{""Name"":""pieprz"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null},{""Name"":""przecier pomidorowy - passata z butelki lub kartonu"",""Quantity"":{""Value"":500,""Unit"":8},""GroupName"":null},{""Name"":""s\u0142odka papryka w proszku"",""Quantity"":{""Value"":2,""Unit"":5},""GroupName"":null},{""Name"":""smalec"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":null},{""Name"":""s\u00F3l i \u015Bwie\u017Co zmielony pieprz"",""Quantity"":{""Value"":1,""Unit"":0},""GroupName"":null}]",String,"[{""Description"":""Do szerokiego garnka w\u0142o\u017Cy\u0107 \u003Cb\u003Esmalec\u003C/b\u003E, doda\u0107 pokrojon\u0105 w kosteczk\u0119 \u003Cb\u003Ecebul\u0119\u003C/b\u003E oraz pokrojon\u0105 na plasterki \u003Cb\u003Ekie\u0142bas\u0119\u003C/b\u003E, sma\u017Cy\u0107 co chwil\u0119 mieszaj\u0105c przez oko\u0142o 7 minut. Doda\u0107 starty na tarce lub rozgnieciony \u003Cb\u003Eczosnek\u003C/b\u003E i sma\u017Cy\u0107 jeszcze przez 3 minuty.""},{""Description"":""Doda\u0107 pokrojone w kostk\u0119 papryki i co chwil\u0119 mieszaj\u0105c sma\u017Cy\u0107 przez ok. 3 minuty. Doprawi\u0107 sol\u0105 (ok. p\u00F3\u0142 \u0142y\u017Ceczki), \u015Bwie\u017Co zmielonym pieprzem oraz s\u0142odk\u0105 i ostr\u0105 papryk\u0105 w proszku.""},{""Description"":""Nast\u0119pnie doda\u0107 obrane i pokrojone w kostk\u0119 \u015Bwie\u017Ce pomidory (bez nasion ze \u015Brodka kom\u00F3r) lub passat\u0119 pomidorow\u0105. Gotowa\u0107 przez oko\u0142o 15 minut pod uchylon\u0105 pokryw\u0105, w mi\u0119dzyczasie kilka razy zamiesza\u0107. Na koniec doda\u0107 koncentrat pomidorowy je\u015Bli u\u017Cywali\u015Bmy \u015Bwie\u017Cych pomidor\u00F3w.""}]",String,🥘 Leczo,String,PT0S,String
+_default,b91ce796-8ed8-4c56-bf86-424800db9708,,,"[{""Name"":""oliwa"",""Quantity"":{""Value"":2,""Unit"":4},""GroupName"":null},{""Name"":""cebula"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""czosnek"",""Quantity"":{""Value"":2,""Unit"":9},""GroupName"":null},{""Name"":""marchewka"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""ziemniaki"",""Quantity"":{""Value"":3,""Unit"":1},""GroupName"":null},{""Name"":""czerwona soczewica"",""Quantity"":{""Value"":50,""Unit"":3},""GroupName"":null},{""Name"":""bulion drobiowy lub warzywny lub ros\u00F3\u0142"",""Quantity"":{""Value"":750,""Unit"":8},""GroupName"":null},{""Name"":""kurkuma"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null},{""Name"":""papryka w proszku"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null},{""Name"":""ostra papryka"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null},{""Name"":""krojone pomidory"",""Quantity"":{""Value"":1,""Unit"":10},""GroupName"":null},{""Name"":""posiekany koperek"",""Quantity"":{""Value"":1,""Unit"":4},""GroupName"":null},{""Name"":""\u015Bmietanka  30% lub 18%"",""Quantity"":{""Value"":0.3,""Unit"":6},""GroupName"":null}]",String,"[{""Description"":""W garnku na oliwie zeszkli\u0107 pokrojon\u0105 w kosteczk\u0119 cebul\u0119.""},{""Description"":""Doda\u0107 przeci\u015Bni\u0119ty przez prask\u0119 czosnek oraz marchewk\u0119 - obran\u0105 i start\u0105 na du\u017Cych oczkach tartki.""},{""Description"":""Nast\u0119pnie wrzuci\u0107 obrane i pokrojone w kostk\u0119 ziemniaki, mieszaj\u0105c co chwil\u0119 podsma\u017Ca\u0107 przez ok. 3 minuty.""},{""Description"":""Doda\u0107 such\u0105 soczewic\u0119 i wymiesza\u0107. Wla\u0107 bulion i zagotowa\u0107. Doda\u0107 kurkum\u0119, s\u0142odk\u0105 i ostr\u0105 papryk\u0119 oraz \u015Bwie\u017Co zmielony pieprz i s\u00F3l do smaku (w razie potrzeby).""},{""Description"":""Gotowa\u0107 pod przykryciem przez ok. 15-20 minut.""},{""Description"":""Doda\u0107 krojone pomidory z puszki i gotowa\u0107 przez ok. 15 minut pod uchylon\u0105 pokryw\u0105, od czasu do czasu zamiesza\u0107.""},{""Description"":""Odstawi\u0107 z ognia, wymiesza\u0107 z posiekanym koperkiem oraz \u015Bmietank\u0105.""}]",String,🍲 Zupa z soczewicy,String,PT0S,String
+_default,cb9c3e12-0aac-4efd-a24d-e2214a5b908c,,,"[{""Name"":""oliwa"",""Quantity"":{""Value"":100,""Unit"":3},""GroupName"":null},{""Name"":""cebula"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""czosnku"",""Quantity"":{""Value"":2,""Unit"":9},""GroupName"":null},{""Name"":""chilli w proszku"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null},{""Name"":""zmielonego kminu rzymskiego (kuminu)"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null},{""Name"":""suszonego oregano"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null},{""Name"":""mielonej wo\u0142owiny (np. gulaszowej, antrykotu)"",""Quantity"":{""Value"":500,""Unit"":3},""GroupName"":null},{""Name"":""\u015Bwie\u017Ce pomidory lub 2/3 puszki obranych pomidor\u00F3w"",""Quantity"":{""Value"":2,""Unit"":1},""GroupName"":null},{""Name"":""cukier"",""Quantity"":{""Value"":1,""Unit"":5},""GroupName"":null},{""Name"":""czerwona papryka"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":null},{""Name"":""czerwonej fasoli (ugotowanej)"",""Quantity"":{""Value"":200,""Unit"":3},""GroupName"":null},{""Name"":""bulionu np. wo\u0142owego lub wody"",""Quantity"":{""Value"":100,""Unit"":8},""GroupName"":null},{""Name"":""boczek"",""Quantity"":{""Value"":100,""Unit"":3},""GroupName"":""opcjonalnie""},{""Name"":""suszone pomidory"",""Quantity"":{""Value"":5,""Unit"":11},""GroupName"":""opcjonalnie""}]",String,"[{""Description"":""Na du\u017Cej patelni, na oliwie zeszkli\u0107 pokrojon\u0105 w kosteczk\u0119 cebul\u0119, doda\u0107 starty czosnek, chilli, kmin rzymski i oregano i mieszaj\u0105c sma\u017Cy\u0107 przez 1 minut\u0119. Stopniowo dodawa\u0107 zmielon\u0105 wo\u0142owin\u0119 i zmielony lub drobno posiekany boczek, mieszaj\u0105c zrumienia\u0107 z ka\u017Cdej strony.""},{""Description"":""Doda\u0107 pomidory (\u015Bwie\u017Ce nale\u017Cy sparzy\u0107, obra\u0107, pokroi\u0107 na \u0107wiartki, usun\u0105\u0107 pestki, mi\u0105\u017Csz pokroi\u0107 w kosteczk\u0119, pomidory z puszki nale\u017Cy rozdrobni\u0107 je\u015Bli s\u0105 w ca\u0142o\u015Bci). Wymiesza\u0107 i doprawi\u0107 cukrem, pieprzem oraz szczypt\u0105 soli.""},{""Description"":""Przykry\u0107 i dusi\u0107 przez oko\u0142o 20 na umiarkowanym ogniu, co jaki\u015B czas zamiesza\u0107. Doda\u0107 pokrojon\u0105 w kosteczk\u0119 papryk\u0119 i posiekane suszone pomidory je\u015Bli ich u\u017Cywamy. Gotowa\u0107 pod przykryciem przez oko\u0142o 10 minut, od czasu do czasu zamiesza\u0107. Na koniec doda\u0107 fasol\u0119 i gotowa\u0107 pod przykryciem przez ok. 3 minuty.""},{""Description"":""Na koniec gotowa\u0107 potraw\u0119 podlewaj\u0105c stopniowo wrz\u0105cym bulionem lub wod\u0105, tak aby powsta\u0142o troch\u0119 g\u0119stego sosu. Mo\u017Cna przygotowa\u0107 wcze\u015Bniej i odgrzewa\u0107.""}]",String,🌶️ Chili con carne,String,PT0S,String
+_default,cf6cc606-1682-45a6-b84d-42285d3fb594,,,"[{""Name"":""filet z dorsza"",""Quantity"":{""Value"":250,""Unit"":3},""GroupName"":null},{""Name"":""\uD83C\uDDEA\uD83C\uDDF8 chorizo"",""Quantity"":{""Value"":80,""Unit"":3},""GroupName"":null},{""Name"":""ma\u0142e szalotki"",""Quantity"":{""Value"":2,""Unit"":1},""GroupName"":null},{""Name"":""ciecierzyca z puszki (zwa\u017Cona po ods\u0105czeniu)"",""Quantity"":{""Value"":120,""Unit"":3},""GroupName"":null},{""Name"":""\uD83E\uDD6B passata pomidorowa"",""Quantity"":{""Value"":300,""Unit"":8},""GroupName"":null},{""Name"":""s\u00F3l i pieprz"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null},{""Name"":""cukier"",""Quantity"":{""Value"":1,""Unit"":7},""GroupName"":null}]",String,"[
+  {
+    ""Description"": ""Filet z dorsza op\u0142uka\u0107 pod zimn\u0105 wod\u0105, p\u0119set\u0105 oczy\u015Bci\u0107 z o\u015Bci. Ostrym no\u017Cem usun\u0105\u0107 sk\u00F3r\u0119. Chorizo pokroi\u0107 w grubsz\u0105 kostk\u0119. Szalotk\u0119 drobno posieka\u0107.""
+  },
+  {
+    ""Description"": ""Na wi\u0119kszej patelni z nieprzywieraj\u0105cym dnem podsma\u017Cy\u0107 chorizo, gdy wytopi si\u0119 t\u0142uszcz doda\u0107 szalotk\u0119 i jeszcze chwil\u0119 podsma\u017Cy\u0107. Doda\u0107 ods\u0105czon\u0105 ciecierzyc\u0119 i passat\u0119 pomidorow\u0105, nast\u0119pnie s\u00F3l i pieprz do smaku oraz szczypt\u0119 cukru. Wymiesza\u0107 i zagotowa\u0107. Na patelni\u0119 w\u0142o\u017Cy\u0107 oczyszczony filet z dorsza (w 3 kawa\u0142kach), patelni\u0119 przykry\u0107 pokrywk\u0105 i gotowa\u0107 na ma\u0142ym ogniu przez 8 minut.""
+  }
+]",String,🐟 Dorsz w sosie pomidorowym,String,PT0S,String
+_default,d04b3526-54d5-4bb5-b36e-85416ee3e176,,,"[
+  {
+    ""Name"": ""mielonego mi\u0119sa (z indyka, ciel\u0119cego lub wieprzowego np. z szynki)"",
+    ""Quantity"": {
+      ""Value"": 500,
+      ""Unit"": 3
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""cebula"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 1
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""czosnku"",
+    ""Quantity"": {
+      ""Value"": 2,
+      ""Unit"": 9
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""suszonego oregano, 1/2 \u0142y\u017Ceczki papryki w proszku"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 5
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""bu\u0142ki tartej lub ugotowanej kaszy jaglanej"",
+    ""Quantity"": {
+      ""Value"": 3,
+      ""Unit"": 4
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""jajko"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 1
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""sosu sojowego (opcjonalnie)"",
+    ""Quantity"": {
+      ""Value"": 1,
+      ""Unit"": 4
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""bulionu drobiowego lub roso\u0142u"",
+    ""Quantity"": {
+      ""Value"": 125,
+      ""Unit"": 8
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""oliwa, mas\u0142o\r"",
+    ""Quantity"": {
+      ""Value"": 0,
+      ""Unit"": 0
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  },
+  {
+    ""Name"": ""przecieru pomidorowego, passaty z butelki lub kartonu"",
+    ""Quantity"": {
+      ""Value"": 350,
+      ""Unit"": 8
+    },
+    ""GroupName"": null,
+    ""Alternative"": null
+  }
+]",String,"[
+  {
+    ""Description"": ""Na patelni na \u0142y\u017Cce oliwy zeszkli\u0107 pokrojon\u0105 w kosteczk\u0119 cebul\u0119, pod koniec doda\u0107 starty 1 z\u0105bek czosnku oraz 1 \u0142y\u017Ck\u0119 mas\u0142a, suszone oregano i papryk\u0119 w proszku, wymiesza\u0107 i chwil\u0119 razem podsma\u017Cy\u0107. Zdj\u0105\u0107 z patelni i zmieli\u0107 razem z mi\u0119sem lub drobniej posieka\u0107 na desce.""
+  },
+  {
+    ""Description"": ""Zmielone mi\u0119so wraz z podsma\u017Con\u0105 cebul\u0105 umie\u015Bci\u0107 w misce. Doda\u0107 bu\u0142k\u0119 tart\u0105 lub ugotowan\u0105 kasz\u0119, jajko, sos sojowy, doprawi\u0107 sol\u0105 oraz pieprzem i dok\u0142adnie wyrobi\u0107. Wilgotnymi d\u0142o\u0144mi uformowa\u0107 niedu\u017Ce pulpeciki.""
+  },
+  {
+    ""Description"": ""Rozgrza\u0107 nat\u0142uszczon\u0105 oliw\u0105 patelni\u0119 i w\u0142o\u017Cy\u0107 pulpeciki. Gdy si\u0119 zrumieni\u0105 od spodu przewr\u00F3ci\u0107 na drug\u0105 stron\u0119 i powt\u00F3rzy\u0107 sma\u017Cenie. Pod koniec na patelni\u0119 doda\u0107 starty drugi z\u0105bek czosnku i lekko go zrumieni\u0107.""
+  },
+  {
+    ""Description"": ""Na patelni\u0119 z pulpecikami wla\u0107 gor\u0105cy bulion, przykry\u0107 pokryw\u0105 i gotowa\u0107 przez ok. 5 - 7 minut, w mi\u0119dzyczasie potrz\u0105sn\u0105\u0107 patelni\u0105 w celu przemieszania pulpecik\u00F3w.""
+  },
+  {
+    ""Description"": ""Doda\u0107 przecier pomidorowy i zagotowa\u0107. Gotowa\u0107 bez przykrycia przez oko\u0142o 10 minut (je\u015Bli u\u017Cywali\u015Bmy indyka) lub ok. 15 minut (w przypadku innego mi\u0119sa). W mi\u0119dzyczasie 1 - 2 razy zamiesza\u0107.""
+  },
+  {
+    ""Description"": ""Sos spr\u00F3bowa\u0107 i doprawi\u0107 w razie potrzeby sol\u0105, pieprzem, cukrem i suszonym oregano. Podawa\u0107 z makaronem i tartym serem.""
+  }
+]",String,Pulpety w sosie pomidorowym,String,PT0S,String
+_default,d8546405-bfbd-47ba-b9ce-2faf29456151,,,"[{""Name"":""mi\u0119so pier\u015B kurczaka"",""Quantity"":{""Value"":300,""Unit"":3},""GroupName"":null},{""Name"":""makaron Mie"",""Quantity"":{""Value"":250,""Unit"":3},""GroupName"":null},{""Name"":""warzywa mro\u017Cone, azja"",""Quantity"":{""Value"":300,""Unit"":3},""GroupName"":null},{""Name"":""mi\u00F3d"",""Quantity"":{""Value"":50,""Unit"":3},""GroupName"":null},{""Name"":""sos sojowy ciemny"",""Quantity"":{""Value"":50,""Unit"":8},""GroupName"":null},{""Name"":""keczup"",""Quantity"":{""Value"":50,""Unit"":3},""GroupName"":null},{""Name"":""m\u0105ka"",""Quantity"":{""Value"":25,""Unit"":3},""GroupName"":null},{""Name"":""woda"",""Quantity"":{""Value"":80,""Unit"":8},""GroupName"":null},{""Name"":""szczypiorek"",""Quantity"":{""Value"":20,""Unit"":3},""GroupName"":null},{""Name"":""olej sezamowy"",""Quantity"":{""Value"":20,""Unit"":3},""GroupName"":null},{""Name"":""przyprawa do kurczaka"",""Quantity"":{""Value"":4,""Unit"":3},""GroupName"":null},{""Name"":""czosnek granulowany"",""Quantity"":{""Value"":8,""Unit"":3},""GroupName"":null}]",String,"[{""Description"":""Dopraw mi\u0119so w misce przyprawami (czosnek granulowany, przyp do kurczaka), obtocz mi\u0119so w m\u0105ce, dodaj 1/4 oleju sezamowego.""},{""Description"":""sma\u017C \uD83D\uDC24 na patelni z 1/4 oleju sezamowego przez 6-8min. Ugotuj makaron. Przelej 80ml wody z makaronu do szklanki. Makaron odced\u017A i przelej zimn\u0105 wod\u0105.""},{""Description"":""do du\u017Cej miski wlej sos sojowy, ketchup, mi\u00F3d, czosnek granulowany, wod\u0119 z makaronu, olej sezamowy i ca\u0142o\u015B\u0107 wymieszaj""},{""Description"":""Sma\u017C warzywa mro\u017Cone 8-10min. Dodaj \uD83D\uDC24, makaron i sos. Dok\u0142adnie mieszaj i gotuj 2-3min""},{""Description"":""Wy\u0142\u00F3\u017C porcje na talerz. Posyp posiekanym szczypiorem.""}]",String,🍜 Makaron w sosie pomidorowo-czosnkowym z kurczakiem,String,PT30M,String
+_default,f26c15f6-74c6-491c-a4a3-f0cd79fb56e7,,,"[{""Name"":""dfsdfdsfddfsdf"",""Quantity"":{""Value"":0,""Unit"":0},""GroupName"":null,""Alternative"":null},{""Name"":""cebula"",""Quantity"":{""Value"":1,""Unit"":1},""GroupName"":""sos"",""Alternative"":1},{""Name"":""m\u0105ka"",""Quantity"":{""Value"":0.5,""Unit"":2},""GroupName"":""sos"",""Alternative"":1},{""Name"":""test1"",""Quantity"":{""Value"":1,""Unit"":2},""GroupName"":null,""Alternative"":2},{""Name"":""test2"",""Quantity"":{""Value"":0.5,""Unit"":0},""GroupName"":null,""Alternative"":2}]",String,"[
+  {
+    ""Description"": ""Ka\u017Cdy krok w nowej linii.""
+  }
+]",String,test,String,PT0S,String

@@ -1,0 +1,25 @@
+PartitionKey,RowKey,Summary,Summary@type
+_default,031a177c-3022-46d7-bec0-930154cf4ed2,🦃 🦃 🦃 Roladki z indyka,String
+_default,14d37fa9-6c73-40bb-bd5a-f3f600f5a57c,"🥗 Sałatka na ciepło z makaronem orzo, warzywami oraz fetą",String
+_default,26a66144-13f8-46b7-a426-cf701e013c46,"🥗 Sałatka batat, avocado, jajko",String
+_default,324d8881-504f-411e-acf9-a9656ea124c6,"🇨🇳 ""Lwie głowy"" - chińskie pulpeciki mięsne gotowane na parze z kapustą",String
+_default,3fe125f6-b108-4216-9dc7-87c0b0fd0468,🇮🇹 Lasagne,String
+_default,493f5f9e-bb1d-410c-8e19-c052d9ae6fd1,🍝 Spaghetti alla carbonara,String
+_default,4b41c59d-b042-4a4e-b5d1-6c811f6a0211,🍝 Spaghetti bolognese,String
+_default,70d9bff1-a1b8-41f5-8473-8703c8f9ef84,🇨🇳 Wieprzowina po chińsku,String
+_default,7591baeb-8260-4f86-8d7a-b886266b68d2,🦃 Kotlety mielone,String
+_default,80ead776-9caf-40dc-8835-ef9081b69dfd,🐗 Gulasz wołowy z ziemniakami i marchewką,String
+_default,880903c4-b5c0-4403-9a42-3083394d9ee4,🐖 Polędwiczki z suszonymi pomidorami,String
+_default,9038a6a5-d36a-4cc1-8398-03a41e13c473,"🥗 Sałatka makaronowa awokado, feta, pomidory, kukurydza",String
+_default,98e88319-4cdf-430b-bb6f-130a4e957bce,🐖 Karkówka pieczona w plastrach,String
+_default,9fa5a681-4c42-4640-a78e-ab2b05d68638,🥞 Placki ziemniaczane,String
+_default,ab6cf2ca-53e8-4cfd-89be-09ba2148efbc,"🍲 Pieczone gnocchi z pomidorkami, mozzarellą i bazylią",String
+_default,b6811e5d-56bb-46de-8357-779d58a0197e,🇨🇳 Polędwica wieprzowa smażona z pieczarkami i porem w szklistym sosie na sposób chiński,String
+_default,b7649289-e990-4946-8ba3-4d14e006fb55,👹 Pierdolce z soczewicą,String
+_default,b7a2579b-4a4a-4aa6-863f-662ec497a27c,🥘 Leczo,String
+_default,b91ce796-8ed8-4c56-bf86-424800db9708,🍲 Zupa z soczewicy,String
+_default,cb9c3e12-0aac-4efd-a24d-e2214a5b908c,🌶️ Chili con carne,String
+_default,cf6cc606-1682-45a6-b84d-42285d3fb594,🐟 Dorsz w sosie pomidorowym,String
+_default,d04b3526-54d5-4bb5-b36e-85416ee3e176,Pulpety w sosie pomidorowym,String
+_default,d8546405-bfbd-47ba-b9ce-2faf29456151,🍜 Makaron w sosie pomidorowo-czosnkowym z kurczakiem,String
+_default,f26c15f6-74c6-491c-a4a3-f0cd79fb56e7,test,String
