@@ -73,14 +73,19 @@ app.MapRazorComponents<App>()
 
 app.UseCfrogMinimalApi();
 
-// https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-9.0#resolve-a-service-at-app-startup
-using (var serviceScope = app.Services.CreateScope())
-{
-    var services = serviceScope.ServiceProvider;
-
-    var initializer = services.GetRequiredService<IRecipesAzInitializer>();
-    Console.WriteLine("Initializing the recipes storage...");
-    await initializer.Initialize();
-}
+await InitTables(app);
 
 app.Run();
+
+static async Task InitTables(WebApplication app)
+{
+    // https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-9.0#resolve-a-service-at-app-startup
+    using (var serviceScope = app.Services.CreateScope())
+    {
+        var services = serviceScope.ServiceProvider;
+
+        var initializer = services.GetRequiredService<IRecipesAzInitializer>();
+        Console.WriteLine("Initializing the recipes storage...");
+        await initializer.Initialize();
+    }
+}
