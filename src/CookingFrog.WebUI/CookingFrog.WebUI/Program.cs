@@ -12,6 +12,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+// On development environment KeyVault is not required
 if (!builder.Environment.IsDevelopment())
 {
     var keyVaultUrl = builder.Configuration["Azure:KeyVault:Uri"];
@@ -19,35 +20,13 @@ if (!builder.Environment.IsDevelopment())
     {
         throw new InvalidOperationException("Azure Key Vault is not configured.");
     }
-    
+
     builder.Configuration.AddAzureKeyVault(
         new Uri(keyVaultUrl),
         new DefaultAzureCredential());
 }
 
-var azureStorageConfig = builder.Configuration
-    .GetSection("Azure:Storage")
-    .Get<AzureStorageConfig>();
-
-if (azureStorageConfig == null)
-{
-    throw new InvalidOperationException("Azure Storage is not configured.");
-}
-
-if (!string.IsNullOrEmpty(azureStorageConfig.ConnectionString))
-{
-    Console.WriteLine($"Adding Azure Storage with the connection string '{azureStorageConfig.ConnectionString}'.");
-    builder.Services.AddFrogStorage(
-        azureStorageConfig.ConnectionString);
-}
-else
-{
-    Console.WriteLine("Adding Azure Storage with account key.");
-    builder.Services.AddFrogStorage(
-        azureStorageConfig.Uri,
-        azureStorageConfig.AccountName,
-        azureStorageConfig.AccountKey);
-}
+builder.AddFrogStorage();;
 
 builder.Services.AddScoped<IRecipesReaderService, ServerRecipesReaderService>();
 builder.Services.AddScoped<IRecipesUpdaterService, ServerRecipesUpdaterService>();
@@ -82,7 +61,7 @@ app.UseHttpsRedirection();
 
 app.MapStaticAssets();
 
-app.UseAuthentication(); 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseAntiforgery();

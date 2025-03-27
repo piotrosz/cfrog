@@ -39,6 +39,33 @@ docker compose remove
 
 ```
 
+### Store secrets in local secret storage
+
+Init:
+```PowerShell
+cd ./src/CookingFrog.WebUI/CookingFrog.WebUI
+dotnet user-secrets init
+```
+Set secrets:
+
+```PowerShell
+# Set Google authentication secrets
+dotnet user-secrets set "Authentication:Google:ClientId" ""
+dotnet user-secrets set "Authentication:Google:Secret" ""
+
+# Set emails authorized to manage recipes
+dotnet user-secrets set "Authorization:Emails" ""
+
+# Set Azure table storage secrets
+dotnet user-secrets set "Azure:Storage:Uri" ""
+dotnet user-secrets set "Azure:Storage:AccountName" ""
+dotnet user-secrets set "Azure:Storage:AccountKey" ""
+
+# OR
+dotnet user-secrets set "Azure:Storage:ConnectionString" ""
+
+```
+
 ### Ideas:
 
 - Use `IDistributedCache`
