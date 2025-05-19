@@ -4,7 +4,6 @@
     ValueExpression="() => _selectedValue"
     Value="_selectedValue"
     ValueChanged="@(async (UnitEnum unit) => await PassValue(unit))">
->
     @foreach (var option in _unitOptions)
     {
         <option value="@option.Value">@option.Description</option>
