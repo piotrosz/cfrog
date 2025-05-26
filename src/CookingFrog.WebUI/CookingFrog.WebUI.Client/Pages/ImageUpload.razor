@@ -1,0 +1,63 @@
+@page "/image-upload"
+@attribute [StreamRendering]
+@inject IImageUploadService ImageUploadService
+@inject IJSRuntime JSRuntime
+@using Microsoft.AspNetCore.Components.Forms
+
+<PageTitle>Image Upload</PageTitle>
+
+<div class="container mt-4">
+    <h1>Image Upload</h1>
+    
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Upload New Image</h5>
+                    <InputFile OnChange="OnInputFileChange" class="form-control mb-3" accept=".jpg,.jpeg,.png,.gif" />
+                    
+                    @if (!string.IsNullOrEmpty(ErrorMessage))
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @ErrorMessage
+                        </div>
+                    }
+                    
+                    @if (IsUploading)
+                    {
+                        <div class="d-flex align-items-center">
+                            <div class="spinner-border spinner-border-sm me-2" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <span>Uploading...</span>
+                        </div>
+                    }
+                    
+                    <button class="btn btn-primary mt-2" @onclick="UploadFile" disabled="@(SelectedFile is null || IsUploading)">
+                        Upload Image
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        @if (UploadedImageUrl != null)
+        {
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Uploaded Image</h5>
+                        <div class="mb-3">
+                            <img src="@UploadedImageUrl" class="img-fluid img-thumbnail" alt="Uploaded image" />
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" readonly value="@UploadedImageUrl" id="imageUrlInput" />
+                            <button class="btn btn-outline-secondary" type="button" @onclick="CopyImageUrlToClipboard">
+                                Copy URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

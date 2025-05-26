@@ -9,10 +9,10 @@
   <ItemGroup>
     <ProjectReference Include="..\CookingFrog.Domain\CookingFrog.Domain.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Azure.Data.Tables" />
     <PackageReference Include="Azure.Identity" />
+    <PackageReference Include="Azure.Storage.Blobs" />
     <PackageReference Include="Microsoft.Extensions.Azure"/>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
   </ItemGroup>
