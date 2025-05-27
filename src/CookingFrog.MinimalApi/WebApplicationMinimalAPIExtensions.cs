@@ -92,16 +92,8 @@ public static class WebApplicationExtensions
     {
         app.MapPost("/api/images/upload", async (
             HttpRequest request,
-            IConfiguration configuration,
             [FromServices] IImageUploader imageUploader) =>
         {
-            // Get the connection string from configuration
-            var connectionString = configuration["Azure:Storage:ConnectionString"];
-            if (string.IsNullOrEmpty(connectionString))
-            {
-                return Results.BadRequest("Blob storage connection string not configured");
-            }
-
             try
             {
                 // Check if the request has a file
