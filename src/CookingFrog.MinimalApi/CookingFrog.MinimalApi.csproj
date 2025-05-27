@@ -1,19 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <!-- Common properties are now defined in Directory.Build.props -->
   </PropertyGroup>
   <ItemGroup>
 	  <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
-
-  <ItemGroup>
-    <!-- TODO: FIX should be no reference -->
-    <PackageReference Include="Azure.Storage.Blobs" />
-  </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\CookingFrog.Application.Models\CookingFrog.Application.Models.csproj" />
     <ProjectReference Include="..\CookingFrog.Domain\CookingFrog.Domain.csproj" />

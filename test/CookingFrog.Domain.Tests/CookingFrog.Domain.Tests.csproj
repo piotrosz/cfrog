@@ -1,10 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-
+<Project Sdk="Microsoft.NET.Sdk">    <PropertyGroup>
+        <!-- Common properties are now defined in Directory.Build.props -->
         <IsPackable>false</IsPackable>
 	    <IsPublishable>false</IsPublishable>
         <IsTestProject>true</IsTestProject>

@@ -36,6 +36,11 @@ public static class Registrations
             clientBuilder.AddTableServiceClient(
                 serviceUri,
                 new TableSharedKeyCredential(accountName, accountKey));
+
+            clientBuilder.AddBlobServiceClient(
+                serviceUri,
+                new Azure.Storage.StorageSharedKeyCredential(accountName, accountKey));
+
             //clientBuilder.UseCredential(new DefaultAzureCredential());
         });
         

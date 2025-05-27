@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Components.Forms;
-
 namespace CookingFrog.WebUI.Client;
 
 // This is just a redeclaration of the IBrowserFile interface from Microsoft.AspNetCore.Components.Forms

@@ -14,7 +14,7 @@ public partial class ImageUpload
     private void OnInputFileChange(InputFileChangeEventArgs e)
     {
         ErrorMessage = null;
-        SelectedFile = e.File;
+        SelectedFile = (IBrowserFile?)e.File;
     }
     
     private async Task UploadFile()

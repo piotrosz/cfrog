@@ -68,9 +68,8 @@ dotnet user-secrets set "Azure:Storage:ConnectionString" ""
 
 ### Ideas:
 
-- Use `IDistributedCache`
-- Import & export recipies in json
-- Add CreatedBy (email)
-- Add ModifiedBy (email)
-- Recipies per user
-- Display and edit preparation time
+- possibility to link image with a recipe,
+- import & export recipies in json,
+- add CreatedBy & ModifiedBy (email) -> recipies per user,
+- display and edit preparation time,
+- use `IDistributedCache`
