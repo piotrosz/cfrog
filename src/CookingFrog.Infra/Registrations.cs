@@ -54,5 +54,6 @@ public static class Registrations
         services.AddScoped<IRecipesSaver, RecipesAzSaver>();
         services.AddScoped<IRecipesUpdater, RecipesAzUpdater>();
         services.AddScoped<IStaticRecipesLoader, StaticRecipesLoader>();
+        services.AddScoped<IImageUploader, RecipeImageUploader>();
     }
 }
