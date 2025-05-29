@@ -34,7 +34,7 @@ public class RecipeParserTests
          Gotować pod przykryciem przez ok. 15 - 20 minut.
          Dodać krojone pomidory z puszki i gotować przez ok. 15 minut pod uchyloną pokrywą, od czasu do czasu zamieszać.
          Odstawić z ognia, wymieszać z posiekanym koperkiem oraz śmietanką.
-""");
+""", null, null);
         
         result.IsSuccess.Should().BeTrue();
     }
@@ -64,7 +64,7 @@ public class RecipeParserTests
             Na koniec skropić warzywa octem winnym i potrząsnąć patelnią w celu wymieszania składników.
             Odstawić patelnię z ognia, dodać makaron orzo i wymieszać. Posypać pokrojonymi na połówki pomidorkami oraz listkami bazylii.
             Wyłożyć do talerzu lub jednej salaterki i posypać pokrojoną fetą lub serem sałatkowym.
-            """);
+            """, null, null);
         
         result.IsSuccess.Should().BeTrue();
     }
@@ -90,7 +90,7 @@ public class RecipeParserTests
             Do szerokiego garnka włożyć smalec, dodać pokrojoną w kosteczkę cebulę oraz pokrojoną na plasterki kiełbasę, smażyć co chwilę mieszając przez około 7 minut. Dodać starty na tarce lub rozgnieciony czosnek i smażyć jeszcze przez 3 minuty.
             Dodać pokrojone w kostkę papryki i co chwilę mieszając smażyć przez ok. 3 minuty. Doprawić solą (ok. pół łyżeczki), świeżo zmielonym pieprzem oraz słodką i ostrą papryką w proszku.
             Następnie dodać obrane i pokrojone w kostkę świeże pomidory (bez nasion ze środka komór) lub passatę pomidorową. Gotować przez około 15 minut pod uchyloną pokrywą, w międzyczasie kilka razy zamieszać. Na koniec dodać koncentrat pomidorowy jeśli używaliśmy świeżych pomidorów.
-            """);
+            """, null, null);
         
         result.IsSuccess.Should().BeTrue();
     }
@@ -122,7 +122,7 @@ public class RecipeParserTests
             Dodać pomidory (świeże należy sparzyć, obrać, pokroić na ćwiartki, usunąć pestki, miąższ pokroić w kosteczkę, pomidory z puszki należy rozdrobnić jeśli są w całości). Wymieszać i doprawić cukrem, pieprzem oraz szczyptą soli.
             Przykryć i dusić przez około 20 na umiarkowanym ogniu, co jakiś czas zamieszać. Dodać pokrojoną w kosteczkę paprykę i posiekane suszone pomidory jeśli ich używamy. Gotować pod przykryciem przez około 10 minut, od czasu do czasu zamieszać. Na koniec dodać fasolę i gotować pod przykryciem przez ok. 3 minuty.
             Na koniec gotować potrawę podlewając stopniowo wrzącym bulionem lub wodą, tak aby powstało trochę gęstego sosu. Można przygotować wcześniej i odgrzewać.
-            """);
+            """, null, null);
         
         result.IsSuccess.Should().BeTrue();
     }
