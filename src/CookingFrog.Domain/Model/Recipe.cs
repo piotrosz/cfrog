@@ -6,8 +6,8 @@ public sealed record Recipe(
     TimeSpan TimeToPrepare,
     IEnumerable<Ingredient> Ingredients,
     IEnumerable<Step> Steps,
-    string Notes,
-    string? ImageUrl = null)
+    string? Notes,
+    string? ImageUrl)
 {
     public Recipe(Guid Guid,
         string Summary,

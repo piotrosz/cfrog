@@ -61,10 +61,23 @@
                         @bind-Value="Model!.Steps"/>
                     <ValidationMessage For="() => Model.Steps"/>
                 </div>
+                <div class="mb-3">
+                    <label
+                        for="txtImageUrl"
+                        class="form-label">Link do obrazka (opcjonalnie)</label>
+                    <InputText
+                        type="text"
+                        class="form-control"
+                        id="txtImageUrl"
+                        placeholder=""
+                        maxlength="400"
+                        @bind-Value="Model!.ImageUrl"/>
+                    <ValidationMessage For="() => Model.ImageUrl"/>
+                </div>
                 <button 
                     type="submit" 
                     class="btn btn-success ">Zapisz
-                    </button>
+                </button>
                 
             </EditForm>
     </Authorized>
