@@ -1,4 +1,5 @@
 using Blazored.LocalStorage;
+using CookingFrog.Domain;
 using CookingFrog.WebUI.Client;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -11,7 +12,7 @@ builder.Services.AddScoped(sp => new HttpClient
 
 builder.Services.AddScoped<IRecipesReaderService, ClientRecipesReaderService>();
 builder.Services.AddScoped<IRecipesUpdaterService, ClientRecipesUpdaterService>();
-builder.Services.AddScoped<IImageUploadService, ImageUploadService>();
+builder.Services.AddScoped<IImageUploadService, ClientImageUploadService>();
 
 builder.Services.AddBlazoredLocalStorage();
 

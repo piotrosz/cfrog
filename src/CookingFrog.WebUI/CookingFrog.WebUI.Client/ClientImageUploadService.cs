@@ -1,9 +1,10 @@
 using System.Net.Http.Headers;
+using CookingFrog.Domain;
 using CSharpFunctionalExtensions;
 
 namespace CookingFrog.WebUI.Client;
 
-public sealed class ImageUploadService(HttpClient httpClient) : IImageUploadService
+public sealed class ClientImageUploadService(HttpClient httpClient) : IImageUploadService
 {
     private const int MaxAllowedFileSizeInBytes = 10 * 1024 * 1024; // 10 MB
     private static readonly string[] AllowedImageExtensions = [".jpg", ".jpeg", ".png", ".gif"];

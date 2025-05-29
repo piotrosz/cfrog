@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
+using IBrowserFile = CookingFrog.Domain.IBrowserFile;
 
 namespace CookingFrog.WebUI.Client.Pages;
 

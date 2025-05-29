@@ -29,6 +29,7 @@ builder.AddFrogStorage();;
 
 builder.Services.AddScoped<IRecipesReaderService, ServerRecipesReaderService>();
 builder.Services.AddScoped<IRecipesUpdaterService, ServerRecipesUpdaterService>();
+builder.Services.AddScoped<IImageUploadService, ServerImageUploadService>();
 
 builder.AddFrogGoogleAuthentication();
 builder.AddFrogAuthorization();

@@ -1,4 +1,4 @@
-namespace CookingFrog.WebUI.Client;
+namespace CookingFrog.Domain;
 
 // This is just a redeclaration of the IBrowserFile interface from Microsoft.AspNetCore.Components.Forms
 // to ensure our code compiles correctly

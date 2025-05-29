@@ -1,3 +1,4 @@
+using CookingFrog.Domain;
 using CSharpFunctionalExtensions;
 
 namespace CookingFrog.WebUI.Client;
