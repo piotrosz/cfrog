@@ -20,6 +20,8 @@ public sealed record RecipeTableEntity : ITableEntity
     public required string Summary { get; set; }
 
     public string? Notes { get; set; }
+
+    public string? ImageUrl { get; set; }
     
     public TimeSpan TimeToPrepare { get; init; }
 }

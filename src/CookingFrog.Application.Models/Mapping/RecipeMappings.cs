@@ -24,7 +24,9 @@ public static class RecipeMappings
             recipe.Guid, 
             ingredients,
             steps,
-            recipe.Notes); 
+            recipe.Notes,
+            recipe.ImageUrl,
+            recipe.TimeToPrepare); 
         
         return recipeModel;
     }

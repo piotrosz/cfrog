@@ -45,6 +45,12 @@ public static class WebApplicationExtensions
                 await updater.UpdateNotes(note, guid, CancellationToken.None);
             });
 
+        app.MapPut("api/recipes/{guid}/image",
+            async (Guid guid, [FromBody] string imageUrl, IRecipesUpdater updater) =>
+            {
+                await updater.UpdateImage(imageUrl, guid, CancellationToken.None);
+            });
+
         app.MapPut("api/recipes/{guid}/ingredients/{index}",
             async (Guid guid, int index, [FromBody] IngredientModel ingredient, IRecipesUpdater updater) =>
             {

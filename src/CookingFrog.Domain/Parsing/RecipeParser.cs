@@ -8,7 +8,9 @@ public static class RecipeParser
         string timeToPrepare,
         string summary,
         string ingredients,
-        string steps)
+        string steps,
+        string? imageUrl,
+        string? notes)
     {
         ArgumentNullException.ThrowIfNull(timeToPrepare);
         ArgumentNullException.ThrowIfNull(summary);
@@ -44,6 +46,7 @@ public static class RecipeParser
 
         var parsedSteps = stepsArray.Select(x => new Step(x.Trim()));
 
-        return ParseResult<Recipe>.Success(new Recipe(Guid.NewGuid(), summary, parsedTimeToPrepare, parsedIngredients, parsedSteps));
+        var recipe = new Recipe(Guid.NewGuid(), summary, parsedTimeToPrepare, parsedIngredients, parsedSteps, notes, imageUrl);
+        return ParseResult<Recipe>.Success(recipe);
     }
 }

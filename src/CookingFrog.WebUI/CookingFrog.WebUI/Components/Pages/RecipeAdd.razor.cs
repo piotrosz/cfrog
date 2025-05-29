@@ -37,7 +37,9 @@ public partial class RecipeAdd(
             Model!.TimeToPrepare,
             Model.Title,
             Model.Ingredients,
-            Model.Steps);
+            Model.Steps,
+            Model.ImageUrl,
+            Model.Notes);
 
         if (!parseResult.IsSuccess)
         {
@@ -64,7 +66,9 @@ public partial class RecipeAdd(
             Model!.TimeToPrepare,
             Model.Title,
             Model.Ingredients,
-            Model.Steps);
+            Model.Steps,
+            Model.ImageUrl,
+            Model.Notes);
 
         if (parseResult.IsSuccess)
         {
@@ -87,7 +91,7 @@ public partial class RecipeAdd(
             _editContext.OnValidationRequested -= HandleValidationRequested;
         }
     }
-    
+
     public sealed class RecipeAddModel
     {
         [Required]
@@ -104,5 +108,9 @@ public partial class RecipeAdd(
         [Required]
         [RegularExpression(@"\d{1,2}:\d{1,2}")]
         public string TimeToPrepare { get; set; } = "00:00";
+
+        public string? ImageUrl { get; set; }
+        
+        public string? Notes { get; set; }
     }
 }

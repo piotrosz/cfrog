@@ -23,7 +23,7 @@ public partial class Recipes(IRecipesReaderService recipesReader)
 
     private Task SearchRecipes(string searchTerm)
     {
-        _recipes = _initialRecipes.Where(x => x.Summary
+        _recipes = _initialRecipes?.Where(x => x.Summary
                 .Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
             .AsQueryable();
 
