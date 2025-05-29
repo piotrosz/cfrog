@@ -3,30 +3,31 @@
     <!-- Enable central package management, https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
-  <ItemGroup>    <PackageVersion Include="CSharpFunctionalExtensions" Version="3.5.1" />
-    <PackageVersion Include="Azure.Data.Tables" Version="12.10.0" />
-    <PackageVersion Include="Azure.Identity" Version="1.13.2" />
-    <PackageVersion Include="Azure.Storage.Blobs" Version="12.19.1" />
+  <ItemGroup>
+    <PackageVersion Include="CSharpFunctionalExtensions" Version="3.6.0" />
+    <PackageVersion Include="Azure.Data.Tables" Version="12.11.0" />
+    <PackageVersion Include="Azure.Identity" Version="1.14.0" />
+    <PackageVersion Include="Azure.Storage.Blobs" Version="12.24.0" />
     <PackageVersion Include="Microsoft.Extensions.Azure" Version="1.11.0" />
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
-    <PackageVersion Include="Swashbuckle.AspNetCore" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="8.1.2" />
     <PackageVersion Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.4.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.Google" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.3" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.Google" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.5" />
     <PackageVersion Include="Blazored.LocalStorage" Version="4.5.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.NET.ILLink.Tasks" Version="9.0.3" />
-    <PackageVersion Include="Microsoft.NET.Sdk.WebAssembly.Pack" Version="9.0.3" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.NET.ILLink.Tasks" Version="9.0.5" />
+    <PackageVersion Include="Microsoft.NET.Sdk.WebAssembly.Pack" Version="9.0.5" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
-    <PackageVersion Include="FluentAssertions" Version="8.2.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageVersion Include="FluentAssertions" Version="8.3.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
     <PackageVersion Include="xunit" Version="2.9.3" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.2">
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
