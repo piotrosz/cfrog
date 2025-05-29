@@ -25,21 +25,33 @@ internal class RecipesAzUpdater(TableServiceClient tableServiceClient) : IRecipe
         
         return Result.Success();
     }
-
-    public async Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
+    
+      public async Task<Result> UpdateImage(string newImageUrl, Guid recipeGuid, CancellationToken cancellationToken)
     {
         var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
         var entity = GetRecipe(recipeGuid, cancellationToken, tableClient);
+
+        entity.ImageUrl = newImageUrl;
+
+        await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
         
+        return Result.Success();
+    }
+
+    public async Task UpdateIngredient(int ingredientIndex, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken)
+    {
+        var tableClient = tableServiceClient.GetTableClient(AzTableNames.RecipesTableName);
+        var entity = GetRecipe(recipeGuid, cancellationToken, tableClient);
+
         var ingredients = GetIngredients(entity);
 
-        if (ingredients.Count <= index)
+        if (ingredients.Count <= ingredientIndex)
         {
-            throw new Exception("Ingredient index is out of range.");
+            throw new Exception($"Ingredient index: '{ingredientIndex}' is out of range.");
         }
-        
-        ingredients[index] = ingredient;
-        
+
+        ingredients[ingredientIndex] = ingredient;
+
         entity.SerializedIngredients = JsonSerializer.Serialize(ingredients);
         await tableClient.UpdateEntityAsync(entity, entity.ETag, TableUpdateMode.Merge, cancellationToken);
     }
@@ -53,7 +65,7 @@ internal class RecipesAzUpdater(TableServiceClient tableServiceClient) : IRecipe
 
         if (steps.Count <= stepIndex)
         {
-            throw new Exception($"Step index {stepIndex} is out of range.");
+            throw new Exception($"Step index '{stepIndex}' is out of range.");
         }
         
         steps[stepIndex] = description;

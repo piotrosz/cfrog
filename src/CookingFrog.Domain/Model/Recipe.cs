@@ -6,13 +6,14 @@ public sealed record Recipe(
     TimeSpan TimeToPrepare,
     IEnumerable<Ingredient> Ingredients,
     IEnumerable<Step> Steps,
-    string Notes)
+    string Notes,
+    string? ImageUrl = null)
 {
     public Recipe(Guid Guid,
         string Summary,
         TimeSpan TimeToPrepare,
         IEnumerable<Ingredient> Ingredients,
-        IEnumerable<Step> Steps) : this(Guid, Summary, TimeToPrepare, Ingredients, Steps, string.Empty)
+        IEnumerable<Step> Steps) : this(Guid, Summary, TimeToPrepare, Ingredients, Steps, string.Empty, ImageUrl: null)
     {
     }
 }

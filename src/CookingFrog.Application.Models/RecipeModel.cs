@@ -8,5 +8,7 @@ public record RecipeModel(
     Guid Guid,
     IEnumerable<IngredientModel> Ingredients,
     IEnumerable<string> Steps,
-    string Notes);
+    string Notes,
+    string? ImageUrl,
+    TimeSpan TimeToPrepare);
     

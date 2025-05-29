@@ -7,7 +7,9 @@ public interface IRecipesUpdater
     Task<Result> UpdateTitle(string newTitle, Guid recipeGuid, CancellationToken cancellationToken);
 
     Task<Result> UpdateNotes(string notes, Guid recipeGuid, CancellationToken cancellationToken);
-    
+
+    Task<Result> UpdateImage(string newImageUrl, Guid recipeGuid, CancellationToken cancellationToken);
+
     Task UpdateIngredient(int index, Ingredient ingredient, Guid recipeGuid, CancellationToken cancellationToken);
 
     Task UpdateStep(int stepIndex, string description, Guid recipeGuid, CancellationToken cancellationToken);

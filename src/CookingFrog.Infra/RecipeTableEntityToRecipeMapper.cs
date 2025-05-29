@@ -21,7 +21,8 @@ public static class RecipeTableEntityToRecipeMapper
             recipe.TimeToPrepare,
             deserializedIngredients.OrderIngredients(),
             deserializedSteps,
-            recipe.Notes ?? string.Empty);
+            recipe.Notes ?? string.Empty,
+            recipe.ImageUrl);
         
         return result;
     }
