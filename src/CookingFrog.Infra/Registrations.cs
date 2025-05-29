@@ -16,6 +16,7 @@ public static class Registrations
         services.AddAzureClients(clientBuilder =>
         {
             clientBuilder.AddTableServiceClient(connectionString);
+            clientBuilder.AddBlobServiceClient(connectionString);
         });
 
         AddServices(services);
@@ -54,6 +55,6 @@ public static class Registrations
         services.AddScoped<IRecipesSaver, RecipesAzSaver>();
         services.AddScoped<IRecipesUpdater, RecipesAzUpdater>();
         services.AddScoped<IStaticRecipesLoader, StaticRecipesLoader>();
-        services.AddScoped<IImageUploader, RecipeImageUploader>();
+        services.AddScoped<IImageUploader, RecipeImageAzUploader>();
     }
 }
