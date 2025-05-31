@@ -9,16 +9,21 @@ public sealed class ClientImageUploadService(HttpClient httpClient) : IImageUplo
     private const int MaxAllowedFileSizeInBytes = 10 * 1024 * 1024; // 10 MB
     private static readonly string[] AllowedImageExtensions = [".jpg", ".jpeg", ".png", ".gif"];
 
-    public async Task<Result<string>> UploadImage(IBrowserFile file, CancellationToken cancellationToken)
+    public async Task<Result<string>> UploadImage(
+        Stream fileStream, 
+        string fileName,
+        long size,
+        string contentType, 
+        CancellationToken cancellationToken)
     {
         try
         {
             // Validate file size
-            if (file.Size > MaxAllowedFileSizeInBytes)
+            if (size > MaxAllowedFileSizeInBytes)
                 return Result.Failure<string>($"File size exceeds the maximum allowed size of {MaxAllowedFileSizeInBytes / (1024 * 1024)} MB.");
 
             // Validate file type
-            var fileExtension = Path.GetExtension(file.Name).ToLowerInvariant();
+            var fileExtension = Path.GetExtension(fileName).ToLowerInvariant();
             if (!AllowedImageExtensions.Contains(fileExtension))
                 return Result.Failure<string>($"File type '{fileExtension}' is not allowed. Allowed types: {string.Join(", ", AllowedImageExtensions)}");
 
@@ -26,12 +31,11 @@ public sealed class ClientImageUploadService(HttpClient httpClient) : IImageUplo
             using var content = new MultipartFormDataContent();
             
             // Get stream from the file
-            using var stream = file.OpenReadStream(MaxAllowedFileSizeInBytes);
-            using var streamContent = new StreamContent(stream);
-            streamContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+            using var streamContent = new StreamContent(fileStream);
+            streamContent.Headers.ContentType = new MediaTypeHeaderValue(contentType);
             
             // Add the file to the form data
-            content.Add(streamContent, "file", file.Name);
+            content.Add(streamContent, "file", fileName);
 
             // Send the request
             var response = await httpClient.PostAsync("/api/images/upload", content, cancellationToken);

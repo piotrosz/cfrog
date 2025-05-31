@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
-using IBrowserFile = CookingFrog.Domain.IBrowserFile;
 
 namespace CookingFrog.WebUI.Client.Pages;
 
@@ -15,7 +13,7 @@ public partial class ImageUpload
     private void OnInputFileChange(InputFileChangeEventArgs e)
     {
         ErrorMessage = null;
-        SelectedFile = (IBrowserFile?)e.File;
+        SelectedFile = e.File;
     }
     
     private async Task UploadFile()
@@ -27,8 +25,14 @@ public partial class ImageUpload
         {
             IsUploading = true;
             ErrorMessage = null;
-            
-            var result = await ImageUploadService.UploadImage(SelectedFile, CancellationToken.None);
+
+            await using var stream = SelectedFile.OpenReadStream();
+            var result = await ImageUploadService.UploadImage(
+                stream,
+                SelectedFile.Name,
+                SelectedFile.Size,
+                SelectedFile.ContentType, 
+                CancellationToken.None);
             
             if (result.IsSuccess)
             {

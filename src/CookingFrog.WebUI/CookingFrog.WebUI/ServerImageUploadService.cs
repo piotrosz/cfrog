@@ -6,12 +6,16 @@ namespace CookingFrog.WebUI;
 
 public sealed class ServerImageUploadService(IImageUploader imageUploader) : IImageUploadService
 {
-    public async Task<Result<string>> UploadImage(IBrowserFile file, CancellationToken cancellationToken)
+    public async Task<Result<string>> UploadImage(
+        Stream fileStream, 
+        string fileName, 
+        long size,
+        string contentType,
+        CancellationToken cancellationToken)
     {
-        using var stream = file.OpenReadStream();
         var imageUrl = await imageUploader.UploadImage(
-            file.Name,
-            stream,
+            fileName,
+            fileStream,
             CancellationToken.None);
 
         return imageUrl;
