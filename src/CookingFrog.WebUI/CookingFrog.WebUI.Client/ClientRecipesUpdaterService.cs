@@ -79,4 +79,15 @@ public sealed class ClientRecipesUpdaterService(HttpClient httpClient) : IRecipe
             cancellationToken);
         result.EnsureSuccessStatusCode();
     }
+
+    public async Task UpdateImage(Guid recipeGuid, string imageUrl, CancellationToken cancellationToken)
+    {
+        var url = $"api/recipes/{recipeGuid}/image";
+        
+        var result = await httpClient.PutAsJsonAsync(
+            url,
+            imageUrl,
+            cancellationToken);
+        result.EnsureSuccessStatusCode();
+    }
 }

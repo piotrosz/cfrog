@@ -41,6 +41,14 @@ public partial class RecipeDetail(
             Recipe = await recipesReader!.GetRecipe(Recipe.Guid);
         }
     }
+
+    private async Task UpdateImageUrl(string? newImageUrl)
+    {
+        if (Recipe is not null && !string.IsNullOrWhiteSpace(newImageUrl))
+        {
+            await recipesUpdater.UpdateImage(Recipe.Guid, newImageUrl, CancellationToken.None);
+        }
+    }
     
     private async Task UpdateStep(StepUpdateModel stepModel)
     {

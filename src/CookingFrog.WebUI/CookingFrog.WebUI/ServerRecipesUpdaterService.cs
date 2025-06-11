@@ -46,4 +46,9 @@ public sealed class ServerRecipesUpdaterService(IRecipesUpdater recipesUpdater) 
     {
         return recipesUpdater.DeleteStep(index, recipeGuid, cancellationToken);
     }
+
+    public Task UpdateImage(Guid recipeGuid, string imageUrl, CancellationToken cancellationToken)
+    {
+        return recipesUpdater.UpdateImage(imageUrl, recipeGuid, cancellationToken);
+    }
 }

@@ -20,4 +20,6 @@ public interface IRecipesUpdaterService
     Task AddStep(int? index, string step, Guid recipeGuid, CancellationToken cancellationToken);
     
     Task DeleteStep(int index, Guid recipeGuid, CancellationToken cancellationToken);
+    
+    Task UpdateImage(Guid recipeGuid, string imageUrl, CancellationToken cancellationToken);
 }
