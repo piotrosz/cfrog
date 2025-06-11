@@ -3,7 +3,9 @@ using Microsoft.JSInterop;
 
 namespace CookingFrog.WebUI.Client.Pages;
 
-public partial class ImageUpload
+public partial class ImageUpload(
+    IImageUploadService imageUploadService,
+    IJSRuntime jsRuntime)
 {
     private IBrowserFile? SelectedFile { get; set; }
     private string? UploadedImageUrl { get; set; }
@@ -27,7 +29,7 @@ public partial class ImageUpload
             ErrorMessage = null;
 
             await using var stream = SelectedFile.OpenReadStream();
-            var result = await ImageUploadService.UploadImage(
+            var result = await imageUploadService.UploadImage(
                 stream,
                 SelectedFile.Name,
                 SelectedFile.Size,
@@ -59,6 +61,6 @@ public partial class ImageUpload
         if (string.IsNullOrEmpty(UploadedImageUrl))
             return;
         
-        await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", UploadedImageUrl);
+        await jsRuntime.InvokeVoidAsync("navigator.clipboard.writeText", UploadedImageUrl);
     }
 }

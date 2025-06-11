@@ -57,13 +57,18 @@ dotnet user-secrets set "Authentication:Google:Secret" ""
 dotnet user-secrets set "Authorization:Emails" ""
 
 # Set Azure table storage secrets
-dotnet user-secrets set "Azure:Storage:Uri" ""
+dotnet user-secrets set "Azure:Storage:TableStorageUrl" ""
+dotnet user-secrets set "Azure:Storage:BlobStorageUrl" ""
 dotnet user-secrets set "Azure:Storage:AccountName" ""
 dotnet user-secrets set "Azure:Storage:AccountKey" ""
 
 # OR
 dotnet user-secrets set "Azure:Storage:ConnectionString" ""
 
+```
+
+```
+dotnet user-secrets list
 ```
 
 ### Ideas:

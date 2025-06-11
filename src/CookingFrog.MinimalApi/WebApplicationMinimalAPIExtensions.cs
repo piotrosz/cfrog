@@ -129,7 +129,7 @@ public static class WebApplicationExtensions
                     return Results.BadRequest("File size exceeds the maximum limit of 5 MB.");
                 }
 
-                using var stream = file.OpenReadStream();
+                await using var stream = file.OpenReadStream();
                 var imageUrl = await imageUploader.UploadImage(
                     file.FileName,
                     stream,

@@ -1,4 +1,5 @@
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using CookingFrog.Domain;
 using CSharpFunctionalExtensions;
 
@@ -43,7 +44,7 @@ public sealed class ClientImageUploadService(HttpClient httpClient) : IImageUplo
             
             // Get the URL of the uploaded image
             var imageUrl = await response.Content.ReadAsStringAsync(cancellationToken);
-            return Result.Success(imageUrl);
+            return Result.Success(imageUrl.Replace("\"", ""));
         }
         catch (Exception ex)
         {

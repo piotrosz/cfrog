@@ -18,6 +18,6 @@ public sealed class ServerImageUploadService(IImageUploader imageUploader) : IIm
             fileStream,
             CancellationToken.None);
 
-        return imageUrl;
+        return imageUrl.ToString();
     }
 }

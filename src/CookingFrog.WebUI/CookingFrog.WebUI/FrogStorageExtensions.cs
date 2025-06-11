@@ -24,7 +24,8 @@ public static class FrogStorageExtensions
         {
             Console.WriteLine("Adding Azure Storage with account key.");
             builder.Services.AddFrogStorage(
-                azureStorageConfig.Uri,
+                azureStorageConfig.TableStorageUrl,
+                azureStorageConfig.BlobStorageUrl,
                 azureStorageConfig.AccountName,
                 azureStorageConfig.AccountKey);
         }

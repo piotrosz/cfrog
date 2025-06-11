@@ -1,4 +1,5 @@
 ﻿using Azure.Data.Tables;
+using Azure.Storage;
 using CookingFrog.Domain;
 using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,23 +25,24 @@ public static class Registrations
 
     public static void AddFrogStorage(
         this IServiceCollection services, 
-        Uri? serviceUri,
+        Uri? tableStoreUrl,
+        Uri? blobStoreUrl,
         string? accountName,
         string? accountKey)
     {
-        ArgumentNullException.ThrowIfNull(serviceUri);
+        ArgumentNullException.ThrowIfNull(tableStoreUrl);
         ArgumentNullException.ThrowIfNull(accountName);
         ArgumentNullException.ThrowIfNull(accountKey);
 
         services.AddAzureClients(clientBuilder =>
         {
             clientBuilder.AddTableServiceClient(
-                serviceUri,
+                tableStoreUrl,
                 new TableSharedKeyCredential(accountName, accountKey));
 
             clientBuilder.AddBlobServiceClient(
-                serviceUri,
-                new Azure.Storage.StorageSharedKeyCredential(accountName, accountKey));
+                blobStoreUrl,
+                new StorageSharedKeyCredential(accountName, accountKey));
 
             //clientBuilder.UseCredential(new DefaultAzureCredential());
         });
