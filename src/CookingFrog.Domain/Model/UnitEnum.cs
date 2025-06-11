@@ -35,5 +35,7 @@ public enum UnitEnum
     [Display(Description = "łodyga|łodygi|łodyg")]
     Stalk,
     [Display(Description = "ziarenko|ziarenka|ziarenek")]
-    Grain
+    Grain,
+    [Display(Description = "kostka|kostki|kostek")]
+    Block
 }

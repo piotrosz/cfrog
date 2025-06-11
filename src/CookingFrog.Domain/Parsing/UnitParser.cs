@@ -46,6 +46,9 @@ public static class UnitParser
             "ziarno" => ParseResult<UnitEnum>.Success(UnitEnum.Grain),
             "ziarna" => ParseResult<UnitEnum>.Success(UnitEnum.Grain),
             "ziaren" => ParseResult<UnitEnum>.Success(UnitEnum.Grain),
+            "kostka" => ParseResult<UnitEnum>.Success(UnitEnum.Block),
+            "kostki" => ParseResult<UnitEnum>.Success(UnitEnum.Block),
+            "kostek" => ParseResult<UnitEnum>.Success(UnitEnum.Block),
             _ => ParseResult<UnitEnum>.Error($"Cannot parse unit: '{input}'")
         };
     }
