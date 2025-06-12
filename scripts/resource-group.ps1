@@ -5,7 +5,7 @@ pwsh
 $resourceGroupName = "rg-cfrog"
 $storageAccountName = "stor0cfrog"
 $location = "polandcentral"
-$subscription = "311d0bf6-7b5c-40ae-880d-a81a7407ebf1"
+$subscription = "-- Fill in subscription id --"
 $appPlanName = "appplan-cfrog"
 $webAppName = "webapp-cfrog"
 $vaultName = "kvcfrog2"

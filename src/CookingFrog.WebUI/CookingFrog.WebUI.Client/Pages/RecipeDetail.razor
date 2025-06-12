@@ -126,12 +126,36 @@ else
                 </div>
             </div>
         }
-        @if (Recipe.ImageUrl != null)
+        @if (!_showEditButtons && Recipe.ImageUrl != null)
         {
             <div class="row gy-2 g-2">
                 <img src="@Recipe.ImageUrl" class="img-fluid" alt=""/>
             </div>
         }
+        @if (_showEditButtons)
+        {
+            <div>
+                <div class="mb-1">
+                    <InputText
+                        class="form-control"
+                        id="txtImageUrl"
+                        @bind-Value="Recipe.ImageUrl"/>
+                </div>
+                <div class="mb-3">
+                    <button
+                        type="button"
+                        class="btn btn-sm btn-success"
+                        @onclick="@(async () =>
+                                  {
+                                      await UpdateImageUrl(Recipe.ImageUrl);
+                                  })"
+                        title="zapisz">
+                        Zapisz
+                    </button>
+                </div>
+            </div>
+        }
+        
         @if (Recipe.TimeToPrepare.TotalMinutes > 0)
         {
             <div class="row gy-2 g-2">
