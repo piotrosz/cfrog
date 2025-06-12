@@ -71,6 +71,10 @@ dotnet user-secrets set "Azure:Storage:ConnectionString" ""
 dotnet user-secrets list
 ```
 
+### Configure App Service & key vault using Managed Identity
+
+https://learn.microsoft.com/en-us/azure/app-service/app-service-key-vault-references?tabs=azure-cli
+
 ### Ideas:
 
 - possibility to link image with a recipe,

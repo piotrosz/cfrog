@@ -23,7 +23,7 @@ az configure --defaults group=$resourceGroupName
 az storage account create -n $storageAccountName -g $resourceGroupName -l $location --subscription $subscription --sku Standard_LRS
 
 # Create key vault
-az keyvault create --name $vaultName --resource-group $resourceGroupName --enable-rbac-authorization false
+az keyvault create --name $vaultName --resource-group $resourceGroupName --enable-rbac-authorization true
 
 # Create app service plan
 az appservice plan create --name $appPlanName --resource-group $resourceGroupName --sku B1 --is-linux --location $location
@@ -41,5 +41,8 @@ az webapp config appsettings set --resource-group $resourceGroupName --name $web
 
 az webapp config appsettings list --resource-group $resourceGroupName --name $webAppName
 
+#identityResourceId=$(az identity show --resource-group <group-name> --name <identity-name> --query id -o tsv)
+#az webapp update --resource-group <group-name> --name <app-name> --set keyVaultReferenceIdentity=${identityResourceId}
+
 # Grant access to the vault
-az keyvault set-policy --secret-permissions get list --name $vaultName --object-id $principalId.Trim("""")
+# az keyvault set-policy --secret-permissions get list --name $vaultName --object-id $principalId.Trim("""")
