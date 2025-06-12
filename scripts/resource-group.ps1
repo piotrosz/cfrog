@@ -31,18 +31,32 @@ az appservice plan create --name $appPlanName --resource-group $resourceGroupNam
 # Create app service
 az webapp create --name $webAppName --resource-group $resourceGroupName --plan $appPlanName --runtime "DOTNETCORE:9.0"
 
-# Assign idenity
-az webapp identity assign -g $resourceGroupName -n $webAppName
+# Enable system-assigned managed identity for the web app
+az webapp identity assign --name $webAppName --resource-group $resourceGroupName
 
-$principalId = (az webapp identity show -g $resourceGroupName -n $webAppName --query principalId)
+# Get the principal ID of the web app's managed identity
+$webAppPrincipalId = $(az webapp identity show --name $webAppName --resource-group $resourceGroupName --query principalId --output tsv)
+Write-Output "Web App Principal ID: $webAppPrincipalId"
 
-# Add configuration
-az webapp config appsettings set --resource-group $resourceGroupName --name $webAppName --settings "VaultName=$vaultName"
+# Create Key Vault access policy for the web app's managed identity
+# This allows the web app to get secrets and certificates from the Key Vault
+az keyvault set-policy --name $vaultName --resource-group $resourceGroupName --object-id $webAppPrincipalId --secret-permissions get list
 
-az webapp config appsettings list --resource-group $resourceGroupName --name $webAppName
+# Add Key Vault reference to app settings
+# Replace 'YourSecretName' with the name of your secret in Key Vault
+az webapp config appsettings set --name $webAppName --resource-group $resourceGroupName --settings "ConnectionStrings__DefaultConnection=@Microsoft.KeyVault(SecretUri=https://$vaultName.vault.azure.net/secrets/ConnectionString/)"
+az webapp config appsettings set --name $webAppName --resource-group $resourceGroupName --settings "AzureWebJobsStorage=@Microsoft.KeyVault(SecretUri=https://$vaultName.vault.azure.net/secrets/ConnectionString/)"
 
-#identityResourceId=$(az identity show --resource-group <group-name> --name <identity-name> --query id -o tsv)
-#az webapp update --resource-group <group-name> --name <app-name> --set keyVaultReferenceIdentity=${identityResourceId}
+# Assign the Key Vault Secrets User role to the web app's managed identity
+# This is required when using RBAC authorization model with Key Vault
+$keyVaultId = $(az keyvault show --name $vaultName --resource-group $resourceGroupName --query id --output tsv)
+az role assignment create --assignee $webAppPrincipalId --role "Key Vault Secrets User" --scope $keyVaultId
 
-# Grant access to the vault
-# az keyvault set-policy --secret-permissions get list --name $vaultName --object-id $principalId.Trim("""")
+# Add Key Vault reference to app configuration
+az webapp config set --name $webAppName --resource-group $resourceGroupName --generic-configurations "{'keyVaultReferenceIdentity': 'SystemAssigned'}"
+
+# Optional: Create a test secret in the Key Vault
+az keyvault secret set --vault-name $vaultName --name "ConnectionString" --value "YourConnectionStringValue"
+
+Write-Output "Web App successfully connected to Key Vault using Managed Identity"
+
